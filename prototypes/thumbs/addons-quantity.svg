@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1240 830" width="1240" height="830" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Add-ons quantity stepper, three states">
+<style>text{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}</style>
+<rect x="0" y="0" width="1240" height="830" rx="0" fill="#F4F4F7"/>
+<rect x="44" y="42" width="34" height="26" rx="6" fill="#EFECFF"/>
+<text x="61" y="60" font-size="12" font-weight="700" fill="#5A4BDA" text-anchor="middle" letter-spacing="0.9">1a</text>
+<text x="90" y="62" font-size="26" font-weight="800" fill="#14141C" letter-spacing="-0.26">Add-Ons · quantity stepper on Property 1 (2 items)</text>
+<text x="44" y="94" font-size="15" font-weight="500" fill="#6B6B7B">The plus-only affordance now expands into an inline stepper. Tap the cards below — they are live:</text>
+<text x="44" y="116" font-size="15" font-weight="500" fill="#6B6B7B">plus adds, the count grows, and the left slot becomes a delete action at quantity 1.</text>
+<text x="44" y="176" font-size="13" font-weight="700" fill="#14141C">State 1 — Nothing added</text>
+<text x="44" y="195" font-size="12" font-weight="500" fill="#8A8A9A">Plus icon only, 32×32 tap target</text>
+<rect x="44" y="214" width="358" height="412" rx="16" fill="#FFFFFF" stroke="#ECECF2" stroke-width="1"/>
+<text x="60" y="248" font-size="18" font-weight="800" fill="#14141C">You Might Also Need</text>
+<rect x="60" y="268" width="54" height="31" rx="15.5" fill="#F3F0FF" stroke="#5A4BDA" stroke-width="1"/>
+<text x="87.0" y="288" font-size="13" font-weight="700" fill="#5A4BDA" text-anchor="middle">All</text>
+<rect x="122" y="268" width="68" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="156.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Books</text>
+<rect x="198" y="268" width="104" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="250.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Stationery</text>
+<rect x="60" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#EAEAF1" stroke-width="1"/>
+<rect x="61" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="138.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Yakeen</text>
+<text x="138.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Physics Modules</text>
+<rect x="177" y="421" width="32" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<path d="M193 432v10M188 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="60" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 100k bought</text>
+<text x="60" y="503" font-size="14" font-weight="600" fill="#2C2C38">Yakeen Physics Modules</text>
+<text x="60" y="528" font-size="15" font-weight="800" fill="#14141C">₹2,668</text>
+<text x="119.6" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹5678</text>
+<line x1="119.6" y1="524" x2="152.6" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="60" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="229" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#EAEAF1" stroke-width="1"/>
+<rect x="230" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="307.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">PW</text>
+<text x="307.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Nazariya Glasses</text>
+<rect x="346" y="421" width="32" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<path d="M362 432v10M357 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="229" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 40k bought</text>
+<text x="229" y="503" font-size="14" font-weight="600" fill="#2C2C38">PW Nazariya Glasses</text>
+<text x="229" y="528" font-size="15" font-weight="800" fill="#14141C">₹448</text>
+<text x="271.4" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹1999</text>
+<line x1="271.4" y1="524" x2="304.4" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="229" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="60" y="564" width="326" height="43" rx="10" fill="#FFFFFF" stroke="#DCDCE6" stroke-width="1"/>
+<text x="223" y="591" font-size="14" font-weight="700" fill="#2C2C38" text-anchor="middle">View All Products</text>
+<text x="430" y="176" font-size="13" font-weight="700" fill="#14141C">State 2 — One item added</text>
+<text x="430" y="195" font-size="12" font-weight="500" fill="#8A8A9A">Stepper: delete · 1 · plus</text>
+<rect x="430" y="214" width="358" height="412" rx="16" fill="#FFFFFF" stroke="#ECECF2" stroke-width="1"/>
+<text x="446" y="248" font-size="18" font-weight="800" fill="#14141C">You Might Also Need</text>
+<rect x="446" y="268" width="54" height="31" rx="15.5" fill="#F3F0FF" stroke="#5A4BDA" stroke-width="1"/>
+<text x="473.0" y="288" font-size="13" font-weight="700" fill="#5A4BDA" text-anchor="middle">All</text>
+<rect x="508" y="268" width="68" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="542.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Books</text>
+<rect x="584" y="268" width="104" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="636.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Stationery</text>
+<rect x="446" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<rect x="447" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="524.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Yakeen</text>
+<text x="524.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Physics Modules</text>
+<rect x="511" y="421" width="84" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<g transform="translate(518.5,429.5)"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round" fill="none"/></g>
+<text x="553" y="442" font-size="14" font-weight="700" fill="#14141C" text-anchor="middle">1</text>
+<path d="M580 432v10M575 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="446" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 100k bought</text>
+<text x="446" y="503" font-size="14" font-weight="600" fill="#2C2C38">Yakeen Physics Modules</text>
+<text x="446" y="528" font-size="15" font-weight="800" fill="#14141C">₹2,668</text>
+<text x="505.6" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹5678</text>
+<line x1="505.6" y1="524" x2="538.6" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="446" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="615" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#EAEAF1" stroke-width="1"/>
+<rect x="616" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="693.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">PW</text>
+<text x="693.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Nazariya Glasses</text>
+<rect x="732" y="421" width="32" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<path d="M748 432v10M743 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="615" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 40k bought</text>
+<text x="615" y="503" font-size="14" font-weight="600" fill="#2C2C38">PW Nazariya Glasses</text>
+<text x="615" y="528" font-size="15" font-weight="800" fill="#14141C">₹448</text>
+<text x="657.4" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹1999</text>
+<line x1="657.4" y1="524" x2="690.4" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="615" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="446" y="564" width="326" height="43" rx="10" fill="#FFFFFF" stroke="#DCDCE6" stroke-width="1"/>
+<text x="609" y="591" font-size="14" font-weight="700" fill="#2C2C38" text-anchor="middle">View All Products</text>
+<text x="816" y="176" font-size="13" font-weight="700" fill="#14141C">State 3 — Multiple added</text>
+<text x="816" y="195" font-size="12" font-weight="500" fill="#8A8A9A">Stepper: minus · n · plus</text>
+<rect x="816" y="214" width="358" height="412" rx="16" fill="#FFFFFF" stroke="#ECECF2" stroke-width="1"/>
+<text x="832" y="248" font-size="18" font-weight="800" fill="#14141C">You Might Also Need</text>
+<rect x="832" y="268" width="54" height="31" rx="15.5" fill="#F3F0FF" stroke="#5A4BDA" stroke-width="1"/>
+<text x="859.0" y="288" font-size="13" font-weight="700" fill="#5A4BDA" text-anchor="middle">All</text>
+<rect x="894" y="268" width="68" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="928.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Books</text>
+<rect x="970" y="268" width="104" height="31" rx="15.5" fill="#FFFFFF" stroke="#E4E4EC" stroke-width="1"/>
+<text x="1022.0" y="288" font-size="13" font-weight="600" fill="#4A4A58" text-anchor="middle">Stationery</text>
+<rect x="832" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<rect x="833" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="910.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Yakeen</text>
+<text x="910.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Physics Modules</text>
+<rect x="897" y="421" width="84" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<path d="M907 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="939" y="442" font-size="14" font-weight="700" fill="#14141C" text-anchor="middle">2</text>
+<path d="M966 432v10M961 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="832" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 100k bought</text>
+<text x="832" y="503" font-size="14" font-weight="600" fill="#2C2C38">Yakeen Physics Modules</text>
+<text x="832" y="528" font-size="15" font-weight="800" fill="#14141C">₹2,668</text>
+<text x="891.6" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹5678</text>
+<line x1="891.6" y1="524" x2="924.6" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="832" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="1001" y="313" width="157" height="148" rx="12" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<rect x="1002" y="314" width="155" height="146" rx="11" fill="#FAFAFC"/>
+<text x="1079.5" y="375" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">PW</text>
+<text x="1079.5" y="390" font-size="11" font-weight="500" fill="#A6A6B4" text-anchor="middle">Nazariya Glasses</text>
+<rect x="1066" y="421" width="84" height="32" rx="8" fill="#FFFFFF" stroke="#5A4BDA" stroke-width="1"/>
+<g transform="translate(1073.5,429.5)"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round" fill="none"/></g>
+<text x="1108" y="442" font-size="14" font-weight="700" fill="#14141C" text-anchor="middle">1</text>
+<path d="M1135 432v10M1130 437h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+<text x="1001" y="481" font-size="12" font-weight="700" fill="#F2711C">🔥 40k bought</text>
+<text x="1001" y="503" font-size="14" font-weight="600" fill="#2C2C38">PW Nazariya Glasses</text>
+<text x="1001" y="528" font-size="15" font-weight="800" fill="#14141C">₹448</text>
+<text x="1043.4" y="528" font-size="12" font-weight="500" fill="#9A9AA8">₹1999</text>
+<line x1="1043.4" y1="524" x2="1076.4" y2="524" stroke="#9A9AA8" stroke-width="1"/>
+<text x="1001" y="549" font-size="12" font-weight="700" fill="#16A34A">70% OFF</text>
+<rect x="832" y="564" width="326" height="43" rx="10" fill="#FFFFFF" stroke="#DCDCE6" stroke-width="1"/>
+<text x="995" y="591" font-size="14" font-weight="700" fill="#2C2C38" text-anchor="middle">View All Products</text>
+<rect x="44" y="666" width="1150" height="104" rx="14" fill="#FFFFFF" stroke="#ECECF2" stroke-width="1"/>
+<text x="68" y="700" font-size="12" font-weight="700" fill="#8A8A9A" letter-spacing="0.72">STEPPER SPEC</text>
+<text x="68" y="724" font-size="13" font-weight="500" fill="#3A3A48">Height 32px · radius 8px · 1px #5A4BDA border · white fill</text>
+<text x="68" y="745" font-size="13" font-weight="500" fill="#3A3A48">Tap zones 30×30px each; count column min-width 24px</text>
+<text x="68" y="766" font-size="13" font-weight="500" fill="#3A3A48">Card border turns #5A4BDA once quantity &gt; 0</text>
+<text x="620" y="700" font-size="12" font-weight="700" fill="#8A8A9A" letter-spacing="0.72">LEFT-SLOT RULE</text>
+<text x="620" y="724" font-size="13" font-weight="500" fill="#3A3A48">qty 1 → delete (trash) icon, removes the add-on</text>
+<text x="620" y="745" font-size="13" font-weight="500" fill="#3A3A48">qty ≥ 2 → minus icon, decrements by one</text>
+<text x="620" y="766" font-size="13" font-weight="500" fill="#3A3A48">Matches the cart-row stepper in type=multi</text>
+</svg>

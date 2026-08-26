@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prototype shelf</title>
+<meta name="description" content="Live prototypes, opened in place." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- ============================================================
+     ADD YOUR PROTOTYPES HERE. Nothing else needs to change.
+     ============================================================ -->
+<script>
+const PROTOTYPES = [
+  {
+    slug: "address-usability",
+    title: "Address Page Usability Fixes",
+    snippet: "Pin code lookup fills city and state, both read-only",
+    description: "Students couldn't find the state and city and don't always remember their pin codes.",
+    file: "prototypes/address-usability.html",
+    thumb: "prototypes/thumbs/address-usability.svg",
+    platform: "App",            // "App" | "Web" | "Admin"
+    frame: "phone",
+    tags: ["Checkout"],
+    updated: "26 Aug 2026"
+  },
+  {
+    slug: "addons-quantity",
+    title: "Add Ons Quantity Fixes",
+    snippet: "Plus grows into a stepper; at qty 1 the left slot deletes",
+    description: "Students not able to figure out how to reduce add-ons quantity.",
+    file: "prototypes/addons-quantity.html",
+    thumb: "prototypes/thumbs/addons-quantity.svg",
+    platform: "App",
+    frame: "wide",
+    tags: ["Checkout"],
+    updated: "26 Aug 2026"
+  }
+];
+</script>
+
+<style>
+  :root{
+    --ink:#0B1220;
+    --plate:#141F33;
+    --plate-hi:#1B2942;
+    --line:#27385A;
+    --chalk:#E9EEF9;
+    --mute:#8698BC;
+    --signal:#63E6BE;
+
+    --display:"Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    --body:"IBM Plex Sans", system-ui, sans-serif;
+    --util:"IBM Plex Mono", ui-monospace, monospace;
+
+    --bar:56px;
+    --gap:22px;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--ink);
+    color:var(--chalk);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  body.is-viewing{overflow:hidden}
+
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--signal); outline-offset:3px; border-radius:4px}
+
+  /* ---------- top bar ---------- */
+  .bar{
+    position:sticky; top:0; z-index:20;
+    height:var(--bar);
+    display:flex; align-items:center; gap:16px;
+    padding:0 clamp(16px,4vw,40px);
+    background:color-mix(in srgb, var(--ink) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .mark{
+    width:11px; height:11px; flex:none;
+    background:var(--signal);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--signal) 18%, transparent);
+  }
+  .bar__name{
+    font-family:var(--display);
+    font-weight:700; font-size:15px; letter-spacing:-.01em;
+    margin-right:auto;
+  }
+  .search{
+    display:flex; align-items:center; gap:8px;
+    background:var(--plate); border:1px solid var(--line);
+    border-radius:999px; padding:6px 14px;
+  }
+  .search input{
+    all:unset; width:clamp(90px,20vw,180px);
+    font-family:var(--util); font-size:12.5px; color:var(--chalk);
+  }
+  .search input::placeholder{color:var(--mute)}
+  .count{font-family:var(--util); font-size:12px; color:var(--mute); white-space:nowrap}
+
+  /* ---------- intro ---------- */
+  .intro{padding:clamp(40px,7vw,76px) clamp(16px,4vw,40px) 0}
+  .intro h1{
+    font-family:var(--display);
+    font-weight:700; letter-spacing:-.03em;
+    font-size:clamp(34px,5.6vw,58px); line-height:1.02;
+    margin:0 0 14px; max-width:16ch;
+  }
+  .intro h1 em{font-style:normal; color:var(--signal)}
+  .intro p{margin:0; max-width:52ch; color:var(--mute); font-size:15.5px}
+  kbd{
+    font-family:var(--util); font-size:11.5px;
+    border:1px solid var(--line); border-bottom-width:2px;
+    border-radius:5px; padding:1px 5px; color:var(--chalk);
+  }
+
+  .filters{
+    display:flex; flex-wrap:wrap; gap:8px;
+    padding:clamp(26px,4vw,40px) clamp(16px,4vw,40px) 0;
+  }
+  .chip{
+    all:unset; cursor:pointer;
+    font-family:var(--util); font-size:11.5px; letter-spacing:.04em; text-transform:uppercase;
+    padding:6px 12px; border-radius:999px;
+    border:1px solid var(--line); color:var(--mute);
+  }
+  .chip:hover{color:var(--chalk); border-color:var(--mute)}
+  .chip[aria-pressed="true"]{
+    color:var(--ink); background:var(--signal); border-color:var(--signal); font-weight:500;
+  }
+
+  /* ---------- grid ---------- */
+  .grid{
+    display:grid; gap:var(--gap);
+    grid-template-columns:repeat(auto-fill, minmax(290px, 1fr));
+    padding:clamp(22px,3vw,32px) clamp(16px,4vw,40px) 90px;
+  }
+
+  .card{
+    position:relative;
+    background:var(--plate);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .card:hover{border-color:color-mix(in srgb, var(--signal) 45%, var(--line)); transform:translateY(-2px)}
+  .card:has(.card__hit:focus-visible){border-color:var(--signal)}
+
+  /* live preview */
+  .shot{
+    position:relative; aspect-ratio:3/2; overflow:hidden;
+    background:var(--plate-hi);
+    border-bottom:1px solid var(--line);
+  }
+  .shot__scaler{
+    position:absolute; top:0; left:0;
+    transform-origin:0 0;
+    transition:opacity .35s ease;
+    opacity:0;
+  }
+  .shot--phone .shot__scaler{
+    left:50%; transform-origin:top center;
+    border-radius:18px; overflow:hidden;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+  }
+  .shot.is-loaded .shot__scaler{opacity:1}
+  .shot iframe{display:block; border:0; pointer-events:none; background:#fff}
+  .shot__img{
+    position:absolute; top:0; left:0; width:100%; display:block;
+    opacity:0; transition:opacity .35s ease;
+  }
+  .shot--phone .shot__img{
+    left:50%; transform:translateX(-50%); width:44%;
+    border-radius:18px;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+  }
+  .shot.is-loaded .shot__img{opacity:1}
+  .shot__note{
+    position:absolute; inset:0; display:grid; place-items:center;
+    padding:24px; text-align:center;
+    font-family:var(--util); font-size:11.5px; color:var(--mute);
+  }
+  .shot.is-loaded .shot__note{display:none}
+  .shot.is-broken .shot__note{color:#F7A88B}
+  .shot::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(to top, color-mix(in srgb, var(--plate) 55%, transparent), transparent 45%);
+  }
+
+  .plate{padding:16px 18px 18px}
+  .snip{
+    font-family:var(--util); font-size:11px; line-height:1.45;
+    color:var(--signal); margin:0 0 7px;
+  }
+  .plate h2{
+    font-family:var(--display); font-weight:600; letter-spacing:-.015em;
+    font-size:18px; line-height:1.2; margin:0 0 7px;
+  }
+  .plate p{margin:0 0 13px; font-size:13.5px; color:var(--mute)}
+  .meta{
+    display:flex; flex-wrap:wrap; align-items:center; gap:7px;
+    font-family:var(--util); font-size:11px; color:var(--mute);
+    padding-top:12px; border-top:1px solid var(--line);
+  }
+  .meta__file{color:var(--chalk)}
+  .meta__tag{
+    color:var(--signal);
+    border:1px solid color-mix(in srgb, var(--signal) 30%, transparent);
+    border-radius:4px; padding:1px 6px;
+  }
+  .meta__plat{
+    color:var(--ink); background:var(--signal); font-weight:500;
+    border-radius:4px; padding:1px 6px;
+  }
+  .meta__sep{opacity:.5}
+  .meta__spacer{margin-left:auto}
+
+  .card__hit{position:absolute; inset:0; text-indent:-9999px; overflow:hidden}
+
+  .empty{
+    grid-column:1/-1; padding:60px 0;
+    font-size:15px; color:var(--mute); max-width:44ch;
+  }
+  .empty b{color:var(--chalk); font-weight:600}
+
+  /* ---------- viewer ---------- */
+  .viewer{
+    position:fixed; inset:0; z-index:60;
+    display:none; flex-direction:column;
+    background:var(--ink);
+  }
+  .viewer.is-open{display:flex}
+  .viewer.is-open .viewer__stage{animation:rise .28s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0; transform:scale(.985)} to{opacity:1; transform:none}}
+
+  .viewer__bar{
+    height:var(--bar); flex:none;
+    display:flex; align-items:center; gap:14px;
+    padding:0 clamp(12px,3vw,24px);
+    border-bottom:1px solid var(--line);
+  }
+  .back{
+    all:unset; cursor:pointer; flex:none;
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--util); font-size:12.5px;
+    padding:7px 13px 7px 10px; border-radius:999px;
+    border:1px solid var(--line); color:var(--chalk);
+  }
+  .back:hover{border-color:var(--signal); color:var(--signal)}
+  .viewer__title{
+    font-family:var(--display); font-weight:600; font-size:15px;
+    letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .viewer__file{font-family:var(--util); font-size:11.5px; color:var(--mute); margin-right:auto}
+  .segmented{display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex:none}
+  .segmented button{
+    all:unset; cursor:pointer; padding:7px 13px;
+    font-family:var(--util); font-size:11.5px; color:var(--mute);
+  }
+  .segmented button:hover{color:var(--chalk)}
+  .segmented button[aria-pressed="true"]{background:var(--signal); color:var(--ink)}
+  .newtab{
+    flex:none; font-family:var(--util); font-size:11.5px; color:var(--mute);
+    text-decoration:none; padding:7px 4px;
+  }
+  .newtab:hover{color:var(--signal)}
+
+  .viewer__stage{
+    flex:1; min-height:0; display:grid; place-items:center;
+    padding:0; overflow:auto;
+    background:
+      radial-gradient(1100px 500px at 50% -12%, color-mix(in srgb, var(--signal) 6%, transparent), transparent),
+      var(--ink);
+  }
+  .viewer__stage[data-device="phone"]{padding:clamp(14px,3vh,30px) 16px}
+  .viewer__frame{
+    width:100%; height:100%; border:0; display:block; background:#fff;
+  }
+  .viewer__stage[data-device="phone"] .viewer__frame{
+    width:390px; max-width:100%; height:min(844px, 100%);
+    border-radius:26px; border:1px solid var(--line);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+  }
+
+  @media (max-width:640px){
+    .viewer__file, .newtab{display:none}
+    .bar__name{margin-right:0}
+    .count{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001s !important; transition-duration:.001s !important}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <span class="mark" aria-hidden="true"></span>
+  <span class="bar__name">Prototype shelf</span>
+  <label class="search">
+    <span aria-hidden="true" style="color:var(--mute);font:12px var(--util)">/</span>
+    <input id="q" type="search" placeholder="Search prototypes" aria-label="Search prototypes" autocomplete="off" />
+  </label>
+  <span class="count" id="count"></span>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Everything we're looking to <em>test</em>.</h1>
+    <p>Pick a card and the prototype opens right here, at full size. <kbd>Esc</kbd> brings you back to the shelf.</p>
+  </section>
+
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="viewer" id="viewer" aria-hidden="true" aria-label="Prototype viewer">
+  <div class="viewer__bar">
+    <button class="back" id="back" type="button">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All prototypes
+    </button>
+    <span class="viewer__title" id="vTitle"></span>
+    <span class="viewer__file" id="vFile"></span>
+    <div class="segmented" role="group" aria-label="Preview width">
+      <button type="button" id="dPhone" aria-pressed="false">Phone</button>
+      <button type="button" id="dWide" aria-pressed="false">Full width</button>
+    </div>
+    <a class="newtab" id="vNew" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
+  </div>
+  <div class="viewer__stage" id="stage" data-device="wide">
+    <iframe class="viewer__frame" id="vFrame" title="Prototype preview"></iframe>
+  </div>
+</section>
+
+<script>
+(function () {
+  const grid = document.getElementById('grid');
+  const filters = document.getElementById('filters');
+  const countEl = document.getElementById('count');
+  const q = document.getElementById('q');
+
+  const viewer = document.getElementById('viewer');
+  const stage = document.getElementById('stage');
+  const vFrame = document.getElementById('vFrame');
+  const vTitle = document.getElementById('vTitle');
+  const vFile = document.getElementById('vFile');
+  const vNew = document.getElementById('vNew');
+  const dPhone = document.getElementById('dPhone');
+  const dWide = document.getElementById('dWide');
+
+  const FILTERS = ['All', 'App', 'Web', 'Admin'];
+  let activeFilter = 'All';
+  let cameFromShelf = false;
+
+  /* ---------- shelf ---------- */
+  filters.innerHTML = FILTERS.map(f =>
+    `<button class="chip" type="button" data-filter="${esc(f)}" aria-pressed="${f === activeFilter}">${esc(f)}</button>`
+  ).join('');
+
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    activeFilter = b.dataset.filter;
+    filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
+    render();
+  });
+
+  q.addEventListener('input', render);
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== q && !viewer.classList.contains('is-open')) {
+      e.preventDefault(); q.focus();
+    }
+  });
+
+  function matches(p) {
+    const term = q.value.trim().toLowerCase();
+    const inFilter = activeFilter === 'All' || p.platform === activeFilter;
+    const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || [])].join(' ').toLowerCase().includes(term);
+    return inFilter && inText;
+  }
+
+  function render() {
+    const list = PROTOTYPES.filter(matches);
+    countEl.textContent = list.length + ' of ' + PROTOTYPES.length;
+
+    if (!list.length) {
+      const term = q.value.trim();
+      grid.innerHTML = `<p class="empty">${
+        term
+          ? `Nothing matches <b>${esc(term)}</b> in <b>${esc(activeFilter)}</b>. Clear the search, or switch to <b>All</b>.`
+          : `No <b>${esc(activeFilter)}</b> prototypes on the shelf yet. Switch to <b>All</b> to see the rest.`
+      }</p>`;
+      return;
+    }
+
+    grid.innerHTML = list.map(p => `
+      <article class="card">
+        <div class="shot ${p.frame === 'phone' ? 'shot--phone' : ''} ${p.thumb ? 'shot--thumb' : ''}" data-frame="${p.frame || 'wide'}">
+          ${p.thumb
+            ? `<img class="shot__img" src="${esc(p.thumb)}" alt="" loading="lazy" />`
+            : `<div class="shot__scaler">
+            <iframe data-src="${esc(p.file)}" tabindex="-1" aria-hidden="true" scrolling="no" title=""></iframe>
+          </div>`}
+          <p class="shot__note">Loading preview…</p>
+        </div>
+        <div class="plate">
+          ${p.snippet ? `<p class="snip">${esc(p.snippet)}</p>` : ''}
+          <h2>${esc(p.title)}</h2>
+          <p>${esc(p.description)}</p>
+          <div class="meta">
+            <span class="meta__file">${esc(p.file.split('/').pop())}</span>
+            ${p.updated ? `<span class="meta__sep">·</span><span>${esc(p.updated)}</span>` : ''}
+            <span class="meta__spacer"></span>
+            ${(p.tags || []).map(t => `<span class="meta__tag">${esc(t)}</span>`).join('')}
+            ${p.platform ? `<span class="meta__plat">${esc(p.platform)}</span>` : ''}
+          </div>
+        </div>
+        <a class="card__hit" href="#p=${encodeURIComponent(p.slug)}">Open ${esc(p.title)}</a>
+      </article>`).join('');
+
+    grid.querySelectorAll('.shot').forEach(shot => {
+      const img = shot.querySelector('.shot__img');
+      if (img) {
+        if (img.complete) shot.classList.add('is-loaded');
+        img.addEventListener('load', () => shot.classList.add('is-loaded'), { once: true });
+        img.addEventListener('error', () => {
+          shot.classList.add('is-broken');
+          shot.querySelector('.shot__note').textContent = 'Image missing — check that ' + img.getAttribute('src') + ' exists.';
+        }, { once: true });
+        return;
+      }
+      mountShot(shot);
+    });
+  }
+
+  /* Scale a real, live copy of the prototype into the card. */
+  function mountShot(shot) {
+    const phone = shot.dataset.frame === 'phone';
+    const scaler = shot.querySelector('.shot__scaler');
+    const frame = shot.querySelector('iframe');
+    const W = phone ? 430 : 1240;
+    const H = phone ? 900 : 830;
+    frame.style.width = W + 'px';
+    frame.style.height = H + 'px';
+
+    const fit = () => {
+      const w = shot.clientWidth;
+      if (!w) return;
+      const k = phone ? (w * 0.44) / W : w / W;
+      scaler.style.transform = phone ? `translateX(-50%) scale(${k})` : `scale(${k})`;
+    };
+    fit();
+    new ResizeObserver(fit).observe(shot);
+
+    let timer;
+    frame.addEventListener('load', () => { clearTimeout(timer); shot.classList.add('is-loaded'); }, { once: true });
+
+    new IntersectionObserver((entries, obs) => {
+      if (!entries[0].isIntersecting) return;
+      obs.disconnect();
+      frame.src = frame.dataset.src;
+      timer = setTimeout(() => {
+        if (!shot.classList.contains('is-loaded')) {
+          shot.classList.add('is-broken');
+          shot.querySelector('.shot__note').textContent = 'Preview unavailable — check that ' + frame.dataset.src + ' exists.';
+        }
+      }, 6000);
+    }, { rootMargin: '400px' }).observe(shot);
+  }
+
+  /* ---------- viewer ---------- */
+  function setDevice(mode) {
+    stage.dataset.device = mode;
+    dPhone.setAttribute('aria-pressed', mode === 'phone');
+    dWide.setAttribute('aria-pressed', mode === 'wide');
+  }
+  dPhone.onclick = () => setDevice('phone');
+  dWide.onclick = () => setDevice('wide');
+
+  function open(p) {
+    vTitle.textContent = p.title;
+    vFile.textContent = p.file;
+    vNew.href = p.file;
+    setDevice(p.frame === 'phone' ? 'phone' : 'wide');
+    if (vFrame.src.indexOf(p.file) === -1) vFrame.src = p.file;
+    viewer.classList.add('is-open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('is-viewing');
+    document.title = p.title + ' — Prototype shelf';
+    document.getElementById('back').focus({ preventScroll: true });
+  }
+
+  function close() {
+    viewer.classList.remove('is-open');
+    viewer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-viewing');
+    vFrame.removeAttribute('src');
+    document.title = 'Prototype shelf';
+  }
+
+  function goBack() {
+    if (cameFromShelf) { history.back(); return; }
+    history.replaceState(null, '', location.pathname + location.search);
+    route();
+  }
+  document.getElementById('back').onclick = goBack;
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && viewer.classList.contains('is-open')) goBack();
+  });
+  grid.addEventListener('click', e => { if (e.target.closest('.card__hit')) cameFromShelf = true; });
+
+  function route() {
+    const m = location.hash.match(/^#p=(.+)$/);
+    const p = m && PROTOTYPES.find(x => x.slug === decodeURIComponent(m[1]));
+    if (p) open(p); else close();
+  }
+  window.addEventListener('hashchange', route);
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  render();
+  route();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"modules": "assets/addons-quantity/c3fbbecf.png", "glasses": "assets/addons-quantity/b20cbf21.png", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/addons-quantity/831f6e1d.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/addons-quantity/dcf6f366.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script>
+(function(){
+  var map = {'assets/prod-modules.png':'modules','assets/prod-glasses.png':'glasses'};
+  function fix(){
+    if(!window.__resources) return;
+    document.querySelectorAll('image-slot[src]').forEach(function(el){
+      var k = map[el.getAttribute('src')];
+      if(k && window.__resources[k]) el.setAttribute('src', window.__resources[k]);
+    });
+  }
+  new MutationObserver(fix).observe(document.documentElement, {childList:true, subtree:true});
+  document.addEventListener('DOMContentLoaded', fix);
+  setTimeout(fix, 500); setTimeout(fix, 1500);
+})();
+</script>
+<script src="assets/addons-quantity/c03daece.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/addons-quantity/b719feee.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/addons-quantity/636bbafe.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/addons-quantity/4bd28cc4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/addons-quantity/626a180b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/addons-quantity/b719feee.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/addons-quantity/636bbafe.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/addons-quantity/4bd28cc4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/addons-quantity/626a180b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/addons-quantity/b719feee.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/addons-quantity/636bbafe.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/addons-quantity/4bd28cc4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/addons-quantity/626a180b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/addons-quantity/b719feee.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/addons-quantity/636bbafe.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/addons-quantity/4bd28cc4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/addons-quantity/626a180b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/addons-quantity/b719feee.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/addons-quantity/636bbafe.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/addons-quantity/4bd28cc4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/addons-quantity/626a180b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<script src="assets/addons-quantity/9c8b3c90.js"></script>
+<style>
+  body { margin:0; background:#F4F4F7; font-family:'Plus Jakarta Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#5A4BDA; text-decoration:none; }
+  a:hover { color:#4436C4; }
+</style>
+</helmet>
+
+<section style="padding:56px 64px 72px; display:flex; flex-direction:column; gap:32px; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-size:12px; font-weight:700; letter-spacing:0.08em; color:#5A4BDA; background:#EFECFF; padding:5px 10px; border-radius:6px;">1a</span>
+      <h1 style="margin:0; font-size:26px; font-weight:800; color:#14141C; letter-spacing:-0.01em;">Add-Ons · quantity stepper on Property 1 (2 items)</h1>
+    </div>
+    <p style="margin:0; font-size:15px; color:#6B6B7B; max-width:640px; text-wrap:pretty;">The plus-only affordance now expands into an inline stepper. Tap the cards below — they are live: plus adds, the count grows, and the left slot becomes a delete action at quantity 1.</p>
+  </div>
+
+  <div style="display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;">
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:13px; font-weight:700; color:#14141C;">State 1 — Nothing added</span>
+        <span style="font-size:12px; color:#8A8A9A;">Plus icon only, 32×32 tap target</span>
+      </div>
+      <div style="width:358px; box-sizing:border-box; background:#FFFFFF; border-radius:16px; border:1px solid #ECECF2; padding:16px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(20,20,28,0.04);">
+        <div style="font-size:18px; font-weight:800; color:#14141C; letter-spacing:-0.01em;">You Might Also Need</div>
+        <div style="display:flex; gap:8px;">
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #5A4BDA; background:#F3F0FF; font-size:13px; font-weight:700; color:#5A4BDA;">All</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Books</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Stationery</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #EAEAF1; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-a1" shape="rect" placeholder="Yakeen Physics Modules" src="assets/addons-quantity/c3fbbecf.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p0.empty }}" hint-placeholder-val="{{ true }}">
+                  <div role="button" sc-camel-on-click="{{ p0.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p0.filled }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p0.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p0.one }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p0.many }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p0.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p0.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#F2711C;">🔥 100k bought</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">Yakeen Physics Modules</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹2,668</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹5678</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #EAEAF1; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-a2" shape="rect" placeholder="PW Nazariya Glasses" src="assets/addons-quantity/b20cbf21.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p1.empty }}" hint-placeholder-val="{{ true }}">
+                  <div role="button" sc-camel-on-click="{{ p1.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p1.filled }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p1.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p1.one }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p1.many }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p1.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p1.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px; font-size:12px; font-weight:700; color:#2C2C38;"><span style="background:#065F46; color:#FFFFFF; width:16px; height:16px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px;">★</span>4.6</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">PW Nazariya Glasses</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹448</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹1999</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+        </div>
+        <div style="border:1px solid #DCDCE6; border-radius:10px; padding:13px; text-align:center; font-size:14px; font-weight:700; color:#2C2C38; cursor:pointer;" style-hover="background:#F7F7FA;">View All Products</div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:13px; font-weight:700; color:#14141C;">State 2 — One item added</span>
+        <span style="font-size:12px; color:#8A8A9A;">Stepper: delete · 1 · plus</span>
+      </div>
+      <div style="width:358px; box-sizing:border-box; background:#FFFFFF; border-radius:16px; border:1px solid #ECECF2; padding:16px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(20,20,28,0.04);">
+        <div style="font-size:18px; font-weight:800; color:#14141C; letter-spacing:-0.01em;">You Might Also Need</div>
+        <div style="display:flex; gap:8px;">
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #5A4BDA; background:#F3F0FF; font-size:13px; font-weight:700; color:#5A4BDA;">All</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Books</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Stationery</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #5A4BDA; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-b1" shape="rect" placeholder="Yakeen Physics Modules" src="assets/addons-quantity/c3fbbecf.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p2.empty }}">
+                  <div role="button" sc-camel-on-click="{{ p2.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p2.filled }}" hint-placeholder-val="{{ true }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p2.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p2.one }}" hint-placeholder-val="{{ true }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p2.many }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p2.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p2.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#F2711C;">🔥 100k bought</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">Yakeen Physics Modules</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹2,668</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹5678</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #EAEAF1; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-b2" shape="rect" placeholder="PW Nazariya Glasses" src="assets/addons-quantity/b20cbf21.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p3.empty }}" hint-placeholder-val="{{ true }}">
+                  <div role="button" sc-camel-on-click="{{ p3.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p3.filled }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p3.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p3.one }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p3.many }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p3.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p3.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px; font-size:12px; font-weight:700; color:#2C2C38;"><span style="background:#065F46; color:#FFFFFF; width:16px; height:16px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px;">★</span>4.6</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">PW Nazariya Glasses</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹448</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹1999</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+        </div>
+        <div style="border:1px solid #DCDCE6; border-radius:10px; padding:13px; text-align:center; font-size:14px; font-weight:700; color:#2C2C38; cursor:pointer;" style-hover="background:#F7F7FA;">View All Products</div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <span style="font-size:13px; font-weight:700; color:#14141C;">State 3 — Multiple added</span>
+        <span style="font-size:12px; color:#8A8A9A;">Stepper: minus · n · plus</span>
+      </div>
+      <div style="width:358px; box-sizing:border-box; background:#FFFFFF; border-radius:16px; border:1px solid #ECECF2; padding:16px; display:flex; flex-direction:column; gap:14px; box-shadow:0 1px 2px rgba(20,20,28,0.04);">
+        <div style="font-size:18px; font-weight:800; color:#14141C; letter-spacing:-0.01em;">You Might Also Need</div>
+        <div style="display:flex; gap:8px;">
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #5A4BDA; background:#F3F0FF; font-size:13px; font-weight:700; color:#5A4BDA;">All</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Books</div>
+          <div style="padding:7px 16px; border-radius:999px; border:1px solid #E4E4EC; background:#FFFFFF; font-size:13px; font-weight:600; color:#4A4A58;">Stationery</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #5A4BDA; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-c1" shape="rect" placeholder="Yakeen Physics Modules" src="assets/addons-quantity/c3fbbecf.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p4.empty }}">
+                  <div role="button" sc-camel-on-click="{{ p4.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p4.filled }}" hint-placeholder-val="{{ true }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p4.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p4.one }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p4.many }}" hint-placeholder-val="{{ true }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p4.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p4.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#F2711C;">🔥 100k bought</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">Yakeen Physics Modules</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹2,668</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹5678</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:0;">
+            <div style="position:relative; height:148px; border:1px solid #5A4BDA; border-radius:12px; overflow:hidden; background:#FFFFFF;">
+              <image-slot fit="contain" id="addon-c2" shape="rect" placeholder="PW Nazariya Glasses" src="assets/addons-quantity/b20cbf21.png"></image-slot>
+              <div style="position:absolute; bottom:8px; right:8px;">
+                <sc-if value="{{ p5.empty }}">
+                  <div role="button" sc-camel-on-click="{{ p5.add }}" style="width:32px; height:32px; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 1px 3px rgba(20,20,28,0.08);" style-hover="background:#F3F0FF;">
+                    <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ p5.filled }}" hint-placeholder-val="{{ true }}">
+                  <div style="height:32px; display:flex; align-items:center; border:1px solid #5A4BDA; border-radius:8px; background:#FFFFFF; box-shadow:0 1px 3px rgba(20,20,28,0.08); overflow:hidden;">
+                    <div role="button" sc-camel-on-click="{{ p5.dec }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <sc-if value="{{ p5.one }}" hint-placeholder-val="{{ true }}">
+                        <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2.8 4.5h10.4M6.2 4.5V3.2A.7.7 0 0 1 6.9 2.5h2.2a.7.7 0 0 1 .7.7v1.3M4.2 4.5l.6 8a.9.9 0 0 0 .9.8h4.6a.9.9 0 0 0 .9-.8l.6-8" stroke="#5A4BDA" stroke-width="1.4" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                      <sc-if value="{{ p5.many }}">
+                        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                      </sc-if>
+                    </div>
+                    <div style="min-width:24px; text-align:center; font-size:14px; font-weight:700; color:#14141C;">{{ p5.qty }}</div>
+                    <div role="button" sc-camel-on-click="{{ p5.inc }}" style="width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F3F0FF;">
+                      <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#5A4BDA" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px; font-size:12px; font-weight:700; color:#2C2C38;"><span style="background:#065F46; color:#FFFFFF; width:16px; height:16px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px;">★</span>4.6</div>
+            <div style="font-size:14px; font-weight:600; color:#2C2C38; line-height:1.35;">PW Nazariya Glasses</div>
+            <div style="display:flex; align-items:baseline; gap:6px;"><span style="font-size:15px; font-weight:800; color:#14141C;">₹448</span><span style="font-size:12px; color:#9A9AA8; text-decoration:line-through;">₹1999</span></div>
+            <div style="font-size:12px; font-weight:700; color:#16A34A;">70% OFF</div>
+          </div>
+        </div>
+        <div style="border:1px solid #DCDCE6; border-radius:10px; padding:13px; text-align:center; font-size:14px; font-weight:700; color:#2C2C38; cursor:pointer;" style-hover="background:#F7F7FA;">View All Products</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:40px; flex-wrap:wrap; padding:22px 24px; background:#FFFFFF; border:1px solid #ECECF2; border-radius:14px; max-width:1150px;">
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8A8A9A;">STEPPER SPEC</span>
+      <span style="font-size:13px; color:#3A3A48; line-height:1.6;">Height 32px · radius 8px · 1px #5A4BDA border · white fill<br>Tap zones 30×30px each; count column min-width 24px<br>Card border turns #5A4BDA once quantity &gt; 0</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <span style="font-size:12px; font-weight:700; letter-spacing:0.06em; color:#8A8A9A;">LEFT-SLOT RULE</span>
+      <span style="font-size:13px; color:#3A3A48; line-height:1.6;">qty 1 → delete (trash) icon, removes the add-on<br>qty ≥ 2 → minus icon, decrements by one<br>Matches the cart-row stepper in <span style="font-weight:700;">type=multi</span></span>
+    </div>
+  </div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{}">
+class Component extends DCLogic {
+  state = { q: [0, 0, 1, 0, 2, 1] };
+  bump(i, d) {
+    this.setState(s => {
+      const q = s.q.slice();
+      q[i] = Math.max(0, Math.min(99, q[i] + d));
+      return { q };
+    });
+  }
+  renderVals() {
+    const v = {};
+    this.state.q.forEach((n, i) => {
+      v['p' + i] = {
+        qty: n, empty: n === 0, filled: n > 0, one: n === 1, many: n > 1,
+        add: () => this.bump(i, 1),
+        inc: () => this.bump(i, 1),
+        dec: () => this.bump(i, -1)
+      };
+    });
+    return v;
+  }
+}
+
+</script>
+
+
+</body></html>
