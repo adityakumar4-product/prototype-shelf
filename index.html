@@ -546,8 +546,8 @@ const PROTOTYPES = [
     vTitle.textContent = p.title;
     vFile.textContent = p.file;
     vNew.href = p.file;
-    setDevice(p.frame === 'phone' ? 'phone' : 'wide');
-    if (vFrame.src.indexOf(p.file) === -1) vFrame.src = p.file;
+    setDevice('wide');
+    loadFrame(p.file);
     viewer.classList.add('is-open');
     viewer.setAttribute('aria-hidden', 'false');
     document.body.classList.add('is-viewing');
@@ -559,8 +559,20 @@ const PROTOTYPES = [
     viewer.classList.remove('is-open');
     viewer.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('is-viewing');
-    vFrame.removeAttribute('src');
+    loadFrame('about:blank');
     document.title = 'Prototype shelf';
+  }
+
+  /* Load the iframe WITHOUT adding a browser-history entry, so a single Back
+     click (or Esc) always returns to the shelf. Assigning iframe.src pushes
+     onto the joint session history — the prototype load would otherwise sit
+     between the shelf and the #p= hash, costing an extra back. location
+     .replace() navigates in place and adds no entry. Also clears on close so
+     each open starts the prototype fresh. */
+  function loadFrame(file) {
+    const url = new URL(file, document.baseURI).href;   // absolute: no about:blank base ambiguity
+    try { vFrame.contentWindow.location.replace(url); }
+    catch (e) { vFrame.src = url; }
   }
 
   function goBack() {
