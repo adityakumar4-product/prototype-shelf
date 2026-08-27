@@ -575,17 +575,25 @@ const PIPELINE = [
   filters.addEventListener('click', e => {
     const b = e.target.closest('.chip');
     if (!b) return;
-    // Pipeline is a jump, not a filter: scroll to the section, change nothing.
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Pipeline is a jump, not a filter. Reset the view to All so every
+    // prototype and the full pipeline are visible, then scroll to the section
+    // (works from any prior filter, incl. Web/Admin where it was hidden).
     if (b.dataset.filter === 'Pipeline') {
-      if (!pipeline.hidden) {
-        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        pipeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      }
+      activeFilter = 'All';
+      filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === 'All'));
+      render();
+      pipeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       return;
     }
+
+    // Platform pill: apply the filter and bring the grid back into view, so
+    // switching filters always shows a result even after a Pipeline jump.
     activeFilter = b.dataset.filter;
     filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
     render();
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   });
 
   q.addEventListener('input', render);
