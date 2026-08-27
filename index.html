@@ -94,6 +94,103 @@ const PROTOTYPES = [
     updated: "27 Aug 2026"
   }
 ];
+
+/* Ideas we're lining up to prototype. No build yet — these render as muted
+   "Prototype in progress" cards in the "In the pipeline" section, and upgrade
+   to live prototypes by moving the entry into PROTOTYPES with a `file`.
+   No `snippet`: the snippet is the mechanic as built, so there isn't one yet. */
+const PIPELINE = [
+  {
+    title: "Students don't notice filters",
+    description: "In tier-2 cities and beyond, students find batches by scrolling and don't notice the filters that would point them to the right course.",
+    platform: "App",
+    tags: ["Discovery", "Filters"]
+  },
+  {
+    title: "Find the right course by voice search",
+    description: "Students often don't know the exact course or teacher names, but they do have the intent to prepare for a specific exam.",
+    platform: "App",
+    tags: ["Discovery", "Voice search"]
+  },
+  {
+    title: "Share with parents, guardians & friends",
+    description: "Students often want to convince their parents or guardians to enrol them, but have no easy way to share the course details.",
+    platform: "App",
+    tags: ["Convincing", "Sharing"]
+  },
+  {
+    title: "Everyone needs coupons",
+    description: "Every student wants an additional discount, but some can't figure out where the coupon-application strip is.",
+    platform: "App",
+    tags: ["Offers", "Coupons"]
+  },
+  {
+    title: "75% of students know teachers before batches",
+    description: "Most students arrive already knowing a teacher, and want to find the courses their favourite teachers are teaching.",
+    platform: "App",
+    tags: ["Discovery", "Teachers"]
+  },
+  {
+    title: "Students call support for confirmation",
+    description: "Students often call known contacts or the support team to confirm batch details, which delays the purchase.",
+    platform: "App",
+    tags: ["Confirmation", "Trust"]
+  },
+  {
+    title: "Counsellor & product have no sync",
+    description: "Counsellors offer extra deals to convert students, but those conversations aren't synced with the product journey.",
+    platform: "App",
+    tags: ["Counsellor", "Conversion"]
+  },
+  {
+    title: "Course purchase is not a one-day activity",
+    description: "We treat course purchase as a one-day journey, but it spans multiple stages: figuring out, convincing, offers, confirmation and conversion.",
+    platform: "App",
+    tags: ["Journey"]
+  },
+  {
+    title: "Every launch is a fight for real estate",
+    description: "Present unique launches once per session on the batch listing, separate from Cohort Events, What's New and New at PW (Super App).",
+    platform: "App",
+    tags: ["Launches", "Listing"]
+  },
+  {
+    title: "Global offers come with deadlines",
+    description: "PW runs many offers through the year, but we often miss channelling students into purchasing during the offer window.",
+    platform: "App",
+    tags: ["Offers", "Urgency"]
+  },
+  {
+    title: "Students look for offers relevant to them",
+    description: "Many students arrive looking for offers specific to them; when counsellors provide the right coupon, they convert.",
+    platform: "App",
+    tags: ["Offers", "Personalisation"]
+  },
+  {
+    title: "Students wait for the lowest price",
+    description: "The conversion cycle stretches when students can predict upcoming price changes and hold out for the lowest price.",
+    platform: "App",
+    tags: ["Pricing", "Offers"]
+  },
+  {
+    title: "Students trust teachers the most",
+    description: "Students skip FBT when a teacher advised against it — teacher-led FBT can put the trust back.",
+    platform: "App",
+    tags: ["Trust", "FBT"]
+  },
+  {
+    title: "Students love a pricing delight",
+    description: "PW students are price-sensitive; a pre-applied, personalised offer can lift motivation and conversion.",
+    platform: "App",
+    tags: ["Offers", "Pricing"]
+  },
+  {
+    title: "Bring your buddies",
+    description: "Students have a small, closed group they share things with upfront — a lever for higher top-of-funnel.",
+    platform: "App",
+    tags: ["Social", "Referral"]
+  }
+];
 </script>
 
 <style>
@@ -281,6 +378,41 @@ const PROTOTYPES = [
 
   .card__hit{position:absolute; inset:0; text-indent:-9999px; overflow:hidden}
 
+  /* ---------- pipeline (planned, not yet built) ---------- */
+  .pipeline{padding:0 clamp(16px,4vw,40px) 90px}
+  /* pull the section up under the grid's bottom padding when it's shown */
+  main:has(#pipeline:not([hidden])) #grid{padding-bottom:clamp(28px,4vw,44px)}
+  .pipeline__head{
+    display:flex; align-items:baseline; gap:12px;
+    border-top:1px solid var(--line); padding-top:clamp(26px,4vw,38px);
+  }
+  .pipeline__title{
+    font-family:var(--display); font-weight:700; letter-spacing:-.02em;
+    font-size:clamp(20px,3vw,26px); margin:0;
+  }
+  .pipeline__count{font-family:var(--util); font-size:12px; color:var(--mute)}
+  .pipeline__lead{margin:8px 0 clamp(18px,3vw,26px); max-width:58ch; color:var(--mute); font-size:14px}
+  .card--planned{
+    background:color-mix(in srgb, var(--plate) 70%, var(--ink));
+    border-style:dashed;
+  }
+  .card--planned:hover{border-color:var(--line); transform:none}
+  .planned__flag{
+    display:flex; align-items:center; gap:8px;
+    font-family:var(--util); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--mute);
+    padding:13px 18px; border-bottom:1px solid var(--line);
+  }
+  .planned__dot{
+    width:7px; height:7px; border-radius:999px; flex:none;
+    background:var(--signal);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--signal) 16%, transparent);
+  }
+  .meta__plat--ghost{
+    color:var(--signal); background:none;
+    border:1px solid color-mix(in srgb, var(--signal) 40%, transparent);
+  }
+
   .empty{
     grid-column:1/-1; padding:60px 0;
     font-size:15px; color:var(--mute); max-width:44ch;
@@ -376,6 +508,15 @@ const PROTOTYPES = [
 
   <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
+
+  <section class="pipeline" id="pipeline" hidden aria-label="In the pipeline">
+    <div class="pipeline__head">
+      <h2 class="pipeline__title">In the pipeline</h2>
+      <span class="pipeline__count" id="pcount"></span>
+    </div>
+    <p class="pipeline__lead">Problems we're lining up to prototype next. Nothing to open yet — each becomes a live card once its prototype lands.</p>
+    <div class="grid" id="pgrid"></div>
+  </section>
 </main>
 
 <section class="viewer" id="viewer" aria-hidden="true" aria-label="Prototype viewer">
@@ -400,6 +541,9 @@ const PROTOTYPES = [
 <script>
 (function () {
   const grid = document.getElementById('grid');
+  const pipeline = document.getElementById('pipeline');
+  const pgrid = document.getElementById('pgrid');
+  const pcountEl = document.getElementById('pcount');
   const filters = document.getElementById('filters');
   const countEl = document.getElementById('count');
   const q = document.getElementById('q');
@@ -447,6 +591,7 @@ const PROTOTYPES = [
   function render() {
     const list = PROTOTYPES.filter(matches);
     countEl.textContent = list.length + ' of ' + PROTOTYPES.length;
+    renderPipeline();
 
     if (!list.length) {
       const term = q.value.trim();
@@ -496,6 +641,29 @@ const PROTOTYPES = [
       }
       mountShot(shot);
     });
+  }
+
+  /* Planned ideas with no prototype yet — muted, non-clickable cards. */
+  function renderPipeline() {
+    const list = PIPELINE.filter(matches);
+    if (!list.length) { pipeline.hidden = true; pgrid.innerHTML = ''; return; }
+    pipeline.hidden = false;
+    pcountEl.textContent = list.length === PIPELINE.length
+      ? PIPELINE.length + ' ideas'
+      : list.length + ' of ' + PIPELINE.length;
+    pgrid.innerHTML = list.map(p => `
+      <article class="card card--planned">
+        <div class="planned__flag"><span class="planned__dot"></span> Prototype in progress</div>
+        <div class="plate">
+          <h2>${esc(p.title)}</h2>
+          <p>${esc(p.description)}</p>
+          <div class="meta">
+            ${(p.tags || []).map(t => `<span class="meta__tag">${esc(t)}</span>`).join('')}
+            <span class="meta__spacer"></span>
+            ${p.platform ? `<span class="meta__plat meta__plat--ghost">${esc(p.platform)}</span>` : ''}
+          </div>
+        </div>
+      </article>`).join('');
   }
 
   /* Scale a real, live copy of the prototype into the card. */
