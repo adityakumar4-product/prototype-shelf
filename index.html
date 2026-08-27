@@ -575,13 +575,17 @@ const PIPELINE = [
   filters.addEventListener('click', e => {
     const b = e.target.closest('.chip');
     if (!b) return;
+    // Pipeline is a jump, not a filter: scroll to the section, change nothing.
+    if (b.dataset.filter === 'Pipeline') {
+      if (!pipeline.hidden) {
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        pipeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }
+      return;
+    }
     activeFilter = b.dataset.filter;
     filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
     render();
-    if (activeFilter === 'Pipeline' && !pipeline.hidden) {
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      pipeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-    }
   });
 
   q.addEventListener('input', render);
@@ -591,36 +595,18 @@ const PIPELINE = [
     }
   });
 
-  function inText(p) {
+  /* Platform filter + free-text search; applies to both built and planned. */
+  function matches(p) {
     const term = q.value.trim().toLowerCase();
-    return !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || [])].join(' ').toLowerCase().includes(term);
-  }
-  /* Built prototypes: shown under All or their platform; never under Pipeline. */
-  function builtVisible(p) {
-    if (activeFilter === 'Pipeline') return false;
-    return (activeFilter === 'All' || p.platform === activeFilter) && inText(p);
-  }
-  /* Planned ideas: shown under All, Pipeline, or their platform. */
-  function pipelineVisible(p) {
-    return (activeFilter === 'All' || activeFilter === 'Pipeline' || p.platform === activeFilter) && inText(p);
+    const inFilter = activeFilter === 'All' || p.platform === activeFilter;
+    const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || [])].join(' ').toLowerCase().includes(term);
+    return inFilter && inText;
   }
 
   function render() {
-    const list = PROTOTYPES.filter(builtVisible);
-    renderPipeline();
-
-    // Pipeline view: only the planned backlog; built grid steps aside.
-    if (activeFilter === 'Pipeline') {
-      const pl = PIPELINE.filter(pipelineVisible).length;
-      countEl.textContent = pl + ' of ' + PIPELINE.length;
-      const term = q.value.trim();
-      grid.innerHTML = pl
-        ? ''
-        : `<p class="empty">Nothing in the pipeline matches <b>${esc(term)}</b>. Clear the search, or switch to <b>All</b>.</p>`;
-      return;
-    }
-
+    const list = PROTOTYPES.filter(matches);
     countEl.textContent = list.length + ' of ' + PROTOTYPES.length;
+    renderPipeline();
 
     if (!list.length) {
       const term = q.value.trim();
@@ -674,7 +660,7 @@ const PIPELINE = [
 
   /* Planned ideas with no prototype yet — muted, non-clickable cards. */
   function renderPipeline() {
-    const list = PIPELINE.filter(pipelineVisible);
+    const list = PIPELINE.filter(matches);
     if (!list.length) { pipeline.hidden = true; pgrid.innerHTML = ''; return; }
     pipeline.hidden = false;
     pcountEl.textContent = list.length === PIPELINE.length
