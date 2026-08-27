@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/cohort-exploration/0dc1cea9.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/cohort-exploration/3bd07ca6.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/cohort-exploration/fb266582.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/575c9a5c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/3b860cec.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/6143b760.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/85b6e2ba.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/c6a423c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cohort-exploration/bc222532.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/575c9a5c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/3b860cec.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/6143b760.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/85b6e2ba.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/c6a423c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cohort-exploration/bc222532.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/575c9a5c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/3b860cec.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/6143b760.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/85b6e2ba.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/c6a423c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cohort-exploration/bc222532.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/575c9a5c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/3b860cec.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/6143b760.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/85b6e2ba.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/c6a423c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/cohort-exploration/bc222532.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/575c9a5c.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/3b860cec.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/6143b760.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/85b6e2ba.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/c6a423c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/cohort-exploration/bc222532.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<style>
+  body { margin:0; background:#EEF2F8; font-family:'Manrope',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:#1B62E8; text-decoration:none; }
+  a:hover { color:#12233F; text-decoration:underline; }
+  .noscroll::-webkit-scrollbar { width:0; height:0; }
+</style>
+</helmet>
+
+<div style="min-height:100vh; display:flex; flex-direction:column; align-items:center; gap:22px; padding:40px 24px 64px; box-sizing:border-box">
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:14px; max-width:560px; text-align:center">
+    <div style="font-size:11px; font-weight:800; letter-spacing:0.16em; color:#1B62E8; text-transform:uppercase">Batches · goal switching prototype</div>
+    <div style="font-size:26px; font-weight:800; color:#0E1726; letter-spacing:-0.02em; line-height:1.2">One tab row instead of three strips</div>
+    <div style="font-size:13.5px; line-height:1.6; color:#5A6478; text-wrap:pretty">Switch the treatment below, then use it: tap goal tabs, tap segment tiles, tap <strong>Change</strong> to open the goals page and pick another goal.</div>
+  </div>
+
+  <div style="display:flex; gap:8px; background:#fff; padding:6px; border-radius:16px; box-shadow:0 2px 10px rgba(14,23,38,0.06)">
+    <sc-for list="{{ variants }}" as="v" hint-placeholder-count="3">
+      <div sc-camel-on-click="{{ v.pick }}" style="display:flex; flex-direction:column; gap:2px; padding:9px 16px; border-radius:11px; cursor:pointer; min-width:120px; background:{{ v.bg }}; color:{{ v.fg }}">
+        <div style="font-size:13px; font-weight:800">{{ v.id }}</div>
+        <div style="font-size:10.5px; font-weight:600; opacity:0.75">{{ v.name }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="font-size:12.5px; font-weight:600; color:#5A6478; background:#fff; border:1px solid #E1E8F2; padding:9px 14px; border-radius:20px; max-width:520px; text-align:center; line-height:1.5">{{ blurb }}</div>
+
+  <div style="width:390px; height:844px; border-radius:38px; background:#111826; padding:9px; box-shadow:0 30px 70px rgba(14,23,38,0.22); box-sizing:border-box; flex:none">
+    <div style="width:100%; height:100%; border-radius:30px; overflow:hidden; background:#fff; display:flex; flex-direction:column; position:relative">
+      <div style="height:26px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; font-size:11px; font-weight:700; color:#1B2431; flex:none"><span>10:00</span><span>85%</span></div>
+
+      <div style="flex:none; background:#F2F6FD; padding:8px 0 0">
+        <div style="display:flex; align-items:center; gap:13px; padding:0 16px 10px">
+          <div style="display:flex; flex-direction:column; gap:3.5px; flex:none">
+            <div style="width:19px; height:2px; background:#1B2431; border-radius:2px"></div>
+            <div style="width:13px; height:2px; background:#1B2431; border-radius:2px"></div>
+            <div style="width:16px; height:2px; background:#1B2431; border-radius:2px"></div>
+          </div>
+          <div style="flex:1; height:38px; background:#fff; border:1px solid #E1E8F2; border-radius:19px; display:flex; align-items:center; gap:9px; padding:0 14px; color:#8A94A8; font-size:13px"><span>⌕</span><span>Search for Arjuna</span></div>
+        </div>
+
+        <sc-if value="{{ isA }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:flex-end; padding:0 0 0 6px">
+            <div style="flex:1; display:flex; gap:3px; overflow-x:auto; align-items:flex-end" class="noscroll">
+              <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ t.pick }}" style="flex:none; display:flex; align-items:center; gap:5px; cursor:pointer; white-space:nowrap; border-radius:13px 13px 0 0; background:{{ t.lift }}; box-shadow:{{ t.shadow }}; padding:{{ t.padLift }}; color:{{ t.fg }}; font-weight:{{ t.fw }}; font-size:{{ t.size }}">
+                  <div style="width:18px; height:18px; border-radius:6px; background:#FFD972; display:{{ t.on }}"></div>
+                  <span>{{ t.name }}</span>
+                  <span style="display:{{ t.on }}; align-items:center; justify-content:center; width:14px; height:14px; border-radius:50%; font-size:8.5px; font-weight:800; background:#1B62E8; color:#fff">✓</span>
+                </div>
+              </sc-for>
+            </div>
+            <div sc-camel-on-click="{{ openPage }}" style="flex:none; padding:0 12px 12px 8px; color:#1B62E8; font-size:13px; font-weight:800; cursor:pointer">Change</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:flex-end; padding:0 0 0 16px; border-bottom:1px solid #DCE5F2">
+            <div style="flex:1; display:flex; gap:14px; overflow-x:auto; align-items:flex-end" class="noscroll">
+              <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ t.pick }}" style="flex:none; display:flex; align-items:center; gap:5px; padding:8px 0 10px; margin-bottom:-1px; cursor:pointer; white-space:nowrap; color:{{ t.fg }}; border-bottom:4px solid {{ t.bd }}; font-weight:{{ t.fw }}; font-size:{{ t.size }}">
+                  <div style="width:17px; height:17px; border-radius:5px; background:#FFD972; display:{{ t.on }}"></div>
+                  <span>{{ t.name }}</span>
+                  <span style="display:{{ t.on }}; align-items:center; justify-content:center; width:14px; height:14px; border-radius:50%; font-size:8.5px; font-weight:800; background:#1B62E8; color:#fff">✓</span>
+                </div>
+              </sc-for>
+            </div>
+            <div sc-camel-on-click="{{ openPage }}" style="flex:none; padding:0 14px 11px 10px; color:#1B62E8; font-size:13px; font-weight:800; cursor:pointer">Change</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isC }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:flex-end; padding:0 0 0 6px">
+            <div style="flex:1; display:flex; gap:3px; overflow-x:auto; align-items:flex-end" class="noscroll">
+              <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ t.pick }}" style="flex:none; display:flex; align-items:center; gap:7px; cursor:pointer; white-space:nowrap; border-radius:13px 13px 0 0; background:{{ t.lift }}; box-shadow:{{ t.shadow }}; padding:{{ t.padEye }}">
+                  <div style="width:20px; height:20px; border-radius:6px; background:#FFD972; display:{{ t.on }}; flex:none"></div>
+                  <div style="display:flex; flex-direction:column; align-items:flex-start; gap:3px">
+                    <div style="display:{{ t.on }}; font-size:8.5px; line-height:1; font-weight:800; letter-spacing:0.1em; color:{{ t.eyeFg }}">{{ t.eyebrow }}</div>
+                    <div style="color:{{ t.fg }}; font-weight:{{ t.fw }}; font-size:{{ t.size }}; line-height:1">{{ t.name }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div sc-camel-on-click="{{ openPage }}" style="flex:none; padding:0 12px 12px 8px; color:#1B62E8; font-size:13px; font-weight:800; cursor:pointer">Change</div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="flex:1; background:#fff; overflow-y:auto" class="noscroll">
+        <div style="padding:14px 14px 8px; display:grid; grid-template-columns:repeat(4,1fr); gap:9px">
+          <sc-for list="{{ tiles }}" as="s" hint-placeholder-count="4">
+            <div sc-camel-on-click="{{ s.pick }}" style="border-radius:13px; padding:10px 4px; display:flex; flex-direction:column; align-items:center; gap:7px; cursor:pointer; background:{{ s.bg }}; border:1px solid {{ s.bd }}; color:{{ s.fg }}">
+              <div style="width:24px; height:24px; border-radius:7px; background:{{ s.icon }}"></div>
+              <div style="font-size:10px; font-weight:700; text-align:center; line-height:1.2">{{ s.name }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:8px 14px 16px; display:flex; flex-direction:column; gap:12px">
+          <div style="display:flex; align-items:center; gap:9px">
+            <div style="width:3px; height:17px; background:#1B62E8; border-radius:2px"></div>
+            <div style="font-size:16px; font-weight:800; color:#0E1726">{{ heading }}</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:11px">
+            <sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
+              <div style="border:1px solid #E9EDF3; border-radius:13px; overflow:hidden; display:flex; flex-direction:column">
+                <div style="height:86px; background:{{ c.tint }}; display:flex; align-items:flex-end; padding:9px"><span style="font-size:9.5px; font-weight:800; color:#6E5426; letter-spacing:0.06em">{{ c.label }}</span></div>
+                <div style="padding:10px; display:flex; flex-direction:column; gap:6px">
+                  <div style="font-size:12px; font-weight:700; color:#0E1726; line-height:1.3">{{ c.title }}</div>
+                  <div style="display:flex; align-items:baseline; gap:5px">
+                    <span style="font-size:13px; font-weight:800; color:#0E1726">{{ c.price }}</span>
+                    <span style="font-size:10px; color:#A3ACBC; text-decoration:line-through">{{ c.mrp }}</span>
+                  </div>
+                  <div style="font-size:10px; font-weight:700; color:#1E7A4D">{{ c.off }}</div>
+                  <div style="height:30px; border-radius:8px; background:#12233F; color:#fff; font-size:11.5px; font-weight:700; display:flex; align-items:center; justify-content:center">{{ c.cta }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex; align-items:center; gap:9px; margin-top:4px">
+            <div style="width:3px; height:17px; background:#1B62E8; border-radius:2px"></div>
+            <div style="font-size:16px; font-weight:800; color:#0E1726">Explore PW</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:11px">
+            <div style="height:80px; border-radius:13px; background:#FFF6DC; padding:11px; font-size:12px; font-weight:800; color:#0E1726">PW Pi<div style="font-size:9.5px; font-weight:600; color:#77839B; margin-top:4px">Padhai ka OTT</div></div>
+            <div style="height:80px; border-radius:13px; background:#EAF1FF; padding:11px; font-size:12px; font-weight:800; color:#0E1726">Saarthi<div style="font-size:9.5px; font-weight:600; color:#77839B; margin-top:4px">Your personal mentor</div></div>
+            <div style="height:80px; border-radius:13px; background:#F1ECFF; padding:11px; font-size:12px; font-weight:800; color:#0E1726">MedEd<div style="font-size:9.5px; font-weight:600; color:#77839B; margin-top:4px">Prepare for NEET PG</div></div>
+            <div style="height:80px; border-radius:13px; background:#E9F7EF; padding:11px; font-size:12px; font-weight:800; color:#0E1726">E Books<div style="font-size:9.5px; font-weight:600; color:#77839B; margin-top:4px">NCERT in your pocket</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:none; height:58px; border-top:1px solid #EDF1F6; background:#fff; display:flex; align-items:center; justify-content:space-around; padding:0 8px">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; font-weight:600; color:#8A94A8"><div style="width:20px; height:20px; border-radius:6px; background:#EDF1F6"></div>Study</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; font-weight:600; color:#8A94A8"><div style="width:20px; height:20px; border-radius:6px; background:#EDF1F6"></div>Courses</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; font-weight:800; color:#1B62E8"><div style="width:20px; height:20px; border-radius:6px; background:#D6E4FF"></div>Batches</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; font-weight:600; color:#8A94A8"><div style="width:20px; height:20px; border-radius:6px; background:#EDF1F6"></div>Pi</div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px; font-size:9.5px; font-weight:600; color:#8A94A8"><div style="width:20px; height:20px; border-radius:6px; background:#EDF1F6"></div>PW Store</div>
+      </div>
+
+      <sc-if value="{{ pageOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute; inset:0; background:#fff; border-radius:30px; z-index:6; display:flex; flex-direction:column">
+          <div style="flex:none; padding:16px; display:flex; align-items:center; gap:13px; border-bottom:1px solid #EDF1F6">
+            <div sc-camel-on-click="{{ closePage }}" style="font-size:18px; color:#0E1726; cursor:pointer">←</div>
+            <div style="font-size:17px; font-weight:800; color:#0E1726">Change goal</div>
+          </div>
+          <div style="flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:16px" class="noscroll">
+            <div style="height:40px; border:1px solid #E1E7EF; background:#F7F9FC; border-radius:20px; display:flex; align-items:center; padding:0 14px; font-size:13px; color:#8A94A8">Search all goals</div>
+            <div style="display:flex; flex-direction:column; gap:9px">
+              <div style="font-size:11px; font-weight:800; letter-spacing:0.1em; color:{{ headFg }}">{{ head }}</div>
+              <div style="border:2px solid #1B62E8; background:#F4F8FF; border-radius:15px; padding:14px; display:flex; align-items:center; gap:12px">
+                <div style="width:36px; height:36px; border-radius:10px; background:#FFD972; flex:none"></div>
+                <div style="flex:1; font-size:16px; font-weight:800; color:#0E1726">{{ goal }}</div>
+                <div style="font-size:14px; font-weight:800; color:#1B62E8">✓</div>
+              </div>
+            </div>
+            <sc-if value="{{ exploring }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-direction:column; gap:9px">
+                <div style="font-size:11px; font-weight:800; color:#1B62E8; letter-spacing:0.1em">YOUR GOAL</div>
+                <div sc-camel-on-click="{{ backToMine }}" style="border:1px solid #C9DCFB; background:#F8FBFF; border-radius:15px; padding:13px; display:flex; align-items:center; gap:12px; cursor:pointer" style-hover="border-color:#1B62E8">
+                  <div style="width:32px; height:32px; border-radius:9px; background:#FFD972; flex:none"></div>
+                  <div style="flex:1; font-size:15px; font-weight:800; color:#0E1726">{{ enrolled }}</div>
+                  <div style="font-size:11.5px; font-weight:800; color:#1B62E8">Back to my goal</div>
+                </div>
+              </div>
+            </sc-if>
+            <div style="display:flex; flex-direction:column; gap:9px">
+              <div style="font-size:11px; font-weight:800; color:#1E7A4D; letter-spacing:0.1em">RELATED TO THIS GOAL</div>
+              <sc-for list="{{ related }}" as="g" hint-placeholder-count="2">
+                <div sc-camel-on-click="{{ g.pick }}" style="border:1px solid #E9EDF3; border-radius:15px; padding:13px; display:flex; align-items:center; gap:12px; cursor:pointer" style-hover="border-color:#1B62E8">
+                  <div style="width:32px; height:32px; border-radius:9px; background:#EAF1FF; flex:none"></div>
+                  <div style="flex:1; font-size:15px; font-weight:700; color:#0E1726">{{ g.name }}</div>
+                  <div style="font-size:14px; color:#B4BECD">›</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px">
+              <div style="font-size:11px; font-weight:800; color:#8A94A8; letter-spacing:0.1em">ALL GOALS</div>
+              <sc-for list="{{ allGoals }}" as="g" hint-placeholder-count="4">
+                <div style="border:1px solid #E9EDF3; border-radius:15px; padding:13px; display:flex; align-items:center; gap:12px">
+                  <div style="width:32px; height:32px; border-radius:9px; background:#F2F5F9; flex:none"></div>
+                  <div style="flex:1; font-size:15px; font-weight:600; color:#46536B">{{ g.name }}</div>
+                  <div style="font-size:14px; color:#B4BECD">›</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="font-size:12px; color:#8A94A8; font-weight:600">Cohort strip and “view other batches” rail are both replaced by the row above the tiles.</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:600,&quot;height&quot;:1100}}">
+const GOALS = ['11th NEET', '12th NEET', '12th CBSE'];
+const ENROLLED = GOALS[0];
+const SEGS = [
+  { name: 'Online', tint: '#DCE8FF' },
+  { name: 'Vidyapeeth', tint: '#E4EAF2' },
+  { name: 'Power Batch', tint: '#FFE9C7' },
+  { name: 'Test Series', tint: '#FFD9D9' }
+];
+const CARDS = [
+  { title: 'Arjuna NEET 2027', price: '₹4,495', mrp: '₹8,500', off: '40% OFF', cta: 'Buy Now', tint: '#FDE7CF', label: 'ARJUNA NEET 2026' },
+  { title: 'Vidyapeeth Class 11th NEET', price: '₹5,000', mrp: '', off: 'For Seat Booking', cta: 'Book a Seat', tint: '#D8DFE8', label: 'CLASS 11 NEET' },
+  { title: 'Lakshya NEET 2027', price: '₹1,499', mrp: '₹2,500', off: '40% OFF', cta: 'Buy Now', tint: '#FBEFD5', label: 'LAKSHYA NEET 2027' },
+  { title: 'Uday Class 11 Boards 2027', price: '₹1,499', mrp: '₹2,500', off: '40% OFF', cta: 'Buy Now', tint: '#CFE9D8', label: 'UDAY TEAM OG' }
+];
+const VARIANTS = [
+  { id: '5A', name: 'Connected tab', blurb: 'The selected tab lifts into white and joins the content sheet with no seam — a blue check marks it. No extra height above the list.' },
+  { id: '5B', name: 'Underline tabs', blurb: 'Standard Android underline tabs: cheapest to build, biggest space saving, but the goal leaves the screen as you scroll.' },
+  { id: '5C', name: 'Labelled tab', blurb: 'Connected tab with a worded eyebrow: YOUR GOAL on 11th NEET, amber EXPLORING when you browse another goal.' }
+];
+
+class Component extends DCLogic {
+  state = { variant: '5A', goal: ENROLLED, seg: 'Online', pageOpen: false };
+
+  renderVals() {
+    const v = this.state.variant;
+    const cur = this.state.goal;
+    const exploring = cur !== ENROLLED;
+    return {
+      variants: VARIANTS.map(x => ({
+        id: x.id,
+        name: x.name,
+        bg: x.id === v ? '#12233F' : 'transparent',
+        fg: x.id === v ? '#FFFFFF' : '#5A6478',
+        pick: () => this.setState({ variant: x.id, pageOpen: false })
+      })),
+      blurb: (VARIANTS.find(x => x.id === v) || VARIANTS[0]).blurb,
+      isA: v === '5A',
+      isB: v === '5B',
+      isC: v === '5C',
+      tabs: GOALS.map(n => {
+        const on = n === cur;
+        return {
+          name: n,
+          pick: () => this.setState({ goal: n }),
+          on: on ? 'flex' : 'none',
+          fg: on ? '#0E1726' : '#8794AB',
+          bd: on ? '#1B62E8' : 'transparent',
+          fw: on ? 800 : 600,
+          size: on ? '14.5px' : '13px',
+          lift: on ? '#FFFFFF' : 'transparent',
+          shadow: on ? '0 -3px 10px rgba(27,98,232,0.10)' : 'none',
+          padLift: on ? '9px 10px 12px' : '10px 8px',
+          padEye: on ? '8px 12px 11px' : '10px 8px',
+          eyebrow: n === ENROLLED ? 'YOUR GOAL' : 'EXPLORING',
+          eyeFg: n === ENROLLED ? '#1B62E8' : '#B26B00'
+        };
+      }),
+      tiles: SEGS.map(s => {
+        const on = s.name === this.state.seg;
+        return {
+          name: s.name,
+          pick: () => this.setState({ seg: s.name }),
+          bg: on ? '#1B62E8' : '#FFFFFF',
+          fg: on ? '#FFFFFF' : '#46536B',
+          bd: on ? '#1B62E8' : '#E4E9F0',
+          icon: on ? 'rgba(255,255,255,0.9)' : s.tint
+        };
+      }),
+      cards: CARDS,
+      heading: exploring ? 'Popular in ' + cur : 'Recommended For You',
+      goal: cur,
+      enrolled: ENROLLED,
+      exploring: exploring,
+      head: exploring ? (v === '5C' ? 'EXPLORING' : 'CURRENTLY VIEWING') : 'YOUR GOAL',
+      headFg: exploring && v === '5C' ? '#B26B00' : '#1B62E8',
+      related: GOALS.filter(n => n !== cur && n !== ENROLLED).map(n => ({
+        name: n,
+        pick: () => this.setState({ goal: n, pageOpen: false })
+      })),
+      allGoals: [{ name: 'Dropper NEET' }, { name: '11th CBSE' }, { name: '12th IIT JEE' }, { name: 'Foundation · Class 10' }],
+      pageOpen: this.state.pageOpen,
+      openPage: () => this.setState({ pageOpen: true }),
+      closePage: () => this.setState({ pageOpen: false }),
+      backToMine: () => this.setState({ goal: ENROLLED, pageOpen: false })
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

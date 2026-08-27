@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="padding:10px 12px 0">
+  <div style="background:#fff;border-radius:18px;box-shadow:0 8px 26px rgba(15,17,22,.09);padding:14px">
+    <div style="display:grid;grid-template-columns:1fr 124px;gap:12px;align-items:start">
+      <div>
+        <div style="display:flex;gap:5px">
+          <div style="font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:#2C3040;border:1px solid #DDE0EA;padding:4px 7px;border-radius:6px">HINGLISH</div>
+          <div style="font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:#8A5A12;background:#FDF0D8;padding:4px 7px;border-radius:6px">LEGENDARY</div>
+        </div>
+        <div style="font:700 20px/1.15 'Source Serif 4',serif;color:#0B0D12;letter-spacing:-.01em;margin-top:9px">Yakeen NEET 2.0 2026</div>
+        <div style="display:flex;align-items:center;gap:7px;margin-top:9px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><circle cx="8" cy="8" r="7" fill="#E23B3B"></circle><circle cx="8" cy="8" r="4" fill="#fff"></circle><circle cx="8" cy="8" r="1.6" fill="#E23B3B"></circle></svg>
+          <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#2C3040">NEET · May 2026 attempt</div>
+        </div>
+      </div>
+
+      <div onClick="{{ topDemo }}" style="position:relative;height:124px;border-radius:14px;background:linear-gradient(165deg,#FBEBAF 0%,#F5D46B 100%);overflow:hidden;cursor:pointer">
+        <div style="position:absolute;inset:8px;border-radius:10px;border:1.5px dashed rgba(120,88,10,.38);display:flex;align-items:center;justify-content:center">
+          <div style="font:700 9px/1.3 'Plus Jakarta Sans',sans-serif;color:rgba(104,76,8,.72);text-align:center;letter-spacing:.03em">FACULTY<br/>PHOTO</div>
+        </div>
+        <div style="position:absolute;bottom:7px;left:7px;display:flex">
+          <div style="width:26px;height:26px;border-radius:50%;background:#BFE6CE;border:2px solid #fff;font:700 9px/22px 'Plus Jakarta Sans',sans-serif;color:#0B6B3F;text-align:center">MR</div>
+          <div style="width:26px;height:26px;border-radius:50%;background:#F7D9B6;border:2px solid #fff;margin-left:-9px;font:700 9px/22px 'Plus Jakarta Sans',sans-serif;color:#8A5A12;text-align:center">RS</div>
+          <div style="width:26px;height:26px;border-radius:50%;background:#CFC9F5;border:2px solid #fff;margin-left:-9px;font:700 9px/22px 'Plus Jakarta Sans',sans-serif;color:#4A3FB0;text-align:center">DM</div>
+        </div>
+        <div style="position:absolute;top:6px;right:6px;display:flex;align-items:center;gap:4px;background:rgba(15,17,22,.86);padding:4px 7px;border-radius:20px;font:700 8px/1 'Plus Jakarta Sans',sans-serif;color:#fff;letter-spacing:.04em"><span style="font-size:7px">▶</span>DEMO</div>
+      </div>
+    </div>
+
+    <sc-if value="{{ teachersTop }}" hint-placeholder-val="{{ true }}">
+    <div onClick="{{ teachers }}" style="display:flex;align-items:center;gap:8px;margin-top:11px;padding:9px 10px;background:#F7F8FC;border-radius:11px;cursor:pointer">
+      <div style="flex:1;font:700 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#0B0D12">5 teachers · 3 free demo classes</div>
+      <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF">View teachers ›</div>
+    </div>
+    </sc-if>
+
+    <div style="margin-top:12px;border:1px solid #EDEEF3;border-radius:12px;overflow:hidden">
+      <sc-if value="{{ dateRows }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="#5A4FCF"></rect><rect x="1.5" y="3" width="13" height="3.4" rx="1.6" fill="#3E349F"></rect><rect x="4" y="1.4" width="1.6" height="3" rx="0.8" fill="#3E349F"></rect><rect x="10.4" y="1.4" width="1.6" height="3" rx="0.8" fill="#3E349F"></rect></svg>
+          <div style="flex:1;font:600 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093">Starts on</div>
+          <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">24 Jul '25</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border-top:1px solid #F2F3F7">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="#B7BCCB"></rect><rect x="1.5" y="3" width="13" height="3.4" rx="1.6" fill="#8A90A2"></rect><rect x="4" y="1.4" width="1.6" height="3" rx="0.8" fill="#8A90A2"></rect><rect x="10.4" y="1.4" width="1.6" height="3" rx="0.8" fill="#8A90A2"></rect></svg>
+          <div style="flex:1;font:600 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093">Ends on</div>
+          <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">24 Jan '26</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ dateGrid }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#F2F3F7">
+        <div style="background:#fff;padding:9px 11px;display:flex;align-items:center;gap:7px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="#5A4FCF"></rect><rect x="1.5" y="3" width="13" height="3.4" rx="1.6" fill="#3E349F"></rect><rect x="4" y="1.4" width="1.6" height="3" rx="0.8" fill="#3E349F"></rect><rect x="10.4" y="1.4" width="1.6" height="3" rx="0.8" fill="#3E349F"></rect></svg>
+          <div>
+            <div style="font:600 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A90A2">STARTS ON</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:3px">24 Jul '25</div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:9px 11px;display:flex;align-items:center;gap:7px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><rect x="1.5" y="3" width="13" height="11.5" rx="2" fill="#B7BCCB"></rect><rect x="1.5" y="3" width="13" height="3.4" rx="1.6" fill="#8A90A2"></rect><rect x="4" y="1.4" width="1.6" height="3" rx="0.8" fill="#8A90A2"></rect><rect x="10.4" y="1.4" width="1.6" height="3" rx="0.8" fill="#8A90A2"></rect></svg>
+          <div>
+            <div style="font:600 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A90A2">ENDS ON</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:3px">24 Jan '26</div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:9px 11px;display:flex;align-items:center;gap:7px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><circle cx="8" cy="8.6" r="6.4" fill="#1B9C64"></circle><path d="M5.2 8.8l1.9 1.9 3.7-3.9" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+          <div>
+            <div style="font:600 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A90A2">SYLLABUS DONE BY</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:3px">24 Oct '25</div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:9px 11px;display:flex;align-items:center;gap:7px">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><path d="M13.4 8a5.4 5.4 0 1 1-1.9-4.1" stroke="#B0670F" stroke-width="1.8" stroke-linecap="round" fill="none"></path><path d="M13.6 2.2v3.1h-3.1" stroke="#B0670F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+          <div>
+            <div style="font:600 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A90A2">REVISION PERIOD</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#B0670F;margin-top:3px">3 months</div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+      <sc-if value="{{ dateRows }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;border-top:1px solid #F2F3F7">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex:0 0 14px"><circle cx="8" cy="8.6" r="6.4" fill="#1B9C64"></circle><path d="M5.2 8.8l1.9 1.9 3.7-3.9" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+        <div style="flex:1;font:600 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093">Syllabus completes on</div>
+        <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">24 Oct '25</div>
+      </div>
+      <div style="background:#E8F7EF;padding:7px 11px;font:700 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B6B3F">+ 3 months of full revision before the exam</div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ teachersBelow }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ teachers }}" style="display:flex;align-items:center;gap:8px;margin-top:8px;padding:9px 10px;background:#F7F8FC;border-radius:11px;cursor:pointer">
+      <div style="flex:1;font:700 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#0B0D12">5 teachers · 3 free demo classes</div>
+      <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF">View teachers ›</div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ showStrip }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:14px;border:1.5px solid #0F1116;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(15,17,22,.10)">
+        <div style="background:#0F1116;padding:8px 11px;display:flex;align-items:center;gap:8px">
+          <div style="flex:1;font:800 10px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.09em;color:#fff;white-space:nowrap">CHOOSE YOUR PLAN</div>
+          <div style="font:700 9px/1 'Plus Jakarta Sans',sans-serif;color:#8DE8B4;letter-spacing:.03em;white-space:nowrap">35k+ on Infinity</div>
+          <div onClick="{{ compare }}" style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;color:#F5C64B;letter-spacing:.06em;cursor:pointer">COMPARE ›</div>
+        </div>
+        <div style="background:#F7F8FC;padding:11px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px">
+          <div onClick="{{ pick0 }}" style="position:relative;border:1.5px solid {{ b0 }};background:{{ bg0 }};border-radius:11px;padding:10px 6px 9px;text-align:center;cursor:pointer;box-shadow:{{ sh0 }}">
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ fg0 }}">{{ n0 }}</div>
+            <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ sfg0 }};margin-top:3px">{{ p0 }}</div>
+          </div>
+          <div onClick="{{ pick1 }}" style="position:relative;border:1.5px solid {{ b1 }};background:{{ bg1 }};border-radius:11px;padding:10px 6px 9px;text-align:center;cursor:pointer;box-shadow:{{ sh1 }}">
+            <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font:800 8px/1 'Plus Jakarta Sans',sans-serif;color:#fff;background:#1668E3;padding:3px 5px;border-radius:4px;white-space:nowrap">POPULAR</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ fg1 }}">{{ n1 }}</div>
+            <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ sfg1 }};margin-top:3px">{{ p1 }}</div>
+          </div>
+          <div onClick="{{ pick2 }}" style="position:relative;border:1.5px solid {{ b2 }};background:{{ bg2 }};border-radius:11px;padding:10px 6px 9px;text-align:center;cursor:pointer;box-shadow:{{ sh2 }}">
+            <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font:800 8px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12;background:#F5C64B;padding:3px 5px;border-radius:4px;white-space:nowrap">BEST VALUE</div>
+            <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ fg2 }}">{{ n2 }}</div>
+            <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ sfg2 }};margin-top:3px">{{ p2 }}</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display:flex;align-items:flex-end;gap:8px;margin-top:13px">
+      <div style="font:800 22px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ price }}</div>
+      <div style="font:500 12px/1.2 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;text-decoration:line-through">{{ mrp }}</div>
+      <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#1B9C64">{{ off }}</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+      <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#0B6B3F;background:#E8F7EF;padding:5px 7px;border-radius:6px">{{ save }}</div>
+      <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#B0670F;background:#FEF3E8;padding:5px 7px;border-radius:6px">{{ urgency }}</div>
+    </div>
+
+    <div onClick="{{ buy }}" style="margin-top:12px;background:#0F1116;border-radius:13px;padding:14px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#fff;cursor:pointer">{{ cta }}</div>
+    <div onClick="{{ compare }}" style="margin-top:9px;text-align:center;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;cursor:pointer">{{ compareLabel }}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:520},&quot;plan&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;},&quot;showStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;compareLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Compare all 3 plans&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onSelect&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(n:number)=&gt;void&quot;},&quot;onCompare&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;()=&gt;void&quot;},&quot;onBuy&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;()=&gt;void&quot;},&quot;onTeachers&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;()=&gt;void&quot;},&quot;onDemo&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(d:object)=&gt;void&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props.plan ?? 1;
+    const plans = [
+      { n: "Basic", price: "₹4,999", mrp: "₹5,600", off: "11% OFF", save: "You save ₹601" },
+      { n: "Infinity", price: "₹9,600", mrp: "₹15,600", off: "38% OFF", save: "You save ₹6,000" },
+      { n: "Infinity Pro", price: "₹20,600", mrp: "₹34,600", off: "40% OFF", save: "You save ₹14,000" }
+    ];
+    const sel = (n) => () => this.props.onSelect && this.props.onSelect(n);
+    const line = (i) => p === i ? "#5A4FCF" : "#E4E6EE";
+    const fill = (i) => p === i ? "#5A4FCF" : "#fff";
+    return {
+      showStrip: this.props.showStrip !== false,
+      dateGrid: this.props.dateLayout !== "rows",
+      dateRows: this.props.dateLayout === "rows",
+      teachersTop: this.props.teachersPosition !== "below",
+      teachersBelow: this.props.teachersPosition === "below",
+      pick0: sel(0), pick1: sel(1), pick2: sel(2),
+      b0: line(0), b1: line(1), b2: line(2), bg0: fill(0), bg1: fill(1), bg2: fill(2),
+      fg0: p === 0 ? "#fff" : "#0B0D12", fg1: p === 1 ? "#fff" : "#0B0D12", fg2: p === 2 ? "#fff" : "#0B0D12",
+      sfg0: p === 0 ? "rgba(255,255,255,.78)" : "#7A8093", sfg1: p === 1 ? "rgba(255,255,255,.78)" : "#7A8093", sfg2: p === 2 ? "rgba(255,255,255,.78)" : "#7A8093",
+      sh0: p === 0 ? "0 4px 12px rgba(90,79,207,.35)" : "none", sh1: p === 1 ? "0 4px 12px rgba(90,79,207,.35)" : "none", sh2: p === 2 ? "0 4px 12px rgba(90,79,207,.35)" : "none",
+      n0: "Basic", n1: "Infinity", n2: "Pro",
+      p0: "₹4,999", p1: "₹9,600", p2: "₹20,600",
+      price: plans[p].price, mrp: plans[p].mrp, off: plans[p].off, save: plans[p].save,
+      urgency: "128 seats left at this price",
+      cta: "Continue with " + plans[p].n,
+      compareLabel: this.props.compareLabel ?? "Compare all 3 plans",
+      compare: () => this.props.onCompare && this.props.onCompare(),
+      buy: () => this.props.onBuy && this.props.onBuy(),
+      teachers: () => this.props.onTeachers && this.props.onTeachers(),
+      topDemo: () => this.props.onDemo && this.props.onDemo({ teacher: "Manish Raj Sir", topic: "Electric Charges & Fields · Lecture 01" })
+    };
+  }
+}
+</script>
+</body>
+</html>

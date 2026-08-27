@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: scale(1); } }
+a { color: #4C3FCF; }
+a:hover { color: #3A2FA8; }
+</style>
+</helmet>
+<div style="width:360px;height:780px;position:relative;overflow:hidden;background:#fff;border-radius:38px;box-shadow:0 0 0 10px #16181D, 0 24px 60px rgba(16,24,40,.28);font-family:Manrope,system-ui,sans-serif;color:#101828">
+
+  <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:relative;flex-shrink:0">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.2px">7:59</div>
+    <div style="position:absolute;left:50%;top:9px;transform:translateX(-50%);width:82px;height:26px;border-radius:14px;background:#16181D"></div>
+    <div style="display:flex;gap:5px;align-items:center;font-size:11px;font-weight:700;color:#101828">
+      <span>▮▮▮</span><span>⌁</span><span>86%</span>
+    </div>
+  </div>
+
+  <div style="height:56px;display:flex;align-items:center;gap:12px;padding:0 18px;border-bottom:1px solid #F0F1F4">
+    <div onClick="{{ back }}" style="width:26px;height:26px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;color:#101828">‹</div>
+    <div style="font-size:17px;font-weight:700;letter-spacing:-.2px">{{ title }}</div>
+  </div>
+
+  <div style="position:absolute;top:100px;left:0;right:0;bottom:0;overflow:hidden">
+
+    <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+      <div style="height:100%;overflow-y:auto;background:#F7F8FA">
+        <sc-if value="{{ reminder }}">
+          <div style="margin:14px 16px 0;padding:14px;border-radius:14px;background:#EEF0FF;border:1px solid #DDE0FF;display:flex;gap:12px;align-items:flex-start">
+            <div style="width:34px;height:34px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#4C3FCF;font-size:16px">◎</div>
+            <div style="flex:1">
+              <div style="font-size:13.5px;font-weight:700;line-height:1.3">Skip typing your pin code</div>
+              <div style="font-size:12.5px;color:#5A5F6E;margin-top:3px;line-height:1.4">Turn on location once and we'll fill your address for you.</div>
+              <div style="display:flex;gap:10px;margin-top:10px">
+                <div onClick="{{ askAgain }}" style="padding:7px 14px;border-radius:8px;background:#4C3FCF;color:#fff;font-size:12.5px;font-weight:700;cursor:pointer">Turn on</div>
+                <div onClick="{{ dismissReminder }}" style="padding:7px 12px;border-radius:8px;color:#5A5F6E;font-size:12.5px;font-weight:600;cursor:pointer">Not now</div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="padding:16px 16px 0">
+          <div style="height:44px;border-radius:12px;background:#fff;border:1px solid #E4E7EC;display:flex;align-items:center;gap:10px;padding:0 14px;color:#98A2B3;font-size:13.5px">
+            <span style="font-size:14px">⌕</span>Search area, locality or pin code
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1px;background:#fff;margin:14px 16px 0;border-radius:14px;border:1px solid #E4E7EC;overflow:hidden">
+          <div onClick="{{ startLocation }}" style="display:flex;align-items:center;gap:12px;padding:15px 14px;cursor:pointer">
+            <div style="width:32px;height:32px;border-radius:9px;background:#EEF0FF;display:flex;align-items:center;justify-content:center;color:#4C3FCF;font-size:15px;font-weight:700">◎</div>
+            <div style="flex:1">
+              <div style="font-size:14.5px;font-weight:700;color:#4C3FCF">Use my current location</div>
+              <div style="font-size:12px;color:#667085;margin-top:2px">Fills pin code, city and state for you</div>
+            </div>
+            <div style="color:#98A2B3;font-size:16px">›</div>
+          </div>
+          <div style="height:1px;background:#F0F1F4"></div>
+          <div onClick="{{ goForm }}" style="display:flex;align-items:center;gap:12px;padding:15px 14px;cursor:pointer">
+            <div style="width:32px;height:32px;border-radius:9px;background:#F2F4F7;display:flex;align-items:center;justify-content:center;font-size:16px;color:#344054">＋</div>
+            <div style="flex:1;font-size:14.5px;font-weight:600">Add a new address manually</div>
+            <div style="color:#98A2B3;font-size:16px">›</div>
+          </div>
+        </div>
+
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.9px;color:#98A2B3;padding:20px 18px 8px">SAVED ADDRESSES</div>
+        <div style="background:#fff;margin:0 16px 24px;border-radius:14px;border:1px solid #E4E7EC;overflow:hidden">
+          <sc-if value="{{ savedNew }}">
+            <div style="padding:14px;background:#F6FFF9;border-bottom:1px solid #F0F1F4;display:flex;gap:12px;animation:fade .3s ease">
+              <div style="width:30px;height:30px;border-radius:9px;background:#ECFDF3;display:flex;align-items:center;justify-content:center;font-size:14px;color:#067647">⌂</div>
+              <div style="flex:1">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="font-size:14px;font-weight:700">Home</div>
+                  <div style="font-size:10px;font-weight:800;letter-spacing:.5px;color:#067647;background:#ECFDF3;padding:3px 6px;border-radius:5px">JUST ADDED</div>
+                </div>
+                <div style="font-size:12.5px;color:#667085;line-height:1.45;margin-top:3px">H. 134, Girdhari Nagar, Sant Raj Nagar, Bulandshahr, Uttar Pradesh 203001</div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-for list="{{ addresses }}" as="a" hint-placeholder-count="2">
+            <div style="padding:14px;border-bottom:1px solid #F0F1F4;display:flex;gap:12px">
+              <div style="width:30px;height:30px;border-radius:9px;background:#F2F4F7;display:flex;align-items:center;justify-content:center;font-size:13px;color:#344054">⌂</div>
+              <div style="flex:1">
+                <div style="font-size:14px;font-weight:700">{{ a.label }}</div>
+                <div style="font-size:12.5px;color:#667085;line-height:1.45;margin-top:3px">{{ a.line }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isForm }}">
+      <div style="height:100%;display:flex;flex-direction:column">
+        <div style="flex:1;overflow-y:auto;padding-bottom:12px">
+
+          <sc-if value="{{ showBanner }}">
+            <div style="margin:0;padding:12px 16px;background:#EEF0FF;border-bottom:1px solid #DDE0FF;display:flex;align-items:center;gap:11px">
+              <div style="color:#4C3FCF;font-size:15px">◎</div>
+              <div style="flex:1;font-size:12.5px;line-height:1.35;color:#2B2F3A">Don't know your pin code? <span style="font-weight:700">Use your location</span> and we'll fill it in.</div>
+              <div onClick="{{ startLocation }}" style="padding:7px 13px;border-radius:8px;background:#4C3FCF;color:#fff;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap">Allow</div>
+            </div>
+          </sc-if>
+
+          <div style="padding:18px 16px 0">
+            <div style="font-size:16px;font-weight:800;letter-spacing:-.2px">Contact Details</div>
+            <div style="position:relative;margin-top:14px;border:1px solid #D0D5DD;border-radius:10px;padding:14px 14px">
+              <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">Name</div>
+              <div style="font-size:14.5px;font-weight:500">Ashpreet Singh</div>
+            </div>
+            <div style="position:relative;margin-top:14px;border:1px solid #D0D5DD;border-radius:10px;padding:14px 14px">
+              <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">Mobile Number</div>
+              <div style="font-size:14.5px;font-weight:500">9717593549</div>
+            </div>
+
+            <div style="font-size:16px;font-weight:800;letter-spacing:-.2px;margin-top:26px">Address Details</div>
+
+            <sc-if value="{{ showCard }}">
+              <div onClick="{{ startLocation }}" style="margin-top:14px;border:1px solid #DDE0FF;background:#F8F9FF;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer">
+                <div style="width:36px;height:36px;border-radius:10px;background:#EEF0FF;display:flex;align-items:center;justify-content:center;color:#4C3FCF;font-size:16px;font-weight:700">◎</div>
+                <div style="flex:1">
+                  <div style="font-size:14px;font-weight:700;color:#2B2F3A">Use my current location</div>
+                  <div style="font-size:12px;color:#667085;margin-top:2px">Auto-fills pin code, locality, city &amp; state</div>
+                </div>
+                <div style="padding:8px 14px;border-radius:8px;background:#4C3FCF;color:#fff;font-size:12.5px;font-weight:700">Use</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ fetching }}">
+              <div style="margin-top:14px;border:1px solid #DDE0FF;background:#F8F9FF;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px">
+                <div style="width:20px;height:20px;border-radius:50%;border:2.5px solid #DDE0FF;border-top-color:#4C3FCF;animation:spin .7s linear infinite"></div>
+                <div style="font-size:13.5px;font-weight:600;color:#4C3FCF">Finding your location…</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ filled }}">
+              <div style="margin-top:14px;display:flex;align-items:center;gap:9px;background:#ECFDF3;border:1px solid #CBEFD9;border-radius:10px;padding:10px 12px;animation:fade .3s ease">
+                <div style="color:#067647;font-size:13px;font-weight:800">✓</div>
+                <div style="flex:1;font-size:12.5px;color:#065F46;font-weight:600">Filled from your current location</div>
+                <sc-if value="{{ showChangeCta }}">
+                  <div onClick="{{ startLocation }}" style="font-size:12px;font-weight:700;color:#067647;cursor:pointer">Change</div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ denied }}">
+              <div style="margin-top:14px;display:flex;align-items:center;gap:9px;background:#F7F8FA;border:1px solid #E4E7EC;border-radius:10px;padding:11px 12px">
+                <div style="color:#98A2B3;font-size:13px">◎</div>
+                <div style="flex:1;font-size:12.5px;color:#667085;line-height:1.35">Location is off. No problem — fill it in below.</div>
+                <div onClick="{{ startLocation }}" style="font-size:12px;font-weight:700;color:#4C3FCF;cursor:pointer">Turn on</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showPinPlain }}">
+              <div style="position:relative;margin-top:16px;border:1px solid #D0D5DD;border-radius:10px;padding:14px;display:flex;align-items:center;gap:10px">
+                <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">Pin Code</div>
+                <div style="flex:1;font-size:14.5px;font-weight:500;color:{{ pinColor }}">{{ pin }}</div>
+                <sc-if value="{{ showChip }}">
+                  <div onClick="{{ startLocation }}" style="display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:7px;background:#EEF0FF;color:#4C3FCF;font-size:11.5px;font-weight:800;cursor:pointer;white-space:nowrap">◎ LOCATE</div>
+                </sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showPinSide }}">
+              <div style="position:relative;margin-top:16px;border:1px solid #D0D5DD;border-radius:10px;padding:0 0 0 14px;display:flex;align-items:stretch;min-height:50px">
+                <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">Pin Code</div>
+                <div style="flex:1;display:flex;align-items:center;font-size:14.5px;font-weight:500;color:{{ pinColor }}">{{ pin }}</div>
+                <sc-if value="{{ showPinHelp }}">
+                  <div onClick="{{ startLocation }}" style="display:flex;align-items:center;gap:6px;padding:0 14px;border-left:1px solid #E4E7EC;color:#4C3FCF;font-size:12.5px;font-weight:800;cursor:pointer;white-space:nowrap">
+                    <span style="font-size:13px">◎</span>Find my PIN
+                  </div>
+                </sc-if>
+              </div>
+              <sc-if value="{{ showPinHelp }}">
+                <div style="font-size:11.5px;color:#98A2B3;font-weight:600;margin-top:7px;padding-left:2px">Don't remember your PIN code? We'll find it from your location.</div>
+              </sc-if>
+            </sc-if>
+
+            <div style="position:relative;margin-top:16px;border:1px solid {{ houseBorder }};border-radius:10px;padding:14px;min-height:74px">
+              <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">House No., Floor, Street</div>
+              <div style="font-size:14.5px;color:#98A2B3;font-weight:500">{{ housePlaceholder }}</div>
+            </div>
+            <sc-if value="{{ filled }}">
+              <div style="font-size:11.5px;color:#4C3FCF;font-weight:600;margin-top:6px;padding-left:2px">Just this one left — add your house or flat number</div>
+            </sc-if>
+
+            <div style="position:relative;margin-top:16px;border:1px solid #D0D5DD;border-radius:10px;padding:14px">
+              <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#667085;font-weight:600">Locality / Town</div>
+              <div style="font-size:14.5px;font-weight:500;color:{{ pinColor }}">{{ locality }}</div>
+            </div>
+
+            <div style="position:relative;margin-top:16px;border:1px solid #D0D5DD;border-radius:10px;padding:14px">
+              <div style="font-size:14.5px;color:#98A2B3;font-weight:500">Landmark (optional)</div>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-top:16px;margin-bottom:8px">
+              <div style="flex:1;position:relative;border:1px solid #E4E7EC;background:#F7F8FA;border-radius:10px;padding:14px">
+                <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#98A2B3;font-weight:600">City</div>
+                <div style="font-size:14.5px;color:#667085;font-weight:500">{{ city }}</div>
+              </div>
+              <div style="flex:1;position:relative;border:1px solid #E4E7EC;background:#F7F8FA;border-radius:10px;padding:14px">
+                <div style="position:absolute;top:-7px;left:11px;background:#fff;padding:0 5px;font-size:10.5px;color:#98A2B3;font-weight:600">State</div>
+                <div style="font-size:14.5px;color:#667085;font-weight:500">{{ state }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:12px 16px 20px;border-top:1px solid #F0F1F4;background:#fff">
+          <div onClick="{{ save }}" style="height:52px;border-radius:12px;background:#16181D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15.5px;font-weight:700;cursor:pointer">Save Address</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showScrim }}">
+      <div style="position:absolute;inset:0;background:rgba(16,24,40,.55);animation:fade .2s ease"></div>
+    </sc-if>
+
+    <sc-if value="{{ isRationale }}">
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;padding:22px 20px 24px;animation:sheetUp .28s cubic-bezier(.2,.8,.2,1)">
+        <div style="width:46px;height:46px;border-radius:13px;background:#EEF0FF;display:flex;align-items:center;justify-content:center;color:#4C3FCF;font-size:20px;font-weight:700">◎</div>
+        <div style="font-size:19px;font-weight:800;letter-spacing:-.3px;margin-top:14px;line-height:1.25">Let us fill your address for you</div>
+        <div style="font-size:13.5px;color:#667085;line-height:1.5;margin-top:8px;text-wrap:pretty">We'll read your location once to get the pin code, locality and city. Nothing else, and only when you tap this.</div>
+        <div onClick="{{ toOs }}" style="height:52px;border-radius:12px;background:#16181D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15.5px;font-weight:700;cursor:pointer;margin-top:20px">Continue</div>
+        <div onClick="{{ closeSheet }}" style="height:44px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#667085;cursor:pointer;margin-top:4px">I'll type it myself</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isOs }}">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 34px">
+        <div style="width:100%;background:#F7F7F8;border-radius:14px;overflow:hidden;animation:pop .18s ease;font-family:-apple-system,'SF Pro Text',Manrope,sans-serif">
+          <div style="padding:19px 18px 16px;text-align:center">
+            <div style="font-size:15px;font-weight:700;color:#000;line-height:1.3">Allow “PW” to use your location?</div>
+            <div style="font-size:12.5px;color:#3C3C43;line-height:1.4;margin-top:7px">Your delivery address will be filled in automatically.</div>
+            <div style="margin-top:14px;height:78px;border-radius:9px;background:linear-gradient(140deg,#E8EFE6,#DDE7E3);position:relative;overflow:hidden">
+              <div style="position:absolute;left:0;right:0;top:30px;height:5px;background:#F2E3B8"></div>
+              <div style="position:absolute;top:0;bottom:0;left:120px;width:5px;background:#F2E3B8"></div>
+              <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:16px;height:16px;border-radius:50%;background:#3478F6;box-shadow:0 0 0 7px rgba(52,120,246,.25)"></div>
+            </div>
+          </div>
+          <div style="height:1px;background:#D4D4D8"></div>
+          <div onClick="{{ allow }}" style="height:45px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#007AFF;font-weight:600;cursor:pointer">Allow Once</div>
+          <div style="height:1px;background:#D4D4D8"></div>
+          <div onClick="{{ allow }}" style="height:45px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#007AFF;font-weight:600;cursor:pointer">Allow While Using App</div>
+          <div style="height:1px;background:#D4D4D8"></div>
+          <div onClick="{{ deny }}" style="height:45px;display:flex;align-items:center;justify-content:center;font-size:15px;color:#007AFF;cursor:pointer">Don't Allow</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isServiceable }}">
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;padding:22px 20px 24px;animation:sheetUp .28s cubic-bezier(.2,.8,.2,1)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:42px;height:42px;border-radius:12px;background:#ECFDF3;display:flex;align-items:center;justify-content:center;color:#067647;font-size:19px;font-weight:800">✓</div>
+          <div>
+            <div style="font-size:16.5px;font-weight:800;letter-spacing:-.2px">We deliver to 203001</div>
+            <div style="font-size:13px;color:#667085;margin-top:2px">Sant Raj Nagar, Bulandshahr</div>
+          </div>
+        </div>
+        <div style="margin-top:16px;border:1px solid #E4E7EC;border-radius:12px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:13px;color:#475467">Expected delivery</div>
+          <div style="font-size:13px;font-weight:700">3–5 days</div>
+        </div>
+        <div onClick="{{ done }}" style="height:52px;border-radius:12px;background:#16181D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:15.5px;font-weight:700;cursor:pointer;margin-top:16px">Address saved</div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:380,&quot;height&quot;:800},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;],&quot;default&quot;:&quot;a&quot;,&quot;tsType&quot;:&quot;'a' | 'b' | 'c'&quot;}}">
+class Component extends DCLogic {
+  state = { screen: null, fetching: false, filled: false, denied: false, reminder: false, savedNew: false };
+
+  get isB() { return this.props.variant === 'b'; }
+  get isC() { return this.props.variant === 'c'; }
+  get scr() { return this.state.screen || (this.isC ? 'form' : 'list'); }
+
+  set(p) { this.setState(p); }
+
+  startLocation = () => {
+    this.set({ screen: (this.isB || this.isC) ? 'os' : 'rationale' });
+  };
+
+  fetch = () => {
+    this.set({ screen: 'form', fetching: true, denied: false });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ fetching: false, filled: true }), 1400);
+  };
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  renderVals() {
+    const s = this.state, b = this.isB, c = this.isC, cur = this.scr;
+    const titles = { list: 'Select Delivery Address', form: 'Add New Address' };
+    const base = cur === 'list' ? 'list' : 'form';
+    return {
+      isList: base === 'list',
+      isForm: base === 'form',
+      isRationale: cur === 'rationale',
+      isOs: cur === 'os',
+      isServiceable: cur === 'service',
+      showScrim: cur === 'rationale' || cur === 'os' || cur === 'service',
+      title: titles[base],
+      fetching: s.fetching,
+      filled: s.filled && !s.fetching,
+      denied: s.denied && !s.filled && !s.fetching,
+      reminder: s.reminder,
+      savedNew: s.savedNew,
+      showCard: !b && !c && !s.fetching && !s.filled && !s.denied,
+      showBanner: b && !s.filled && !s.fetching,
+      showChip: b && !s.filled && !s.fetching,
+      showChangeCta: !c,
+      showPinPlain: !c,
+      showPinSide: c,
+      showPinHelp: c && !s.filled && !s.fetching,
+      pin: s.filled ? '203001' : 'Enter 6-digit pin code',
+      locality: s.filled ? 'Sant Raj Nagar' : 'Area, colony or village',
+      city: s.filled ? 'Bulandshahr' : 'Auto-filled',
+      state: s.filled ? 'Uttar Pradesh' : 'Auto-filled',
+      pinColor: s.filled ? '#101828' : '#98A2B3',
+      houseBorder: s.filled ? '#4C3FCF' : '#D0D5DD',
+      housePlaceholder: 'e.g. H. 134, Girdhari Nagar',
+      addresses: [
+        { label: 'Hostel', line: 'Room 214, Shanti Niketan Boys Hostel, Meerut Division, Uttar Pradesh 250001' },
+        { label: 'Coaching centre', line: 'PW Vidyapeeth, Sector 55, Noida, Uttar Pradesh 201301' }
+      ],
+      back: () => this.set({ screen: 'list' }),
+      goForm: () => this.set({ screen: 'form', filled: false, denied: false }),
+      startLocation: this.startLocation,
+      askAgain: () => { this.set({ reminder: false, screen: 'form', denied: false }); setTimeout(() => this.set({ screen: 'os' }), 120); },
+      dismissReminder: () => this.set({ reminder: false }),
+      toOs: () => this.set({ screen: 'os' }),
+      closeSheet: () => this.set({ screen: 'form' }),
+      allow: this.fetch,
+      deny: () => this.set({ screen: 'form', denied: true, filled: false, fetching: false, reminder: true }),
+      save: () => this.set({ screen: 'service' }),
+      done: () => this.set({ screen: 'list', savedNew: true, filled: false, denied: false })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

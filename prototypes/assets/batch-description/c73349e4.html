@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div data-cmp-id="{{ cmpId }}" style="background:#fff;border-radius:18px;border:1px solid #E7E9F0;overflow:hidden">
+  <div style="position:relative;padding:13px 11px 4px">
+    <div style="position:absolute;top:13px;bottom:8px;width:58px;box-sizing:border-box;right:{{ hiRight }};background:linear-gradient(180deg,#F1F0FF 0%,#FAFAFF 100%);border:1.5px solid #5A4FCF;border-radius:12px;transition:right .22s cubic-bezier(.4,0,.2,1);pointer-events:none"></div>
+    <div style="position:relative;display:grid;grid-template-columns:1fr 58px 58px 58px;align-items:end;padding-bottom:8px">
+      <div style="padding:0 10px 9px 0">
+        <div style="font:700 15px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Choose your plan</div>
+      </div>
+      <div onClick="{{ pick0 }}" style="text-align:center;padding:8px 2px;cursor:pointer">
+        <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Basic</div>
+        <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:3px">₹4,999</div>
+      </div>
+      <div onClick="{{ pick1 }}" style="text-align:center;padding:8px 2px;cursor:pointer">
+        <div style="font:700 8px/1 'Plus Jakarta Sans',sans-serif;color:#1668E3;background:#E4EEFD;display:inline-block;padding:3px 5px;border-radius:4px;margin-bottom:4px;letter-spacing:.04em">POPULAR</div>
+        <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Infinity</div>
+        <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:3px">₹9,600</div>
+      </div>
+      <div onClick="{{ pick2 }}" style="text-align:center;padding:8px 2px;cursor:pointer">
+        <div style="font:700 8px/1 'Plus Jakarta Sans',sans-serif;color:#9A6A12;background:#FDF0D8;display:inline-block;padding:3px 5px;border-radius:4px;margin-bottom:4px;letter-spacing:.04em">BEST VALUE</div>
+        <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Pro</div>
+        <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:3px">₹20,600</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 11px">
+    <sc-for list="{{ rows }}" as="r" hint-placeholder-count="2">
+      <div data-plan-anchor="{{ r.anchorFlag }}" style="display:grid;grid-template-columns:1fr 58px 58px 58px;align-items:center;border-top:1px solid {{ r.rule }};padding:10px 0 10px 9px;margin-left:-9px;background:{{ r.bg }};box-shadow:inset 3px 0 0 {{ r.accent }};transition:background .5s ease">
+        <div style="padding-right:8px">
+          <div style="font:600 12px/1.3 'Plus Jakarta Sans',sans-serif;color:#2C3040">{{ r.title }}</div>
+          <sc-if value="{{ r.hasTag }}" hint-placeholder-val="{{ false }}">
+            <div style="display:inline-block;font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:{{ r.tagFg }};background:{{ r.tagBg }};padding:3px 5px;border-radius:4px;margin-top:5px">{{ r.tag }}</div>
+          </sc-if>
+        </div>
+        <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ r.c0 }}">{{ r.v0 }}</div>
+        <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ r.c1 }}">{{ r.v1 }}</div>
+        <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ r.c2 }}">{{ r.v2 }}</div>
+      </div>
+    </sc-for>
+
+    <div onClick="{{ toggle }}" style="margin-top:11px;text-align:center;border:1px solid #DDE0EA;border-radius:11px;padding:11px;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;cursor:pointer">{{ toggleLabel }}</div>
+  </div>
+
+  <div style="margin:12px;padding:12px;border-radius:14px;background:#0F1116;display:flex;align-items:center;gap:10px">
+    <div style="flex:1">
+      <div style="font:700 12px/1.35 'Plus Jakarta Sans',sans-serif;color:#fff">{{ deltaTitle }}</div>
+      <div style="font:500 10px/1.35 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;margin-top:2px">{{ deltaSub }}</div>
+    </div>
+    <div onClick="{{ upgrade }}" style="font:800 11px/1 'Plus Jakarta Sans',sans-serif;color:#0F1116;background:#F5C64B;padding:9px 12px;border-radius:9px;cursor:pointer;white-space:nowrap">{{ deltaCta }}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:362,&quot;height&quot;:560},&quot;plan&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;},&quot;defaultOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;onSelect&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(n:number)=&gt;void&quot;}}">
+// [title, basic, infinity, pro, tag]
+const ROWS = [
+  ["Live & recorded lectures", 1, 1, 1, "IN EVERY PLAN"],
+  ["Lecturewise PDF notes", 1, 1, 1, ""],
+  ["DPPs with video solutions", 1, 1, 1, ""],
+  ["Regular live tests & AITS", 1, 1, 1, ""],
+  ["3 months revision classes", 1, 1, 1, ""],
+  ["Community access", 1, 1, 1, ""],
+  ["Khazaana question bank", 0, 1, 1, "NEW IN INFINITY"],
+  ["Sahayak doubt solving", 0, 1, 1, ""],
+  ["Online test series", 0, 1, 1, ""],
+  ["Printed books & material", 0, 1, 1, ""],
+  ["PW goodies kit", 0, 1, 1, ""],
+  ["Saarthi personal guide", 0, 0, 1, "ONLY IN PRO"],
+  ["1:1 mentorship calls", 0, 0, 1, ""],
+  ["Offline test series + Test Pass", 0, 0, 1, ""]
+];
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: props.defaultOpen === true, flash: false };
+    this.cid = "cmp" + Math.random().toString(36).slice(2, 8);
+  }
+
+  componentDidUpdate(prev, prevState) {
+    if (prev.plan !== this.props.plan) {
+      clearTimeout(this._t);
+      this._t = setTimeout(() => this.setState({ flash: false }), 1800);
+      this.setState({ open: true, flash: true }, () => this.scrollToAnchor());
+      return;
+    }
+    if (!prevState.open && this.state.open) this.scrollToAnchor();
+  }
+
+  scrollToAnchor() {
+    clearTimeout(this._s);
+    this._s = setTimeout(() => {
+      const el = document.querySelector('[data-cmp-id="' + this.cid + '"] [data-plan-anchor="1"]');
+      if (!el) return;
+      let sc = el.parentElement;
+      while (sc && !/auto|scroll/.test(getComputedStyle(sc).overflowY)) sc = sc.parentElement;
+      if (!sc) return;
+      const top = el.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop;
+      const from = sc.scrollTop;
+      const to = Math.max(0, Math.min(top - 130, sc.scrollHeight - sc.clientHeight));
+      const t0 = performance.now();
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 480);
+        sc.scrollTop = from + (to - from) * (1 - Math.pow(1 - k, 3));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, 140);
+  }
+
+  componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._s); }
+
+  renderVals() {
+    const p = this.props.plan ?? 1;
+    const open = this.state.open;
+    const list = open ? ROWS : ROWS.slice(0, 2);
+    const owns = (a, b, c) => p === 0 ? a === 1 : p === 1 ? (a === 0 && b === 1) : (b === 0 && c === 1);
+    let anchored = false;
+
+    const rows = list.map(([title, a, b, c, tag]) => {
+      const pro = a === 0 && b === 0 && c === 1;
+      const mine = open && owns(a, b, c);
+      const isAnchor = mine && !anchored && (anchored = true);
+      const tint = mine
+        ? (this.state.flash ? "#EFEDFF" : "#F7F6FF")
+        : pro ? "linear-gradient(90deg,rgba(253,240,216,0) 0%,rgba(253,240,216,.5) 100%)" : "transparent";
+      const cell = (v, gold) => ({ v: v ? "✓" : "—", c: v ? (gold ? "#B07A14" : "#1B9C64") : "#C8CCD8" });
+      const c0 = cell(a, false), c1 = cell(b, false), c2 = cell(c, pro);
+      return {
+        title, hasTag: !!tag, tag,
+        tagFg: tag === "ONLY IN PRO" ? "#9A6A12" : tag === "NEW IN INFINITY" ? "#1668E3" : "#6B7183",
+        tagBg: tag === "ONLY IN PRO" ? "#FDF0D8" : tag === "NEW IN INFINITY" ? "#E4EEFD" : "#F0F1F5",
+        rule: mine ? "#DED9FA" : pro ? "#F7EFDD" : "#F0F1F5", bg: tint,
+        accent: mine ? "#5A4FCF" : "transparent",
+        anchorFlag: isAnchor ? "1" : "0",
+        v0: c0.v, c0: c0.c, v1: c1.v, c1: c1.c, v2: c2.v, c2: c2.c
+      };
+    });
+
+    const sel = (n) => () => {
+      if (n === p) {
+        clearTimeout(this._t);
+        this._t = setTimeout(() => this.setState({ flash: false }), 1800);
+        this.setState({ open: true, flash: true }, () => this.scrollToAnchor());
+        return;
+      }
+      this.props.onSelect && this.props.onSelect(n);
+    };
+    const deltas = [
+      { t: "Add Infinity for ₹384/month more", s: "Doubt solving, test series, books & goodies", c: "Upgrade", to: 1 },
+      { t: "Go Pro for ₹917/month more", s: "Saarthi guide, 1:1 mentorship, offline tests", c: "Go Pro", to: 2 },
+      { t: "You're on the most complete plan", s: "Everything Yakeen offers is included", c: "Continue", to: 2 }
+    ][p];
+
+    return {
+      cmpId: this.cid,
+      hiRight: "calc(11px + " + [116, 58, 0][p] + "px)",
+      pick0: sel(0), pick1: sel(1), pick2: sel(2),
+      rows,
+      toggleLabel: open ? "Hide items" : "+ See all " + ROWS.length + " plan items",
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      deltaTitle: deltas.t, deltaSub: deltas.s, deltaCta: deltas.c,
+      upgrade: () => this.props.onSelect && this.props.onSelect(deltas.to)
+    };
+  }
+}
+</script>
+</body>
+</html>

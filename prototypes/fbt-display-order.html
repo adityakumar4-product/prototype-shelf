@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/fbt-display-order/5a421bb4.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/fbt-display-order/9bffb304.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/fbt-display-order/cb95199f.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fbt-display-order/7ec56ff5.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fbt-display-order/e71a7cc8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fbt-display-order/98ab70a7.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fbt-display-order/a7af64af.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fbt-display-order/744f83bd.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fbt-display-order/d802fdcd.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fbt-display-order/63f9f500.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fbt-display-order/6c95ce2d.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fbt-display-order/cd0ea469.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  html, body { margin:0; padding:0; }
+  body { font-family: Poppins, system-ui, sans-serif; background:#F3F5F9; }
+  a { color:#4B57DC; text-decoration:none; }
+  a:hover { color:#3742C4; text-decoration:underline; }
+  input, button, select { font-family: inherit; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb { background:#CBD3E1; border-radius:8px; }
+</style>
+</helmet>
+<div style="display:flex;height:100vh;overflow:hidden;color:#17203A">
+
+  <div style="width:236px;flex:0 0 236px;background:#151C31;color:#fff;display:flex;flex-direction:column;overflow-y:auto">
+    <div style="padding:22px 20px 18px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid #232C49">
+      <div style="width:52px;height:52px;border-radius:50%;background:#2A3454;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#9FB0D8">AK</div>
+      <div style="font-size:13px;font-weight:600;margin-top:8px">Aditya Kumar — Product</div>
+      <div style="font-size:11px;color:#7E8CB0">aditya.kumar4@pw.live</div>
+    </div>
+    <div style="padding:12px 0;display:flex;flex-direction:column;gap:2px">
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Configuration</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Users</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Application</div>
+      <div style="padding:11px 20px;font-size:13px;color:#fff;font-weight:500">Management</div>
+      <div style="display:flex;flex-direction:column;gap:2px;padding:2px 10px">
+        <div style="padding:10px 14px;border-radius:8px;background:#232C49;font-size:13px;font-weight:500">Batch Category</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Mentors</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Margdarshak</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Orders</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Saarthi</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Testimonial</div>
+        <div style="padding:10px 14px;font-size:13px;color:#AEB9D6">Test Pass</div>
+      </div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Doubt</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">All Cohorts</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Batch Automation</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Video Player</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">Studio</div>
+      <div style="padding:11px 20px;font-size:13px;color:#AEB9D6">OTT</div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;overflow:hidden">
+    <div style="height:62px;flex:0 0 62px;background:#fff;border-bottom:1px solid #E3E8F1;display:flex;align-items:center;gap:16px;padding:0 24px">
+      <div style="display:flex;flex-direction:column;gap:4px;width:18px">
+        <div style="height:2px;background:#17203A"></div>
+        <div style="height:2px;background:#17203A"></div>
+        <div style="height:2px;background:#17203A"></div>
+      </div>
+      <div style="font-size:19px;font-weight:600">Yakeen 2.0 2027</div>
+      <div style="flex:1"></div>
+      <div style="font-size:12px;color:#6B7690">FBT Mapping</div>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:18px 24px 96px">
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#6B7690;margin-bottom:14px">
+        <span style="color:#4B57DC">Batch Category</span>
+        <span>›</span>
+        <span style="color:#4B57DC">Default Category</span>
+        <span>›</span>
+        <span style="color:#17203A">Yakeen 2.0 2027</span>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E3E8F1;border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <div style="display:flex;background:#F0F2F8;border-radius:9px;padding:3px;gap:3px">
+          <button sc-camel-on-click="{{ setGrouped }}" style="border:0;cursor:pointer;padding:8px 14px;border-radius:7px;font-size:12.5px;font-weight:500;background:{{ tabGroupedBg }};color:{{ tabGroupedFg }};box-shadow:{{ tabGroupedShadow }}">Grouped by plan</button>
+          <button sc-camel-on-click="{{ setTwoPane }}" style="border:0;cursor:pointer;padding:8px 14px;border-radius:7px;font-size:12.5px;font-weight:500;background:{{ tabPaneBg }};color:{{ tabPaneFg }};box-shadow:{{ tabPaneShadow }}">Plan explorer</button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;border:1px solid #E3E8F1;border-radius:9px;padding:0 12px;height:38px;min-width:280px;flex:1;max-width:420px">
+          <svg width="14" height="14" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="#8E99B4" stroke-width="1.6"></circle><path d="M10.6 10.6L14 14" stroke="#8E99B4" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          <input value="{{ search }}" sc-camel-on-change="{{ onSearch }}" placeholder="Search FBT item, plan name or plan ID" style="border:0;outline:0;font-size:13px;flex:1;color:#17203A;background:transparent">
+        </div>
+
+        <label style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:#4A5470;cursor:pointer">
+          <input type="checkbox" checked="{{ onlyClashes }}" sc-camel-on-change="{{ toggleOnlyClashes }}" style="accent-color:#E0912B;width:15px;height:15px">
+          Only order clashes
+        </label>
+
+        <div style="flex:1"></div>
+        <div style="font-size:12px;color:#6B7690">{{ summary }}</div>
+        <button sc-camel-on-click="{{ openCreate }}" style="border:0;cursor:pointer;background:#4B57DC;color:#fff;font-size:13px;font-weight:500;padding:10px 16px;border-radius:9px" style-hover="background:#3742C4">+ New mapping</button>
+      </div>
+
+      <sc-if value="{{ isGrouped }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid {{ g.borderColor }};border-radius:12px;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:{{ g.headBg }};border-bottom:1px solid #EDF0F6">
+                <button sc-camel-on-click="{{ g.toggle }}" style="border:0;background:transparent;cursor:pointer;font-size:13px;color:#6B7690;width:18px">{{ g.caret }}</button>
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <div style="display:flex;align-items:center;gap:9px">
+                    <span style="font-size:14.5px;font-weight:600">{{ g.name }}</span>
+                    <span style="font-size:10.5px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;padding:3px 7px;border-radius:5px;background:{{ g.tagBg }};color:{{ g.tagFg }}">{{ g.tag }}</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#8E99B4">
+                    <span>{{ g.idLabel }}</span>
+                    <button sc-camel-on-click="{{ g.copyId }}" style="border:0;background:transparent;cursor:pointer;color:#4B57DC;font-size:11.5px;padding:0">{{ g.copyLabel }}</button>
+                  </div>
+                </div>
+                <div style="flex:1"></div>
+                <sc-if value="{{ g.hasClash }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;align-items:center;gap:6px;background:#FDF3E2;color:#9A6412;border:1px solid #F2DDB4;font-size:11.5px;font-weight:500;padding:5px 10px;border-radius:7px">
+                    <span style="width:6px;height:6px;border-radius:50%;background:#E0912B"></span>
+                    {{ g.clashLabel }}
+                  </div>
+                </sc-if>
+                <div style="font-size:12px;color:#6B7690">{{ g.countLabel }}</div>
+                <sc-if value="{{ g.reordering }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;gap:8px">
+                    <button sc-camel-on-click="{{ g.cancel }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:12.5px;padding:8px 14px;border-radius:8px;color:#4A5470">Cancel</button>
+                    <button sc-camel-on-click="{{ g.save }}" style="border:0;background:#17203A;color:#fff;cursor:pointer;font-size:12.5px;font-weight:500;padding:8px 14px;border-radius:8px">Save order</button>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ g.idle }}" hint-placeholder-val="{{ true }}">
+                  <button sc-camel-on-click="{{ g.startReorder }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:12.5px;padding:8px 14px;border-radius:8px;color:#4A5470" style-hover="border-color:#4B57DC;color:#4B57DC">Reorder</button>
+                </sc-if>
+              </div>
+
+              <sc-if value="{{ g.open }}" hint-placeholder-val="{{ true }}">
+                <div style="overflow-x:auto">
+                  <div style="display:grid;grid-template-columns:38px 46px minmax(220px,1fr) 96px 132px 168px 78px 108px;min-width:960px;align-items:center;gap:10px;padding:10px 16px;font-size:10.5px;font-weight:600;letter-spacing:.5px;color:#8E99B4;text-transform:uppercase;background:#FAFBFD;border-bottom:1px solid #EDF0F6">
+                    <div></div>
+                    <div>S.No</div>
+                    <div>FBT item</div>
+                    <div>Source</div>
+                    <div>Display order</div>
+                    <div>Plan</div>
+                    <div>Status</div>
+                    <div>Actions</div>
+                  </div>
+                  <sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="4">
+                    <div style="display:grid;grid-template-columns:38px 46px minmax(220px,1fr) 96px 132px 168px 78px 108px;min-width:960px;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #F1F4F9;background:{{ r.bg }}" style-hover="background:#F7F9FC">
+                      <input type="checkbox" checked="{{ r.selected }}" sc-camel-on-change="{{ r.toggleSel }}" style="accent-color:#4B57DC;width:15px;height:15px">
+                      <div style="font-size:12.5px;color:#8E99B4">{{ r.sno }}</div>
+                      <div style="min-width:0">
+                        <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="{{ r.title }}">{{ r.title }}</div>
+                        <div style="font-size:11px;color:#8E99B4;margin-top:2px">{{ r.sub }}</div>
+                      </div>
+                      <div>
+                        <span style="font-size:10.5px;font-weight:500;padding:4px 8px;border-radius:5px;background:{{ r.typeBg }};color:{{ r.typeFg }}">{{ r.typeLabel }}</span>
+                      </div>
+                      <div style="display:flex;align-items:center;gap:6px">
+                        <input type="number" value="{{ r.order }}" sc-camel-on-change="{{ r.onOrder }}" style="width:52px;height:32px;text-align:center;font-size:13px;font-weight:600;color:#17203A;border:1px solid {{ r.orderBorder }};border-radius:7px;background:{{ r.orderBg }};outline:0" style-focus="border-color:#4B57DC">
+                        <sc-if value="{{ r.reordering }}" hint-placeholder-val="{{ true }}">
+                          <div style="display:flex;flex-direction:column;gap:2px">
+                            <button sc-camel-on-click="{{ r.up }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;width:22px;height:15px;border-radius:4px;font-size:8px;line-height:1;color:#4A5470;padding:0">▲</button>
+                            <button sc-camel-on-click="{{ r.down }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;width:22px;height:15px;border-radius:4px;font-size:8px;line-height:1;color:#4A5470;padding:0">▼</button>
+                          </div>
+                        </sc-if>
+                        <sc-if value="{{ r.clash }}" hint-placeholder-val="{{ true }}">
+                          <span style="font-size:10.5px;font-weight:500;color:#9A6412;background:#FDF3E2;border:1px solid #F2DDB4;padding:3px 6px;border-radius:5px">clash</span>
+                        </sc-if>
+                      </div>
+                      <div style="min-width:0">
+                        <div style="font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.planName }}</div>
+                        <div style="font-size:10.5px;color:#A3ACC4;font-family:ui-monospace,monospace" title="{{ r.planId }}">{{ r.planIdShort }}</div>
+                      </div>
+                      <div>
+                        <span style="font-size:11.5px;color:{{ r.statusFg }};display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:{{ r.statusFg }}"></span>{{ r.status }}</span>
+                      </div>
+                      <div style="display:flex;gap:6px">
+                        <button sc-camel-on-click="{{ r.edit }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:11.5px;padding:6px 10px;border-radius:7px;color:#4A5470" style-hover="border-color:#4B57DC;color:#4B57DC">Edit</button>
+                        <button sc-camel-on-click="{{ r.remove }}" style="border:1px solid #F6DCE4;background:#fff;cursor:pointer;font-size:11.5px;padding:6px 10px;border-radius:7px;color:#C7275C" style-hover="background:#FDF0F4">Remove</button>
+                      </div>
+                    </div>
+                  </sc-for>
+                  <sc-if value="{{ g.empty }}" hint-placeholder-val="{{ true }}">
+                    <div style="padding:34px 16px;display:flex;flex-direction:column;align-items:center;gap:10px">
+                      <div style="width:38px;height:38px;border-radius:10px;border:1.5px dashed #CBD3E1"></div>
+                      <div style="font-size:13px;font-weight:500">No FBT items mapped to this plan</div>
+                      <div style="font-size:12px;color:#8E99B4;text-align:center;max-width:340px;text-wrap:pretty">{{ g.emptyHint }}</div>
+                      <button sc-camel-on-click="{{ g.addHere }}" style="border:0;background:#EEF0FC;color:#4B57DC;cursor:pointer;font-size:12.5px;font-weight:500;padding:9px 15px;border-radius:8px;margin-top:2px">Attach FBT item</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isTwoPane }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:288px minmax(0,1fr);gap:16px;align-items:start">
+          <div style="background:#fff;border:1px solid #E3E8F1;border-radius:12px;overflow:hidden">
+            <div style="padding:13px 16px;font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:#8E99B4;border-bottom:1px solid #EDF0F6">Scope</div>
+            <sc-for list="{{ scopes }}" as="s" hint-placeholder-count="4">
+              <div sc-camel-on-click="{{ s.select }}" style="padding:13px 16px;border-bottom:1px solid #F1F4F9;cursor:pointer;display:flex;align-items:center;gap:10px;background:{{ s.bg }};border-left:3px solid {{ s.bar }}" style-hover="background:#F7F9FC">
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:13px;font-weight:{{ s.weight }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.name }}</div>
+                  <div style="font-size:10.5px;color:#A3ACC4;font-family:ui-monospace,monospace;margin-top:2px">{{ s.idShort }}</div>
+                </div>
+                <sc-if value="{{ s.hasClash }}" hint-placeholder-val="{{ true }}">
+                  <span style="width:7px;height:7px;border-radius:50%;background:#E0912B"></span>
+                </sc-if>
+                <div style="font-size:11.5px;color:#6B7690;background:#F0F2F8;padding:3px 8px;border-radius:20px">{{ s.count }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="background:#fff;border:1px solid #E3E8F1;border-radius:12px;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:12px;padding:15px 18px;border-bottom:1px solid #EDF0F6">
+              <div style="min-width:0">
+                <div style="font-size:15px;font-weight:600">{{ pane.name }}</div>
+                <div style="font-size:11.5px;color:#8E99B4;margin-top:3px">{{ pane.meta }}</div>
+              </div>
+              <div style="flex:1"></div>
+              <sc-if value="{{ pane.reordering }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:8px">
+                  <button sc-camel-on-click="{{ pane.cancel }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:12.5px;padding:8px 14px;border-radius:8px;color:#4A5470">Cancel</button>
+                  <button sc-camel-on-click="{{ pane.save }}" style="border:0;background:#17203A;color:#fff;cursor:pointer;font-size:12.5px;font-weight:500;padding:8px 14px;border-radius:8px">Save order</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ pane.idle }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:8px">
+                  <button sc-camel-on-click="{{ pane.startReorder }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:12.5px;padding:8px 14px;border-radius:8px;color:#4A5470">Reorder</button>
+                  <button sc-camel-on-click="{{ pane.addHere }}" style="border:0;background:#4B57DC;color:#fff;cursor:pointer;font-size:12.5px;font-weight:500;padding:8px 14px;border-radius:8px">Attach item</button>
+                </div>
+              </sc-if>
+            </div>
+            <div style="overflow-x:auto">
+            <div style="display:grid;grid-template-columns:38px 46px minmax(220px,1fr) 96px 132px 78px 108px;min-width:800px;align-items:center;gap:10px;padding:10px 18px;font-size:10.5px;font-weight:600;letter-spacing:.5px;color:#8E99B4;text-transform:uppercase;background:#FAFBFD;border-bottom:1px solid #EDF0F6">
+              <div></div>
+              <div>S.No</div>
+              <div>FBT item</div>
+              <div>Source</div>
+              <div>Display order</div>
+              <div>Status</div>
+              <div>Actions</div>
+            </div>
+            <sc-for list="{{ pane.rows }}" as="r" hint-placeholder-count="5">
+              <div style="display:grid;grid-template-columns:38px 46px minmax(220px,1fr) 96px 132px 78px 108px;min-width:800px;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #F1F4F9;background:{{ r.bg }}" style-hover="background:#F7F9FC">
+                <input type="checkbox" checked="{{ r.selected }}" sc-camel-on-change="{{ r.toggleSel }}" style="accent-color:#4B57DC;width:15px;height:15px">
+                <div style="font-size:12.5px;color:#8E99B4">{{ r.sno }}</div>
+                <div style="min-width:0">
+                  <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="{{ r.title }}">{{ r.title }}</div>
+                  <div style="font-size:11px;color:#8E99B4;margin-top:2px">{{ r.sub }}</div>
+                </div>
+                <div>
+                  <span style="font-size:10.5px;font-weight:500;padding:4px 8px;border-radius:5px;background:{{ r.typeBg }};color:{{ r.typeFg }}">{{ r.typeLabel }}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <input type="number" value="{{ r.order }}" sc-camel-on-change="{{ r.onOrder }}" style="width:52px;height:32px;text-align:center;font-size:13px;font-weight:600;color:#17203A;border:1px solid {{ r.orderBorder }};border-radius:7px;background:{{ r.orderBg }};outline:0" style-focus="border-color:#4B57DC">
+                  <sc-if value="{{ r.reordering }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:2px">
+                      <button sc-camel-on-click="{{ r.up }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;width:22px;height:15px;border-radius:4px;font-size:8px;line-height:1;color:#4A5470;padding:0">▲</button>
+                      <button sc-camel-on-click="{{ r.down }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;width:22px;height:15px;border-radius:4px;font-size:8px;line-height:1;color:#4A5470;padding:0">▼</button>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ r.clash }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:10.5px;font-weight:500;color:#9A6412;background:#FDF3E2;border:1px solid #F2DDB4;padding:3px 6px;border-radius:5px">clash</span>
+                  </sc-if>
+                </div>
+                <div>
+                  <span style="font-size:11.5px;color:{{ r.statusFg }};display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:{{ r.statusFg }}"></span>{{ r.status }}</span>
+                </div>
+                <div style="display:flex;gap:6px">
+                  <button sc-camel-on-click="{{ r.edit }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:11.5px;padding:6px 10px;border-radius:7px;color:#4A5470" style-hover="border-color:#4B57DC;color:#4B57DC">Edit</button>
+                  <button sc-camel-on-click="{{ r.remove }}" style="border:1px solid #F6DCE4;background:#fff;cursor:pointer;font-size:11.5px;padding:6px 10px;border-radius:7px;color:#C7275C" style-hover="background:#FDF0F4">Remove</button>
+                </div>
+              </div>
+            </sc-for>
+            </div>
+            <sc-if value="{{ pane.empty }}" hint-placeholder-val="{{ true }}">
+              <div style="padding:52px 18px;display:flex;flex-direction:column;align-items:center;gap:10px">
+                <div style="width:38px;height:38px;border-radius:10px;border:1.5px dashed #CBD3E1"></div>
+                <div style="font-size:13px;font-weight:500">Nothing mapped here yet</div>
+                <div style="font-size:12px;color:#8E99B4;text-align:center;max-width:360px;text-wrap:pretty">{{ pane.emptyHint }}</div>
+                <button sc-camel-on-click="{{ pane.addHere }}" style="border:0;background:#EEF0FC;color:#4B57DC;cursor:pointer;font-size:12.5px;font-weight:500;padding:9px 15px;border-radius:8px;margin-top:2px">Attach FBT item</button>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{ bulk.on }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#17203A;color:#fff;border-radius:12px;padding:12px 14px 12px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 14px 34px rgba(15,22,45,.28);z-index:40">
+      <div style="font-size:13px;font-weight:500">{{ bulk.label }}</div>
+      <div style="width:1px;height:22px;background:#33405F"></div>
+      <div style="display:flex;align-items:center;gap:7px;font-size:12.5px;color:#C7D0E6">
+        Set order
+        <input type="number" value="{{ bulk.value }}" sc-camel-on-change="{{ bulk.onValue }}" style="width:52px;height:30px;text-align:center;border:1px solid #33405F;background:#1E2843;color:#fff;border-radius:7px;font-size:12.5px;outline:0">
+        <button sc-camel-on-click="{{ bulk.apply }}" style="border:0;background:#4B57DC;color:#fff;cursor:pointer;font-size:12.5px;font-weight:500;padding:7px 12px;border-radius:7px">Apply</button>
+      </div>
+      <button sc-camel-on-click="{{ bulk.sequence }}" style="border:1px solid #33405F;background:transparent;color:#C7D0E6;cursor:pointer;font-size:12.5px;padding:7px 12px;border-radius:7px">Renumber 1…n</button>
+      <button sc-camel-on-click="{{ bulk.deactivate }}" style="border:1px solid #33405F;background:transparent;color:#C7D0E6;cursor:pointer;font-size:12.5px;padding:7px 12px;border-radius:7px">Deactivate</button>
+      <button sc-camel-on-click="{{ bulk.remove }}" style="border:0;background:#33405F;color:#FF9EBB;cursor:pointer;font-size:12.5px;padding:7px 12px;border-radius:7px">Remove</button>
+      <button sc-camel-on-click="{{ bulk.clear }}" style="border:0;background:transparent;color:#8E99B4;cursor:pointer;font-size:16px;padding:0 4px">×</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ sheet.on }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed;inset:0;z-index:50;display:flex;justify-content:flex-end">
+      <div sc-camel-on-click="{{ sheet.close }}" style="position:absolute;inset:0;background:rgba(21,28,49,.34)"></div>
+      <div style="position:relative;width:520px;max-width:94vw;background:#fff;height:100%;display:flex;flex-direction:column;box-shadow:-18px 0 46px rgba(15,22,45,.2)">
+        <div style="padding:20px 22px;border-bottom:1px solid #EDF0F6;display:flex;align-items:flex-start;gap:12px">
+          <div>
+            <div style="font-size:17px;font-weight:600">{{ sheet.title }}</div>
+            <div style="font-size:12px;color:#8E99B4;margin-top:4px">{{ sheet.subtitle }}</div>
+          </div>
+          <div style="flex:1"></div>
+          <button sc-camel-on-click="{{ sheet.close }}" style="border:0;background:#F0F2F8;cursor:pointer;width:30px;height:30px;border-radius:8px;color:#4A5470;font-size:15px">×</button>
+        </div>
+
+        <div style="flex:1;overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-size:11.5px;font-weight:600;color:#4A5470">FBT item</div>
+            <input value="{{ sheet.itemQuery }}" sc-camel-on-change="{{ sheet.onItemQuery }}" placeholder="Search catalogue…" style="height:40px;border:1px solid #E3E8F1;border-radius:9px;padding:0 12px;font-size:13px;outline:0" style-focus="border-color:#4B57DC">
+            <div style="border:1px solid #EDF0F6;border-radius:9px;max-height:154px;overflow-y:auto">
+              <sc-for list="{{ sheet.itemOptions }}" as="o" hint-placeholder-count="3">
+                <div sc-camel-on-click="{{ o.pick }}" style="padding:10px 12px;border-bottom:1px solid #F4F6FA;cursor:pointer;display:flex;align-items:center;gap:9px;background:{{ o.bg }}" style-hover="background:#F7F9FC">
+                  <span style="width:15px;height:15px;border-radius:50%;border:1.5px solid {{ o.dot }};display:flex;align-items:center;justify-content:center"><span style="width:7px;height:7px;border-radius:50%;background:{{ o.fill }}"></span></span>
+                  <span style="font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="{{ o.title }}">{{ o.title }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="font-size:11.5px;font-weight:600;color:#4A5470">Attach to</div>
+              <div style="flex:1"></div>
+              <button sc-camel-on-click="{{ sheet.toggleGlobal }}" style="border:1px solid {{ sheet.globalBorder }};background:{{ sheet.globalBg }};color:{{ sheet.globalFg }};cursor:pointer;font-size:11.5px;font-weight:500;padding:6px 11px;border-radius:7px">Global (all plans)</button>
+            </div>
+            <input value="{{ sheet.planQuery }}" sc-camel-on-change="{{ sheet.onPlanQuery }}" placeholder="Search plan by name or ID…" style="height:40px;border:1px solid #E3E8F1;border-radius:9px;padding:0 12px;font-size:13px;outline:0" style-focus="border-color:#4B57DC">
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <sc-for list="{{ sheet.planOptions }}" as="p" hint-placeholder-count="4">
+                <button sc-camel-on-click="{{ p.toggle }}" style="border:1px solid {{ p.border }};background:{{ p.bg }};color:{{ p.fg }};cursor:pointer;font-size:12px;font-weight:500;padding:8px 12px;border-radius:20px;display:flex;align-items:center;gap:7px">
+                  {{ p.name }}
+                  <span style="font-size:10px;color:{{ p.idFg }};font-family:ui-monospace,monospace">{{ p.idShort }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:14px;align-items:flex-end">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:11.5px;font-weight:600;color:#4A5470">Display order</div>
+              <input type="number" value="{{ sheet.order }}" sc-camel-on-change="{{ sheet.onOrder }}" style="width:96px;height:40px;border:1px solid #E3E8F1;border-radius:9px;padding:0 12px;font-size:14px;font-weight:600;outline:0" style-focus="border-color:#4B57DC">
+            </div>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#4A5470;cursor:pointer;height:40px">
+              <input type="checkbox" checked="{{ sheet.shift }}" sc-camel-on-change="{{ sheet.toggleShift }}" style="accent-color:#4B57DC;width:15px;height:15px">
+              Shift existing items down
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#4A5470;cursor:pointer;height:40px">
+              <input type="checkbox" checked="{{ sheet.isDefault }}" sc-camel-on-change="{{ sheet.toggleDefault }}" style="accent-color:#4B57DC;width:15px;height:15px">
+              Is default
+            </label>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:11.5px;font-weight:600;color:#4A5470">Live order preview</div>
+            <sc-for list="{{ sheet.previews }}" as="pv" hint-placeholder-count="2">
+              <div style="border:1px solid #EDF0F6;border-radius:10px;overflow:hidden">
+                <div style="padding:9px 12px;background:#FAFBFD;border-bottom:1px solid #EDF0F6;display:flex;align-items:center;gap:8px">
+                  <span style="font-size:12.5px;font-weight:600">{{ pv.name }}</span>
+                  <span style="font-size:10.5px;color:#A3ACC4;font-family:ui-monospace,monospace">{{ pv.idShort }}</span>
+                  <div style="flex:1"></div>
+                  <span style="font-size:11px;color:{{ pv.noteFg }}">{{ pv.note }}</span>
+                </div>
+                <sc-for list="{{ pv.rows }}" as="pr" hint-placeholder-count="3">
+                  <div style="display:grid;grid-template-columns:38px minmax(0,1fr) 74px;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #F4F6FA;background:{{ pr.bg }}">
+                    <div style="font-size:12px;font-weight:600;color:{{ pr.orderFg }}">{{ pr.order }}</div>
+                    <div style="font-size:12px;color:{{ pr.fg }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="{{ pr.title }}">{{ pr.title }}</div>
+                    <div style="font-size:10.5px;color:{{ pr.tagFg }};text-align:right">{{ pr.tag }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+            <sc-if value="{{ sheet.noPreview }}" hint-placeholder-val="{{ true }}">
+              <div style="border:1px dashed #DDE3EE;border-radius:10px;padding:22px;text-align:center;font-size:12px;color:#8E99B4">Pick an item and at least one plan to preview the resulting order.</div>
+            </sc-if>
+          </div>
+        </div>
+
+        <div style="padding:16px 22px;border-top:1px solid #EDF0F6;display:flex;align-items:center;gap:12px">
+          <div style="font-size:11.5px;color:#8E99B4;flex:1">{{ sheet.footNote }}</div>
+          <button sc-camel-on-click="{{ sheet.close }}" style="border:1px solid #E3E8F1;background:#fff;cursor:pointer;font-size:13px;padding:10px 16px;border-radius:9px;color:#4A5470">Cancel</button>
+          <button sc-camel-on-click="{{ sheet.submit }}" style="border:0;background:{{ sheet.submitBg }};color:#fff;cursor:{{ sheet.submitCursor }};font-size:13px;font-weight:500;padding:10px 18px;border-radius:9px">{{ sheet.submitLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ toast.on }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed;right:24px;top:78px;background:#17203A;color:#fff;font-size:12.5px;padding:11px 15px;border-radius:9px;z-index:60;box-shadow:0 10px 26px rgba(15,22,45,.25)">{{ toast.msg }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1600,&quot;height&quot;:1000},&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;grouped&quot;,&quot;twopane&quot;],&quot;default&quot;:&quot;grouped&quot;,&quot;tsType&quot;:&quot;'grouped' | 'twopane'&quot;},&quot;showPlanIds&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;flagClashes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  static PLANS = [
+    { id: 'p1', name: 'Iconic', pid: '6a699d5735b734920b2a6c6f' },
+    { id: 'p2', name: 'Lakshya', pid: '6a6347c5901bdc9dca6e532d' },
+    { id: 'p3', name: 'Aarambh', pid: '69af0ff3197fa76c2309ec4a' },
+    { id: 'p4', name: 'Yakeen Plus (Beta)', pid: '699c3bad1ce6aabb38aa7af4' }
+  ];
+  static ITEMS = [
+    { id: 'i1', t: 'Saarthi Yakeen NEET 2.0 2027' },
+    { id: 'i2', t: 'PW NEET PYQ 39 Years Biology For 2027 Exam | PYQ Deja Vu | Chapterwise and Topicwise Solutions' },
+    { id: 'i3', t: 'PW Objective NCERT Punch 5.0 Biology For NEET 2027' },
+    { id: 'i4', t: 'PW Objective NCERT Punch 5.0 Chemistry For NEET 2027' },
+    { id: 'i5', t: 'Yakeen For NEET Droppers Modules with Solutions Set of 24 Books (2026 Edition)' },
+    { id: 'i6', t: 'PW Pi OTT' },
+    { id: 'i7', t: 'Yakeen For NEET Droppers Modules with Solutions Combo Set of 24 Books' },
+    { id: 'i8', t: 'Study Tools Kit – Pens, Highlighter & Stationery Pouch' },
+    { id: 'i9', t: 'Digital Alarm Clock Table Clock for Students (MIROR Clock)' },
+    { id: 'i10', t: 'Table study Lamp for students | Rechargeable LED Desk Lamp - 011' },
+    { id: 'i11', t: '300 Pages A4 Size Spiral Binding Notebook set of 3' },
+    { id: 'i12', t: 'NAZARIYA Blue Ray Protection Glasses | UV Filter Glasses' }
+  ];
+
+  static seed() {
+    const r = [];
+    let n = 0;
+    const add = (item, plan, order, source, isDefault, status) => {
+      n += 1;
+      r.push({ k: 'm' + n, item: item, plan: plan, order: order, source: source, isDefault: !!isDefault, status: status || 'Active' });
+    };
+    add('i6', 'GLOBAL', 1, 'global', true);
+    add('i8', 'GLOBAL', 4, 'global', false);
+    add('i9', 'GLOBAL', 6, 'global', false, 'Inactive');
+    add('i1', 'p1', 1, 'plan', true);
+    add('i3', 'p1', 2, 'plan', false);
+    add('i2', 'p1', 2, 'plan', false);
+    add('i11', 'p1', 3, 'plan', false);
+    add('i6', 'p1', 4, 'global', true);
+    add('i8', 'p1', 5, 'global', false);
+    add('i4', 'p2', 1, 'plan', true);
+    add('i2', 'p2', 2, 'plan', false);
+    add('i12', 'p2', 3, 'plan', false);
+    add('i6', 'p2', 3, 'global', true);
+    add('i8', 'p2', 5, 'global', false);
+    add('i5', 'p3', 1, 'plan', true);
+    add('i7', 'p3', 2, 'plan', false);
+    add('i10', 'p3', 3, 'plan', false, 'Inactive');
+    add('i6', 'p3', 4, 'global', true);
+    add('i8', 'p3', 5, 'global', false);
+    return r;
+  }
+
+  state = {
+    rows: Component.seed(),
+    view: null,
+    search: '',
+    onlyClashes: false,
+    open: { GLOBAL: true, p1: true, p2: true, p3: false, p4: false },
+    scope: 'p1',
+    reorder: null,
+    draft: null,
+    sel: {},
+    bulkValue: 1,
+    sheet: null,
+    toast: ''
+  };
+
+  itemTitle(id) { const it = Component.ITEMS.find(x => x.id === id); return it ? it.t : id; }
+  planOf(id) { return Component.PLANS.find(p => p.id === id); }
+  short(pid) { return pid ? pid.slice(0, 8) + '…' + pid.slice(-4) : '—'; }
+
+  flash(msg) {
+    clearTimeout(this._t);
+    this.setState({ toast: msg });
+    this._t = setTimeout(() => this.setState({ toast: '' }), 2200);
+  }
+
+  liveRows() { return this.state.draft ? this.state.draft : this.state.rows; }
+
+  matches(r, scopeId) {
+    const q = this.state.search.trim().toLowerCase();
+    if (!q) return true;
+    const p = this.planOf(scopeId);
+    return (this.itemTitle(r.item).toLowerCase().indexOf(q) >= 0)
+      || (p && p.name.toLowerCase().indexOf(q) >= 0)
+      || (p && p.pid.toLowerCase().indexOf(q) >= 0)
+      || (scopeId === 'GLOBAL' && 'global'.indexOf(q) === 0);
+  }
+
+  scopeRows(scopeId) {
+    const rows = this.liveRows().filter(r => r.plan === scopeId);
+    const counts = {};
+    rows.forEach(r => { counts[r.order] = (counts[r.order] || 0) + 1; });
+    const visible = rows.filter(r => this.matches(r, scopeId))
+      .filter(r => !this.state.onlyClashes || counts[r.order] > 1)
+      .sort((a, b) => a.order - b.order || this.itemTitle(a.item).localeCompare(this.itemTitle(b.item)));
+    return { all: rows, counts: counts, visible: visible };
+  }
+
+  setOrder(k, v) {
+    const val = Math.max(1, parseInt(v, 10) || 1);
+    const apply = list => list.map(r => (r.k === k ? Object.assign({}, r, { order: val }) : r));
+    if (this.state.draft) this.setState({ draft: apply(this.state.draft) });
+    else { this.setState({ rows: apply(this.state.rows) }); this.flash('Display order updated to ' + val); }
+  }
+
+  move(scopeId, k, dir) {
+    const list = this.liveRows().filter(r => r.plan === scopeId).sort((a, b) => a.order - b.order);
+    const i = list.findIndex(r => r.k === k);
+    const j = i + dir;
+    if (i < 0 || j < 0 || j >= list.length) return;
+    const seq = list.slice();
+    seq.splice(j, 0, seq.splice(i, 1)[0]);
+    const orderMap = {};
+    seq.forEach((r, idx) => { orderMap[r.k] = idx + 1; });
+    const next = this.liveRows().map(r => (orderMap[r.k] ? Object.assign({}, r, { order: orderMap[r.k] }) : r));
+    if (this.state.draft) this.setState({ draft: next }); else this.setState({ rows: next });
+  }
+
+  buildRow(r, idx, scopeId, counts, showPlan) {
+    const clash = (this.props.flagClashes ?? true) && counts[r.order] > 1;
+    const reordering = this.state.reorder === scopeId;
+    const p = this.planOf(r.plan);
+    const isGlobalMaster = r.plan === 'GLOBAL';
+    return {
+      k: r.k,
+      sno: idx + 1 + '.',
+      title: this.itemTitle(r.item),
+      sub: isGlobalMaster ? 'Merged into ' + this.liveRows().filter(x => x.item === r.item && x.source === 'global' && x.plan !== 'GLOBAL').length + ' plans' : (r.isDefault ? 'Default selection' : 'Optional add-on'),
+      typeLabel: r.source === 'global' ? 'Global' : 'Plan',
+      typeBg: r.source === 'global' ? '#EAF1FE' : '#F0F2F8',
+      typeFg: r.source === 'global' ? '#2C5BC4' : '#5A6480',
+      order: r.order,
+      orderBorder: clash ? '#E8BE7A' : (reordering ? '#C6CDE0' : '#EDF0F6'),
+      orderBg: clash ? '#FDF7EC' : '#fff',
+      clash: clash,
+      reordering: reordering,
+      planName: isGlobalMaster ? 'All plans' : (p ? p.name : '—'),
+      planId: isGlobalMaster ? 'global' : (p ? p.pid : ''),
+      planIdShort: (this.props.showPlanIds ?? true) ? (isGlobalMaster ? 'global scope' : this.short(p && p.pid)) : '',
+      status: r.status,
+      statusFg: r.status === 'Active' ? '#2E9E63' : '#98A2B8',
+      bg: clash ? '#FFFDF8' : '#fff',
+      selected: !!this.state.sel[r.k],
+      toggleSel: () => this.setState(s => {
+        const sel = Object.assign({}, s.sel);
+        if (sel[r.k]) delete sel[r.k]; else sel[r.k] = scopeId;
+        return { sel: sel };
+      }),
+      onOrder: e => this.setOrder(r.k, e.target.value),
+      up: () => this.move(scopeId, r.k, -1),
+      down: () => this.move(scopeId, r.k, 1),
+      edit: () => this.openSheet('edit', r),
+      remove: () => { this.setState(s => ({ rows: s.rows.filter(x => x.k !== r.k) })); this.flash('Mapping removed'); },
+      showPlan: showPlan
+    };
+  }
+
+  openSheet(mode, row) {
+    const s = {
+      mode: mode,
+      item: row ? row.item : '',
+      itemQuery: '',
+      planQuery: '',
+      plans: row ? (row.plan === 'GLOBAL' ? [] : [row.plan]) : [this.state.view === 'twopane' && this.state.scope !== 'GLOBAL' ? this.state.scope : 'p1'],
+      global: row ? row.plan === 'GLOBAL' : false,
+      order: row ? row.order : 1,
+      shift: true,
+      isDefault: row ? row.isDefault : false,
+      editKey: row ? row.k : null
+    };
+    this.setState({ sheet: s });
+  }
+  patchSheet(patch) { this.setState(st => ({ sheet: Object.assign({}, st.sheet, patch) })); }
+
+  submitSheet() {
+    const s = this.state.sheet;
+    if (!s || !s.item) { this.flash('Pick an FBT item first'); return; }
+    const targets = s.global ? Component.PLANS.map(p => p.id) : s.plans;
+    if (!targets.length) { this.flash('Pick at least one plan'); return; }
+    let rows = this.state.rows.slice();
+    if (s.editKey) rows = rows.filter(r => r.k !== s.editKey);
+    let n = Date.now();
+    const source = s.global ? 'global' : 'plan';
+    if (s.global) rows.push({ k: 'g' + n, item: s.item, plan: 'GLOBAL', order: s.order, source: 'global', isDefault: s.isDefault, status: 'Active' });
+    targets.forEach(pid => {
+      if (s.shift) rows = rows.map(r => (r.plan === pid && r.order >= s.order ? Object.assign({}, r, { order: r.order + 1 }) : r));
+      n += 1;
+      rows.push({ k: 'n' + n, item: s.item, plan: pid, order: s.order, source: source, isDefault: s.isDefault, status: 'Active' });
+    });
+    this.setState({ rows: rows, sheet: null });
+    this.flash(s.editKey ? 'Mapping updated' : 'Mapped to ' + targets.length + (targets.length > 1 ? ' plans' : ' plan'));
+  }
+
+  previewFor(pid, s) {
+    const label = pid === 'GLOBAL' ? 'Global scope' : this.planOf(pid).name;
+    const idShort = pid === 'GLOBAL' ? 'applies to every plan' : this.short(this.planOf(pid).pid);
+    let list = this.state.rows.filter(r => r.plan === pid && r.k !== s.editKey)
+      .map(r => ({ order: r.order, title: this.itemTitle(r.item), tag: r.source === 'global' ? 'global' : '', moved: false }));
+    if (s.shift) list = list.map(r => (r.order >= s.order ? { order: r.order + 1, title: r.title, tag: r.tag, moved: true } : r));
+    list.push({ order: s.order, title: this.itemTitle(s.item), tag: 'new', moved: false });
+    list.sort((a, b) => a.order - b.order);
+    const shifted = list.filter(r => r.moved).length;
+    return {
+      name: label,
+      idShort: idShort,
+      note: shifted ? shifted + ' item(s) shift down' : 'no items shift',
+      noteFg: shifted ? '#9A6412' : '#8E99B4',
+      rows: list.map(r => ({
+        order: r.order,
+        title: r.title,
+        tag: r.tag === 'new' ? 'new' : (r.moved ? 'shifted' : r.tag),
+        bg: r.tag === 'new' ? '#F2F4FE' : (r.moved ? '#FFFCF6' : '#fff'),
+        fg: r.tag === 'new' ? '#2A34A8' : '#17203A',
+        orderFg: r.tag === 'new' ? '#2A34A8' : '#6B7690',
+        tagFg: r.tag === 'new' ? '#4B57DC' : (r.moved ? '#9A6412' : '#A3ACC4')
+      }))
+    };
+  }
+
+  renderVals() {
+    const st = this.state;
+    const scopeIds = ['GLOBAL'].concat(Component.PLANS.map(p => p.id));
+
+    const groups = scopeIds.map(id => {
+      const info = this.scopeRows(id);
+      const clashCount = Object.keys(info.counts).filter(o => info.counts[o] > 1).length;
+      const isG = id === 'GLOBAL';
+      const p = this.planOf(id);
+      const open = !!st.open[id];
+      const reordering = st.reorder === id;
+      return {
+        name: isG ? 'Global items' : p.name,
+        tag: isG ? 'all plans' : 'batch plan',
+        tagBg: isG ? '#EAF1FE' : '#F0F2F8',
+        tagFg: isG ? '#2C5BC4' : '#5A6480',
+        idLabel: isG ? 'Applies to every plan in this batch' : 'Plan ID ' + p.pid,
+        copyLabel: isG ? '' : 'Copy',
+        copyId: () => { if (!isG && navigator.clipboard) navigator.clipboard.writeText(p.pid); this.flash('Plan ID copied'); },
+        headBg: reordering ? '#F7F8FE' : '#fff',
+        borderColor: reordering ? '#C6CDE0' : '#E3E8F1',
+        caret: open ? '▾' : '▸',
+        open: open,
+        toggle: () => this.setState(s => ({ open: Object.assign({}, s.open, { [id]: !s.open[id] }) })),
+        hasClash: clashCount > 0,
+        clashLabel: clashCount + ' order clash' + (clashCount > 1 ? 'es' : ''),
+        countLabel: info.all.length + ' items',
+        reordering: reordering,
+        idle: !reordering,
+        startReorder: () => this.setState({ reorder: id, draft: this.state.rows.slice() }),
+        cancel: () => this.setState({ reorder: null, draft: null }),
+        save: () => { this.setState({ rows: this.state.draft, reorder: null, draft: null }); this.flash('Order saved'); },
+        empty: info.visible.length === 0,
+        emptyHint: isG ? 'Global items you add here are merged into every plan, and you can then tune each plan’s own display order.' : 'Attach a catalogue item, or let a global item cover this plan.',
+        addHere: () => { this.openSheet('create'); this.patchSheet({ plans: isG ? [] : [id], global: isG }); },
+        rows: info.visible.map((r, i) => this.buildRow(r, i, id, info.counts, true))
+      };
+    });
+
+    const scopes = scopeIds.map(id => {
+      const info = this.scopeRows(id);
+      const isG = id === 'GLOBAL';
+      const p = this.planOf(id);
+      const active = st.scope === id;
+      return {
+        name: isG ? 'Global items' : p.name,
+        idShort: isG ? 'all plans' : this.short(p.pid),
+        count: info.all.length,
+        hasClash: Object.keys(info.counts).some(o => info.counts[o] > 1),
+        bg: active ? '#F2F4FE' : '#fff',
+        bar: active ? '#4B57DC' : 'transparent',
+        weight: active ? 600 : 500,
+        select: () => this.setState({ scope: id })
+      };
+    });
+
+    const sc = st.scope;
+    const paneInfo = this.scopeRows(sc);
+    const paneIsG = sc === 'GLOBAL';
+    const panePlan = this.planOf(sc);
+    const paneClash = Object.keys(paneInfo.counts).filter(o => paneInfo.counts[o] > 1).length;
+    const pane = {
+      name: paneIsG ? 'Global items' : panePlan.name,
+      meta: (paneIsG ? 'Merged into every plan · ' : 'Plan ID ' + panePlan.pid + ' · ') + paneInfo.all.length + ' items' + (paneClash ? ' · ' + paneClash + ' order clash' : ''),
+      rows: paneInfo.visible.map((r, i) => this.buildRow(r, i, sc, paneInfo.counts, false)),
+      empty: paneInfo.visible.length === 0,
+      emptyHint: paneIsG ? 'Add a global item to push it into every plan at a chosen order.' : 'Attach a catalogue item to ' + (panePlan ? panePlan.name : 'this plan') + '.',
+      reordering: st.reorder === sc,
+      idle: st.reorder !== sc,
+      startReorder: () => this.setState({ reorder: sc, draft: this.state.rows.slice() }),
+      cancel: () => this.setState({ reorder: null, draft: null }),
+      save: () => { this.setState({ rows: this.state.draft, reorder: null, draft: null }); this.flash('Order saved'); },
+      addHere: () => { this.openSheet('create'); this.patchSheet({ plans: paneIsG ? [] : [sc], global: paneIsG }); }
+    };
+
+    const selKeys = Object.keys(st.sel);
+    const bulk = {
+      on: selKeys.length > 0,
+      label: selKeys.length + ' mapping' + (selKeys.length > 1 ? 's' : '') + ' selected',
+      value: st.bulkValue,
+      onValue: e => this.setState({ bulkValue: Math.max(1, parseInt(e.target.value, 10) || 1) }),
+      apply: () => { this.setState(s => ({ rows: s.rows.map(r => (s.sel[r.k] ? Object.assign({}, r, { order: s.bulkValue }) : r)), sel: {} })); this.flash('Display order set for selection'); },
+      sequence: () => {
+        this.setState(s => {
+          const byScope = {};
+          s.rows.forEach(r => { if (s.sel[r.k]) { byScope[r.plan] = byScope[r.plan] || []; byScope[r.plan].push(r.k); } });
+          const map = {};
+          Object.keys(byScope).forEach(pid => {
+            s.rows.filter(r => r.plan === pid).sort((a, b) => a.order - b.order).forEach((r, i) => { map[r.k] = i + 1; });
+          });
+          return { rows: s.rows.map(r => (map[r.k] ? Object.assign({}, r, { order: map[r.k] }) : r)), sel: {} };
+        });
+        this.flash('Renumbered 1…n within each affected plan');
+      },
+      deactivate: () => { this.setState(s => ({ rows: s.rows.map(r => (s.sel[r.k] ? Object.assign({}, r, { status: 'Inactive' }) : r)), sel: {} })); this.flash('Selection deactivated'); },
+      remove: () => { this.setState(s => ({ rows: s.rows.filter(r => !s.sel[r.k]), sel: {} })); this.flash('Selection removed'); },
+      clear: () => this.setState({ sel: {} })
+    };
+
+    const s = st.sheet;
+    let sheet = { on: false };
+    if (s) {
+      const iq = s.itemQuery.trim().toLowerCase();
+      const pq = s.planQuery.trim().toLowerCase();
+      const targets = s.global ? Component.PLANS.map(p => p.id) : s.plans;
+      sheet = {
+        on: true,
+        title: s.editKey ? 'Edit FBT mapping' : 'New FBT mapping',
+        subtitle: 'Yakeen 2.0 2027 · pick the item, the plans, and where it lands',
+        itemQuery: s.itemQuery,
+        onItemQuery: e => this.patchSheet({ itemQuery: e.target.value }),
+        itemOptions: Component.ITEMS.filter(it => !iq || it.t.toLowerCase().indexOf(iq) >= 0).map(it => ({
+          title: it.t,
+          bg: s.item === it.id ? '#F2F4FE' : '#fff',
+          dot: s.item === it.id ? '#4B57DC' : '#CBD3E1',
+          fill: s.item === it.id ? '#4B57DC' : 'transparent',
+          pick: () => this.patchSheet({ item: it.id })
+        })),
+        planQuery: s.planQuery,
+        onPlanQuery: e => this.patchSheet({ planQuery: e.target.value }),
+        planOptions: Component.PLANS.filter(p => !pq || p.name.toLowerCase().indexOf(pq) >= 0 || p.pid.indexOf(pq) >= 0).map(p => {
+          const on = s.global || s.plans.indexOf(p.id) >= 0;
+          return {
+            name: p.name,
+            idShort: this.short(p.pid),
+            border: on ? '#4B57DC' : '#E3E8F1',
+            bg: on ? '#F2F4FE' : '#fff',
+            fg: on ? '#2A34A8' : '#4A5470',
+            idFg: on ? '#7A85E0' : '#A3ACC4',
+            toggle: () => {
+              if (s.global) { this.patchSheet({ global: false, plans: [p.id] }); return; }
+              const next = s.plans.indexOf(p.id) >= 0 ? s.plans.filter(x => x !== p.id) : s.plans.concat([p.id]);
+              this.patchSheet({ plans: next });
+            }
+          };
+        }),
+        global: s.global,
+        globalBorder: s.global ? '#4B57DC' : '#E3E8F1',
+        globalBg: s.global ? '#4B57DC' : '#fff',
+        globalFg: s.global ? '#fff' : '#4A5470',
+        toggleGlobal: () => this.patchSheet({ global: !s.global, plans: [] }),
+        order: s.order,
+        onOrder: e => this.patchSheet({ order: Math.max(1, parseInt(e.target.value, 10) || 1) }),
+        shift: s.shift,
+        toggleShift: () => this.patchSheet({ shift: !s.shift }),
+        isDefault: s.isDefault,
+        toggleDefault: () => this.patchSheet({ isDefault: !s.isDefault }),
+        previews: s.item && targets.length ? targets.slice(0, 4).map(pid => this.previewFor(pid, s)) : [],
+        noPreview: !(s.item && targets.length),
+        footNote: s.global ? 'Global item is inserted at order ' + s.order + ' in all ' + Component.PLANS.length + ' plans; you can retune per plan afterwards.' : (targets.length ? 'Applies to ' + targets.length + ' plan(s) at order ' + s.order + '.' : 'No plan selected yet.'),
+        submitLabel: s.editKey ? 'Save mapping' : 'Create mapping',
+        submitBg: s.item && targets.length ? '#4B57DC' : '#C6CDE0',
+        submitCursor: s.item && targets.length ? 'pointer' : 'not-allowed',
+        submit: () => this.submitSheet(),
+        close: () => this.setState({ sheet: null })
+      };
+    }
+
+    const totalClash = scopeIds.reduce((acc, id) => {
+      const c = this.scopeRows(id).counts;
+      return acc + Object.keys(c).filter(o => c[o] > 1).length;
+    }, 0);
+
+    const grouped = (st.view || this.props.defaultView || 'grouped') === 'grouped';
+    return {
+      isGrouped: grouped,
+      isTwoPane: !grouped,
+      setGrouped: () => this.setState({ view: 'grouped' }),
+      setTwoPane: () => this.setState({ view: 'twopane' }),
+      tabGroupedBg: grouped ? '#fff' : 'transparent',
+      tabGroupedFg: grouped ? '#17203A' : '#6B7690',
+      tabGroupedShadow: grouped ? '0 1px 3px rgba(21,28,49,.14)' : 'none',
+      tabPaneBg: grouped ? 'transparent' : '#fff',
+      tabPaneFg: grouped ? '#6B7690' : '#17203A',
+      tabPaneShadow: grouped ? 'none' : '0 1px 3px rgba(21,28,49,.14)',
+      search: st.search,
+      onSearch: e => this.setState({ search: e.target.value }),
+      onlyClashes: st.onlyClashes,
+      toggleOnlyClashes: () => this.setState(s => ({ onlyClashes: !s.onlyClashes })),
+      summary: st.rows.length + ' mappings · ' + Component.PLANS.length + ' plans · ' + totalClash + ' clashes',
+      openCreate: () => this.openSheet('create'),
+      groups: groups,
+      scopes: scopes,
+      pane: pane,
+      bulk: bulk,
+      sheet: sheet,
+      toast: { on: !!st.toast, msg: st.toast }
+    };
+  }
+}
+</script>
+
+
+</body></html>

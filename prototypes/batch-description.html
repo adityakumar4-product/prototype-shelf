@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"./PWHero.dc.html": "assets/batch-description/e6b2389a.html", "./PWCompare.dc.html": "assets/batch-description/c73349e4.html", "./PWFeatures.dc.html": "assets/batch-description/ea09a6f8.html", "./PWFaculty.dc.html": "assets/batch-description/941801f1.html", "./PWPageBody.dc.html": "assets/batch-description/945d1eef.html", "./PWOverlays.dc.html": "assets/batch-description/d8126b60.html", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/batch-description/1515b2fc.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/batch-description/5b32ad71.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/batch-description/f9b804ed.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/batch-description/f25ada4e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/batch-description/8af74d1d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/batch-description/2f00e230.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/batch-description/764f2ae0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/batch-description/f25ada4e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/batch-description/8af74d1d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/batch-description/2f00e230.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/batch-description/764f2ae0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/f25ada4e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/8af74d1d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/2f00e230.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/764f2ae0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/f25ada4e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/8af74d1d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/2f00e230.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/764f2ae0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/batch-description/f25ada4e.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/batch-description/8af74d1d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/batch-description/2f00e230.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/batch-description/764f2ae0.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/9ce322ad.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/bd7d7ae1.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/46520a1d.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/4cdd4de4.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/f3039e2e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/batch-description/294d7212.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/9ce322ad.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/bd7d7ae1.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/46520a1d.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/4cdd4de4.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/f3039e2e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/batch-description/294d7212.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    body { margin:0; background:#15161B; font-family:'Plus Jakarta Sans',sans-serif; }
+    a { color:#B9B2FF; text-decoration:none; }
+    a:hover { color:#fff; }
+    ::-webkit-scrollbar { width:0; height:0; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:26px 20px 40px;gap:20px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="text-align:center">
+      <div style="font:800 10px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;color:#7E86A0">YAKEEN NEET 2.0 2026 · PROTOTYPE</div>
+      <div style="font:700 21px/1.2 'Source Serif 4',serif;color:#fff;margin-top:9px">Description + plans, one page</div>
+    </div>
+
+    <div style="display:flex;gap:5px;padding:5px;background:#22242C;border-radius:13px">
+      <div sc-camel-on-click="{{ showB }}" style="padding:9px 16px;border-radius:9px;background:{{ bgB }};font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:{{ fgB }};cursor:pointer;transition:background .18s ease">1B · Table first</div>
+      <div sc-camel-on-click="{{ showC }}" style="padding:9px 16px;border-radius:9px;background:{{ bgC }};font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:{{ fgC }};cursor:pointer;transition:background .18s ease">1C · Bottom sheet</div>
+    </div>
+
+    <div style="max-width:420px;text-align:center;font:500 12px/1.55 'Plus Jakarta Sans',sans-serif;color:#8A90A2;min-height:38px">{{ blurb }}</div>
+  </div>
+
+  <div style="width:390px;height:844px;box-sizing:border-box;border:8px solid #0B0D12;border-radius:44px;background:#fff;overflow:hidden;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.5)">
+
+    <sc-if value="{{ isB }}" hint-placeholder-val="{{ true }}">
+      <div ref="{{ refB }}" style="height:100%;overflow-y:auto;background:#F4F5F8;position:relative">
+        <div style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px)">
+          <div style="height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12"><span>7:59</span><span style="letter-spacing:.12em">▪▪▪ ▪</span></div>
+          <div style="height:44px;display:flex;align-items:center;gap:10px;padding:0 14px">
+            <div style="font:400 16px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">‹</div>
+            <div style="flex:1;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Yakeen NEET 2.0 2026</div>
+            <div style="font:400 14px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">↥</div>
+          </div>
+        </div>
+
+        <dc-import name="PWHero" plan="{{ planB }}" compare-label="Check plan details for full comparison" on-select="{{ selB }}" on-compare="{{ cmpB }}" on-buy="{{ buyB }}" on-teachers="{{ facB }}" on-demo="{{ demoB }}" hint-size="100%,660px"></dc-import>
+
+        <div style="padding:12px 16px 0" ref="{{ refCmpB }}">
+          <dc-import name="PWCompare" plan="{{ planB }}" on-select="{{ selB }}" hint-size="100%,560px"></dc-import>
+        </div>
+
+        <div style="padding:26px 16px 0">
+          <dc-import name="PWFeatures" hint-size="100%,300px"></dc-import>
+        </div>
+
+        <div style="padding:28px 16px 0" ref="{{ refFacB }}">
+          <dc-import name="PWFaculty" on-demo="{{ demoB }}" hint-size="100%,340px"></dc-import>
+        </div>
+
+        <div style="padding:28px 16px 120px">
+          <dc-import name="PWPageBody" show-features="{{ false }}" hint-size="100%,900px"></dc-import>
+        </div>
+      </div>
+
+      <div style="position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid #E7E9F0;padding:11px 14px 20px;display:flex;align-items:center;gap:12px;z-index:30">
+        <div style="flex:1">
+          <div style="font:800 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ priceB }}</div>
+          <div style="font:600 10px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64;margin-top:4px">{{ subB }}</div>
+        </div>
+        <div sc-camel-on-click="{{ buyB }}" style="background:#0F1116;color:#fff;border-radius:12px;padding:13px 22px;font:700 13px/1 'Plus Jakarta Sans',sans-serif;cursor:pointer">Buy now</div>
+      </div>
+
+      <dc-import name="PWOverlays" mode="{{ ovB }}" plan="{{ planB }}" teacher="{{ ovTeacherB }}" topic="{{ ovTopicB }}" on-close="{{ closeB }}" on-plans="{{ ovPlansB }}" hint-size="0,0"></dc-import>
+    </sc-if>
+
+    <sc-if value="{{ isC }}" hint-placeholder-val="{{ false }}">
+      <div ref="{{ refC }}" style="height:100%;overflow-y:auto;background:#F4F5F8;position:relative">
+        <div style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px)">
+          <div style="height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12"><span>7:59</span><span style="letter-spacing:.12em">▪▪▪ ▪</span></div>
+          <div style="height:44px;display:flex;align-items:center;gap:10px;padding:0 14px">
+            <div style="font:400 16px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">‹</div>
+            <div style="flex:1;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Yakeen NEET 2.0 2026</div>
+            <div style="font:400 14px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">↥</div>
+          </div>
+        </div>
+
+        <dc-import name="PWHero" plan="{{ planC }}" show-strip="{{ false }}" date-layout="rows" teachers-position="below" compare-label="Choose &amp; compare plans" on-select="{{ selC }}" on-compare="{{ openSheet }}" on-buy="{{ buyC }}" on-teachers="{{ facC }}" on-demo="{{ demoC }}" hint-size="100%,600px"></dc-import>
+
+        <div style="padding:24px 16px 0" ref="{{ refFacC }}">
+          <dc-import name="PWFaculty" on-demo="{{ demoC }}" hint-size="100%,340px"></dc-import>
+        </div>
+
+        <div style="padding:28px 16px 170px">
+          <dc-import name="PWPageBody" hint-size="100%,900px"></dc-import>
+        </div>
+      </div>
+
+      <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+        <div sc-camel-on-click="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(8,9,12,.45);z-index:24"></div>
+      </sc-if>
+
+      <div style="position:absolute;left:0;right:0;bottom:0;height:{{ sheetH }};background:#fff;border-radius:22px 22px 0 0;box-shadow:0 -10px 40px rgba(8,9,12,.22);z-index:26;transition:height .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden">
+        <div sc-camel-on-click="{{ toggleSheet }}" style="padding:10px 14px 8px;cursor:pointer">
+          <div style="width:38px;height:4px;border-radius:2px;background:#E4E6EE;margin:0 auto 10px"></div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <sc-for list="{{ stripC }}" as="p" hint-placeholder-count="3">
+              <div sc-camel-on-click="{{ p.pick }}" style="flex:1;border:1.5px solid {{ p.bd }};background:{{ p.bg }};border-radius:10px;padding:7px 4px;text-align:center;cursor:pointer">
+                <div style="font:700 10px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ p.fg }}">{{ p.name }}</div>
+                <div style="font:600 9px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ p.sfg }};margin-top:2px">{{ p.price }}</div>
+              </div>
+            </sc-for>
+            <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;padding:0 4px">{{ sheetToggleLabel }}</div>
+          </div>
+        </div>
+
+        <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;overflow-y:auto;padding:8px 12px 4px">
+            <dc-import name="PWCompare" plan="{{ planC }}" default-open="{{ true }}" on-select="{{ selC }}" hint-size="100%,640px"></dc-import>
+          </div>
+        </sc-if>
+
+        <div style="border-top:1px solid #EDEEF3;padding:11px 14px 20px;display:flex;align-items:center;gap:12px;background:#fff">
+          <div style="flex:1">
+            <div style="font:800 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ priceC }}</div>
+            <div style="font:600 10px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64;margin-top:4px">{{ subC }}</div>
+          </div>
+          <div sc-camel-on-click="{{ buyC }}" style="background:#0F1116;color:#fff;border-radius:12px;padding:13px 22px;font:700 13px/1 'Plus Jakarta Sans',sans-serif;cursor:pointer">Buy now</div>
+        </div>
+      </div>
+
+      <dc-import name="PWOverlays" mode="{{ ovC }}" plan="{{ planC }}" teacher="{{ ovTeacherC }}" topic="{{ ovTopicC }}" on-close="{{ closeC }}" on-plans="{{ ovPlansC }}" hint-size="0,0"></dc-import>
+    </sc-if>
+  </div>
+
+  <div style="font:500 11px/1.5 'Plus Jakarta Sans',sans-serif;color:#5F6678;text-align:center;max-width:420px">Tap plan columns, faculty cards, demos and Buy now — everything works in place. Both variants live on the comparison board too.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const PLANS = [
+  { n: "Basic", price: "₹4,999", sub: "You save ₹601 · 11% off" },
+  { n: "Infinity", price: "₹9,600", sub: "You save ₹6,000 · only ₹384/mo more" },
+  { n: "Infinity Pro", price: "₹20,600", sub: "You save ₹14,000 · 40% off" }
+];
+
+const BLURBS = {
+  b: "Plan module highlighted in the first fold, full comparison table right below it, then features and faculty. Most direct route to a plan decision.",
+  c: "Nothing navigates away: the plan bar sits at the bottom and grows in place into the full comparison, with every item open by default."
+};
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { view: "b", b: 1, c: 1, sheet: false, ov: { b: null, c: null } };
+    this.refB = React.createRef();
+    this.refCmpB = React.createRef();
+    this.refFacB = React.createRef();
+    this.refC = React.createRef();
+    this.refFacC = React.createRef();
+  }
+
+  ovSet(key, val) { this.setState(s => ({ ov: Object.assign({}, s.ov, { [key]: val }) })); }
+
+  scrollTo(scRef, ref) {
+    setTimeout(() => {
+      const sc = scRef.current, el = ref.current;
+      if (!sc || !el) return;
+      const to = Math.max(0, Math.min(el.offsetTop - 118, sc.scrollHeight - sc.clientHeight));
+      const from = sc.scrollTop, t0 = performance.now();
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 460);
+        sc.scrollTop = from + (to - from) * (1 - Math.pow(1 - k, 3));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, 120);
+  }
+
+  frame(key) {
+    const p = this.state[key];
+    const K = key.toUpperCase();
+    const o = this.state.ov[key] || {};
+    return {
+      ["plan" + K]: p,
+      ["sel" + K]: (n) => this.setState({ [key]: n }),
+      ["price" + K]: PLANS[p].price,
+      ["sub" + K]: PLANS[p].sub,
+      ["buy" + K]: () => this.ovSet(key, { mode: "checkout" }),
+      ["demo" + K]: (d) => this.ovSet(key, { mode: "demo", teacher: d.teacher, topic: d.topic }),
+      ["close" + K]: () => this.ovSet(key, null),
+      ["ov" + K]: o.mode || "none",
+      ["ovTeacher" + K]: o.teacher || "PW faculty",
+      ["ovTopic" + K]: o.topic || "Free demo class"
+    };
+  }
+
+  renderVals() {
+    const v = this.state.view;
+    const cur = this.state.c;
+    const stripC = PLANS.map((pl, i) => ({
+      name: i === 2 ? "Pro" : pl.n,
+      price: pl.price,
+      bd: cur === i ? "#5A4FCF" : "#E4E6EE",
+      bg: cur === i ? "#5A4FCF" : "#fff",
+      fg: cur === i ? "#fff" : "#0B0D12",
+      sfg: cur === i ? "rgba(255,255,255,.78)" : "#7A8093",
+      pick: () => this.setState({ c: i })
+    }));
+
+    return Object.assign({}, this.frame("b"), this.frame("c"), {
+      isB: v === "b", isC: v === "c",
+      showB: () => this.setState({ view: "b" }),
+      showC: () => this.setState({ view: "c", sheet: false }),
+      bgB: v === "b" ? "#F5C64B" : "transparent",
+      bgC: v === "c" ? "#F5C64B" : "transparent",
+      fgB: v === "b" ? "#15161B" : "#9AA0B4",
+      fgC: v === "c" ? "#15161B" : "#9AA0B4",
+      blurb: BLURBS[v],
+
+      refB: this.refB, refCmpB: this.refCmpB, refFacB: this.refFacB,
+      cmpB: () => this.scrollTo(this.refB, this.refCmpB),
+      facB: () => this.scrollTo(this.refB, this.refFacB),
+      ovPlansB: () => { this.ovSet("b", null); this.scrollTo(this.refB, this.refCmpB); },
+
+      refC: this.refC, refFacC: this.refFacC,
+      stripC,
+      sheetOpen: this.state.sheet,
+      sheetH: this.state.sheet ? "680px" : "150px",
+      sheetToggleLabel: this.state.sheet ? "Close ⌄" : "Compare ›",
+      openSheet: () => this.setState({ sheet: true }),
+      closeSheet: () => this.setState({ sheet: false }),
+      toggleSheet: () => this.setState(s => ({ sheet: !s.sheet })),
+      facC: () => { this.setState({ sheet: false }); this.scrollTo(this.refC, this.refFacC); },
+      ovPlansC: () => { this.ovSet("c", null); this.setState({ sheet: true }); }
+    });
+  }
+}
+</script>
+
+
+</body></html>

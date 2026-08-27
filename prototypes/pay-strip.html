@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/pay-strip/27353cc0.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/pay-strip/8cf5fe05.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/pay-strip/48063764.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pay-strip/081042da.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pay-strip/7b22a715.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pay-strip/f24d1976.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pay-strip/140188ff.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pay-strip/081042da.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pay-strip/7b22a715.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pay-strip/f24d1976.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pay-strip/140188ff.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pay-strip/081042da.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pay-strip/7b22a715.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pay-strip/f24d1976.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pay-strip/140188ff.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pay-strip/081042da.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pay-strip/7b22a715.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pay-strip/f24d1976.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pay-strip/140188ff.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pay-strip/081042da.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pay-strip/7b22a715.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pay-strip/f24d1976.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pay-strip/140188ff.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin: 0; background: #E7EAF3; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #4B3FCF; }
+  a:hover { color: #2F249C; }
+  @keyframes strip-rot-34 {
+    0%, 20% { transform: translateY(0); }
+    25%, 45% { transform: translateY(-34px); }
+    50%, 70% { transform: translateY(-68px); }
+    75%, 100% { transform: translateY(-102px); }
+  }
+  @keyframes strip-arrow {
+    0%, 100% { transform: translateX(0); opacity: 0.55; }
+    50% { transform: translateX(3px); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .strip-track { animation: none !important; transform: translateY(-102px) !important; }
+    .strip-row { padding-left: 38px !important; }
+    .strip-arrow { animation: none !important; }
+    .sheet { transition: none !important; }
+  }
+</style>
+</helmet>
+
+
+
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; box-sizing: border-box">
+  <div style="width: 390px; height: 800px; background: #F2F4FB; border-radius: 40px; box-shadow: 0 30px 70px rgba(20,22,28,0.22); overflow: hidden; display: flex; flex-direction: column; position: relative">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 22px 4px; font-size: 13px; font-weight: 700; color: #14161C; background: #F2F4FB">
+      <span>7:59</span>
+      <div style="display: flex; align-items: center; gap: 4px">
+        <span style="width: 15px; height: 10px; border: 1.5px solid #14161C; border-radius: 2px; display: block"></span>
+        <span style="width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid #14161C; display: block"></span>
+        <span style="width: 9px; height: 14px; border-radius: 2px; background: #14161C; display: block"></span>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #F2F4FB">
+      <span style="font-size: 20px; color: #14161C; line-height: 1">‹</span>
+      <span style="font-size: 17px; font-weight: 700; color: #14161C">Checkout</span>
+    </div>
+
+    <div ref="{{ scrollRef }}" sc-camel-on-scroll="{{ onScroll }}" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px">
+
+      <div style="margin: 0 16px; background: #FFF; border-radius: 16px; padding: 14px; display: flex; gap: 14px">
+        <div style="width: 84px; height: 84px; border-radius: 12px; background: #DED9FA; flex: 0 0 auto"></div>
+        <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #4B3FCF">INFINITY</div>
+          <div style="font-size: 15px; font-weight: 700; color: #14161C; text-wrap: pretty">Yakeen NEET Hindi 2.0 2026</div>
+          <div style="font-size: 13px; color: #767B87">Group 1</div>
+          <div style="display: flex; align-items: baseline; gap: 6px; white-space: nowrap">
+            <span style="font-size: 15px; font-weight: 800; color: #14161C">₹4,700</span>
+            <span style="font-size: 12px; color: #767B87; text-decoration: line-through">₹5,999</span>
+            <span style="font-size: 12px; font-weight: 700; color: #0B6B31">22% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FFF; padding: 18px 0 20px; display: flex; flex-direction: column; gap: 14px">
+        <div style="padding: 0 16px; font-size: 19px; font-weight: 800; color: #14161C">You Might Also Need</div>
+        <div style="padding: 0 16px; display: flex; gap: 10px">
+          <span style="font-size: 13px; font-weight: 600; color: #4B3FCF; border: 1px solid #4B3FCF; background: #F4F2FE; border-radius: 999px; padding: 7px 16px">All</span>
+          <span style="font-size: 13px; font-weight: 600; color: #3B3F4A; border: 1px solid #DCDFE8; border-radius: 999px; padding: 7px 16px">Books</span>
+          <span style="font-size: 13px; font-weight: 600; color: #3B3F4A; border: 1px solid #DCDFE8; border-radius: 999px; padding: 7px 16px">Stationery</span>
+        </div>
+        <div style="display: grid; grid-auto-flow: column; grid-auto-columns: 132px; gap: 14px; overflow-x: auto; padding: 0 16px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 116px; border-radius: 12px; border: 1px solid #E6E8EF; background: #EFF1F7"></div>
+            <div style="font-size: 12px; font-weight: 700; color: #C2540A">100k bought</div>
+            <div style="font-size: 13px; font-weight: 600; color: #14161C; text-wrap: pretty">Yakeen Physics Modules</div>
+            <div style="display: flex; align-items: baseline; gap: 5px"><span style="font-size: 14px; font-weight: 800; color: #14161C">₹3,500</span><span style="font-size: 11px; color: #767B87; text-decoration: line-through">₹5,678</span></div>
+            <div style="font-size: 12px; font-weight: 700; color: #0B6B31">38% OFF</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 116px; border-radius: 12px; border: 1px solid #E6E8EF; background: #EFF1F7"></div>
+            <div style="font-size: 12px; font-weight: 700; color: #0B6B31">★ 4.6</div>
+            <div style="font-size: 13px; font-weight: 600; color: #14161C; text-wrap: pretty">PW Nazariya Glasses</div>
+            <div style="display: flex; align-items: baseline; gap: 5px"><span style="font-size: 14px; font-weight: 800; color: #14161C">₹448</span><span style="font-size: 11px; color: #767B87; text-decoration: line-through">₹1,999</span></div>
+            <div style="font-size: 12px; font-weight: 700; color: #0B6B31">70% OFF</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 116px; border-radius: 12px; border: 1px solid #E6E8EF; background: #EFF1F7"></div>
+            <div style="font-size: 12px; font-weight: 700; color: #0B6B31">★ 4.6</div>
+            <div style="font-size: 13px; font-weight: 600; color: #14161C; text-wrap: pretty">A4 Softbound Notebook</div>
+            <div style="display: flex; align-items: baseline; gap: 5px"><span style="font-size: 14px; font-weight: 800; color: #14161C">₹370</span><span style="font-size: 11px; color: #767B87; text-decoration: line-through">₹1,199</span></div>
+            <div style="font-size: 12px; font-weight: 700; color: #0B6B31">69% OFF</div>
+          </div>
+        </div>
+        <div style="margin: 4px 16px 0; border: 1px solid #DCDFE8; border-radius: 12px; padding: 14px; text-align: center; font-size: 14px; font-weight: 600; color: #14161C">View All Products</div>
+        <div style="margin: 0 16px; border: 1px solid #DCDFE8; border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 12px">
+          <span style="width: 22px; height: 22px; border-radius: 4px; background: #0B6B31; flex: 0 0 auto"></span>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 15px; font-weight: 700; color: #14161C">Coupon YAKEEN400 applied</span>
+            <span style="font-size: 13px; color: #767B87">Tap to change or remove</span>
+          </div>
+          <span style="font-size: 18px; color: #767B87">›</span>
+        </div>
+      </div>
+
+      <div style="background: #FFF; padding: 18px 16px 22px; display: flex; flex-direction: column; gap: 14px">
+        <div style="font-size: 19px; font-weight: 800; color: #14161C">Order Summary</div>
+        <div style="background: #FEF8E7; border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 12px">
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 14px; font-weight: 700; color: #14161C">Donate to PW Foundation</span>
+            <a href="#" style="font-size: 12px; font-weight: 600">Know More</a>
+          </div>
+          <span style="font-size: 13px; font-weight: 700; color: #3B3F4A">₹10</span>
+          <span style="width: 20px; height: 20px; border-radius: 4px; background: #14161C; color: #FFF; font-size: 12px; display: flex; align-items: center; justify-content: center">✓</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px; color: #3B3F4A">
+          <div style="display: flex; justify-content: space-between"><span>Yakeen NEET Hindi 2.0 2026</span><span>₹4,700</span></div>
+          <div style="display: flex; justify-content: space-between"><span>Yakeen Physics Modules</span><span>₹3,500</span></div>
+          <div style="display: flex; justify-content: space-between"><span>PW Foundation Donation</span><span>₹10</span></div>
+          <div style="display: flex; justify-content: space-between"><span>Delivery Charges</span><span>₹299</span></div>
+          <div style="display: flex; justify-content: space-between"><span>Total amount</span><span style="font-weight: 700; color: #14161C">₹8,509</span></div>
+          <div style="height: 1px; background: #E6E8EF; margin: 2px 0"></div>
+          <div style="display: flex; justify-content: space-between"><span>Coupon YAKEEN400</span><span style="color: #0B6B31">−₹1,400</span></div>
+          <div style="display: flex; justify-content: space-between"><span>Batch launch offer</span><span style="color: #0B6B31">−₹411</span></div>
+        </div>
+        <div style="height: 1px; background: #E6E8EF"></div>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <span style="font-size: 17px; font-weight: 800; color: #14161C">Amount to Pay</span>
+          <div style="display: flex; align-items: baseline; gap: 6px">
+            <span style="font-size: 13px; color: #767B87; text-decoration: line-through">₹8,509</span>
+            <span style="font-size: 19px; font-weight: 800; color: #14161C">₹6,698</span>
+          </div>
+        </div>
+        <div style="background: #E5F4EA; border-radius: 10px; padding: 10px 12px; font-size: 13px; font-weight: 700; color: #0B6B31">You save ₹1,811 on this purchase</div>
+      </div>
+
+      <div style="background: #EDEFF6; padding: 34px 0; text-align: center; font-size: 13px; font-weight: 600; color: #767B87">Your Transaction is 100% Secure</div>
+    </div>
+
+    <div style="box-shadow: 0 -8px 24px rgba(20,22,28,0.08); position: relative; z-index: 2">
+      <div style="height: 34px; overflow: hidden; position: relative">
+        <button sc-camel-on-click="{{ nextBanner }}" aria-label="Show next price detail" style="position: absolute; top: 0; left: 0; bottom: 0; z-index: 2; width: 38px; border: 0; background: none; padding: 0; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <span class="strip-arrow" style="width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 6px solid {{ arrowColor }}; animation: strip-arrow 1.6s ease-in-out infinite"></span>
+        </button>
+        <div class="strip-track" style="position: absolute; inset: 0; animation: {{ bannerAnim }}; transform: {{ bannerTransform }}">
+          <div style="height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 0 16px 0 38px; box-sizing: border-box; font-size: 13px; font-weight: 700; background: #E5F4EA; color: #0B6B31">
+            <span>You save ₹1,811 on this purchase</span>
+          </div>
+          <div style="height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 0 16px 0 38px; box-sizing: border-box; font-size: 13px; font-weight: 700; background: #F1EFFC; color: #382C9E">
+            <div style="display: flex; align-items: center; gap: 6px">
+              <span>Total amount ₹8,509</span>
+              <span style="color: #8B86C4">•</span>
+              <span>21% OFF for you</span>
+            </div>
+          </div>
+          <div style="height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 0 16px 0 38px; box-sizing: border-box; font-size: 13px; font-weight: 700; background: #E5F4EA; color: #0B6B31">
+            <span>You save ₹1,811 on this purchase</span>
+          </div>
+          <div style="height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 0 16px 0 38px; box-sizing: border-box; font-size: 13px; font-weight: 700; background: #F1EFFC; color: #382C9E">
+            <div style="display: flex; align-items: center; gap: 6px">
+              <span>Total amount ₹8,509</span>
+              <span style="color: #8B86C4">•</span>
+              <span>21% OFF for you</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #E6E8EF; background: #FFF; padding: 12px 16px 22px; display: flex; align-items: center; gap: 14px">
+        <div style="display: flex; flex-direction: column; gap: 3px; flex: 1">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #767B87">Amount to pay</div>
+          <div style="display: flex; align-items: baseline; gap: 5px; white-space: nowrap">
+            <span style="font-size: 19px; font-weight: 800; color: #14161C; letter-spacing: -0.01em">₹6,698</span>
+            <span style="font-size: 12px; color: #767B87; text-decoration: line-through">₹8,509</span>
+          </div>
+          <button sc-camel-on-click="{{ openSheet }}" style="align-self: flex-start; border: 0; background: none; padding: 0; font-family: inherit; font-size: 13px; font-weight: 600; color: #4B3FCF; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; white-space: nowrap">View Details</button>
+        </div>
+        <button style="flex: 0 0 auto; white-space: nowrap; border: 0; background: #14161C; color: #FFF; font-family: inherit; font-size: 14px; font-weight: 700; padding: 14px 18px; border-radius: 10px; min-height: 48px; cursor: pointer" style-hover="background: #000">Proceed to Pay</button>
+      </div>
+    </div>
+
+    <div sc-camel-on-click="{{ closeSheet }}" style="position: absolute; inset: 0; z-index: 3; background: rgba(20,22,28,0.45); opacity: {{ scrimOpacity }}; pointer-events: {{ scrimEvents }}; transition: opacity 260ms ease"></div>
+
+    <div class="sheet" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; background: #FFF; border-radius: 22px 22px 0 0; box-shadow: 0 -18px 40px rgba(20,22,28,0.22); padding: 8px 16px 22px; display: flex; flex-direction: column; gap: 14px; transform: {{ sheetTransform }}; transition: transform 320ms cubic-bezier(0.22,0.8,0.2,1)">
+      <div style="width: 44px; height: 4px; border-radius: 999px; background: #DCDFE8; align-self: center; margin-bottom: 2px"></div>
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <span style="font-size: 17px; font-weight: 800; color: #14161C">Price Details</span>
+        <button sc-camel-on-click="{{ closeSheet }}" style="border: 0; background: #F2F4FB; width: 32px; height: 32px; border-radius: 999px; font-family: inherit; font-size: 15px; color: #3B3F4A; cursor: pointer">✕</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px; color: #3B3F4A">
+        <div style="display: flex; justify-content: space-between"><span>Yakeen NEET Hindi 2.0 2026</span><span>₹4,700</span></div>
+        <div style="display: flex; justify-content: space-between"><span>Yakeen Physics Modules</span><span>₹3,500</span></div>
+        <div style="display: flex; justify-content: space-between"><span>PW Foundation Donation</span><span>₹10</span></div>
+        <div style="display: flex; justify-content: space-between"><span>Delivery Charges</span><span>₹299</span></div>
+        <div style="display: flex; justify-content: space-between; font-weight: 700; color: #14161C"><span>Total amount</span><span>₹8,509</span></div>
+      </div>
+      <div style="background: #E5F4EA; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-size: 13px; font-weight: 800; color: #0B6B31">Your discounts — ₹1,811</div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: #14532B"><span>Coupon YAKEEN400</span><span>−₹1,400</span></div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: #14532B"><span>Batch launch offer</span><span>−₹411</span></div>
+      </div>
+      <div style="height: 1px; background: #E6E8EF"></div>
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <span style="font-size: 16px; font-weight: 800; color: #14161C">Amount to pay</span>
+        <div style="display: flex; align-items: baseline; gap: 6px">
+          <span style="font-size: 13px; color: #767B87; text-decoration: line-through">₹8,509</span>
+          <span style="font-size: 20px; font-weight: 800; color: #14161C">₹6,698</span>
+        </div>
+      </div>
+      <div style="font-size: 13px; color: #3B3F4A">Or 3 monthly payments of <strong>₹2,233</strong> — no cost EMI</div>
+      <sc-if value="{{ showExpiry }}" hint-placeholder-val="{{ true }}">
+        <div style="background: #FEF3E2; border-radius: 10px; padding: 10px 12px; font-size: 13px; font-weight: 700; color: #8A4B08">This price is held for {{ countdown }}</div>
+      </sc-if>
+      <button sc-camel-on-click="{{ closeSheet }}" style="border: 0; background: #14161C; color: #FFF; font-family: inherit; font-size: 15px; font-weight: 700; padding: 15px; border-radius: 12px; min-height: 48px; cursor: pointer" style-hover="background: #000">Proceed to Pay ₹6,698</button>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;rotateBanner&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Payment strip&quot;},&quot;freezeOnEngage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Payment strip&quot;},&quot;offerHoldMinutes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:15,&quot;min&quot;:0,&quot;max&quot;:60,&quot;unit&quot;:&quot;min&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Payment strip&quot;}}">
+class Component extends DCLogic {
+  state = { sheet: false, frozen: false, secondsLeft: null, manual: null };
+
+  componentDidMount() { this.arm(); }
+  componentDidUpdate() { this.arm(); }
+  componentWillUnmount() { clearInterval(this._tick); this._tick = null; clearTimeout(this._idle); }
+
+  arm() {
+    const mins = this.props.offerHoldMinutes ?? 15;
+    if (this.state.secondsLeft === null && mins > 0) this.setState({ secondsLeft: Math.round(mins * 60) });
+    if (!this._tick && mins > 0) {
+      this._tick = setInterval(() => {
+        this.setState(s => ({ secondsLeft: s.secondsLeft > 0 ? s.secondsLeft - 1 : 0 }));
+      }, 1000);
+    }
+  }
+
+  // Freeze the rotation once the student settles at the bottom of the page,
+  // so the payable amount is what's on screen at the moment they tap Pay.
+  onScroll = (e) => {
+    if (this.state.frozen || this.props.freezeOnEngage === false) return;
+    const el = e.currentTarget;
+    const nearBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 120;
+    clearTimeout(this._idle);
+    if (nearBottom) this._idle = setTimeout(() => this.setState({ frozen: true }), 400);
+  };
+
+  fmt(total) {
+    const m = Math.floor(total / 60), s = total % 60;
+    return m + ':' + String(s).padStart(2, '0');
+  }
+
+  renderVals() {
+    const frozen = this.state.frozen || this.state.sheet;
+    const rotate = this.props.rotateBanner ?? true;
+    const mins = this.props.offerHoldMinutes ?? 15;
+    return {
+      // Two full passes, then it settles on the price + discount row for good.
+      // A tap on the arrow takes over: manual index wins and auto-rotation stops.
+      bannerAnim: (this.state.manual !== null || !rotate || frozen) ? 'none' : 'strip-rot-34 13s cubic-bezier(0.22,0.8,0.2,1) 1 forwards',
+      bannerTransform: this.state.manual !== null
+        ? 'translateY(' + (-34 * this.state.manual) + 'px)'
+        : ((!rotate || frozen) ? 'translateY(-102px)' : 'translateY(0)'),
+      arrowColor: (this.state.manual ?? 1) % 2 === 0 ? '#0B6B31' : '#382C9E',
+      nextBanner: () => this.setState(s => ({
+        manual: s.manual === null ? 0 : (s.manual + 1) % 4,
+        frozen: false,
+      })),
+      onScroll: this.onScroll,
+      openSheet: () => this.setState({ sheet: true }),
+      closeSheet: () => this.setState({ sheet: false }),
+      sheetTransform: this.state.sheet ? 'translateY(0)' : 'translateY(102%)',
+      scrimOpacity: this.state.sheet ? 1 : 0,
+      scrimEvents: this.state.sheet ? 'auto' : 'none',
+      showExpiry: mins > 0 && this.state.secondsLeft > 0,
+      countdown: this.fmt(this.state.secondsLeft || 0),
+    };
+  }
+}
+
+</script>
+
+
+</body></html>
