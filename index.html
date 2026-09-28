@@ -92,25 +92,26 @@ const PROTOTYPES = [
     frame: "phone",
     tags: ["Batch page", "Plans"],
     updated: "27 Aug 2026"
+  },
+  {
+    slug: "voice-search",
+    title: "Find the right course by voice search",
+    snippet: "Spoken intent → one-line reply, editable chips, then batches",
+    description: "Students often don't know the exact course or teacher names, but they do have the intent to prepare for a specific exam.",
+    file: "prototypes/voice-search.html",
+    platform: "App",
+    frame: "wide",
+    tags: ["Discovery", "Voice search"],
+    updated: "28 Sep 2026"
   }
 ];
 
-/* Ideas we're lining up to prototype. No build yet — these render as muted
-   "Prototype in progress" cards in the "In the pipeline" section, and upgrade
-   to live prototypes by moving the entry into PROTOTYPES with a `file`.
-   No `snippet`: the snippet is the mechanic as built, so there isn't one yet. */
 const PIPELINE = [
   {
     title: "Students don't notice filters",
     description: "In tier-2 cities and beyond, students find batches by scrolling and don't notice the filters that would point them to the right course.",
     platform: "App",
     tags: ["Discovery", "Filters"]
-  },
-  {
-    title: "Find the right course by voice search",
-    description: "Students often don't know the exact course or teacher names, but they do have the intent to prepare for a specific exam.",
-    platform: "App",
-    tags: ["Discovery", "Voice search"]
   },
   {
     title: "Share with parents, guardians & friends",
@@ -384,40 +385,18 @@ const PIPELINE = [
 
   .card__hit{position:absolute; inset:0; text-indent:-9999px; overflow:hidden}
 
-  /* ---------- pipeline (planned, not yet built) ---------- */
+  /* ---------- pipeline ---------- */
   .pipeline{padding:0 clamp(16px,4vw,40px) 90px; scroll-margin-top:calc(var(--bar) + 14px)}
-  /* pull the section up under the grid's bottom padding when it's shown */
   main:has(#pipeline:not([hidden])) #grid{padding-bottom:clamp(28px,4vw,44px)}
-  .pipeline__head{
-    display:flex; align-items:baseline; gap:12px;
-    border-top:1px solid var(--line); padding-top:clamp(26px,4vw,38px);
-  }
-  .pipeline__title{
-    font-family:var(--display); font-weight:700; letter-spacing:-.02em;
-    font-size:clamp(20px,3vw,26px); margin:0;
-  }
+  .pipeline__head{display:flex; align-items:baseline; gap:12px; border-top:1px solid var(--line); padding-top:clamp(26px,4vw,38px)}
+  .pipeline__title{font-family:var(--display); font-weight:700; letter-spacing:-.02em; font-size:clamp(20px,3vw,26px); margin:0}
   .pipeline__count{font-family:var(--util); font-size:12px; color:var(--mute)}
-  .pipeline__lead{margin:8px 0 clamp(18px,3vw,26px); max-width:58ch; color:var(--mute); font-size:14px}
-  .card--planned{
-    background:color-mix(in srgb, var(--plate) 70%, var(--ink));
-    border-style:dashed;
-  }
+  .pipeline__lead{margin:8px 0 clamp(18px,4vw,28px); max-width:58ch; color:var(--mute); font-size:14px}
+  .card--planned{background:color-mix(in srgb, var(--plate) 70%, var(--ink)); border-style:dashed}
   .card--planned:hover{border-color:var(--line); transform:none}
-  .planned__flag{
-    display:flex; align-items:center; gap:8px;
-    font-family:var(--util); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--mute);
-    padding:13px 18px; border-bottom:1px solid var(--line);
-  }
-  .planned__dot{
-    width:7px; height:7px; border-radius:999px; flex:none;
-    background:var(--signal);
-    box-shadow:0 0 0 3px color-mix(in srgb, var(--signal) 16%, transparent);
-  }
-  .meta__plat--ghost{
-    color:var(--signal); background:none;
-    border:1px solid color-mix(in srgb, var(--signal) 40%, transparent);
-  }
+  .planned__flag{display:flex; align-items:center; gap:8px; font-family:var(--util); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--mute); padding:13px 18px; border-bottom:1px solid var(--line)}
+  .planned__dot{width:7px; height:7px; border-radius:999px; flex:none; background:var(--signal); box-shadow:0 0 0 3px color-mix(in srgb, var(--signal) 16%, transparent)}
+  .meta__plat--ghost{color:var(--signal); background:none; border:1px solid color-mix(in srgb, var(--signal) 40%, transparent)}
 
   .empty{
     grid-column:1/-1; padding:60px 0;
@@ -576,10 +555,6 @@ const PIPELINE = [
     const b = e.target.closest('.chip');
     if (!b) return;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Pipeline is a jump, not a filter. Reset the view to All so every
-    // prototype and the full pipeline are visible, then scroll to the section
-    // (works from any prior filter, incl. Web/Admin where it was hidden).
     if (b.dataset.filter === 'Pipeline') {
       activeFilter = 'All';
       filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === 'All'));
@@ -587,9 +562,6 @@ const PIPELINE = [
       pipeline.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       return;
     }
-
-    // Platform pill: apply the filter and bring the grid back into view, so
-    // switching filters always shows a result even after a Pipeline jump.
     activeFilter = b.dataset.filter;
     filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
     render();
@@ -603,11 +575,11 @@ const PIPELINE = [
     }
   });
 
-  /* Platform filter + free-text search; applies to both built and planned. */
   function matches(p) {
     const term = q.value.trim().toLowerCase();
     const inFilter = activeFilter === 'All' || p.platform === activeFilter;
-    const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || [])].join(' ').toLowerCase().includes(term);
+    const prototype = p.prototypeSlug && PROTOTYPES.find(item => item.slug === p.prototypeSlug);
+    const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || []), ...(prototype ? [prototype.title, prototype.snippet, prototype.description] : [])].join(' ').toLowerCase().includes(term);
     return inFilter && inText;
   }
 
@@ -666,17 +638,14 @@ const PIPELINE = [
     });
   }
 
-  /* Planned ideas with no prototype yet — muted, non-clickable cards. */
   function renderPipeline() {
     const list = PIPELINE.filter(matches);
     if (!list.length) { pipeline.hidden = true; pgrid.innerHTML = ''; return; }
     pipeline.hidden = false;
-    pcountEl.textContent = list.length === PIPELINE.length
-      ? PIPELINE.length + ' ideas'
-      : list.length + ' of ' + PIPELINE.length;
+    pcountEl.textContent = list.length === PIPELINE.length ? PIPELINE.length + ' ideas' : list.length + ' of ' + PIPELINE.length;
     pgrid.innerHTML = list.map(p => `
       <article class="card card--planned">
-        <div class="planned__flag"><span class="planned__dot"></span> Prototype in progress</div>
+        <div class="planned__flag"><span class="planned__dot"></span>Prototype in progress</div>
         <div class="plate">
           <h2>${esc(p.title)}</h2>
           <p>${esc(p.description)}</p>
@@ -737,8 +706,8 @@ const PIPELINE = [
     vTitle.textContent = p.title;
     vFile.textContent = p.file;
     vNew.href = p.file;
-    setDevice('wide');
-    loadFrame(p.file);
+    setDevice(p.frame === 'phone' ? 'phone' : 'wide');
+    if (vFrame.src.indexOf(p.file) === -1) vFrame.src = p.file;
     viewer.classList.add('is-open');
     viewer.setAttribute('aria-hidden', 'false');
     document.body.classList.add('is-viewing');
@@ -750,20 +719,8 @@ const PIPELINE = [
     viewer.classList.remove('is-open');
     viewer.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('is-viewing');
-    loadFrame('about:blank');
+    vFrame.removeAttribute('src');
     document.title = 'Prototype shelf';
-  }
-
-  /* Load the iframe WITHOUT adding a browser-history entry, so a single Back
-     click (or Esc) always returns to the shelf. Assigning iframe.src pushes
-     onto the joint session history — the prototype load would otherwise sit
-     between the shelf and the #p= hash, costing an extra back. location
-     .replace() navigates in place and adds no entry. Also clears on close so
-     each open starts the prototype fresh. */
-  function loadFrame(file) {
-    const url = new URL(file, document.baseURI).href;   // absolute: no about:blank base ambiguity
-    try { vFrame.contentWindow.location.replace(url); }
-    catch (e) { vFrame.src = url; }
   }
 
   function goBack() {

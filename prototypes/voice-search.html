@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"androidFrame": "assets/voice-search/cf5cdc9d.jsx", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/voice-search/e3c5c626.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/voice-search/8932e263.js", "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js": "assets/voice-search/91b8d6db.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/voice-search/1d2b6bb9.js"></script>
+
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<style>/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/voice-search/ba1c63de.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/voice-search/69e71c41.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/voice-search/580de6ef.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/voice-search/6c85e4cf.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/voice-search/32eb2bd8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/voice-search/8a9fe8bc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/voice-search/307c8663.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/voice-search/caf499e7.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/voice-search/6669bbfe.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/voice-search/3d0ce266.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/voice-search/27dc51df.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/voice-search/7ab3a109.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin: 0; background: #0E1116; font-family: 'Poppins', system-ui, sans-serif; }
+  a { color: #1268E0; text-decoration: none; }
+  a:hover { color: #0B4EAE; }
+  @keyframes wf { 0%,100% { transform: scaleY(.22); } 50% { transform: scaleY(1); } }
+  @keyframes ring { 0% { transform: scale(.85); opacity: .55; } 100% { transform: scale(1.9); opacity: 0; } }
+  @keyframes think { 0%,80%,100% { opacity: .25; } 40% { opacity: 1; } }
+  @keyframes sheetUp { from { transform: translateY(101%); } to { transform: translateY(0); } }
+  @keyframes fadeUp { from { transform: translateY(10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @keyframes popIn { from { transform: scale(.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes caret { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-wrap:wrap;align-items:flex-start;gap:38px;padding:34px 30px 60px;box-sizing:border-box;color:#fff">
+
+  <div style="flex:1 1 250px;max-width:320px;min-width:230px">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A93A6;font-weight:600">Voice search · prototype</div>
+    <div style="font-size:27px;line-height:1.2;font-weight:600;margin-top:10px;letter-spacing:-.01em">Students don't know batch names. They know their exam.</div>
+    <div style="font-size:13px;line-height:1.65;color:#9AA3B2;margin-top:14px">Native voice search on the batch listing. The student speaks their intent in Hindi or English; PW answers in one line, shows what it understood as editable chips, then the batches.</div>
+
+    <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6E778A;font-weight:600;margin-top:26px">Voice UI take</div>
+    <div style="display:flex;gap:7px;margin-top:9px">
+      <button sc-camel-on-click="{{ setA }}" style="flex:1;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:10px;border-radius:10px;font:500 12px 'Poppins';cursor:pointer;text-align:left" style-hover="border-color:#1268E0">A · Full screen</button>
+      <button sc-camel-on-click="{{ setB }}" style="flex:1;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:10px;border-radius:10px;font:500 12px 'Poppins';cursor:pointer;text-align:left" style-hover="border-color:#1268E0">B · Sheet</button>
+      <button sc-camel-on-click="{{ setC }}" style="flex:1;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:10px;border-radius:10px;font:500 12px 'Poppins';cursor:pointer;text-align:left" style-hover="border-color:#1268E0">C · In-field</button>
+    </div>
+    <div style="font-size:11px;line-height:1.6;color:#7C8496;margin-top:8px">{{ variantNote }}</div>
+
+    <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6E778A;font-weight:600;margin-top:24px">Say something</div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-top:9px">
+      <sc-for list="{{ queryList }}" as="q" hint-placeholder-count="6">
+        <button sc-camel-on-click="{{ q.pick }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;gap:3px" style-hover="border-color:#1268E0;background:#1B222C">
+          <span style="font:600 9px 'Poppins';letter-spacing:.1em;color:#7C8496">{{ q.kind }}</span>
+          <span style="font:500 12.5px 'Poppins';color:#E6E9EF">“{{ q.label }}”</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6E778A;font-weight:600;margin-top:24px">Jump to state</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:9px">
+      <sc-for list="{{ stateList }}" as="s" hint-placeholder-count="8">
+        <button sc-camel-on-click="{{ s.go }}" style="background:#171B22;border:1px solid #262C36;color:#C7CDDA;padding:7px 10px;border-radius:8px;font:500 11px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;color:#fff">{{ s.label }}</button>
+      </sc-for>
+    </div>
+    <div style="font-size:11px;line-height:1.6;color:#6E778A;margin-top:18px">Backend can be Google speech-to-text — everything on screen stays PW.</div>
+  </div>
+
+  <div style="flex:0 0 auto">
+    <x-import component-from-global-scope="AndroidDevice" from="assets/voice-search/cf5cdc9d.jsx#/android-frame.jsx" hint-size="412px,892px">
+      <div style="position:relative;height:100%;background:#fff;overflow:hidden;font-family:'Poppins',system-ui,sans-serif">
+
+        <sc-if value="{{ showListing }}" hint-placeholder-val="{{ true }}">
+          <div style="height:100%;overflow-y:auto;padding-bottom:20px;box-sizing:border-box">
+            <div style="background:linear-gradient(180deg,#BFE9FB 0%,#D8F2FD 70%,#FFFFFF 100%);padding:12px 14px 16px">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="display:flex;flex-direction:column;gap:3px;cursor:pointer">
+                  <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+                  <div style="width:13px;height:2px;background:#1F2328;border-radius:2px"></div>
+                  <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+                </div>
+                <div sc-camel-on-click="{{ openVoice }}" style="flex:1;background:#fff;border-radius:9px;padding:10px 12px;display:flex;align-items:center;gap:9px;box-shadow:0 1px 3px rgba(15,23,42,.08);cursor:pointer">
+                  <span style="font-size:13px;color:#6B7280">🔍</span>
+                  <span style="flex:1;font-size:13px;color:#8A9099">Search batches, teachers, exams</span>
+                  <div style="width:1px;height:16px;background:#E4E8EF"></div>
+                  <div style="width:22px;height:22px;border-radius:50%;background:#1268E0;display:grid;place-items:center">
+                    <div style="width:7px;height:11px;border-radius:4px;background:#fff"></div>
+                  </div>
+                </div>
+              </div>
+
+              <sc-if value="{{ nudge }}" hint-placeholder-val="{{ true }}">
+                <div sc-camel-on-click="{{ openVoice }}" style="margin-top:9px;display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #C7E4F7;border-radius:20px;padding:6px 11px 6px 8px;cursor:pointer;box-shadow:0 1px 3px rgba(15,23,42,.06)">
+                  <div style="width:18px;height:18px;border-radius:50%;background:#EAF3FF;display:grid;place-items:center">
+                    <div style="width:5px;height:8px;border-radius:3px;background:#1268E0"></div>
+                  </div>
+                  <span style="font-size:11.5px;font-weight:500;color:#1F2328">Try saying <span style="color:#1268E0">“NEET ke liye 11th ka batch”</span></span>
+                </div>
+              </sc-if>
+
+              <div style="margin-top:12px;background:rgba(255,255,255,.5);border-radius:11px;padding:9px 12px;display:flex;align-items:center;gap:10px">
+                <div style="width:29px;height:29px;border-radius:7px;background:#fff;display:grid;place-items:center;font-size:15px">🎒</div>
+                <div style="flex:1;font-size:15px;font-weight:600;color:#1F2328">Class 11 NEET</div>
+                <div style="font-size:13px;font-weight:600;color:#5B4CE8;cursor:pointer">Change</div>
+              </div>
+
+              <div style="display:flex;gap:9px;margin-top:13px">
+                <div style="flex:1;background:#1268E0;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer">
+                  <div style="font-size:18px">🖥️</div>
+                  <div style="font-size:11px;font-weight:600;color:#fff;margin-top:5px">Online</div>
+                </div>
+                <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer">
+                  <div style="font-size:18px">🏫</div>
+                  <div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Vidyapeeth</div>
+                </div>
+                <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer">
+                  <div style="font-size:18px">⚡</div>
+                  <div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Power Batch</div>
+                </div>
+                <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer">
+                  <div style="font-size:18px">📝</div>
+                  <div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Test Series</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;padding:18px 14px 0">
+              <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+              <div style="font-size:16px;font-weight:600;color:#1F2328">Recommended For You</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:13px 14px 0">
+              <div style="cursor:pointer">
+                <div style="height:104px;border-radius:11px;background:linear-gradient(160deg,#DCEEFF,#B6D8F7);padding:11px;box-sizing:border-box">
+                  <div style="font-size:15px;font-weight:700;color:#0B4EAE;line-height:1.15">ARJUNA<br>NEET 2027</div>
+                </div>
+                <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Arjuna NEET 2027</div>
+                <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px">
+                  <div style="font-size:14px;font-weight:600;color:#1F2328">₹4,199</div>
+                  <div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹6999</div>
+                </div>
+                <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:4px">40% OFF</div>
+                <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+              </div>
+              <div>
+                <div style="height:104px;border-radius:11px;background:#FDF0D0;padding:11px;box-sizing:border-box">
+                  <div style="font-size:15px;font-weight:700;color:#B37400;line-height:1.15">Lakshya<br>NEET 2027</div>
+                </div>
+                <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Lakshya NEET 2027</div>
+                <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px">
+                  <div style="font-size:14px;font-weight:600;color:#1F2328">₹3,499</div>
+                  <div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹5500</div>
+                </div>
+                <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:4px">36% OFF</div>
+                <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+              </div>
+            </div>
+
+            <div style="background:#FDF1E7;margin-top:20px;padding:16px 14px;display:flex;align-items:center;gap:12px">
+              <div style="flex:1">
+                <div style="font-size:16px;font-weight:700;color:#F04E23;line-height:1.2">Small Group Learning</div>
+                <div style="font-size:12px;color:#5A4049;margin-top:6px;line-height:1.5">1:1 teacher interaction, live doubts, small classroom size.</div>
+              </div>
+              <button style="background:#fff;border:1px solid #F0B79E;color:#C2360F;border-radius:9px;padding:10px 14px;font:500 12px 'Poppins';cursor:pointer;white-space:nowrap">Explore</button>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;padding:20px 14px 0">
+              <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+              <div style="font-size:16px;font-weight:600;color:#1F2328">Explore PW</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:13px 14px 0">
+              <div style="background:linear-gradient(150deg,#FFE07A,#FFD24A);border-radius:12px;padding:13px;height:96px;box-sizing:border-box">
+                <div style="font-size:15px;font-weight:600;color:#1F2328">PW Pi</div>
+                <div style="font-size:11px;color:#5A4A10;margin-top:3px">Padhai ka OTT</div>
+              </div>
+              <div style="background:linear-gradient(150deg,#DCEBFF,#C6DEFF);border-radius:12px;padding:13px;height:96px;box-sizing:border-box">
+                <div style="font-size:15px;font-weight:600;color:#1F2328">Saarthi</div>
+                <div style="font-size:11px;color:#2E4368;margin-top:3px">Your personal mentor</div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isResults }}">
+          <div style="height:100%;overflow-y:auto;background:#F7F9FC;padding-bottom:24px;box-sizing:border-box">
+            <div style="background:#fff;padding:12px 14px 13px;border-bottom:1px solid #EDF0F5;position:sticky;top:0;z-index:5">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div sc-camel-on-click="{{ backToListing }}" style="font-size:19px;color:#1F2328;cursor:pointer;line-height:1">←</div>
+                <div sc-camel-on-click="{{ openVoice }}" style="flex:1;background:#F4F6FA;border:1px solid #E4E8EF;border-radius:9px;padding:9px 11px;display:flex;align-items:center;gap:8px;cursor:pointer">
+                  <div style="width:18px;height:18px;border-radius:50%;background:#1268E0;display:grid;place-items:center;flex:0 0 auto">
+                    <div style="width:5px;height:8px;border-radius:3px;background:#fff"></div>
+                  </div>
+                  <span style="flex:1;font-size:12.5px;color:#1F2328;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ heardText }}</span>
+                  <span style="font-size:11px;font-weight:600;color:#1268E0">Edit</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:14px 14px 0;animation:fadeUp .3s ease both">
+              <div style="background:#fff;border:1px solid #E1EBFA;border-radius:14px;padding:13px 14px;box-shadow:0 2px 10px rgba(18,104,224,.06)">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="width:20px;height:20px;border-radius:6px;background:#EAF3FF;display:grid;place-items:center;font-size:11px">✦</div>
+                  <div style="font-size:10px;font-weight:600;letter-spacing:.1em;color:#7B8698">PW UNDERSTOOD</div>
+                </div>
+                <div style="font-size:14.5px;line-height:1.5;color:#1F2328;margin-top:9px;font-weight:500;text-wrap:pretty">{{ reply }}</div>
+
+                <sc-if value="{{ hasChips }}">
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:11px">
+                    <sc-for list="{{ chips }}" as="c" hint-placeholder-count="3">
+                      <div style="display:inline-flex;align-items:center;gap:6px;background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:5px 8px 5px 10px">
+                        <span style="font-size:11.5px;font-weight:500;color:#3A4049">{{ c.label }}</span>
+                        <span sc-camel-on-click="{{ c.remove }}" style="font-size:12px;color:#9AA0A9;cursor:pointer;line-height:1">×</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+
+            <sc-if value="{{ needsFollowUp }}">
+              <div style="padding:12px 14px 0;animation:fadeUp .35s ease both">
+                <div style="background:#0B2E63;border-radius:14px;padding:14px">
+                  <div style="font-size:13.5px;line-height:1.5;color:#DCE9FF;font-weight:500">{{ followQ }}</div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+                    <sc-for list="{{ followChips }}" as="f" hint-placeholder-count="3">
+                      <button sc-camel-on-click="{{ f.pick }}" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:8px 13px;font:500 12px 'Poppins';cursor:pointer" style-hover="background:#1268E0;border-color:#1268E0">{{ f.label }}</button>
+                    </sc-for>
+                  </div>
+                  <div sc-camel-on-click="{{ openVoice }}" style="display:flex;align-items:center;gap:7px;margin-top:12px;cursor:pointer">
+                    <div style="width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center">
+                      <div style="width:4px;height:7px;border-radius:2px;background:#9CC4FF"></div>
+                    </div>
+                    <span style="font-size:11.5px;color:#9CC4FF;font-weight:500">or answer by voice</span>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isNoMatch }}">
+              <div style="padding:12px 14px 0">
+                <div style="background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:16px;text-align:center">
+                  <div style="font-size:22px">🧭</div>
+                  <div style="font-size:14px;font-weight:600;color:#1F2328;margin-top:8px">No batch for this yet</div>
+                  <div style="font-size:12px;line-height:1.55;color:#6B7280;margin-top:6px">PW doesn't run UPSC batches right now. We'll tell you the day it launches.</div>
+                  <div style="display:flex;gap:8px;margin-top:14px">
+                    <button style="flex:1;background:#1268E0;color:#fff;border:0;border-radius:9px;padding:11px;font:500 12.5px 'Poppins';cursor:pointer" style-hover="background:#0B4EAE">Notify me</button>
+                    <button sc-camel-on-click="{{ backToListing }}" style="flex:1;background:#fff;color:#1F2328;border:1px solid #D8DDE5;border-radius:9px;padding:11px;font:500 12.5px 'Poppins';cursor:pointer">Browse batches</button>
+                  </div>
+                </div>
+                <div style="font-size:12px;font-weight:600;color:#6B7280;margin-top:18px;letter-spacing:.02em">STUDENTS ALSO ASKED FOR</div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:9px">
+                  <div sc-camel-on-click="{{ openVoice }}" style="background:#fff;border:1px solid #D8DDE5;border-radius:16px;padding:7px 11px;font-size:11.5px;font-weight:500;color:#3A4049;cursor:pointer">NEET Class 11</div>
+                  <div sc-camel-on-click="{{ openVoice }}" style="background:#fff;border:1px solid #D8DDE5;border-radius:16px;padding:7px 11px;font-size:11.5px;font-weight:500;color:#3A4049;cursor:pointer">JEE Dropper</div>
+                  <div sc-camel-on-click="{{ openVoice }}" style="background:#fff;border:1px solid #D8DDE5;border-radius:16px;padding:7px 11px;font-size:11.5px;font-weight:500;color:#3A4049;cursor:pointer">Class 12 Boards</div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasTeacher }}">
+              <div style="padding:12px 14px 0">
+                <div style="background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px">
+                  <div style="width:46px;height:46px;border-radius:50%;background:linear-gradient(150deg,#DCEEFF,#B6D8F7);display:grid;place-items:center;font-size:16px;font-weight:700;color:#0B4EAE">SK</div>
+                  <div style="flex:1">
+                    <div style="font-size:13.5px;font-weight:600;color:#1F2328">Saurabh Sir</div>
+                    <div style="font-size:11.5px;color:#6B7280;margin-top:2px">Physics · 9 yrs · 4.8 ★ · Teaches 3 batches</div>
+                  </div>
+                  <div style="font-size:11.5px;font-weight:600;color:#1268E0;cursor:pointer">Profile</div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasResults }}">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 14px 0">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="width:3px;height:16px;background:#1268E0;border-radius:2px"></div>
+                  <div style="font-size:15px;font-weight:600;color:#1F2328">{{ resultCountText }}</div>
+                </div>
+                <div style="font-size:11.5px;font-weight:600;color:#1268E0;cursor:pointer">Filters</div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:11px;padding:12px 14px 0">
+                <sc-for list="{{ results }}" as="b" hint-placeholder-count="3">
+                  <div sc-camel-on-click="{{ b.open }}" style="background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:11px;display:flex;gap:12px;cursor:pointer;animation:fadeUp .3s ease both" style-hover="border-color:#B6D8F7">
+                    <div style="width:88px;height:88px;border-radius:10px;flex:0 0 auto;padding:9px;box-sizing:border-box;background:{{ b.tint }}">
+                      <div style="font-size:11.5px;font-weight:700;line-height:1.2;color:{{ b.ink }}">{{ b.cover }}</div>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                      <div style="display:inline-flex;align-items:center;gap:5px;background:#EAF3FF;border-radius:5px;padding:3px 6px">
+                        <span style="font-size:8.5px;font-weight:700;letter-spacing:.05em;color:#0B4EAE">{{ b.why }}</span>
+                      </div>
+                      <div style="font-size:13.5px;font-weight:600;color:#1F2328;margin-top:6px;line-height:1.3">{{ b.title }}</div>
+                      <div style="font-size:11px;color:#6B7280;margin-top:3px">{{ b.meta }}</div>
+                      <div style="display:flex;align-items:baseline;gap:6px;margin-top:7px">
+                        <div style="font-size:14px;font-weight:600;color:#1F2328">{{ b.price }}</div>
+                        <div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">{{ b.mrp }}</div>
+                        <div style="font-size:11px;font-weight:600;color:#1AA260">{{ b.off }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div sc-camel-on-click="{{ openVoice }}" style="margin:18px 14px 0;border:1px dashed #C7D2E2;border-radius:12px;padding:13px;display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;background:#fff">
+                <div style="width:20px;height:20px;border-radius:50%;background:#EAF3FF;display:grid;place-items:center">
+                  <div style="width:5px;height:8px;border-radius:3px;background:#1268E0"></div>
+                </div>
+                <span style="font-size:12.5px;font-weight:500;color:#1268E0">Not what you meant? Ask again</span>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isDetail }}">
+          <div style="height:100%;overflow-y:auto;background:#fff;padding-bottom:84px;box-sizing:border-box">
+            <div style="padding:14px 14px 0;display:flex;align-items:center;gap:11px">
+              <div sc-camel-on-click="{{ backToResults }}" style="font-size:19px;color:#1F2328;cursor:pointer;line-height:1">←</div>
+              <div style="font-size:14px;font-weight:600;color:#1F2328">Batch details</div>
+            </div>
+            <div style="margin:14px 14px 0;height:150px;border-radius:14px;padding:14px;box-sizing:border-box;background:{{ pickTint }}">
+              <div style="font-size:19px;font-weight:700;line-height:1.15;color:{{ pickInk }}">{{ pickCover }}</div>
+            </div>
+            <div style="padding:14px 14px 0">
+              <div style="display:inline-flex;background:#EAF3FF;border-radius:5px;padding:3px 7px;font-size:9px;font-weight:700;letter-spacing:.05em;color:#0B4EAE">{{ pickWhy }}</div>
+              <div style="font-size:19px;font-weight:600;color:#1F2328;margin-top:8px;line-height:1.25">{{ pickTitle }}</div>
+              <div style="font-size:12px;color:#6B7280;margin-top:5px">{{ pickMeta }}</div>
+              <div style="display:flex;align-items:baseline;gap:8px;margin-top:12px">
+                <div style="font-size:22px;font-weight:600;color:#1F2328">{{ pickPrice }}</div>
+                <div style="font-size:13px;color:#9AA0A9;text-decoration:line-through">{{ pickMrp }}</div>
+                <div style="font-size:13px;font-weight:600;color:#1AA260">{{ pickOff }}</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 14px 0">
+              <div style="background:#F7F9FC;border-radius:11px;padding:11px">
+                <div style="font-size:15px">🎥</div>
+                <div style="font-size:12px;font-weight:600;color:#1F2328;margin-top:6px">Live + recorded</div>
+                <div style="font-size:11px;color:#6B7280;margin-top:2px">6 classes / week</div>
+              </div>
+              <div style="background:#F7F9FC;border-radius:11px;padding:11px">
+                <div style="font-size:15px">📓</div>
+                <div style="font-size:12px;font-weight:600;color:#1F2328;margin-top:6px">Notes &amp; DPPs</div>
+                <div style="font-size:11px;color:#6B7280;margin-top:2px">Daily practice</div>
+              </div>
+              <div style="background:#F7F9FC;border-radius:11px;padding:11px">
+                <div style="font-size:15px">💬</div>
+                <div style="font-size:12px;font-weight:600;color:#1F2328;margin-top:6px">Doubt solving</div>
+                <div style="font-size:11px;color:#6B7280;margin-top:2px">In {{ pickMedium }}</div>
+              </div>
+              <div style="background:#F7F9FC;border-radius:11px;padding:11px">
+                <div style="font-size:15px">📝</div>
+                <div style="font-size:12px;font-weight:600;color:#1F2328;margin-top:6px">Test series</div>
+                <div style="font-size:11px;color:#6B7280;margin-top:2px">NEET pattern</div>
+              </div>
+            </div>
+            <div style="padding:20px 14px 0">
+              <div style="font-size:14px;font-weight:600;color:#1F2328">Your teachers</div>
+              <div style="display:flex;flex-direction:column;gap:9px;margin-top:11px">
+                <div style="display:flex;align-items:center;gap:11px">
+                  <div style="width:38px;height:38px;border-radius:50%;background:#DCEEFF;display:grid;place-items:center;font:700 12px 'Poppins';color:#0B4EAE">SK</div>
+                  <div><div style="font-size:12.5px;font-weight:600;color:#1F2328">Saurabh Sir</div><div style="font-size:11px;color:#6B7280">Physics</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:11px">
+                  <div style="width:38px;height:38px;border-radius:50%;background:#FDF0D0;display:grid;place-items:center;font:700 12px 'Poppins';color:#B37400">AN</div>
+                  <div><div style="font-size:12.5px;font-weight:600;color:#1F2328">Anushka Ma'am</div><div style="font-size:11px;color:#6B7280">Biology</div></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:11px">
+                  <div style="width:38px;height:38px;border-radius:50%;background:#E4DEFB;display:grid;place-items:center;font:700 12px 'Poppins';color:#3D3466">RM</div>
+                  <div><div style="font-size:12.5px;font-weight:600;color:#1F2328">Rahul Sir</div><div style="font-size:11px;color:#6B7280">Chemistry</div></div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #EDF0F5;padding:12px 14px;display:flex;align-items:center;gap:12px">
+              <div>
+                <div style="font-size:16px;font-weight:600;color:#1F2328">{{ pickPrice }}</div>
+                <div style="font-size:10.5px;color:#1AA260;font-weight:600">{{ pickOff }} today</div>
+              </div>
+              <button sc-camel-on-click="{{ goCheckout }}" style="flex:1;background:#1F2328;color:#fff;border:0;border-radius:10px;padding:13px;font:600 13.5px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isCheckout }}">
+          <div style="height:100%;overflow-y:auto;background:#F7F9FC;padding-bottom:84px;box-sizing:border-box">
+            <div style="background:#fff;padding:14px;display:flex;align-items:center;gap:11px;border-bottom:1px solid #EDF0F5">
+              <div sc-camel-on-click="{{ backToDetail }}" style="font-size:19px;color:#1F2328;cursor:pointer;line-height:1">←</div>
+              <div style="font-size:14px;font-weight:600;color:#1F2328">Checkout</div>
+            </div>
+            <div style="margin:14px;background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:12px;display:flex;gap:12px">
+              <div style="width:64px;height:64px;border-radius:10px;flex:0 0 auto;padding:8px;box-sizing:border-box;background:{{ pickTint }}">
+                <div style="font-size:9.5px;font-weight:700;line-height:1.2;color:{{ pickInk }}">{{ pickCover }}</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:13px;font-weight:600;color:#1F2328;line-height:1.3">{{ pickTitle }}</div>
+                <div style="font-size:11px;color:#6B7280;margin-top:3px">{{ pickMeta }}</div>
+              </div>
+            </div>
+            <div style="margin:0 14px;background:#fff;border:1px solid #E4E8EF;border-radius:14px;padding:14px">
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#3A4049"><span>Batch price</span><span>{{ pickMrp }}</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;color:#1AA260;margin-top:9px"><span>Discount ({{ pickOff }})</span><span>− {{ pickSaving }}</span></div>
+              <div style="height:1px;background:#EDF0F5;margin:12px 0"></div>
+              <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:#1F2328"><span>Total</span><span>{{ pickPrice }}</span></div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #EDF0F5;padding:12px 14px">
+              <button sc-camel-on-click="{{ goSuccess }}" style="width:100%;background:#1268E0;color:#fff;border:0;border-radius:10px;padding:14px;font:600 14px 'Poppins';cursor:pointer" style-hover="background:#0B4EAE">Pay {{ pickPrice }}</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isSuccess }}">
+          <div style="height:100%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px;box-sizing:border-box;text-align:center">
+            <div style="width:70px;height:70px;border-radius:50%;background:#E8F8EE;display:grid;place-items:center;font-size:30px;animation:popIn .35s ease both">✅</div>
+            <div style="font-size:19px;font-weight:600;color:#1F2328;margin-top:18px;line-height:1.3">{{ pickTitle }} is yours</div>
+            <div style="font-size:12.5px;color:#6B7280;margin-top:9px;line-height:1.6">You found it by saying “{{ heardText }}”. Classes start Monday, 6 PM.</div>
+            <button sc-camel-on-click="{{ backToListing }}" style="margin-top:22px;background:#1F2328;color:#fff;border:0;border-radius:10px;padding:13px 22px;font:600 13px 'Poppins';cursor:pointer">Start learning</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ overlayA }}">
+          <div style="position:absolute;inset:0;background:#0B2E63;display:flex;flex-direction:column;padding:16px 20px 26px;box-sizing:border-box;animation:fadeUp .25s ease both">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div sc-camel-on-click="{{ backToListing }}" style="font-size:20px;color:#8FB6F0;cursor:pointer;line-height:1">✕</div>
+              <div sc-camel-on-click="{{ toggleLang }}" style="display:flex;background:rgba(255,255,255,.1);border-radius:18px;padding:3px;cursor:pointer">
+                <div style="padding:5px 12px;border-radius:15px;font:600 11px 'Poppins';background:{{ enBg }};color:{{ enInk }}">EN</div>
+                <div style="padding:5px 12px;border-radius:15px;font:600 11px 'Poppins';background:{{ hiBg }};color:{{ hiInk }}">हिं</div>
+              </div>
+            </div>
+
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+              <sc-if value="{{ isPermission }}">
+                <div style="animation:fadeUp .3s ease both">
+                  <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;margin:0 auto">
+                    <div style="width:13px;height:21px;border-radius:7px;background:#8FB6F0"></div>
+                  </div>
+                  <div style="font-size:18px;font-weight:600;color:#fff;margin-top:20px;line-height:1.35">Let PW hear you</div>
+                  <div style="font-size:12.5px;color:#9CC4FF;margin-top:9px;line-height:1.6;max-width:250px">Mic access is used only while you're speaking a search. Nothing is recorded.</div>
+                  <button sc-camel-on-click="{{ allowMic }}" style="margin-top:22px;background:#fff;color:#0B2E63;border:0;border-radius:10px;padding:12px 22px;font:600 13px 'Poppins';cursor:pointer">Allow microphone</button>
+                  <div sc-camel-on-click="{{ backToListing }}" style="font-size:12px;color:#8FB6F0;margin-top:14px;cursor:pointer">Type instead</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isIdle }}">
+                <div style="animation:fadeUp .3s ease both">
+                  <div style="font-size:20px;font-weight:600;color:#fff;line-height:1.35;max-width:260px">{{ idleTitle }}</div>
+                  <div style="font-size:12.5px;color:#9CC4FF;margin-top:10px">Tap the mic and just say it</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isListening }}">
+                <div style="width:100%;animation:fadeUp .25s ease both">
+                  <div style="font-size:11px;font-weight:600;letter-spacing:.14em;color:#8FB6F0">LISTENING</div>
+                  <div style="font-size:24px;font-weight:500;color:#fff;line-height:1.4;margin-top:16px;min-height:100px;text-wrap:pretty">{{ shownText }}<span style="animation:caret 1s steps(1) infinite;color:#5F9BF0">|</span></div>
+                  <div style="display:flex;align-items:flex-end;justify-content:center;gap:5px;height:44px;margin-top:8px">
+                    <div style="width:5px;height:40px;border-radius:3px;background:#3F86EE;transform-origin:bottom;animation:wf .9s ease-in-out infinite"></div>
+                    <div style="width:5px;height:40px;border-radius:3px;background:#5F9BF0;transform-origin:bottom;animation:wf .9s ease-in-out .12s infinite"></div>
+                    <div style="width:5px;height:40px;border-radius:3px;background:#8FB6F0;transform-origin:bottom;animation:wf .9s ease-in-out .24s infinite"></div>
+                    <div style="width:5px;height:40px;border-radius:3px;background:#5F9BF0;transform-origin:bottom;animation:wf .9s ease-in-out .36s infinite"></div>
+                    <div style="width:5px;height:40px;border-radius:3px;background:#3F86EE;transform-origin:bottom;animation:wf .9s ease-in-out .48s infinite"></div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isProcessing }}">
+                <div style="animation:fadeUp .25s ease both">
+                  <div style="font-size:18px;font-weight:500;color:#DCE9FF;line-height:1.45;max-width:280px">“{{ shownText }}”</div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:7px;margin-top:22px">
+                    <div style="width:7px;height:7px;border-radius:50%;background:#8FB6F0;animation:think 1.1s ease-in-out infinite"></div>
+                    <div style="width:7px;height:7px;border-radius:50%;background:#8FB6F0;animation:think 1.1s ease-in-out .18s infinite"></div>
+                    <div style="width:7px;height:7px;border-radius:50%;background:#8FB6F0;animation:think 1.1s ease-in-out .36s infinite"></div>
+                    <div style="font-size:12.5px;color:#9CC4FF;margin-left:5px">Finding your batches</div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isNoSpeech }}">
+                <div style="animation:fadeUp .25s ease both">
+                  <div style="font-size:19px;font-weight:600;color:#fff;line-height:1.35">Didn't catch anything</div>
+                  <div style="font-size:12.5px;color:#9CC4FF;margin-top:9px;line-height:1.6;max-width:250px">Hold the phone a little closer and say your exam and class.</div>
+                  <button sc-camel-on-click="{{ startListen }}" style="margin-top:20px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:11px 20px;font:500 12.5px 'Poppins';cursor:pointer">Try again</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isUnclear }}">
+                <div style="animation:fadeUp .25s ease both">
+                  <div style="font-size:13px;color:#8FB6F0">You said</div>
+                  <div style="font-size:19px;font-weight:500;color:#fff;margin-top:7px;line-height:1.4">“{{ shownText }}”</div>
+                  <div style="font-size:12.5px;color:#9CC4FF;margin-top:14px;line-height:1.6;max-width:260px">Couldn't match that to a batch. Pick one to get going:</div>
+                  <div style="display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:14px">
+                    <button sc-camel-on-click="{{ pickExam }}" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:8px 13px;font:500 12px 'Poppins';cursor:pointer" style-hover="background:#1268E0;border-color:#1268E0">NEET Class 11</button>
+                    <button sc-camel-on-click="{{ pickTeacher }}" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:8px 13px;font:500 12px 'Poppins';cursor:pointer" style-hover="background:#1268E0;border-color:#1268E0">A teacher's batch</button>
+                    <button sc-camel-on-click="{{ pickOffline }}" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:18px;padding:8px 13px;font:500 12px 'Poppins';cursor:pointer" style-hover="background:#1268E0;border-color:#1268E0">Offline centre</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isNoisy }}">
+                <div style="animation:fadeUp .25s ease both">
+                  <div style="font-size:24px">🔊</div>
+                  <div style="font-size:19px;font-weight:600;color:#fff;margin-top:12px;line-height:1.35">It's loud around you</div>
+                  <div style="font-size:12.5px;color:#9CC4FF;margin-top:9px;line-height:1.6;max-width:250px">Speak a bit louder, or type your search instead.</div>
+                  <div style="display:flex;gap:8px;justify-content:center;margin-top:20px">
+                    <button sc-camel-on-click="{{ startListen }}" style="background:#fff;color:#0B2E63;border:0;border-radius:10px;padding:11px 18px;font:600 12.5px 'Poppins';cursor:pointer">Keep speaking</button>
+                    <button sc-camel-on-click="{{ backToListing }}" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:11px 18px;font:500 12.5px 'Poppins';cursor:pointer">Type</button>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+
+            <sc-if value="{{ showHints }}">
+              <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:14px">
+                <div sc-camel-on-click="{{ pickTeacher }}" style="flex:0 0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:7px 12px;font-size:11.5px;color:#DCE9FF;cursor:pointer;white-space:nowrap">“Saurabh sir ka batch”</div>
+                <div sc-camel-on-click="{{ pickMedium }}" style="flex:0 0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:7px 12px;font-size:11.5px;color:#DCE9FF;cursor:pointer;white-space:nowrap">“Hindi medium batch”</div>
+                <div sc-camel-on-click="{{ pickOffline }}" style="flex:0 0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:7px 12px;font-size:11.5px;color:#DCE9FF;cursor:pointer;white-space:nowrap">“Offline centre near me”</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showMicButton }}">
+              <div style="display:flex;flex-direction:column;align-items:center">
+                <div sc-camel-on-click="{{ micTap }}" style="position:relative;width:74px;height:74px;cursor:pointer">
+                  <sc-if value="{{ isListening }}">
+                    <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #3F86EE;animation:ring 1.8s ease-out infinite"></div>
+                    <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #3F86EE;animation:ring 1.8s ease-out .9s infinite"></div>
+                  </sc-if>
+                  <div style="position:absolute;inset:0;border-radius:50%;background:{{ micBg }};display:grid;place-items:center;box-shadow:0 8px 24px rgba(18,104,224,.4)">
+                    <sc-if value="{{ isListening }}">
+                      <div style="width:20px;height:20px;border-radius:5px;background:#fff"></div>
+                    </sc-if>
+                    <sc-if value="{{ micShowsMic }}" hint-placeholder-val="{{ true }}">
+                      <div style="display:flex;flex-direction:column;align-items:center;gap:3px">
+                        <div style="width:13px;height:20px;border-radius:7px;background:#fff"></div>
+                        <div style="width:19px;height:2px;border-radius:2px;background:#fff"></div>
+                      </div>
+                    </sc-if>
+                  </div>
+                </div>
+                <div style="font-size:11px;color:#8FB6F0;margin-top:11px">{{ micHint }}</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ overlayC }}">
+          <div style="position:absolute;inset:0;background:#fff;display:flex;flex-direction:column;animation:fadeUp .2s ease both">
+            <div style="padding:14px 16px 0;display:flex;align-items:center;gap:12px">
+              <div sc-camel-on-click="{{ backToListing }}" style="font-size:20px;color:#1F2328;cursor:pointer;line-height:1">←</div>
+              <div style="flex:1;text-align:center;font-size:14.5px;font-weight:500;color:#3A4049;padding-right:20px">Search batches, teachers, exams</div>
+            </div>
+
+            <div style="padding:16px 16px 0;position:relative;z-index:2">
+              <div style="border:1px solid #E4E8EF;border-radius:12px;padding:14px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 4px rgba(15,23,42,.05);position:relative">
+                <div style="flex:1;min-width:0;display:flex;align-items:center;gap:2px;position:relative">
+                  <sc-if value="{{ cCaretBold }}">
+                    <div style="width:3px;height:22px;border-radius:2px;background:#1268E0;flex:0 0 auto"></div>
+                  </sc-if>
+                  <sc-if value="{{ cCaretThin }}" hint-placeholder-val="{{ true }}">
+                    <div style="width:1.5px;height:19px;border-radius:2px;background:#1268E0;flex:0 0 auto;animation:caret 1s steps(1) infinite"></div>
+                  </sc-if>
+                  <div style="font-size:14.5px;color:{{ cTextInk }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:4px">{{ cFieldText }}</div>
+
+                  <sc-if value="{{ isListening }}">
+                    <div style="position:absolute;left:-14px;top:24px;width:44px;height:44px">
+                      <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #9CC4FF;animation:ring 1.7s ease-out infinite"></div>
+                      <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #9CC4FF;animation:ring 1.7s ease-out .85s infinite"></div>
+                      <div style="position:absolute;inset:0;border-radius:50%;background:#1268E0;display:grid;place-items:center;box-shadow:0 4px 14px rgba(18,104,224,.4)">
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                          <div style="width:9px;height:14px;border-radius:5px;background:#fff"></div>
+                          <div style="width:14px;height:2px;border-radius:2px;background:#fff"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </div>
+
+                <div style="width:1px;height:22px;background:#E4E8EF"></div>
+                <div sc-camel-on-click="{{ micTap }}" style="width:26px;display:grid;place-items:center;cursor:pointer">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                    <div style="width:9px;height:14px;border-radius:5px;background:{{ micBg }}"></div>
+                    <div style="width:14px;height:2px;border-radius:2px;background:{{ micBg }}"></div>
+                  </div>
+                </div>
+              </div>
+
+              <sc-if value="{{ isListening }}">
+                <div style="display:flex;align-items:center;gap:8px;margin-top:34px;padding-left:36px">
+                  <div style="display:flex;align-items:flex-end;gap:2.5px;height:16px">
+                    <div style="width:3px;height:14px;border-radius:2px;background:#1268E0;transform-origin:bottom;animation:wf .8s ease-in-out infinite"></div>
+                    <div style="width:3px;height:14px;border-radius:2px;background:#8FB6F0;transform-origin:bottom;animation:wf .8s ease-in-out .1s infinite"></div>
+                    <div style="width:3px;height:14px;border-radius:2px;background:#1268E0;transform-origin:bottom;animation:wf .8s ease-in-out .2s infinite"></div>
+                    <div style="width:3px;height:14px;border-radius:2px;background:#8FB6F0;transform-origin:bottom;animation:wf .8s ease-in-out .3s infinite"></div>
+                  </div>
+                  <div style="font-size:11.5px;color:#6B7280">Listening — tap anywhere to stop</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isPermission }}">
+                <div style="margin-top:12px;background:#F4F8FF;border:1px solid #DCE9FF;border-radius:12px;padding:12px">
+                  <div style="font-size:12.5px;font-weight:600;color:#1F2328">Let PW hear you</div>
+                  <div style="font-size:11.5px;color:#6B7280;margin-top:5px;line-height:1.55">Mic is used only while you speak. Nothing is recorded.</div>
+                  <button sc-camel-on-click="{{ allowMic }}" style="margin-top:11px;background:#1268E0;color:#fff;border:0;border-radius:9px;padding:10px 16px;font:600 12px 'Poppins';cursor:pointer" style-hover="background:#0B4EAE">Allow microphone</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isProcessing }}">
+                <div style="display:flex;align-items:center;gap:6px;margin-top:14px;padding-left:4px">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out infinite"></div>
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out .18s infinite"></div>
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out .36s infinite"></div>
+                  <div style="font-size:12px;color:#6B7280;margin-left:5px">Finding your batches</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ cShowError }}">
+                <div style="margin-top:12px;background:#FFF7ED;border:1px solid #FBE0C0;border-radius:12px;padding:12px">
+                  <div style="font-size:12.5px;font-weight:600;color:#8A4B00">{{ cErrorTitle }}</div>
+                  <div style="font-size:11.5px;color:#8A6A44;margin-top:5px;line-height:1.55">{{ cErrorBody }}</div>
+                  <button sc-camel-on-click="{{ startListen }}" style="margin-top:11px;background:#fff;border:1px solid #E8C79E;color:#8A4B00;border-radius:9px;padding:9px 15px;font:600 12px 'Poppins';cursor:pointer">Try again</button>
+                </div>
+              </sc-if>
+            </div>
+
+            <div sc-camel-on-click="{{ stopTyping }}" style="flex:1;padding:26px 16px 0;overflow-y:auto">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="font-size:11px;font-weight:600;letter-spacing:.14em;color:#6B7280;white-space:nowrap">RECENTLY SEARCHED</div>
+                <div style="flex:1;height:1px;background:#EDF0F5"></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px;margin-top:16px">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <div style="width:34px;height:34px;border-radius:9px;background:#DCEEFF;display:grid;place-items:center;font:700 10px 'Poppins';color:#0B4EAE">A</div>
+                  <div style="flex:1"><div style="font-size:13px;color:#1F2328">Arjuna NEET 2027</div><div style="font-size:11px;color:#9AA0A9;margin-top:2px">Class 11 · Online</div></div>
+                  <div style="font-size:16px;color:#C7CDDA">↗</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px">
+                  <div style="width:34px;height:34px;border-radius:9px;background:#FDF0D0;display:grid;place-items:center;font:700 10px 'Poppins';color:#B37400">L</div>
+                  <div style="flex:1"><div style="font-size:13px;color:#1F2328">Lakshya NEET 2027</div><div style="font-size:11px;color:#9AA0A9;margin-top:2px">Class 11 · Online</div></div>
+                  <div style="font-size:16px;color:#C7CDDA">↗</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px">
+                  <div style="width:34px;height:34px;border-radius:9px;background:#E4DEFB;display:grid;place-items:center;font:700 10px 'Poppins';color:#3D3466">S</div>
+                  <div style="flex:1"><div style="font-size:13px;color:#1F2328">Saurabh Sir</div><div style="font-size:11px;color:#9AA0A9;margin-top:2px">Physics teacher</div></div>
+                  <div style="font-size:16px;color:#C7CDDA">↗</div>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:center;gap:11px;margin-top:26px">
+                <div style="font-size:11px;font-weight:600;letter-spacing:.14em;color:#6B7280;white-space:nowrap">TRY SAYING</div>
+                <div style="flex:1;height:1px;background:#EDF0F5"></div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px">
+                <div sc-camel-on-click="{{ pickTeacher }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Saurabh sir ka batch”</div>
+                <div sc-camel-on-click="{{ pickMedium }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Hindi medium batch”</div>
+                <div sc-camel-on-click="{{ pickOffline }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Offline centre near me”</div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ overlayB }}">
+          <div style="position:absolute;inset:0;background:rgba(11,26,48,.55);backdrop-filter:blur(1.5px)" sc-camel-on-click="{{ backToListing }}"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;padding:14px 16px 20px;box-sizing:border-box;box-shadow:0 -8px 30px rgba(11,26,48,.28);animation:sheetUp .3s cubic-bezier(.2,.8,.25,1) both">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="width:38px;height:4px;border-radius:3px;background:#E4E8EF"></div>
+              <div sc-camel-on-click="{{ toggleLang }}" style="display:flex;background:#F4F6FA;border-radius:16px;padding:3px;cursor:pointer">
+                <div style="padding:4px 11px;border-radius:13px;font:600 10.5px 'Poppins';background:{{ enBgB }};color:{{ enInkB }}">EN</div>
+                <div style="padding:4px 11px;border-radius:13px;font:600 10.5px 'Poppins';background:{{ hiBgB }};color:{{ hiInkB }}">हिं</div>
+              </div>
+            </div>
+
+            <sc-if value="{{ isPermission }}">
+              <div style="padding:16px 0 4px">
+                <div style="font-size:16px;font-weight:600;color:#1F2328;line-height:1.35">Let PW hear you</div>
+                <div style="font-size:12px;color:#6B7280;margin-top:7px;line-height:1.6">Used only while you speak a search. Nothing is recorded.</div>
+                <div style="display:flex;gap:8px;margin-top:16px">
+                  <button sc-camel-on-click="{{ allowMic }}" style="flex:1;background:#1268E0;color:#fff;border:0;border-radius:10px;padding:12px;font:600 12.5px 'Poppins';cursor:pointer" style-hover="background:#0B4EAE">Allow microphone</button>
+                  <button sc-camel-on-click="{{ backToListing }}" style="background:#fff;color:#3A4049;border:1px solid #D8DDE5;border-radius:10px;padding:12px 16px;font:500 12.5px 'Poppins';cursor:pointer">Type</button>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isIdle }}">
+              <div style="padding:14px 0 2px">
+                <div style="font-size:15.5px;font-weight:600;color:#1F2328;line-height:1.35">{{ idleTitle }}</div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+                  <div sc-camel-on-click="{{ pickTeacher }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Saurabh sir ka batch”</div>
+                  <div sc-camel-on-click="{{ pickMedium }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Hindi medium batch”</div>
+                  <div sc-camel-on-click="{{ pickOffline }}" style="background:#F4F6FA;border:1px solid #E4E8EF;border-radius:16px;padding:7px 11px;font-size:11.5px;color:#3A4049;cursor:pointer">“Offline centre near me”</div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isListening }}">
+              <div style="padding:14px 0 2px">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#E5484D"></div>
+                  <div style="font-size:10.5px;font-weight:600;letter-spacing:.12em;color:#6B7280">LISTENING</div>
+                </div>
+                <div style="font-size:17px;font-weight:500;color:#1F2328;line-height:1.45;margin-top:11px;min-height:74px;text-wrap:pretty">{{ shownText }}<span style="animation:caret 1s steps(1) infinite;color:#1268E0">|</span></div>
+                <div style="display:flex;align-items:center;gap:3px;height:28px">
+                  <div style="flex:1;height:22px;border-radius:2px;background:#BFD9F8;transform-origin:center;animation:wf .8s ease-in-out infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#8FB6F0;transform-origin:center;animation:wf .8s ease-in-out .07s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#1268E0;transform-origin:center;animation:wf .8s ease-in-out .14s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#8FB6F0;transform-origin:center;animation:wf .8s ease-in-out .21s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#BFD9F8;transform-origin:center;animation:wf .8s ease-in-out .28s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#8FB6F0;transform-origin:center;animation:wf .8s ease-in-out .35s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#1268E0;transform-origin:center;animation:wf .8s ease-in-out .42s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#8FB6F0;transform-origin:center;animation:wf .8s ease-in-out .49s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#BFD9F8;transform-origin:center;animation:wf .8s ease-in-out .56s infinite"></div>
+                  <div style="flex:1;height:22px;border-radius:2px;background:#8FB6F0;transform-origin:center;animation:wf .8s ease-in-out .63s infinite"></div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isProcessing }}">
+              <div style="padding:14px 0 2px">
+                <div style="font-size:15px;font-weight:500;color:#1F2328;line-height:1.45">“{{ shownText }}”</div>
+                <div style="display:flex;align-items:center;gap:6px;margin-top:14px">
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out infinite"></div>
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out .18s infinite"></div>
+                  <div style="width:6px;height:6px;border-radius:50%;background:#1268E0;animation:think 1.1s ease-in-out .36s infinite"></div>
+                  <div style="font-size:12px;color:#6B7280;margin-left:5px">Finding your batches</div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isNoSpeech }}">
+              <div style="padding:14px 0 2px">
+                <div style="font-size:15.5px;font-weight:600;color:#1F2328">Didn't catch anything</div>
+                <div style="font-size:12px;color:#6B7280;margin-top:7px;line-height:1.6">Hold the phone closer and say your exam and class.</div>
+                <button sc-camel-on-click="{{ startListen }}" style="margin-top:14px;background:#fff;border:1px solid #D8DDE5;color:#1F2328;border-radius:10px;padding:11px 18px;font:500 12.5px 'Poppins';cursor:pointer">Try again</button>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isUnclear }}">
+              <div style="padding:14px 0 2px">
+                <div style="font-size:15px;font-weight:500;color:#1F2328;line-height:1.45">“{{ shownText }}”</div>
+                <div style="font-size:12px;color:#6B7280;margin-top:8px;line-height:1.6">Couldn't match that to a batch. Pick one to get going:</div>
+                <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:12px">
+                  <button sc-camel-on-click="{{ pickExam }}" style="background:#F4F6FA;border:1px solid #E4E8EF;color:#3A4049;border-radius:16px;padding:8px 12px;font:500 11.5px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;color:#1268E0">NEET Class 11</button>
+                  <button sc-camel-on-click="{{ pickTeacher }}" style="background:#F4F6FA;border:1px solid #E4E8EF;color:#3A4049;border-radius:16px;padding:8px 12px;font:500 11.5px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;color:#1268E0">A teacher's batch</button>
+                  <button sc-camel-on-click="{{ pickOffline }}" style="background:#F4F6FA;border:1px solid #E4E8EF;color:#3A4049;border-radius:16px;padding:8px 12px;font:500 11.5px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;color:#1268E0">Offline centre</button>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isNoisy }}">
+              <div style="padding:14px 0 2px">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span style="font-size:15px">🔊</span>
+                  <div style="font-size:15px;font-weight:600;color:#1F2328">It's loud around you</div>
+                </div>
+                <div style="font-size:12px;color:#6B7280;margin-top:7px;line-height:1.6">Speak a bit louder, or type your search instead.</div>
+                <div style="display:flex;gap:8px;margin-top:14px">
+                  <button sc-camel-on-click="{{ startListen }}" style="flex:1;background:#1268E0;color:#fff;border:0;border-radius:10px;padding:11px;font:600 12.5px 'Poppins';cursor:pointer">Keep speaking</button>
+                  <button sc-camel-on-click="{{ backToListing }}" style="background:#fff;color:#3A4049;border:1px solid #D8DDE5;border-radius:10px;padding:11px 16px;font:500 12.5px 'Poppins';cursor:pointer">Type</button>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #F0F2F6">
+              <div sc-camel-on-click="{{ micTap }}" style="position:relative;width:52px;height:52px;flex:0 0 auto;cursor:pointer">
+                <sc-if value="{{ isListening }}">
+                  <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #BFD9F8;animation:ring 1.8s ease-out infinite"></div>
+                </sc-if>
+                <div style="position:absolute;inset:0;border-radius:50%;background:{{ micBg }};display:grid;place-items:center;box-shadow:0 4px 14px rgba(18,104,224,.32)">
+                  <sc-if value="{{ isListening }}">
+                    <div style="width:15px;height:15px;border-radius:4px;background:#fff"></div>
+                  </sc-if>
+                  <sc-if value="{{ micShowsMic }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:2px">
+                      <div style="width:10px;height:15px;border-radius:5px;background:#fff"></div>
+                      <div style="width:15px;height:2px;border-radius:2px;background:#fff"></div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+              <div style="flex:1;font-size:11.5px;color:#6B7280;line-height:1.5">{{ micHint }}</div>
+              <div sc-camel-on-click="{{ backToListing }}" style="font-size:12px;font-weight:600;color:#6B7280;cursor:pointer">Cancel</div>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </x-import>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],&quot;default&quot;:&quot;A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Voice UI&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;hi&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Voice UI&quot;},&quot;speechSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:150,&quot;max&quot;:700,&quot;step&quot;:50,&quot;default&quot;:300,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Voice UI&quot;},&quot;showNudge&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Listing&quot;}}">
+class Component extends DCLogic {
+  QUERIES = {
+    exam: {
+      kind: 'EXAM + CLASS', label: 'NEET ke liye 11th ka batch chahiye',
+      en: 'I want a Class 11 NEET batch', hi: 'NEET ke liye 11th ka batch chahiye',
+      chips: ['NEET', 'Class 11', 'Online'],
+      reply: 'Class 11 NEET, online. These three are where most students like you start.',
+      results: ['arjuna', 'lakshya', 'yakeen']
+    },
+    teacher: {
+      kind: 'TEACHER NAME', label: 'Saurabh sir ka Physics batch chahiye',
+      en: "I want Saurabh sir's Physics batch", hi: 'Saurabh sir ka Physics batch chahiye',
+      chips: ['Saurabh Sir', 'Physics', 'Class 11'],
+      reply: 'Saurabh sir takes Physics in these Class 11 NEET batches.',
+      teacher: true, results: ['arjuna', 'power', 'yakeen']
+    },
+    medium: {
+      kind: 'LANGUAGE / MEDIUM', label: 'Hindi medium wala NEET batch',
+      en: 'A Hindi medium NEET batch', hi: 'Hindi medium wala NEET batch',
+      chips: ['NEET', 'Hindi medium', 'Class 11'],
+      reply: 'Hindi-medium batches — lectures, notes and doubt-solving all in Hindi.',
+      results: ['arjunaH', 'lakshyaH', 'yakeenH']
+    },
+    offline: {
+      kind: 'MODE / LOCATION', label: 'Mere paas offline centre hai kya',
+      en: 'Is there an offline centre near me', hi: 'Mere paas koi offline centre hai kya',
+      chips: ['Offline', 'Vidyapeeth', 'Near Kota'],
+      reply: 'Two PW Vidyapeeth centres near you have Class 11 NEET seats open.',
+      results: ['vpKota', 'vpJhalawar']
+    },
+    vague: {
+      kind: 'VAGUE GOAL', label: 'Mujhe doctor banna hai',
+      en: 'I want to become a doctor', hi: 'Mujhe doctor banna hai',
+      chips: ['NEET'],
+      reply: 'Doctor banne ke liye NEET. One thing and I can show the right batch.',
+      followQ: 'Which class are you in right now?',
+      followChips: ['Class 11', 'Class 12', 'Dropper'],
+      results: ['arjuna', 'lakshya', 'yakeen']
+    },
+    nomatch: {
+      kind: 'OUT OF CATALOGUE', label: 'IAS ki coaching chahiye',
+      en: 'I want IAS coaching', hi: 'Mujhe IAS ki coaching chahiye',
+      chips: ['UPSC / IAS'],
+      reply: "Heard you — UPSC prep. PW doesn't have IAS batches yet.",
+      noMatch: true, results: []
+    }
+  };
+
+  BATCHES = {
+    arjuna:      { cover: 'ARJUNA NEET 2027', tint: 'linear-gradient(160deg,#DCEEFF,#B6D8F7)', ink: '#0B4EAE', title: 'Arjuna NEET 2027', meta: 'Class 11 · English · Starts 15 Sep', price: '₹4,199', mrp: '₹6,999', off: '40% OFF', saving: '₹2,800', why: 'MOST PICKED FOR NEET 11', medium: 'English' },
+    lakshya:     { cover: 'LAKSHYA NEET 2027', tint: '#FDF0D0', ink: '#B37400', title: 'Lakshya NEET 2027', meta: 'Class 11 · English · Starts 12 Sep', price: '₹3,499', mrp: '₹5,500', off: '36% OFF', saving: '₹2,001', why: 'LIGHTER SCHEDULE', medium: 'English' },
+    yakeen:      { cover: 'YAKEEN NEET 2027', tint: 'linear-gradient(160deg,#E4DEFB,#D3CAF7)', ink: '#3D3466', title: 'Yakeen NEET 2027', meta: 'Class 11 · Hinglish · Starts 18 Sep', price: '₹2,999', mrp: '₹4,999', off: '40% OFF', saving: '₹2,000', why: 'BUDGET FRIENDLY', medium: 'Hinglish' },
+    power:       { cover: 'POWER BATCH NEET', tint: 'linear-gradient(150deg,#4A1206,#8C2A0A)', ink: '#FFC53D', title: 'Arjuna Power Batch NEET 2027', meta: 'Small group · 1:1 doubts', price: '₹5,000', mrp: '₹7,500', off: '33% OFF', saving: '₹2,500', why: 'SAURABH SIR TAKES PHYSICS', medium: 'English' },
+    arjunaH:     { cover: 'ARJUNA NEET हिंदी', tint: 'linear-gradient(160deg,#DCEEFF,#B6D8F7)', ink: '#0B4EAE', title: 'Arjuna NEET 2027 (Hindi)', meta: 'Class 11 · Hindi · Starts 15 Sep', price: '₹4,199', mrp: '₹6,999', off: '40% OFF', saving: '₹2,800', why: 'FULLY HINDI MEDIUM', medium: 'Hindi' },
+    lakshyaH:    { cover: 'LAKSHYA NEET हिंदी', tint: '#FDF0D0', ink: '#B37400', title: 'Lakshya NEET 2027 (Hindi)', meta: 'Class 11 · Hindi · Starts 12 Sep', price: '₹3,499', mrp: '₹5,500', off: '36% OFF', saving: '₹2,001', why: 'HINDI NOTES + DPP', medium: 'Hindi' },
+    yakeenH:     { cover: 'YAKEEN NEET हिंदी', tint: 'linear-gradient(160deg,#E4DEFB,#D3CAF7)', ink: '#3D3466', title: 'Yakeen NEET 2027 (Hindi)', meta: 'Class 11 · Hindi · Starts 18 Sep', price: '₹2,999', mrp: '₹4,999', off: '40% OFF', saving: '₹2,000', why: 'HINDI · LOWEST FEE', medium: 'Hindi' },
+    vpKota:      { cover: 'VIDYAPEETH KOTA', tint: 'linear-gradient(160deg,#9FB0BF,#6E7C89)', ink: '#FFFFFF', title: 'PW Vidyapeeth Kota', meta: '4.2 km away · 38 seats left', price: '₹5,000', mrp: '₹7,000', off: 'Seat booking', saving: '₹2,000', why: 'NEAREST CENTRE', medium: 'Hindi + English' },
+    vpJhalawar:  { cover: 'VIDYAPEETH JHALAWAR', tint: 'linear-gradient(160deg,#5E7A8C,#2E4657)', ink: '#FFFFFF', title: 'PW Vidyapeeth Jhalawar', meta: '31 km away · 12 seats left', price: '₹5,000', mrp: '₹7,000', off: 'Seat booking', saving: '₹2,000', why: 'ALSO NEAR YOU', medium: 'Hindi' }
+  };
+
+  state = {
+    screen: 'listing', variant: 'A', qid: 'exam', lang: 'en',
+    phase: 'idle', granted: false, revealed: 0, removed: [],
+    followAnswered: null, pick: 'arjuna'
+  };
+
+  componentDidMount() {
+    const v = this.props.variant;
+    const l = this.props.lang;
+    if (v === 'B' || v === 'C' || l === 'hi') this.setState({ variant: v || 'A', lang: l || 'en' });
+  }
+  componentWillUnmount() { this.clear(); }
+  clear() { clearTimeout(this.tick); clearTimeout(this.t1); clearTimeout(this.t2); }
+
+  q() { return this.QUERIES[this.state.qid]; }
+  words() { const q = this.q(); return (this.state.lang === 'hi' ? q.hi : q.en).split(' '); }
+  speed() { return this.props.speechSpeed ?? 300; }
+
+  openVoice = () => {
+    this.clear();
+    this.setState({ screen: 'voice', revealed: 0, removed: [], followAnswered: null,
+      phase: this.state.granted ? 'idle' : 'permission' });
+  };
+  allowMic = () => { this.setState({ granted: true }); this.startListen(); };
+  startListen = () => {
+    this.clear();
+    this.setState({ screen: 'voice', phase: 'listening', granted: true, revealed: 0, removed: [], followAnswered: null });
+    const total = this.words().length;
+    const speed = this.speed();
+    let n = 0;
+    const step = () => {
+      n += 1;
+      this.setState({ revealed: n });
+      if (n < total) this.tick = setTimeout(step, speed);
+    };
+    this.tick = setTimeout(step, speed);
+    this.t1 = setTimeout(() => this.setState({ phase: 'processing' }), total * speed + 400);
+    this.t2 = setTimeout(() => this.setState({ screen: 'results' }), total * speed + 1700);
+  };
+  micTap = () => {
+    const p = this.state.phase;
+    if (p === 'listening') { this.clear(); this.setState({ revealed: this.words().length, phase: 'processing' });
+      this.t2 = setTimeout(() => this.setState({ screen: 'results' }), 900); }
+    else this.startListen();
+  };
+
+  jump = (phase) => () => { this.clear(); this.setState({ screen: 'voice', phase, granted: phase !== 'permission', revealed: this.words().length }); };
+  setVariant = (variant) => () => this.setState({ variant });
+  setA = this.setVariant('A');
+  setB = this.setVariant('B');
+  setC = this.setVariant('C');
+  stopTyping = () => {
+    const p = this.state.phase;
+    if (p !== 'listening') return;
+    this.clear();
+    this.setState({ revealed: this.words().length, phase: 'processing' });
+    this.t2 = setTimeout(() => this.setState({ screen: 'results' }), 800);
+  };
+  toggleLang = () => this.setState({ lang: this.state.lang === 'en' ? 'hi' : 'en' });
+
+  choose = (qid) => () => { this.clear(); this.setState({ qid, screen: 'voice', phase: 'idle', granted: true, revealed: 0, removed: [], followAnswered: null }, () => this.startListen()); };
+  pickExam = this.choose('exam');
+  pickTeacher = this.choose('teacher');
+  pickMedium = this.choose('medium');
+  pickOffline = this.choose('offline');
+
+  backToListing = () => { this.clear(); this.setState({ screen: 'listing', phase: 'idle' }); };
+  backToResults = () => this.setState({ screen: 'results' });
+  backToDetail = () => this.setState({ screen: 'detail' });
+  goCheckout = () => this.setState({ screen: 'checkout' });
+  goSuccess = () => this.setState({ screen: 'success' });
+
+  renderVals() {
+    const s = this.state, q = this.q(), ws = this.words();
+    const isVoice = s.screen === 'voice';
+    const shown = s.phase === 'listening' ? ws.slice(0, s.revealed).join(' ') : ws.join(' ');
+    const followPending = !!q.followQ && !s.followAnswered;
+    const chipLabels = q.chips.filter((c) => !s.removed.includes(c));
+    if (s.followAnswered) chipLabels.push(s.followAnswered);
+    const ids = followPending ? [] : q.results;
+    const results = ids.map((id) => Object.assign({}, this.BATCHES[id], {
+      open: () => this.setState({ screen: 'detail', pick: id })
+    }));
+    const p = this.BATCHES[s.pick];
+    const on = (c) => (c ? '#1268E0' : 'transparent');
+
+    return {
+      setA: this.setA, setB: this.setB, setC: this.setC, stopTyping: this.stopTyping,
+      openVoice: this.openVoice, micTap: this.micTap,
+      startListen: this.startListen, allowMic: this.allowMic, toggleLang: this.toggleLang,
+      backToListing: this.backToListing, backToResults: this.backToResults,
+      backToDetail: this.backToDetail, goCheckout: this.goCheckout, goSuccess: this.goSuccess,
+      pickExam: this.pickExam, pickTeacher: this.pickTeacher,
+      pickMedium: this.pickMedium, pickOffline: this.pickOffline,
+      variantNote: s.variant === 'A'
+        ? 'Full-screen: maximum focus, big transcript, thumb-reachable mic. Best for first-time voice users.'
+        : s.variant === 'B'
+        ? 'Bottom sheet: listing stays visible behind, so the student never loses their place.'
+        : 'In-field: no sheet at all. Voice types straight into the search bar — bold caret with a mic bubble attached. Tap anywhere to stop.',
+      queryList: Object.keys(this.QUERIES).map((k) => ({
+        kind: this.QUERIES[k].kind, label: this.QUERIES[k].label, pick: this.choose(k)
+      })),
+      stateList: [
+        { label: 'Mic permission', go: this.jump('permission') },
+        { label: 'Idle', go: this.jump('idle') },
+        { label: 'Listening', go: this.startListen },
+        { label: 'Processing', go: this.jump('processing') },
+        { label: 'No speech', go: this.jump('nospeech') },
+        { label: "Didn't understand", go: this.jump('unclear') },
+        { label: 'Noisy', go: this.jump('noisy') },
+        { label: 'Results', go: () => this.setState({ screen: 'results' }) },
+        { label: 'Listing', go: this.backToListing }
+      ],
+
+      showListing: s.screen === 'listing' || (isVoice && s.variant === 'B'),
+      nudge: (this.props.showNudge ?? true) && s.screen === 'listing',
+      isResults: s.screen === 'results',
+      isDetail: s.screen === 'detail',
+      isCheckout: s.screen === 'checkout',
+      isSuccess: s.screen === 'success',
+      overlayA: isVoice && s.variant === 'A',
+      overlayB: isVoice && s.variant === 'B',
+      overlayC: isVoice && s.variant === 'C',
+      cCaretBold: s.phase === 'listening',
+      cCaretThin: s.phase !== 'listening',
+      cFieldText: shown && s.phase !== 'idle' && s.phase !== 'permission' ? shown : 'Try “NEET ke liye 11th ka batch”',
+      cTextInk: shown && s.phase !== 'idle' && s.phase !== 'permission' ? '#1F2328' : '#9AA0A9',
+      cShowError: s.phase === 'nospeech' || s.phase === 'unclear' || s.phase === 'noisy',
+      cErrorTitle: s.phase === 'nospeech' ? "Didn't catch anything"
+        : s.phase === 'unclear' ? "Couldn't match that to a batch" : "It's loud around you",
+      cErrorBody: s.phase === 'nospeech' ? 'Hold the phone closer and say your exam and class.'
+        : s.phase === 'unclear' ? 'Try saying your exam and class — like “NEET Class 11”.'
+        : 'Speak a bit louder, or type your search instead.',
+
+      isPermission: s.phase === 'permission',
+      isIdle: s.phase === 'idle',
+      isListening: s.phase === 'listening',
+      isProcessing: s.phase === 'processing',
+      isNoSpeech: s.phase === 'nospeech',
+      isUnclear: s.phase === 'unclear',
+      isNoisy: s.phase === 'noisy',
+      showHints: s.phase === 'idle' || s.phase === 'nospeech',
+      showMicButton: s.phase !== 'permission',
+      micShowsMic: s.phase !== 'listening',
+      micBg: s.phase === 'listening' ? '#E5484D' : '#1268E0',
+      micHint: s.phase === 'listening' ? 'Tap to stop' : s.phase === 'processing' ? 'One second…' : 'Tap and speak',
+      idleTitle: s.lang === 'hi' ? 'Apna exam ya teacher ka naam boliye' : 'Say your exam, class, or a teacher’s name',
+
+      shownText: shown,
+      heardText: ws.join(' '),
+      reply: q.reply,
+      chips: chipLabels.map((c) => ({ label: c, remove: () => this.setState({ removed: s.removed.concat([c]) }) })),
+      hasChips: chipLabels.length > 0,
+      needsFollowUp: followPending,
+      followQ: q.followQ,
+      followChips: (q.followChips || []).map((f) => ({ label: f, pick: () => this.setState({ followAnswered: f }) })),
+      isNoMatch: !!q.noMatch,
+      hasTeacher: !!q.teacher && !followPending,
+      hasResults: results.length > 0,
+      results,
+      resultCountText: results.length + ' batches for you',
+
+      enBg: on(s.lang === 'en'), enInk: s.lang === 'en' ? '#fff' : '#8FB6F0',
+      hiBg: on(s.lang === 'hi'), hiInk: s.lang === 'hi' ? '#fff' : '#8FB6F0',
+      enBgB: s.lang === 'en' ? '#1268E0' : 'transparent', enInkB: s.lang === 'en' ? '#fff' : '#6B7280',
+      hiBgB: s.lang === 'hi' ? '#1268E0' : 'transparent', hiInkB: s.lang === 'hi' ? '#fff' : '#6B7280',
+
+      pickTitle: p.title, pickCover: p.cover, pickTint: p.tint, pickInk: p.ink,
+      pickMeta: p.meta, pickPrice: p.price, pickMrp: p.mrp, pickOff: p.off,
+      pickSaving: p.saving, pickWhy: p.why, pickMedium: p.medium
+    };
+  }
+}
+</script>
+
+
+</body></html>

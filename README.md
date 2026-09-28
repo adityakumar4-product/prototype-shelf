@@ -10,12 +10,24 @@ prototype-shelf/
 └── prototypes/
     ├── assets/
     │   ├── address-usability/   fonts, scripts, images
-    │   └── addons-quantity/
+    │   ├── addons-quantity/
+    │   ├── address-locator/
+    │   ├── batch-description/
+    │   ├── cohort-exploration/
+    │   ├── fbt-display-order/
+    │   ├── pay-strip/
+    │   └── voice-search/
     ├── thumbs/
     │   ├── address-usability.svg
     │   └── addons-quantity.svg
     ├── address-usability.html   (App)
-    └── addons-quantity.html     (App)
+    ├── addons-quantity.html     (App)
+    ├── address-locator.html     (App)
+    ├── batch-description.html   (App)
+    ├── cohort-exploration.html  (App)
+    ├── fbt-display-order.html   (Admin)
+    ├── pay-strip.html           (App)
+    └── voice-search.html        (App, linked from its pipeline idea)
 ```
 
 ## Add a prototype
@@ -56,17 +68,17 @@ python3 tools/flatten_bundle.py ~/Downloads/My_Export.html \
         prototypes/assets/my-prototype
 ```
 
-It also sets `window.__resources` to the extracted React and ReactDOM copies, so the page doesn't reach out to unpkg.com either. Both current prototypes have been flattened. Run any new export through this before adding it to the shelf.
+It also sets `window.__resources` to the extracted React and ReactDOM copies, so the page doesn't reach out to unpkg.com either. All listed prototypes have been flattened. Run any new export through this before adding it to the shelf.
 
 ## Card images
 
-By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Both current cards use one. Delete the `thumb` line from an entry to switch that card back to a live preview.
+By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-That's the only edit. Cards, filters, search, deep links and the viewer all come from that list.
+The shelf has eight built prototypes and 15 remaining pipeline ideas. Voice Search is a live prototype in the main section and appears under both All and App.
 
 ## Filters
 
-The chips are a fixed set — **All · App · Web · Admin** — so the row never changes shape as prototypes come and go. Each prototype's `platform` decides which chip it appears under; anything without a `platform` only shows under All. To change the set, edit the `FILTERS` array in `index.html` and use the same words in `platform`.
+The platform chips are **All · App · Web · Admin**; Pipeline scrolls to the planned ideas. Each prototype's `platform` decides which platform chip it appears under. The pipeline shares the platform filters and search; its count reflects the matching ideas.
 
 `tags` are separate: they're descriptive labels on the card (and searchable), not filters.
 
@@ -77,6 +89,7 @@ The chips are a fixed set — **All · App · Web · Admin** — so the row neve
 - **Every prototype is shareable.** Send someone `yoursite.vercel.app/#p=doubt-chat` and it opens straight into that prototype.
 - **Width toggle.** The viewer has Phone / Full width, so a mobile prototype can be checked in a 390px frame and a dashboard can fill the screen.
 - **Search.** `/` focuses the search box.
+- **Pipeline.** The Pipeline chip jumps to the 15 ideas still in progress.
 
 ## Run locally
 
