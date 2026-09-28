@@ -16,6 +16,7 @@ prototype-shelf/
     │   ├── cohort-exploration/
     │   ├── fbt-display-order/
     │   ├── pay-strip/
+    │   ├── exam-first-teaching/
     │   └── voice-search/
     ├── thumbs/
     │   ├── address-usability.svg
@@ -27,7 +28,8 @@ prototype-shelf/
     ├── cohort-exploration.html  (App)
     ├── fbt-display-order.html   (Admin)
     ├── pay-strip.html           (App)
-    └── voice-search.html        (App, linked from its pipeline idea)
+    ├── voice-search.html        (App)
+    └── exam-first-teaching.html (App)
 ```
 
 ## Add a prototype
@@ -74,7 +76,7 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has eight built prototypes and 15 remaining pipeline ideas. Voice Search is a live prototype in the main section and appears under both All and App.
+The shelf has nine built prototypes and 15 remaining pipeline ideas. Voice Search is a live prototype in the main section and appears under both All and App.
 
 ## Filters
 
