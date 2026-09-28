@@ -22,6 +22,8 @@ EXT = {
     "image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp",
     "image/svg+xml": ".svg", "image/gif": ".gif",
     "text/javascript": ".js", "application/javascript": ".js",
+    "text/jsx": ".jsx", "text/babel": ".jsx", "application/json": ".json",
+    "text/plain": ".txt",
     "text/css": ".css", "font/woff2": ".woff2", "font/woff": ".woff",
     "font/ttf": ".ttf", "text/html": ".html",
 }
