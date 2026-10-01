@@ -76,7 +76,7 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has nine built prototypes and 15 remaining pipeline ideas. Voice Search is a live prototype in the main section and appears under both All and App.
+The shelf has ten built prototypes and 15 remaining pipeline ideas. Voice Search and Dropper NEET: Next Year Purchase are live prototypes in the main section and appear under both All and App.
 
 ## Filters
 
