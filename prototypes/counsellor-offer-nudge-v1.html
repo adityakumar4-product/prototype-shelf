@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counsellor Offer Nudge · Batch Listing 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --pw-blue:#1268E0;
+  --pw-indigo:#5B4CE8;
+  --ink:#1F2328;
+  --ink-2:#3A4049;
+  --muted:#6B7280;
+  --line:#E6E9EF;
+  --green:#1AA260;
+  --green-deep:#0F7A48;
+  --amber:#B45309;
+  --red:#C62828;
+  --nav-h:62px;
+  --strip-h:56px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:#0E1116;color:#E6E9EF;
+  font-family:'Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
+  display:flex;align-items:flex-start;justify-content:center;gap:40px;
+  padding:34px 30px 60px;flex-wrap:wrap;
+}
+
+/* ─── demo control panel (not part of the product) ─────────────── */
+.panel{flex:1 1 250px;max-width:330px;min-width:230px}
+.panel .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A93A6;font-weight:600}
+.panel h1{font-size:26px;line-height:1.22;font-weight:600;margin-top:10px;letter-spacing:-.01em}
+.panel p{font-size:13px;line-height:1.65;color:#9AA3B2;margin-top:14px}
+.panel h2{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#6E7688;font-weight:600;margin:22px 0 8px}
+.ctrls{display:flex;flex-direction:column;gap:7px}
+.ctrl-row{display:flex;gap:7px;flex-wrap:wrap}
+button.ctrl{
+  text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;
+  padding:10px 12px;border-radius:10px;font:500 12.5px 'Poppins';cursor:pointer;
+  transition:border-color .16s,background .16s;flex:1 1 auto;
+}
+button.ctrl:hover{border-color:var(--pw-blue);background:#1B222C}
+button.ctrl[aria-pressed="true"]{border-color:var(--pw-blue);background:#122033;color:#9CC6FF}
+.note{font-size:11.5px;line-height:1.6;color:#6E7688;margin-top:18px}
+
+/* ─── device frame ──────────────────────────────────────────────── */
+.device{
+  flex:0 0 auto;width:412px;height:892px;border-radius:18px;overflow:hidden;
+  background:#f4fbf8;border:8px solid rgba(116,119,117,.5);
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
+  display:flex;flex-direction:column;
+}
+.statusbar{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:relative;flex:0 0 auto;font-family:Roboto,system-ui,sans-serif}
+.statusbar .time{font-size:14px;letter-spacing:.25px;color:#171d1b}
+.statusbar .punch{position:absolute;left:50%;top:8px;transform:translateX(-50%);width:24px;height:24px;border-radius:100px;background:#2e2e2e}
+.gesturebar{height:24px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:#fff}
+.gesturebar i{width:108px;height:4px;border-radius:2px;background:#171d1b;opacity:.4}
+
+.screen{flex:1;position:relative;overflow:hidden;background:#fff}
+
+/* ─── base screen: Batch Listing 2.0 ───────────────────────────── */
+#scroller{
+  position:absolute;inset:0;overflow-y:auto;background:#fff;
+  padding-bottom:calc(var(--nav-h) + 96px);
+  -webkit-overflow-scrolling:touch;
+}
+.hero{background:linear-gradient(180deg,#BFE9FB 0%,#D8F2FD 70%,#FFFFFF 100%);padding:12px 14px 16px;position:relative}
+.hero-top{display:flex;align-items:center;gap:12px;transition:padding-right .24s ease}
+.screen.has-token .hero-top{padding-right:42px}
+.burger{display:flex;flex-direction:column;gap:3px;cursor:pointer}
+.burger i{width:17px;height:2px;background:var(--ink);border-radius:2px}
+.burger i:nth-child(2){width:13px}
+.searchbar{flex:1;background:#fff;border-radius:9px;padding:10px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 1px 3px rgba(15,23,42,.08);font-size:13px;color:#8A9099}
+.goal{margin-top:12px;background:rgba(255,255,255,.45);border-radius:11px;padding:9px 12px;display:flex;align-items:center;gap:10px}
+.goal .ico{width:29px;height:29px;border-radius:7px;background:#fff;display:grid;place-items:center;font-size:15px}
+.goal .name{flex:1;font-size:15px;font-weight:600;color:var(--ink)}
+.goal .chg{font-size:13px;font-weight:600;color:var(--pw-indigo);cursor:pointer}
+.modes{display:flex;gap:9px;margin-top:13px}
+.mode{flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer}
+.mode.on{background:var(--pw-blue)}
+.mode .e{font-size:18px}
+.mode .l{font-size:11px;font-weight:500;color:var(--ink-2);margin-top:5px}
+.mode.on .l{color:#fff;font-weight:600}
+.otherbatches{display:flex;align-items:center;gap:9px;padding:4px 14px 14px}
+.otherbatches .lbl{font-size:9px;font-weight:600;letter-spacing:.06em;color:var(--muted);line-height:1.25;width:52px}
+.chips{flex:1;display:flex;gap:7px;overflow:hidden}
+.chip{border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:var(--ink-2);white-space:nowrap}
+.chip.dark{border-color:var(--ink);color:var(--ink)}
+.sechead{display:flex;align-items:center;gap:8px;padding:20px 14px 0}
+.sechead i{width:3px;height:17px;background:var(--pw-blue);border-radius:2px}
+.sechead span{font-size:16px;font-weight:600;color:var(--ink)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:13px 14px 0}
+.thumb{height:104px;border-radius:11px;padding:11px;display:flex;align-items:flex-start;overflow:hidden}
+.cname{font-size:13px;color:var(--ink);margin-top:9px;line-height:1.35}
+.prow{display:flex;align-items:baseline;gap:6px;margin-top:8px}
+.pnow{font-size:14px;font-weight:600;color:var(--ink)}
+.pold{font-size:11px;color:#9AA0A9;text-decoration:line-through}
+.poff{font-size:11px;font-weight:600;color:var(--green);margin-top:4px}
+.psub{font-size:11px;color:var(--muted);margin-top:4px}
+.buy{margin-top:10px;width:100%;background:var(--ink);color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer}
+.buy:hover{background:#33383F}
+.buy.ghost{background:#fff;color:var(--pw-indigo);border:1px solid var(--pw-indigo);padding:10px}
+.buy.ghost:hover{background:#F3F1FE}
+.vert{font-size:11px;font-weight:700;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg)}
+.sgl{background:#FDF1E7;margin-top:22px;padding:18px 14px}
+.sgl-in{display:flex;gap:14px}
+.sgl h3{font-size:19px;font-weight:700;color:#F04E23;line-height:1.2}
+.sgl ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.sgl li .e{font-size:16px}
+.sgl li .t{font-size:12px;color:var(--ink-2);margin-top:4px}
+.sgl-card{width:158px;background:#fff;border-radius:12px;overflow:hidden}
+.explore{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:13px 14px 0}
+.explore div.t{border-radius:12px;padding:13px;height:112px}
+.explore .n{font-size:15px;font-weight:600;color:var(--ink)}
+.explore .s{font-size:11px;margin-top:3px}
+.rail{display:flex;gap:12px;padding:13px 14px 0;overflow-x:auto}
+.rail>div{flex:0 0 128px}
+.rail .thumb{height:112px;position:relative;display:block}
+.rating{position:absolute;bottom:8px;left:8px;background:#fff;border-radius:5px;padding:2px 6px;font-size:9px;font-weight:600;color:var(--ink)}
+.courses{display:flex;flex-direction:column;gap:14px;padding:14px 14px 0}
+.course{border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.course .banner{height:104px;background:#EEF1F5}
+.course .body{padding:12px}
+.course .tagrow{display:flex;align-items:center;gap:8px}
+.course .tag{font-size:10px;font-weight:600;color:#F04E23;flex:1}
+.course .lang{border:1px solid #D8DDE5;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:500;color:var(--ink-2)}
+.course .nm{font-size:15px;font-weight:600;color:var(--ink);margin-top:5px}
+.course .st{font-size:11px;color:var(--muted);margin-top:5px}
+.course .foot{display:flex;align-items:center;gap:10px;margin-top:11px}
+.course .foot .buy{margin-top:0;width:auto;padding:10px 20px}
+.counsellor-price{margin-top:5px;display:inline-flex;align-items:center;gap:4px;background:#FFF4E0;border-radius:5px;padding:3px 6px}
+.counsellor-price span{font-size:9px;font-weight:600;color:#9A5B00}
+
+/* ─── bottom nav ───────────────────────────────────────────────── */
+.bottomnav{
+  position:absolute;left:0;right:0;bottom:0;height:var(--nav-h);z-index:40;
+  background:#fff;border-top:1px solid var(--line);display:flex;padding:8px 6px 11px;
+}
+.bottomnav>div{flex:1;text-align:center}
+.bottomnav .e{font-size:15px;line-height:18px}
+.bottomnav .l{font-size:9px;color:var(--muted);margin-top:2px}
+.bottomnav .active .l{color:var(--ink);font-weight:600}
+.bottomnav .dot{width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;margin:0 auto;font-size:13px}
+
+/* ─── re-entry token (header dock) ─────────────────────────────── */
+.token{
+  position:absolute;top:10px;right:12px;z-index:45;
+  width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;
+  display:none;place-items:center;
+}
+.token.show{display:grid;animation:tokenIn .34s cubic-bezier(.2,.9,.3,1.15) both}
+.token .pill{
+  width:34px;height:34px;border-radius:11px;background:#fff;display:grid;place-items:center;
+  box-shadow:0 2px 8px rgba(15,23,42,.16);position:relative;
+}
+.token .dot{
+  position:absolute;top:-3px;right:-3px;width:11px;height:11px;border-radius:50%;
+  background:var(--green);border:2px solid #fff;
+}
+.token.warn .dot{background:#D97706}
+.token.crit .dot{background:var(--red)}
+@keyframes tokenIn{from{opacity:0;transform:scale(.6) translateY(-6px)}to{opacity:1;transform:none}}
+
+/* ─── THE NUDGE ────────────────────────────────────────────────── */
+#nudge{
+  position:absolute;left:8px;right:8px;bottom:calc(var(--nav-h) + 8px);z-index:50;
+  background:#fff;border-radius:16px 16px 12px 12px;
+  box-shadow:0 -2px 10px rgba(15,23,42,.06), 0 12px 34px rgba(15,23,42,.20);
+  border:1px solid rgba(91,76,232,.14);
+  overflow:hidden;
+  will-change:transform;
+  --p:0;
+  transform:translateY(calc(var(--p) * (var(--h,300px) - var(--strip-h))));
+  touch-action:none;
+}
+#nudge.hidden{display:none}
+#nudge.enter{transform:translateY(140%);opacity:0}
+#nudge.springing{
+  transition:transform .32s cubic-bezier(.22,.92,.32,1.14), opacity .28s ease;
+}
+#nudge.leaving{
+  transition:transform .3s cubic-bezier(.4,0,1,1), opacity .26s ease;
+  transform:translateY(150%);opacity:0;
+}
+
+/* strip layer — occupies the top 56px, fades in as p→1 */
+.strip{
+  position:absolute;top:0;left:0;right:0;height:var(--strip-h);
+  display:flex;align-items:center;gap:10px;padding:0 12px;
+  background:#fff;cursor:pointer;border:0;width:100%;text-align:left;font-family:inherit;
+  opacity:clamp(0, calc((var(--p) - .42) / .58), 1);
+  pointer-events:none;
+}
+#nudge.collapsed .strip{pointer-events:auto}
+.strip:focus-visible{outline:2px solid var(--pw-indigo);outline-offset:-2px}
+.strip .code{
+  font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.02em;
+  display:flex;align-items:center;gap:6px;flex:1;min-width:0;
+}
+.strip .code b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.strip .ok{color:var(--green);font-size:12px;font-weight:700;flex:0 0 auto}
+.strip .caret{font-size:14px;color:#9AA0A9;flex:0 0 auto}
+
+/* expanded body — fades out as p→1 */
+.sheet-body{
+  padding:6px 14px 14px;
+  opacity:clamp(0, calc(1 - var(--p) * 1.9), 1);
+}
+#nudge.collapsed .sheet-body{pointer-events:none}
+
+.handle-row{display:flex;align-items:center;justify-content:center;position:relative;height:22px;cursor:grab}
+.handle-row:active{cursor:grabbing}
+.handle{width:38px;height:4px;border-radius:2px;background:#DDE1E8}
+.dismiss{
+  position:absolute;top:-4px;right:-10px;width:44px;height:44px;border:0;background:transparent;
+  display:grid;place-items:center;cursor:pointer;padding:0;
+}
+.dismiss i{
+  width:28px;height:28px;border-radius:50%;background:#F0F2F5;color:#4A5058;
+  display:grid;place-items:center;font-size:12px;font-style:normal;line-height:1;
+}
+.dismiss:hover i{background:#E4E7EC}
+.dismiss:focus-visible i{outline:2px solid var(--pw-indigo);outline-offset:2px}
+
+/* 1 · counsellor trust row */
+.trust{display:flex;align-items:center;gap:11px;margin-top:2px}
+.avatar{position:relative;flex:0 0 auto;width:42px;height:42px}
+.avatar svg{display:block}
+.avatar .tick{
+  position:absolute;right:-3px;bottom:-2px;width:17px;height:17px;border-radius:50%;
+  background:var(--green);border:2px solid #fff;display:grid;place-items:center;
+}
+.avatar .tick svg{width:8px;height:8px}
+.trust .t1{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.3}
+.trust .t2{font-size:11px;color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:5px}
+.trust .t2 svg{opacity:.75}
+
+/* 2 · auto-applied coupon ticket */
+.ticket{
+  position:relative;margin-top:12px;display:flex;align-items:center;gap:10px;
+  border:1.5px dashed #B9B0F5;border-radius:10px;background:#F7F5FF;
+  padding:10px 12px;overflow:hidden;
+}
+.ticket::before,.ticket::after{
+  content:"";position:absolute;top:50%;width:12px;height:12px;border-radius:50%;
+  background:#fff;transform:translateY(-50%);
+}
+.ticket::before{left:-7px}
+.ticket::after{right:-7px}
+.ticket .check{
+  flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--green);
+  display:grid;place-items:center;
+}
+.ticket .check svg{width:10px;height:10px}
+.ticket .code{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.04em;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace}
+.ticket .lbl{font-size:11px;color:var(--green-deep);font-weight:500;margin-top:1px}
+.ticket .more{
+  margin-left:auto;background:none;border:0;font:600 11px 'Poppins';color:var(--pw-blue);
+  cursor:pointer;padding:6px 2px;flex:0 0 auto;
+}
+.ticket .more:focus-visible{outline:2px solid var(--pw-indigo);outline-offset:2px;border-radius:4px}
+.ticket.verifying{border-color:#D8DDE5;background:#F7F8FA}
+.ticket.verifying .check{background:#C9CDD4}
+.ticket.failed{border-color:#F0B4B4;background:#FEF6F6}
+.ticket.failed .check{background:var(--red)}
+.spinner{width:14px;height:14px;border:2px solid #C9CDD4;border-top-color:#8A9099;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.retry{
+  margin-left:auto;background:#fff;border:1px solid var(--red);color:var(--red);
+  border-radius:8px;padding:7px 12px;font:600 11.5px 'Poppins';cursor:pointer;flex:0 0 auto;
+}
+
+/* shimmer sweep + confetti tick, first render only */
+.ticket .shimmer{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.85) 50%,transparent 70%);
+  transform:translateX(-120%);
+}
+.ticket.celebrate .shimmer{animation:sweep 1.05s .12s cubic-bezier(.4,0,.2,1) 1 forwards}
+@keyframes sweep{to{transform:translateX(120%)}}
+.ticket.celebrate .check{animation:pop .42s .1s cubic-bezier(.2,.9,.3,1.5) both}
+@keyframes pop{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.22)}100%{transform:scale(1);opacity:1}}
+.confetti{position:absolute;left:22px;top:50%;width:0;height:0;pointer-events:none}
+.confetti i{
+  position:absolute;width:4px;height:4px;border-radius:1px;opacity:0;
+}
+.ticket.celebrate .confetti i{animation:burst .62s .16s ease-out both}
+@keyframes burst{
+  0%{opacity:1;transform:translate(0,0) scale(.4)}
+  100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1)}
+}
+
+/* 3 · price impact */
+.price{display:flex;align-items:baseline;gap:9px;margin-top:12px;flex-wrap:wrap}
+.price .mrp{font-size:13px;color:#9AA0A9;text-decoration:line-through}
+.price .now{font-size:23px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.price .save{
+  margin-left:auto;background:#E9F8F0;color:var(--green-deep);border-radius:999px;
+  padding:5px 10px;font-size:11.5px;font-weight:600;
+}
+.price .batch{flex-basis:100%;font-size:11px;color:var(--muted);margin-top:-2px}
+
+/* 4 · urgency row */
+.urgency{display:flex;align-items:center;gap:9px;margin-top:13px}
+.urgency .lbl{font-size:11.5px;color:var(--muted);font-weight:500;flex:1}
+.clock{display:flex;align-items:center;gap:4px}
+.clock .cap{
+  background:#EEF0F4;color:var(--ink);border-radius:7px;padding:5px 7px;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1;min-width:28px;text-align:center;
+}
+.clock .sep{font-size:12px;font-weight:600;color:#9AA0A9}
+.clock.warn .cap{background:#FEF0DC;color:var(--amber)}
+.clock.warn .sep{color:var(--amber)}
+.clock.crit .cap{background:#FDECEC;color:var(--red)}
+.clock.crit .sep{color:var(--red)}
+.strip .clock .cap{font-size:12px;padding:4px 6px;min-width:25px}
+
+/* 5 · CTA */
+.cta{
+  margin-top:14px;width:100%;background:var(--pw-indigo);color:#fff;border:0;border-radius:12px;
+  padding:15px;font:600 14.5px 'Poppins';cursor:pointer;
+  transition:transform .12s ease,background .16s ease;
+}
+.cta:hover{background:#4C3ED6}
+.cta:active{transform:scale(.985)}
+.cta:disabled{background:#C9C5EC;cursor:not-allowed}
+.cta:focus-visible{outline:2px solid #2B1B8C;outline-offset:2px}
+
+/* expired variant */
+.expired{padding:16px 14px 16px}
+.expired .row{display:flex;align-items:center;gap:11px}
+.expired .t1{font-size:14px;font-weight:600;color:#5A6169}
+.expired .t2{font-size:11.5px;color:#8A9099;margin-top:2px}
+.expired .cta{background:#fff;color:var(--ink-2);border:1px solid #D8DDE5;margin-top:13px}
+.expired .cta:hover{background:#F5F6F8}
+.expired .avatar svg circle:first-child{opacity:.5}
+
+/* ─── snackbar ─────────────────────────────────────────────────── */
+.snackbar{
+  position:absolute;left:14px;right:14px;bottom:calc(var(--nav-h) + 12px);z-index:60;
+  background:#22262C;color:#F2F4F7;border-radius:11px;padding:13px 15px;
+  font-size:12.5px;display:flex;align-items:center;gap:9px;
+  box-shadow:0 10px 28px rgba(0,0,0,.3);
+  transform:translateY(140%);opacity:0;pointer-events:none;
+  transition:transform .3s cubic-bezier(.22,.92,.32,1.1),opacity .24s ease;
+}
+.snackbar.show{transform:none;opacity:1}
+
+/* ─── offer picker (multiple offers) ───────────────────────────── */
+.scrim{
+  position:absolute;inset:0;z-index:70;background:rgba(31,35,40,.5);
+  display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .24s ease;
+}
+.scrim.show{opacity:1;pointer-events:auto}
+.picker{
+  width:100%;background:#fff;border-radius:18px 18px 0 0;padding:16px 16px 20px;
+  transform:translateY(100%);transition:transform .3s cubic-bezier(.22,.92,.32,1.1);
+}
+.scrim.show .picker{transform:none}
+.picker h3{font-size:15px;font-weight:600;color:var(--ink)}
+.picker p{font-size:11.5px;color:var(--muted);margin-top:3px}
+.opt{
+  display:flex;align-items:center;gap:11px;width:100%;text-align:left;
+  border:1.5px solid var(--line);border-radius:12px;padding:12px;margin-top:11px;
+  background:#fff;cursor:pointer;font-family:inherit;
+}
+.opt[aria-checked="true"]{border-color:var(--pw-indigo);background:#F7F5FF}
+.opt .radio{width:17px;height:17px;border-radius:50%;border:2px solid #C4C9D2;flex:0 0 auto;display:grid;place-items:center}
+.opt[aria-checked="true"] .radio{border-color:var(--pw-indigo)}
+.opt[aria-checked="true"] .radio::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--pw-indigo)}
+.opt .oc{font-size:13px;font-weight:600;color:var(--ink);font-family:ui-monospace,Menlo,monospace}
+.opt .os{font-size:11px;color:var(--muted);margin-top:2px}
+.opt .amt{margin-left:auto;font-size:13px;font-weight:600;color:var(--green-deep)}
+.opt .best{font-size:9px;font-weight:600;color:var(--pw-indigo);letter-spacing:.06em}
+
+/* ─── token popover ────────────────────────────────────────────── */
+.pop{
+  position:absolute;top:58px;right:12px;left:auto;width:250px;z-index:65;
+  background:#fff;border-radius:14px;padding:13px;box-shadow:0 14px 34px rgba(15,23,42,.24);
+  transform-origin:top right;transform:scale(.9);opacity:0;pointer-events:none;
+  transition:transform .2s cubic-bezier(.2,.9,.3,1.15),opacity .18s ease;
+}
+.pop.show{transform:none;opacity:1;pointer-events:auto}
+.pop .ph{font-size:12px;font-weight:600;color:var(--ink)}
+.pop .ps{font-size:11px;color:var(--muted);margin-top:2px}
+.pop .cta{margin-top:11px;padding:11px;font-size:13px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<aside class="panel">
+  <div class="eyebrow">Batch listing 2.0 · prototype</div>
+  <h1>Counsellor Offer Nudge</h1>
+  <p>The counsellor's verbal promise, turned into a visible receipt inside the product — verified, auto-applied and honestly time-bound.</p>
+
+  <h2>States</h2>
+  <div class="ctrls">
+    <div class="ctrl-row">
+      <button class="ctrl" data-act="replay">↻ Replay entry</button>
+      <button class="ctrl" data-act="expand">Expand</button>
+      <button class="ctrl" data-act="collapse">Collapse</button>
+    </div>
+    <button class="ctrl" data-act="dismiss">✕ Dismiss (snackbar + token)</button>
+  </div>
+
+  <h2>Countdown</h2>
+  <div class="ctrls">
+    <div class="ctrl-row">
+      <button class="ctrl" data-secs="8048">2h 14m</button>
+      <button class="ctrl" data-secs="2700">45m · amber</button>
+      <button class="ctrl" data-secs="540">9m · red</button>
+    </div>
+    <button class="ctrl" data-act="expire">Offer expired</button>
+  </div>
+
+  <h2>Coupon edge cases</h2>
+  <div class="ctrls">
+    <button class="ctrl" data-act="verify-ok">Verifying… → applied</button>
+    <button class="ctrl" data-act="verify-fail">Verifying… → failed + retry</button>
+    <button class="ctrl" data-act="multi" aria-pressed="false">Multiple offers → picker</button>
+  </div>
+
+  <h2>Export</h2>
+  <div class="ctrls">
+    <button class="ctrl" data-act="download">Download this HTML</button>
+  </div>
+
+  <p class="note">Scroll the listing to watch the sheet interpolate into the 56px strip. Tap the strip to spring it back. Drag the grab handle down to collapse. No counsellor name or photo is ever rendered — only the generic PW counsellor illustration.</p>
+</aside>
+
+<div class="device">
+  <div class="statusbar">
+    <span class="time">9:30</span>
+    <div class="punch"></div>
+    <span class="time" style="font-size:12px">▲ ◗ ▮</span>
+  </div>
+
+  <div class="screen">
+
+    <!-- ══ base screen: Batch Listing 2.0 ══ -->
+    <div id="scroller">
+      <div class="hero">
+        <div class="hero-top">
+          <div class="burger"><i></i><i></i><i></i></div>
+          <div class="searchbar"><span>🔍</span><span>Search for Arjuna</span></div>
+        </div>
+        <div class="goal">
+          <div class="ico">🎒</div>
+          <div class="name">Class 11 NEET</div>
+          <div class="chg">Change</div>
+        </div>
+        <div class="modes">
+          <div class="mode on"><div class="e">🖥️</div><div class="l">Online</div></div>
+          <div class="mode"><div class="e">🏫</div><div class="l">Vidyapeeth</div></div>
+          <div class="mode"><div class="e">⚡</div><div class="l">Power Batch</div></div>
+          <div class="mode"><div class="e">📝</div><div class="l">Test Series</div></div>
+        </div>
+      </div>
+
+      <div class="otherbatches">
+        <div class="lbl">VIEW OTHER BATCHES</div>
+        <div class="chips">
+          <div class="chip">XII</div><div class="chip">Class 12</div>
+          <div class="chip">XII+</div><div class="chip">Dropper</div>
+        </div>
+      </div>
+
+      <div class="sechead"><i></i><span>Recommended For You</span></div>
+      <div class="grid2">
+        <div>
+          <div class="thumb" style="background:linear-gradient(160deg,#DCEEFF,#B6D8F7)">
+            <div style="font-size:15px;font-weight:700;color:#0B4EAE;line-height:1.15">ARJUNA<br>NEET 2026</div>
+          </div>
+          <div class="cname">Arjuna NEET 2027</div>
+          <div class="prow"><div class="pnow" id="cardPrice">₹2,999</div><div class="pold">₹4,499</div></div>
+          <div class="counsellor-price" id="cardTag"><span>🔒</span><span>COUNSELLOR PRICE</span></div>
+          <button class="buy">Buy Now</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:linear-gradient(160deg,#9FB0BF,#6E7C89)"><div class="vert">CLASS 11 JEE</div></div>
+          <div class="cname">Vidyapeeth Class 11th NEET</div>
+          <div class="pnow" style="margin-top:8px">₹5,000</div>
+          <div class="psub">For Seat Booking</div>
+          <button class="buy">Book a Seat</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:#FDF0D0">
+            <div style="font-size:15px;font-weight:700;color:#B37400;line-height:1.15">Lakshya<br>NEET 2027</div>
+          </div>
+          <div class="cname">Lakshya NEET 2027</div>
+          <div class="prow"><div class="pnow">₹1,499</div><div class="pold">₹2500</div></div>
+          <div class="poff">40% OFF</div>
+          <button class="buy">Buy Now</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:#1B8A3A">
+            <div style="font-size:15px;font-weight:700;color:#fff;line-height:1.15">UDAY<br><span style="font-size:12px;font-weight:600">TEAM OG</span></div>
+          </div>
+          <div class="cname">Uday Class 11 Boards 2027</div>
+          <div class="prow"><div class="pnow">₹1,499</div><div class="pold">₹2500</div></div>
+          <div class="poff">40% OFF</div>
+          <button class="buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="sgl">
+        <div class="sgl-in">
+          <div style="flex:1">
+            <h3>Small Group<br>Learning</h3>
+            <ul>
+              <li><div class="e">👨‍🏫</div><div class="t">1:1 interaction with teacher</div></li>
+              <li><div class="e">💬</div><div class="t">Live doubt solving</div></li>
+              <li><div class="e">👥</div><div class="t">Small Classroom Size</div></li>
+            </ul>
+          </div>
+          <div class="sgl-card">
+            <div style="height:104px;background:linear-gradient(150deg,#4A1206,#8C2A0A);padding:11px">
+              <div style="font-size:15px;font-weight:700;color:#FFC53D;line-height:1.1">POWER<br>BATCH</div>
+              <div style="margin-top:7px;display:inline-block;background:#FFC53D;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:700;color:#4A1206">NEET</div>
+            </div>
+            <div style="padding:11px">
+              <div class="cname" style="margin-top:0">Arjuna Power Batch NEET 2027</div>
+              <div class="pnow" style="margin-top:8px">₹5,000</div>
+              <button class="buy" style="padding:10px">Explore</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sechead" style="padding-top:22px"><i></i><span>Explore PW</span></div>
+      <div class="explore">
+        <div class="t" style="background:linear-gradient(150deg,#FFE07A,#FFD24A)"><div class="n">PW Pi</div><div class="s" style="color:#5A4A10">Padhai ka OTT</div></div>
+        <div class="t" style="background:linear-gradient(150deg,#DCEBFF,#C6DEFF)"><div class="n">Saarthi</div><div class="s" style="color:#2E4368">Your personal mentor</div></div>
+        <div class="t" style="background:linear-gradient(150deg,#E4DEFB,#D3CAF7)"><div class="n">MedEd</div><div class="s" style="color:#3D3466">Prepare for NEET PG</div></div>
+        <div class="t" style="background:linear-gradient(150deg,#D7F0FF,#BEE6FF)"><div class="n">E Books</div><div class="s" style="color:#1E4A66">NCERT in your pocket</div></div>
+      </div>
+
+      <div class="sechead" style="padding-top:24px"><i></i><span>Learn Offline at PW Centres</span></div>
+      <div class="grid2">
+        <div>
+          <div class="thumb" style="background:linear-gradient(160deg,#A8B6C2,#74828E)"><div class="vert">CLASS 11 JEE</div></div>
+          <div class="cname">Vidyapeeth Class 11th NEET</div>
+          <div class="pnow" style="margin-top:8px">₹5,000</div>
+          <div class="psub">For Seat Booking</div>
+          <button class="buy">Book a Seat</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:linear-gradient(160deg,#5E7A8C,#2E4657)"><div class="vert">TEST SERIES</div></div>
+          <div class="cname">Marks Improvement Programme</div>
+          <div class="prow"><div class="pnow">₹4,499</div><div class="pold">₹5500</div></div>
+          <div class="poff">40% OFF</div>
+          <button class="buy">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="sechead" style="padding-top:24px"><i></i><span>PW Digital Products</span></div>
+      <div class="grid2">
+        <div>
+          <div class="thumb" style="background:#FBF3DE;display:block">
+            <div style="font-size:14px;font-weight:700;color:#1F2328;line-height:1.15">Padhai<br>ka asli</div>
+            <div style="margin-top:6px;display:inline-block;background:#6B5B14;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:#FFD24A">OTT</div>
+          </div>
+          <div style="font-size:10px;font-weight:600;color:#F04E23;margin-top:9px;letter-spacing:.04em">3 MONTHS</div>
+          <div class="cname" style="margin-top:3px">PW Pi OTT</div>
+          <div class="prow"><div class="pnow">₹999</div><div class="pold">₹1199</div></div>
+          <div class="poff">40% OFF</div>
+          <button class="buy ghost">Buy Now</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:#EAF2FF;display:block">
+            <div style="font-size:14px;font-weight:700;color:#1268E0;line-height:1.15">NCERT<br>in your</div>
+            <div style="margin-top:6px;display:inline-block;background:#1268E0;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:700;color:#fff">POCKET</div>
+          </div>
+          <div style="font-size:10px;font-weight:600;color:#F04E23;margin-top:9px;letter-spacing:.04em">3 MONTHS</div>
+          <div class="cname" style="margin-top:3px">Digital Books</div>
+          <div class="prow"><div class="pnow">₹1,499</div><div class="pold">₹2500</div></div>
+          <div class="poff">40% OFF</div>
+          <button class="buy ghost">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="sechead" style="padding-top:24px"><i></i><span>PW Modules</span></div>
+      <div class="rail">
+        <div>
+          <div class="thumb" style="background:#2B1B4A">
+            <div style="font-size:12px;font-weight:700;color:#FFD24A;line-height:1.2">NCERT<br>PUNCH</div>
+            <div class="rating">★ 4.6</div>
+          </div>
+          <div class="cname" style="font-size:12px">Objective NCERT Punch 4.0</div>
+          <div class="prow" style="gap:5px"><div class="pnow" style="font-size:13px">₹1,499</div><div class="pold" style="font-size:10px">₹2500</div></div>
+          <div class="poff" style="font-size:10px">40% OFF</div>
+          <button class="buy ghost" style="padding:9px;font-size:12px">Buy Now</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:#123A6B">
+            <div style="font-size:12px;font-weight:700;color:#8FD3FF;line-height:1.2">12 NEET<br>YEARS</div>
+            <div class="rating">★ 4.6</div>
+          </div>
+          <div class="cname" style="font-size:12px">NEET 12 Years PYQ</div>
+          <div class="prow" style="gap:5px"><div class="pnow" style="font-size:13px">₹1,499</div><div class="pold" style="font-size:10px">₹2500</div></div>
+          <div class="poff" style="font-size:10px">40% OFF</div>
+          <button class="buy ghost" style="padding:9px;font-size:12px">Buy Now</button>
+        </div>
+        <div>
+          <div class="thumb" style="background:#4A1206">
+            <div style="font-size:12px;font-weight:700;color:#FFC53D;line-height:1.2">MedEd<br>Notes</div>
+            <div class="rating">★ 4.6</div>
+          </div>
+          <div class="cname" style="font-size:12px">MedEd Handwritten</div>
+          <div class="prow" style="gap:5px"><div class="pnow" style="font-size:13px">₹1,499</div><div class="pold" style="font-size:10px">₹2500</div></div>
+          <div class="poff" style="font-size:10px">40% OFF</div>
+          <button class="buy ghost" style="padding:9px;font-size:12px">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="sechead" style="padding-top:24px"><i></i><span>All Courses</span></div>
+      <div style="font-size:11px;color:#6B7280;padding:5px 14px 0">34 courses available</div>
+      <div class="rail" style="padding-top:12px">
+        <div class="chip dark" style="flex:0 0 auto">Filters ⌄</div>
+        <div class="chip" style="flex:0 0 auto">Online</div>
+        <div class="chip" style="flex:0 0 auto">Offline</div>
+        <div class="chip" style="flex:0 0 auto">Power Batch</div>
+      </div>
+      <div class="courses" id="courses"><div class="course"><div class="banner"></div><div class="body"><div class="tagrow"><div class="tag">NEW BATCH</div><div class="lang">Hinglish</div></div><div class="nm">Arjuna NEET 2027</div><div class="st">🗓 Started on 12 Apr 2026</div><div class="foot"><div style="flex:1"><div class="prow" style="margin-top:0"><div class="pnow">₹4,499</div><div class="pold">₹5500</div></div><div class="poff">40% OFF</div></div><button class="buy">Buy Now</button><div style="font-size:15px;color:#6B7280">›</div></div></div></div><div class="course"><div class="banner"></div><div class="body"><div class="tagrow"><div class="tag">FILLING FAST</div><div class="lang">English</div></div><div class="nm">Lakshya NEET 2027</div><div class="st">🗓 Started on 02 Apr 2026</div><div class="foot"><div style="flex:1"><div class="prow" style="margin-top:0"><div class="pnow">₹1,499</div><div class="pold">₹2500</div></div><div class="poff">40% OFF</div></div><button class="buy">Buy Now</button><div style="font-size:15px;color:#6B7280">›</div></div></div></div><div class="course"><div class="banner"></div><div class="body"><div class="tagrow"><div class="tag">BOARDS + NEET</div><div class="lang">Hinglish</div></div><div class="nm">Uday Class 11 Boards 2027</div><div class="st">🗓 Started on 28 Mar 2026</div><div class="foot"><div style="flex:1"><div class="prow" style="margin-top:0"><div class="pnow">₹1,499</div><div class="pold">₹2500</div></div><div class="poff">40% OFF</div></div><button class="buy">Buy Now</button><div style="font-size:15px;color:#6B7280">›</div></div></div></div></div>
+      <div style="height:18px"></div>
+    </div>
+
+    <!-- ══ re-entry token, docks into header after dismissal ══ -->
+    <button class="token" id="token" aria-label="Your counsellor offer, saved">
+      <span class="pill">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.8 2.8 0 0 0 0 5.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.8 2.8 0 0 0 0-5.6V8Z" stroke="#5B4CE8" stroke-width="1.6"></path>
+          <path d="M14 9.5 10 14.5" stroke="#5B4CE8" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+        <span class="dot" id="tokenDot"></span>
+      </span>
+    </button>
+
+    <div class="pop" id="pop" role="dialog" aria-label="Saved counsellor offer">
+      <div class="ph">Your counsellor offer is saved</div>
+      <div class="ps"><span id="popCode">PWLOCK1500</span> stays applied at checkout.</div>
+      <div class="urgency" style="margin-top:9px">
+        <div class="lbl">Expires in</div>
+        <div class="clock" id="popClock">
+          <span class="cap" data-hh="">02</span><span class="sep">:</span>
+          <span class="cap" data-mm="">13</span><span class="sep">:</span>
+          <span class="cap" data-ss="">32</span>
+        </div>
+      </div>
+      <button class="cta">Continue with this offer →</button>
+    </div>
+
+    <!-- ══ bottom nav ══ -->
+    <div class="bottomnav">
+      <div><div class="e">📖</div><div class="l">Study</div></div>
+      <div><div class="e">🏫</div><div class="l">Centres</div></div>
+      <div class="active"><div class="dot">🎓</div><div class="l">Batches</div></div>
+      <div><div class="e">🅿️</div><div class="l">Pi</div></div>
+      <div><div class="e">🛍️</div><div class="l">PW Store</div></div>
+    </div>
+
+    <!-- ══ THE NUDGE ══ -->
+    <section id="nudge" class="collapsed" aria-label="Counsellor offer" style="--h: 336px; --p: 1;">
+
+      <!-- State 2 — collapsed strip -->
+      <button class="strip" id="strip" tabindex="0" aria-label="Counsellor offer, coupon applied. Tap to expand.">
+        <span class="avatar" style="width:26px;height:26px">
+          <svg width="26" height="26" viewBox="0 0 42 42" aria-hidden="true">
+            <circle cx="21" cy="21" r="21" fill="#EDEAFE"></circle>
+            <path d="M12 19a9 9 0 0 1 18 0" stroke="#5B4CE8" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+            <rect x="9.5" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+            <rect x="27.9" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+            <path d="M30.2 25.5v1.6a3 3 0 0 1-3 3h-2.4" stroke="#5B4CE8" stroke-width="2" fill="none" stroke-linecap="round"></path>
+            <circle cx="21" cy="22.5" r="4.2" fill="#1268E0"></circle>
+            <path d="M13.6 33.5a7.8 7.8 0 0 1 14.8 0" fill="#1268E0"></path>
+          </svg>
+          <span class="tick" style="width:12px;height:12px;right:-2px;bottom:-1px">
+            <svg viewBox="0 0 12 12" style="width:6px;height:6px" aria-hidden="true"><path d="M1 6.2 4.3 9.5 11 2.8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </span>
+        <span class="code"><b id="stripCode">PWLOCK1500</b> <span class="ok" id="stripOk">applied ✓</span></span>
+        <span class="clock" id="stripClock">
+          <span class="cap" data-hh="">02</span><span class="sep">:</span>
+          <span class="cap" data-mm="">13</span><span class="sep">:</span>
+          <span class="cap" data-ss="">32</span>
+        </span>
+        <span class="caret">⌃</span>
+      </button>
+
+      <!-- State 1 — expanded sheet -->
+      <div class="sheet-body" id="sheetBody" aria-hidden="true">
+        <div class="handle-row" id="handleRow">
+          <div class="handle"></div>
+          <button class="dismiss" id="dismiss" aria-label="Dismiss counsellor offer"><i>✕</i></button>
+        </div>
+
+        <div class="trust">
+          <span class="avatar">
+            <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+              <circle cx="21" cy="21" r="21" fill="#EDEAFE"></circle>
+              <path d="M12 19a9 9 0 0 1 18 0" stroke="#5B4CE8" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+              <rect x="9.5" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+              <rect x="27.9" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+              <path d="M30.2 25.5v1.6a3 3 0 0 1-3 3h-2.4" stroke="#5B4CE8" stroke-width="2" fill="none" stroke-linecap="round"></path>
+              <circle cx="21" cy="22.5" r="4.2" fill="#1268E0"></circle>
+              <path d="M13.6 33.5a7.8 7.8 0 0 1 14.8 0" fill="#1268E0"></path>
+            </svg>
+            <span class="tick">
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.2 4.3 9.5 11 2.8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+          </span>
+          <div>
+            <div class="t1">Offer confirmed by your PW Counsellor</div>
+            <div class="t2">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#6B7280" stroke-width="2"></circle><path d="M12 7.5V12l3 1.8" stroke="#6B7280" stroke-width="2" stroke-linecap="round"></path></svg>
+              From your call today, 2:30 PM
+            </div>
+          </div>
+        </div>
+
+        <div class="ticket celebrate" id="ticket">
+          <span class="shimmer"></span>
+          <span class="confetti" id="confetti"><i style="background:#5B4CE8;--dx:20.0px;--dy:0.0px"></i><i style="background:#1AA260;--dx:13.0px;--dy:22.5px"></i><i style="background:#1268E0;--dx:-16.0px;--dy:27.7px"></i><i style="background:#FFC53D;--dx:-20.0px;--dy:0.0px"></i><i style="background:#5B4CE8;--dx:-13.0px;--dy:-22.5px"></i><i style="background:#1AA260;--dx:16.0px;--dy:-27.7px"></i></span>
+          <span class="check" id="ticketCheck"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.2 4.3 9.5 11 2.8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span>
+            <span class="code" id="ticketCode">PWLOCK1500</span>
+            <div class="lbl" id="ticketLbl">Coupon auto-applied</div>
+          </span>
+          <button class="more" id="moreOffers" hidden="">1 more offer</button>
+          <button class="retry" id="retryBtn" hidden="">Retry</button>
+        </div>
+
+        <div class="price">
+          <span class="mrp" id="mrp">₹4,499</span>
+          <span class="now" id="now">₹2,999</span>
+          <span class="save" id="save">You save ₹1,500</span>
+          <span class="batch">on Arjuna NEET 2027</span>
+        </div>
+
+        <div class="urgency">
+          <div class="lbl">Counsellor offer expires in</div>
+          <div class="clock" id="clock">
+            <span class="cap" data-hh="">02</span><span class="sep">:</span>
+            <span class="cap" data-mm="">13</span><span class="sep">:</span>
+            <span class="cap" data-ss="">32</span>
+          </div>
+        </div>
+
+        <button class="cta" id="cta">Continue with this offer →</button>
+      </div>
+
+      <!-- Edge case — expired -->
+      <div class="expired" id="expiredCard" hidden="">
+        <div class="row">
+          <span class="avatar" style="filter:grayscale(1);opacity:.7">
+            <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+              <circle cx="21" cy="21" r="21" fill="#EDEAFE"></circle>
+              <path d="M12 19a9 9 0 0 1 18 0" stroke="#5B4CE8" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+              <rect x="9.5" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+              <rect x="27.9" y="18" width="4.6" height="7.5" rx="2.3" fill="#5B4CE8"></rect>
+              <circle cx="21" cy="22.5" r="4.2" fill="#1268E0"></circle>
+              <path d="M13.6 33.5a7.8 7.8 0 0 1 14.8 0" fill="#1268E0"></path>
+            </svg>
+          </span>
+          <div style="flex:1">
+            <div class="t1">This offer has ended</div>
+            <div class="t2">Your counsellor can confirm a fresh one.</div>
+          </div>
+          <button class="dismiss" id="dismiss2" aria-label="Dismiss"><i>✕</i></button>
+        </div>
+        <button class="cta">Request callback from your counsellor</button>
+      </div>
+    </section>
+
+    <div class="snackbar" id="snackbar" role="status">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.8 2.8 0 0 0 0 5.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.8 2.8 0 0 0 0-5.6V8Z" stroke="#9CC6FF" stroke-width="1.6"></path></svg>
+      Offer saved — find it anytime in your cart
+    </div>
+
+    <div class="scrim" id="scrim">
+      <div class="picker" role="dialog" aria-label="Choose an offer">
+        <h3>Choose your offer</h3>
+        <p>We apply the best one for you by default.</p>
+        <button class="opt" role="radio" aria-checked="true" data-code="PWLOCK1500" data-off="1500">
+          <span class="radio"></span>
+          <span>
+            <span class="best">BEST · COUNSELLOR CONFIRMED</span>
+            <div class="oc">PWLOCK1500</div>
+            <div class="os">From your call today, 2:30 PM</div>
+          </span>
+          <span class="amt">−₹1,500</span>
+        </button>
+        <button class="opt" role="radio" aria-checked="false" data-code="NEETSTART900" data-off="900">
+          <span class="radio"></span>
+          <span>
+            <div class="oc">NEETSTART900</div>
+            <div class="os">Campaign offer · ends in 3 days</div>
+          </span>
+          <span class="amt">−₹900</span>
+        </button>
+        <button class="cta" id="usePicked">Use this offer</button>
+      </div>
+    </div>
+
+    <div class="sr-only" id="live" aria-live="polite">Counsellor offer expires in 2 hours 13 minutes.</div>
+  </div>
+
+  <div class="gesturebar"><i></i></div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── base screen: All Courses list ─────────────────────────── */
+  var COURSES = [
+    {tag:'NEW BATCH', lang:'Hinglish', name:'Arjuna NEET 2027', start:'12 Apr 2026', price:'₹4,499', mrp:'₹5500'},
+    {tag:'FILLING FAST', lang:'English', name:'Lakshya NEET 2027', start:'02 Apr 2026', price:'₹1,499', mrp:'₹2500'},
+    {tag:'BOARDS + NEET', lang:'Hinglish', name:'Uday Class 11 Boards 2027', start:'28 Mar 2026', price:'₹1,499', mrp:'₹2500'}
+  ];
+  document.getElementById('courses').innerHTML = COURSES.map(function(c){
+    return '<div class="course"><div class="banner"></div><div class="body">'
+      + '<div class="tagrow"><div class="tag">'+c.tag+'</div><div class="lang">'+c.lang+'</div></div>'
+      + '<div class="nm">'+c.name+'</div><div class="st">🗓 Started on '+c.start+'</div>'
+      + '<div class="foot"><div style="flex:1"><div class="prow" style="margin-top:0">'
+      + '<div class="pnow">'+c.price+'</div><div class="pold">'+c.mrp+'</div></div>'
+      + '<div class="poff">40% OFF</div></div>'
+      + '<button class="buy">Buy Now</button><div style="font-size:15px;color:#6B7280">›</div></div>'
+      + '</div></div>';
+  }).join('');
+
+  /* ── offer model ───────────────────────────────────────────── */
+  var OFFER = { code:'PWLOCK1500', discount:1500, mrp:4499, secs:2*3600+14*60+8 };
+
+  var nudge      = document.getElementById('nudge');
+  var strip      = document.getElementById('strip');
+  var sheetBody  = document.getElementById('sheetBody');
+  var expiredCard= document.getElementById('expiredCard');
+  var scroller   = document.getElementById('scroller');
+  var ticket     = document.getElementById('ticket');
+  var ticketCode = document.getElementById('ticketCode');
+  var ticketLbl  = document.getElementById('ticketLbl');
+  var ticketCheck= document.getElementById('ticketCheck');
+  var retryBtn   = document.getElementById('retryBtn');
+  var moreOffers = document.getElementById('moreOffers');
+  var cta        = document.getElementById('cta');
+  var snackbar   = document.getElementById('snackbar');
+  var token      = document.getElementById('token');
+  var tokenDot   = document.getElementById('tokenDot');
+  var pop        = document.getElementById('pop');
+  var scrim      = document.getElementById('scrim');
+  var live       = document.getElementById('live');
+  var clocks     = [document.getElementById('clock'), document.getElementById('stripClock'), document.getElementById('popClock')];
+  var screenEl   = document.querySelector('.screen');
+
+  var state = {
+    p: 0,                 // 0 = expanded sheet, 1 = collapsed strip
+    dismissed: false,
+    expired: false,
+    coupon: 'applied',    // 'applied' | 'verifying' | 'failed'
+    autoExpandUsed: false,
+    lockBase: -1,         // scroll position at which scroll-linking was suspended
+    snackTimer: null,
+    verifyTimer: null
+  };
+
+  var money = function(n){ return '₹' + n.toLocaleString('en-IN'); };
+  var pad2  = function(n){ return String(n).padStart(2,'0'); };
+  var clamp = function(v,a,b){ return v<a?a:v>b?b:v; };
+
+  /* ── geometry: the sheet translates down so only the strip shows ── */
+  function measure(){
+    var prev = nudge.style.transform;
+    nudge.style.transform = 'none';
+    var h = nudge.offsetHeight;
+    nudge.style.transform = prev;
+    nudge.style.setProperty('--h', h + 'px');
+  }
+
+  function setP(v, spring){
+    state.p = clamp(v, 0, 1);
+    nudge.classList.toggle('springing', !!spring);
+    nudge.style.setProperty('--p', state.p);
+    var collapsed = state.p > 0.55;
+    nudge.classList.toggle('collapsed', collapsed);
+    strip.tabIndex = collapsed ? 0 : -1;
+    sheetBody.setAttribute('aria-hidden', collapsed ? 'true' : 'false');
+  }
+
+  function expand(){ state.lockBase = scroller.scrollTop; setP(0, true); }
+  function collapse(){ setP(1, true); }
+
+  /* ── scroll-linked interpolation ───────────────────────────── */
+  var RANGE = 90, ticking = false;
+  scroller.addEventListener('scroll', function(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      ticking = false;
+      if (state.dismissed || state.expired || dragging) return;
+      var top = scroller.scrollTop;
+
+      // After a manual expand, scroll-linking stays suspended until the
+      // user deliberately scrolls further down again.
+      if (state.lockBase >= 0) {
+        if (top > state.lockBase + 40) state.lockBase = -1;
+        else return;
+      }
+
+      if (top < 8 && state.p > 0.9 && !state.autoExpandUsed) {
+        state.autoExpandUsed = true;   // one auto-expand only — never a yo-yo
+        expand();
+        return;
+      }
+      setP(top / RANGE, false);
+    });
+  }, {passive:true});
+
+  strip.addEventListener('click', function(){ if (state.p > 0.55) expand(); });
+
+  /* ── drag-to-collapse on the grab handle ───────────────────── */
+  var dragging = false, dragStart = 0, dragFrom = 0, travel = 1;
+  document.getElementById('handleRow').addEventListener('pointerdown', function(e){
+    dragging = true; dragStart = e.clientY; dragFrom = state.p;
+    travel = Math.max(1, nudge.offsetHeight - 56);
+    nudge.classList.remove('springing');
+    e.currentTarget.setPointerCapture(e.pointerId);
+  });
+  document.getElementById('handleRow').addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    setP(dragFrom + (e.clientY - dragStart) / travel, false);
+  });
+  function endDrag(){
+    if (!dragging) return;
+    dragging = false;
+    state.p > 0.4 ? collapse() : expand();
+  }
+  document.getElementById('handleRow').addEventListener('pointerup', endDrag);
+  document.getElementById('handleRow').addEventListener('pointercancel', endDrag);
+
+  /* ── countdown ─────────────────────────────────────────────── */
+  var lastAnnounced = -1;
+  function renderClock(){
+    var s = OFFER.secs;
+    var hh = pad2(Math.floor(s/3600)), mm = pad2(Math.floor(s%3600/60)), ss = pad2(s%60);
+    var tone = s < 900 ? 'crit' : s < 3600 ? 'warn' : '';
+    clocks.forEach(function(c){
+      if (!c) return;
+      c.querySelector('[data-hh]').textContent = hh;
+      c.querySelector('[data-mm]').textContent = mm;
+      c.querySelector('[data-ss]').textContent = ss;
+      c.className = 'clock' + (tone ? ' ' + tone : '');
+    });
+    token.classList.remove('warn','crit');
+    if (tone) token.classList.add(tone);
+
+    // Announce once a minute rather than every tick.
+    var mins = Math.floor(s/60);
+    if (mins !== lastAnnounced) {
+      lastAnnounced = mins;
+      live.textContent = s <= 0
+        ? 'Counsellor offer has expired.'
+        : 'Counsellor offer expires in ' + Math.floor(s/3600) + ' hours ' + (mins % 60) + ' minutes.';
+    }
+  }
+  setInterval(function(){
+    if (OFFER.secs <= 0) { if (!state.expired) setExpired(); return; }
+    OFFER.secs--;                       // honest clock — never reset
+    renderClock();
+    if (OFFER.secs === 0) setExpired();
+  }, 1000);
+
+  /* ── price rendering ───────────────────────────────────────── */
+  function renderPrice(){
+    document.getElementById('mrp').textContent  = money(OFFER.mrp);
+    document.getElementById('now').textContent  = money(OFFER.mrp - OFFER.discount);
+    document.getElementById('save').textContent = 'You save ' + money(OFFER.discount);
+    ticketCode.textContent = OFFER.code;
+    document.getElementById('stripCode').textContent = OFFER.code;
+    document.getElementById('popCode').textContent = OFFER.code;
+    document.getElementById('cardPrice').textContent = money(OFFER.mrp - OFFER.discount);
+  }
+
+  /* ── coupon states ─────────────────────────────────────────── */
+  function setCoupon(next){
+    state.coupon = next;
+    clearTimeout(state.verifyTimer);
+    ticket.classList.remove('verifying','failed');
+    retryBtn.hidden = true;
+    ticketCheck.hidden = false;
+    ticketCheck.style.background = '';
+    ticketCheck.innerHTML = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6.2 4.3 9.5 11 2.8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    if (next === 'applied') {
+      ticketLbl.textContent = 'Coupon auto-applied';
+      ticketLbl.style.color = '';
+      cta.disabled = false;
+      cta.textContent = 'Continue with this offer →';
+      document.getElementById('stripOk').textContent = 'applied ✓';
+      document.getElementById('cardTag').hidden = false;
+    } else if (next === 'verifying') {
+      // Never show the green tick before the server confirms.
+      ticket.classList.add('verifying');
+      ticketCheck.innerHTML = '<span class="spinner"></span>';
+      ticketCheck.style.background = 'transparent';
+      ticketLbl.textContent = 'Verifying your offer…';
+      ticketLbl.style.color = '#6B7280';
+      cta.disabled = true;
+      cta.textContent = 'Verifying your offer…';
+      document.getElementById('stripOk').textContent = 'verifying…';
+      document.getElementById('cardTag').hidden = true;
+    } else {
+      ticket.classList.add('failed');
+      ticketCheck.innerHTML = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>';
+      ticketLbl.textContent = "Couldn't verify this offer right now";
+      ticketLbl.style.color = '#C62828';
+      retryBtn.hidden = false;
+      cta.disabled = true;
+      cta.textContent = 'Continue with this offer →';
+      document.getElementById('stripOk').textContent = 'retry';
+      document.getElementById('cardTag').hidden = true;
+    }
+    if (next === 'applied') ticketCheck.style.background = '';
+    // Until the server confirms, the discounted price is not claimed anywhere.
+    var confirmed = next === 'applied';
+    document.getElementById('mrp').hidden = !confirmed;
+    document.getElementById('save').hidden = !confirmed;
+    document.getElementById('now').textContent = money(confirmed ? OFFER.mrp - OFFER.discount : OFFER.mrp);
+    strip.setAttribute('aria-label',
+      next === 'applied' ? 'Counsellor offer, coupon applied. Tap to expand.'
+      : next === 'verifying' ? 'Counsellor offer, verifying your coupon. Tap to expand.'
+      : "Counsellor offer, coupon couldn't be verified. Tap to expand and retry.");
+    measure();
+  }
+
+  function verify(succeed){
+    setCoupon('verifying');
+    state.verifyTimer = setTimeout(function(){
+      succeed ? (setCoupon('applied'), celebrate()) : setCoupon('failed');
+    }, 1600);
+  }
+  retryBtn.addEventListener('click', function(){ verify(true); });
+
+  function downloadCurrentHtml(){
+    var html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'counsellor-offer-nudge.html';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 0);
+  }
+
+  /* ── one-time celebratory tick ─────────────────────────────── */
+  var CONFETTI = ['#5B4CE8','#1AA260','#1268E0','#FFC53D','#5B4CE8','#1AA260'];
+  document.getElementById('confetti').innerHTML = CONFETTI.map(function(c,i){
+    var a = (i/CONFETTI.length) * Math.PI * 2, d = 20 + (i%3)*6;
+    return '<i style="background:'+c+';--dx:'+(Math.cos(a)*d).toFixed(1)+'px;--dy:'+(Math.sin(a)*d).toFixed(1)+'px"></i>';
+  }).join('');
+
+  function celebrate(){
+    ticket.classList.remove('celebrate');
+    void ticket.offsetWidth;              // restart the animation
+    ticket.classList.add('celebrate');
+  }
+
+  /* ── entry / dismiss ───────────────────────────────────────── */
+  function show(delay){
+    clearTimeout(state.snackTimer);
+    snackbar.classList.remove('show');
+    token.classList.remove('show');
+    screenEl.classList.remove('has-token');
+    pop.classList.remove('show');
+    state.dismissed = false;
+    state.autoExpandUsed = false;
+    state.lockBase = -1;
+    nudge.classList.remove('leaving');
+    nudge.classList.add('hidden','enter');
+    setTimeout(function(){
+      nudge.classList.remove('hidden');
+      measure();
+      setP(0, false);
+      requestAnimationFrame(function(){
+        nudge.classList.add('springing');
+        nudge.classList.remove('enter');
+        setTimeout(celebrate, 260);       // tick lands after the sheet settles
+      });
+    }, delay);
+  }
+
+  function dismiss(){
+    if (state.dismissed) return;
+    state.dismissed = true;
+    nudge.classList.remove('springing');
+    nudge.classList.add('leaving');
+    setTimeout(function(){ nudge.classList.add('hidden'); nudge.classList.remove('leaving'); }, 320);
+
+    snackbar.classList.add('show');
+    clearTimeout(state.snackTimer);
+    state.snackTimer = setTimeout(function(){ snackbar.classList.remove('show'); }, 3000);
+    setTimeout(function(){ token.classList.add('show'); screenEl.classList.add('has-token'); renderClock(); }, 260);
+  }
+  document.getElementById('dismiss').addEventListener('click', dismiss);
+  document.getElementById('dismiss2').addEventListener('click', dismiss);
+
+  // The token is a quiet re-entry point, not a re-appearing sheet.
+  token.addEventListener('click', function(e){ e.stopPropagation(); pop.classList.toggle('show'); });
+  document.querySelector('.screen').addEventListener('click', function(e){
+    if (!pop.contains(e.target) && !token.contains(e.target)) pop.classList.remove('show');
+  });
+  /* ── expired variant ───────────────────────────────────────── */
+  function setExpired(){
+    state.expired = true;
+    OFFER.secs = 0;
+    renderClock();
+    sheetBody.hidden = true;
+    strip.hidden = true;
+    expiredCard.hidden = false;
+    nudge.classList.remove('hidden','collapsed','enter','leaving');
+    state.dismissed = false;
+    measure();
+    setP(0, true);
+  }
+  function unExpire(){
+    state.expired = false;
+    if (OFFER.secs <= 0) { OFFER.secs = 2*3600 + 14*60 + 8; lastAnnounced = -1; renderClock(); }
+    sheetBody.hidden = false;
+    strip.hidden = false;
+    expiredCard.hidden = true;
+  }
+
+  /* ── multiple offers picker ────────────────────────────────── */
+  var multiOn = false;
+  moreOffers.addEventListener('click', function(){ scrim.classList.add('show'); });
+  scrim.addEventListener('click', function(e){ if (e.target === scrim) scrim.classList.remove('show'); });
+  Array.prototype.forEach.call(scrim.querySelectorAll('.opt'), function(opt){
+    opt.addEventListener('click', function(){
+      scrim.querySelectorAll('.opt').forEach(function(o){ o.setAttribute('aria-checked','false'); });
+      opt.setAttribute('aria-checked','true');
+    });
+  });
+  document.getElementById('usePicked').addEventListener('click', function(){
+    var sel = scrim.querySelector('.opt[aria-checked="true"]');
+    OFFER.code = sel.dataset.code;
+    OFFER.discount = parseInt(sel.dataset.off, 10);
+    renderPrice(); measure(); celebrate();
+    scrim.classList.remove('show');
+  });
+
+  /* ── demo controls ─────────────────────────────────────────── */
+  document.querySelector('.panel').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if (!b) return;
+
+    if (b.dataset.secs){
+      OFFER.secs = parseInt(b.dataset.secs, 10);
+      lastAnnounced = -1;
+      if (state.expired){ unExpire(); show(0); }
+      renderClock();
+      return;
+    }
+    switch (b.dataset.act){
+      case 'replay':      unExpire(); scroller.scrollTop = 0; setCoupon('applied'); show(800); break;
+      case 'expand':      if (!state.dismissed && !nudge.classList.contains('hidden')) expand(); break;
+      case 'collapse':    if (!state.dismissed && !state.expired) collapse(); break;
+      case 'dismiss':     dismiss(); break;
+      case 'expire':      setExpired(); break;
+      case 'verify-ok':   if (state.expired){ unExpire(); show(0); } verify(true); break;
+      case 'verify-fail': if (state.expired){ unExpire(); show(0); } verify(false); break;
+      case 'multi':
+        multiOn = !multiOn;
+        b.setAttribute('aria-pressed', String(multiOn));
+        moreOffers.hidden = !multiOn;
+        measure();
+        break;
+      case 'download':
+        downloadCurrentHtml();
+        break;
+    }
+  });
+
+  /* ── boot ──────────────────────────────────────────────────── */
+  renderPrice();
+  renderClock();
+  setCoupon('applied');
+  window.addEventListener('resize', measure);
+  show(800);                              // let the page breathe first
+})();
+</script>
+
+
+</body></html>

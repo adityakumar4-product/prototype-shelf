@@ -76,7 +76,7 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has ten built prototypes and 15 remaining pipeline ideas. Voice Search and Dropper NEET: Next Year Purchase are live prototypes in the main section and appear under both All and App.
+The shelf has 11 built prototypes and 14 remaining pipeline ideas. Voice Search, Dropper NEET: Next Year Purchase and Counsellor Offer Nudge are live prototypes in the main section and appear under both All and App. Counsellor Offer Nudge contains two switchable versions.
 
 ## Filters
 
@@ -91,7 +91,7 @@ The platform chips are **All · App · Web · Admin**; Pipeline scrolls to the p
 - **Every prototype is shareable.** Send someone `yoursite.vercel.app/#p=doubt-chat` and it opens straight into that prototype.
 - **Width toggle.** The viewer has Phone / Full width, so a mobile prototype can be checked in a 390px frame and a dashboard can fill the screen.
 - **Search.** `/` focuses the search box.
-- **Pipeline.** The Pipeline chip jumps to the 15 ideas still in progress.
+- **Pipeline.** The Pipeline chip jumps to the 14 ideas still in progress.
 
 ## Run locally
 

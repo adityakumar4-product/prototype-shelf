@@ -125,6 +125,17 @@ const PROTOTYPES = [
     frame: "phone",
     tags: ["Dropper", "Personalisation", "Alternate careers"],
     updated: "1 Oct 2026"
+  },
+  {
+    slug: "counsellor-offer-nudge",
+    title: "Counsellor Offer Nudge",
+    snippet: "Switch between two counsellor-offer nudge concepts",
+    description: "Counsellor offers are not connected to the product journey, leaving promised deals invisible during batch discovery.",
+    file: "prototypes/counsellor-offer-nudge.html",
+    platform: "App",
+    frame: "wide",
+    tags: ["Counsellor", "Conversion", "Offers"],
+    updated: "1 Oct 2026"
   }
 ];
 
@@ -158,12 +169,6 @@ const PIPELINE = [
     description: "Students often call known contacts or the support team to confirm batch details, which delays the purchase.",
     platform: "App",
     tags: ["Confirmation", "Trust"]
-  },
-  {
-    title: "Counsellor & product have no sync",
-    description: "Counsellors offer extra deals to convert students, but those conversations aren't synced with the product journey.",
-    platform: "App",
-    tags: ["Counsellor", "Conversion"]
   },
   {
     title: "Course purchase is not a one-day activity",
@@ -566,7 +571,6 @@ const PIPELINE = [
 
   const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline'];
   let activeFilter = 'All';
-  let cameFromShelf = false;
 
   /* ---------- shelf ---------- */
   filters.innerHTML = FILTERS.map(f =>
@@ -746,7 +750,6 @@ const PIPELINE = [
   }
 
   function goBack() {
-    if (cameFromShelf) { history.back(); return; }
     history.replaceState(null, '', location.pathname + location.search);
     route();
   }
@@ -754,7 +757,6 @@ const PIPELINE = [
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && viewer.classList.contains('is-open')) goBack();
   });
-  grid.addEventListener('click', e => { if (e.target.closest('.card__hit')) cameFromShelf = true; });
 
   function route() {
     const m = location.hash.match(/^#p=(.+)$/);
