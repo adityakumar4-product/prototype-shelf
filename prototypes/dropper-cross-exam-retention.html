@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fa">
+  <title>Dropper Retention · Cross-exam pathways</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212b;
+      --muted: #677582;
+      --line: #e2e8ee;
+      --blue: #1769d2;
+      --blue-dark: #104b99;
+      --mint: #dff4eb;
+      --green: #127449;
+      --coral: #ee7757;
+      --paper: #ffffff;
+      font-family: "DM Sans", "Avenir Next", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #eaf0f4;
+      color: var(--ink);
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; }
+    button { font: inherit; }
+
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(250px, 340px) minmax(340px, 430px);
+      justify-content: center;
+      align-items: center;
+      gap: clamp(28px, 6vw, 80px);
+      padding: 28px;
+      background-color: #eaf0f4;
+      background-image: linear-gradient(90deg, rgba(23, 33, 43, .035) 1px, transparent 1px), linear-gradient(rgba(23, 33, 43, .035) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .brief { max-width: 340px; }
+    .eyebrow { color: var(--blue-dark); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .brief h1 { margin: 12px 0 10px; font-size: 30px; line-height: 1.08; font-weight: 700; }
+    .brief p { margin: 0; color: #53616e; font-size: 14px; line-height: 1.6; }
+    .brief__problem { margin-top: 22px; padding-top: 18px; border-top: 1px solid #cdd7df; }
+    .brief__problem h2 { margin: 0 0 6px; color: #475562; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .brief__problem p { font-size: 13px; }
+    .brief__signal { margin-top: 20px; display: flex; align-items: center; gap: 10px; color: #35434e; font-size: 12px; }
+    .brief__signal i { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 4px rgba(238,119,87,.16); }
+
+    .device {
+      position: relative;
+      height: min(844px, calc(100vh - 36px));
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 7px solid #d7dfe5;
+      border-radius: 26px;
+      background: var(--paper);
+      box-shadow: 0 24px 58px rgba(27, 45, 62, .18), 0 2px 8px rgba(27, 45, 62, .1);
+    }
+
+    .status { height: 34px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 17px; color: #394550; font-size: 11px; font-weight: 700; }
+    .status__right { display: flex; align-items: center; gap: 5px; }
+    .signal { display: flex; align-items: end; gap: 2px; height: 11px; }
+    .signal i { display: block; width: 3px; border-radius: 2px; background: #3b4650; }
+    .signal i:nth-child(1) { height: 4px; }
+    .signal i:nth-child(2) { height: 6px; }
+    .signal i:nth-child(3) { height: 8px; }
+    .signal i:nth-child(4) { height: 10px; }
+    .battery { width: 18px; height: 9px; border: 1px solid #3b4650; border-radius: 2px; padding: 1px; }
+    .battery i { display: block; width: 72%; height: 100%; border-radius: 1px; background: #3b4650; }
+
+    .appbar { flex: none; display: flex; align-items: center; gap: 11px; padding: 10px 17px 13px; border-bottom: 1px solid #f0f2f4; }
+    .logo { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; color: white; background: var(--blue); font-size: 13px; font-weight: 800; }
+    .appbar__name { flex: 1; font-size: 13px; font-weight: 700; }
+    .avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: #344450; background: #e6edf2; font-size: 11px; font-weight: 700; }
+
+    .scroll { flex: 1; min-height: 0; overflow: auto; padding: 18px 16px 98px; scrollbar-width: thin; }
+    .greeting { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .greeting__copy { min-width: 0; }
+    .greeting__kicker { color: var(--muted); font-size: 11px; }
+    .greeting h2 { margin: 3px 0 0; font-size: 20px; line-height: 1.2; }
+    .goal { flex: none; display: flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 7px; padding: 6px 8px; font-size: 10px; font-weight: 600; color: #475562; }
+    .goal span { color: var(--blue); }
+
+    .intro { margin: 16px 0 15px; border-radius: 10px; padding: 13px 14px; background: #f1f6fb; }
+    .intro strong { display: block; font-size: 13px; }
+    .intro p { margin: 4px 0 0; color: #52616e; font-size: 11px; line-height: 1.5; }
+
+    .section-label { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 9px; }
+    .section-label h3 { margin: 0; font-size: 14px; }
+    .section-label span { color: var(--muted); font-size: 10px; }
+
+    .paths { display: grid; gap: 9px; }
+    .path {
+      width: 100%; display: grid; grid-template-columns: 36px minmax(0, 1fr) 20px; align-items: center; gap: 10px;
+      padding: 11px; border: 1px solid var(--line); border-radius: 9px; background: white; text-align: left; color: var(--ink); cursor: pointer;
+      transition: border-color .16s ease, background-color .16s ease, transform .16s ease;
+    }
+    .path:hover { border-color: #a9c8eb; transform: translateY(-1px); }
+    .path[aria-pressed="true"] { border-color: var(--blue); background: #f5f9ff; box-shadow: inset 0 0 0 1px var(--blue); }
+    .path:focus-visible, .course:focus-visible, .all-courses:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+    .path__icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 8px; color: var(--blue-dark); background: #e8f2ff; font-size: 13px; font-weight: 800; }
+    .path[data-path="explore"] .path__icon { color: #9a4934; background: #fff0e9; }
+    .path__text { min-width: 0; }
+    .path__title { display: block; font-size: 12px; font-weight: 700; }
+    .path__detail { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .radio { width: 17px; height: 17px; border: 1.5px solid #9aa7b3; border-radius: 50%; }
+    .path[aria-pressed="true"] .radio { display: grid; place-items: center; border-color: var(--blue); }
+    .path[aria-pressed="true"] .radio::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+
+    .results { margin-top: 18px; }
+    .course-list { display: grid; gap: 8px; }
+    .course { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 9px; background: white; }
+    .course__mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 7px; color: #184b80; background: #dceeff; font-size: 11px; font-weight: 800; }
+    .course:nth-child(2) .course__mark { color: #8c4b1c; background: #ffedd8; }
+    .course:nth-child(3) .course__mark { color: #267148; background: #def3e7; }
+    .course__name { font-size: 11px; font-weight: 700; }
+    .course__meta { margin-top: 3px; color: var(--muted); font-size: 9px; }
+    .course__arrow { color: #7a8791; font-size: 17px; }
+    .all-courses { width: 100%; min-height: 42px; margin-top: 10px; border: 0; border-radius: 8px; color: white; background: var(--blue); font-size: 12px; font-weight: 700; cursor: pointer; }
+    .all-courses:hover { background: var(--blue-dark); }
+
+    .helper { margin-top: 12px; color: var(--muted); text-align: center; font-size: 10px; line-height: 1.45; }
+    .toast { position: absolute; left: 18px; right: 18px; bottom: 72px; z-index: 4; padding: 10px 12px; border-radius: 8px; color: white; background: #273642; font-size: 11px; box-shadow: 0 6px 18px rgba(20, 34, 46, .2); opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
+    .toast.show { opacity: 1; transform: none; }
+    .bottomnav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; height: 62px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; border-top: 1px solid var(--line); background: rgba(255,255,255,.97); }
+    .bottomnav div { color: #73808a; text-align: center; font-size: 9px; }
+    .bottomnav b { display: block; margin-bottom: 3px; color: #56636e; font-size: 15px; line-height: 1; }
+    .bottomnav .active, .bottomnav .active b { color: var(--blue-dark); font-weight: 700; }
+
+    @media (max-width: 760px) {
+      .layout { grid-template-columns: minmax(0, 430px); align-items: start; padding: 12px; }
+      .brief { display: none; }
+      .device { height: calc(100vh - 24px); min-height: 560px; border-width: 4px; border-radius: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="layout">
+    <aside class="brief" aria-label="Prototype context">
+      <div class="eyebrow">Retention · Cross-exam</div>
+      <h1>More than one way forward.</h1>
+      <p>Reactivation should not send every dropper into the same category. Let students choose whether to continue toward their current exam or explore another path.</p>
+      <section class="brief__problem">
+        <h2>The problem</h2>
+        <p>Some droppers decide their current exam no longer feels within reach. A single reactivation route can miss the alternatives they are ready to consider.</p>
+      </section>
+      <div class="brief__signal"><i aria-hidden="true"></i><span>Two routes, one personalised starting point</span></div>
+    </aside>
+
+    <section class="device" aria-label="Dropper reactivation experience">
+      <div class="status"><span>9:41</span><span class="status__right"><span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>5G</span><span class="battery" aria-hidden="true"><i></i></span></span></div>
+      <header class="appbar"><span class="logo">PW</span><span class="appbar__name">Your learning</span><span class="avatar" aria-label="Student profile">A</span></header>
+      <div class="scroll">
+        <div class="greeting">
+          <div class="greeting__copy"><div class="greeting__kicker">A fresh look at your next step</div><h2>Hi, aspirant</h2></div>
+          <div class="goal"><span>●</span> Dropper</div>
+        </div>
+        <section class="intro" aria-label="Personalised recommendation">
+          <strong>Your goal can take more than one path.</strong>
+          <p>Choose what feels right for you today. You can explore other options whenever you're ready.</p>
+        </section>
+        <div class="section-label"><h3>What would you like to explore?</h3><span>Choose one</span></div>
+        <div class="paths" role="group" aria-label="Choose a study path">
+          <button class="path" type="button" data-path="neet" aria-pressed="true">
+            <span class="path__icon" aria-hidden="true">N</span>
+            <span class="path__text"><span class="path__title">Continue NEET preparation</span><span class="path__detail">A structured next attempt, at your pace</span></span>
+            <span class="radio" aria-hidden="true"></span>
+          </button>
+          <button class="path" type="button" data-path="explore" aria-pressed="false">
+            <span class="path__icon" aria-hidden="true">↗</span>
+            <span class="path__text"><span class="path__title">Explore other exams &amp; careers</span><span class="path__detail">Discover related options beyond NEET</span></span>
+            <span class="radio" aria-hidden="true"></span>
+          </button>
+        </div>
+        <section class="results" aria-live="polite">
+          <div class="section-label"><h3 id="result-title">Recommended NEET batches</h3><span id="result-count">2 options</span></div>
+          <div class="course-list" id="course-list"></div>
+          <button class="all-courses" id="all-courses" type="button">View NEET batches</button>
+          <p class="helper" id="helper">Not ready to decide? You can change your path later.</p>
+        </section>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <nav class="bottomnav" aria-label="Main navigation">
+        <div><b aria-hidden="true">⌂</b>Home</div>
+        <div class="active"><b aria-hidden="true">▤</b>Learn</div>
+        <div><b aria-hidden="true">◷</b>Tests</div>
+        <div><b aria-hidden="true">◉</b>Account</div>
+      </nav>
+    </section>
+  </main>
+  <script>
+    const paths = {
+      neet: {
+        title: 'Recommended NEET batches',
+        count: '2 options',
+        action: 'View NEET batches',
+        helper: 'Not ready to decide? You can change your path later.',
+        items: [
+          { mark: 'NEET', name: 'Yakeen NEET', meta: 'Dropper batch · Online' },
+          { mark: 'TEST', name: 'NEET Test Series', meta: 'Practice and track your progress' }
+        ]
+      },
+      explore: {
+        title: 'Explore other pathways',
+        count: '3 options',
+        action: 'Explore all options',
+        helper: 'Explore at your own pace. Your current goal stays saved.',
+        items: [
+          { mark: 'NUR', name: 'BSc Nursing', meta: 'Nursing entrance preparation' },
+          { mark: 'PHM', name: 'B.Pharm', meta: 'Pharmacy entrance preparation' },
+          { mark: 'UG', name: 'CUET', meta: 'Explore undergraduate programmes' }
+        ]
+      }
+    };
+
+    const courseList = document.getElementById('course-list');
+    const toast = document.getElementById('toast');
+    let toastTimer;
+
+    function renderPath(key) {
+      const data = paths[key];
+      document.querySelectorAll('[data-path]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.path === key));
+      });
+      document.getElementById('result-title').textContent = data.title;
+      document.getElementById('result-count').textContent = data.count;
+      document.getElementById('all-courses').textContent = data.action;
+      document.getElementById('helper').textContent = data.helper;
+      courseList.innerHTML = data.items.map(item => `
+        <article class="course" tabindex="0">
+          <span class="course__mark">${item.mark}</span>
+          <span><span class="course__name">${item.name}</span><span class="course__meta">${item.meta}</span></span>
+          <span class="course__arrow" aria-hidden="true">›</span>
+        </article>`).join('');
+    }
+
+    document.querySelectorAll('[data-path]').forEach(button => {
+      button.addEventListener('click', () => renderPath(button.dataset.path));
+    });
+    document.getElementById('all-courses').addEventListener('click', () => {
+      const active = document.querySelector('[data-path][aria-pressed="true"]');
+      toast.textContent = active.dataset.path === 'neet'
+        ? 'Showing NEET preparation options.'
+        : 'Showing cross-exam and career options.';
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    });
+
+    renderPath('neet');
+  </script>
+</body>
+</html>
