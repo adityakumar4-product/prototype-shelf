@@ -147,6 +147,17 @@ const PROTOTYPES = [
     frame: "wide",
     tags: ["Dropper", "Retention", "Cross-exam"],
     updated: "2 Oct 2026"
+  },
+  {
+    slug: "growth-roadmap",
+    title: "PW Growth Roadmap",
+    snippet: "102 growth ideas across Uninstall, Activation, Conversion, ARPU and Retention",
+    description: "Consolidated growth-loop framework, master idea list with RICE, theme roadmaps, and detailed item explanations.",
+    file: "prototypes/growth-roadmap.html",
+    platform: "App",
+    frame: "wide",
+    tags: ["Roadmap", "Growth", "RICE"],
+    updated: "7 Oct 2026"
   }
 ];
 
@@ -580,7 +591,7 @@ const PIPELINE = [
   const dPhone = document.getElementById('dPhone');
   const dWide = document.getElementById('dWide');
 
-  const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline'];
+  const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline', 'Roadmap'];
   let activeFilter = 'All';
 
   /* ---------- shelf ---------- */
@@ -592,6 +603,14 @@ const PIPELINE = [
     const b = e.target.closest('.chip');
     if (!b) return;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (b.dataset.filter === 'Roadmap') {
+      activeFilter = 'All';
+      q.value = '';
+      filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === 'All'));
+      render();
+      document.getElementById('prototype-growth-roadmap')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      return;
+    }
     if (b.dataset.filter === 'Pipeline') {
       activeFilter = 'All';
       filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === 'All'));
@@ -636,7 +655,7 @@ const PIPELINE = [
     }
 
     grid.innerHTML = list.map(p => `
-      <article class="card">
+      <article class="card" id="prototype-${esc(p.slug)}">
         <div class="shot ${p.frame === 'phone' ? 'shot--phone' : ''} ${p.thumb ? 'shot--thumb' : ''}" data-frame="${p.frame || 'wide'}">
           ${p.thumb
             ? `<img class="shot__img" src="${esc(p.thumb)}" alt="" loading="lazy" />`
