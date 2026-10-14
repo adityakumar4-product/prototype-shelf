@@ -79,6 +79,9 @@ const PROTOTYPES = [
     file: "prototypes/cohort-exploration.html",
     platform: "App",
     frame: "phone",
+    previewZoom: 0.76,
+    previewFocus: 405,
+    previewHeight: 1280,
     tags: ["Cohort", "Navigation"],
     updated: "27 Aug 2026"
   },
@@ -684,7 +687,7 @@ const PIPELINE = [
 
     grid.innerHTML = list.map(p => `
       <article class="card" id="prototype-${esc(p.slug)}">
-        <div class="shot ${p.frame === 'phone' ? 'shot--phone' : ''} ${p.thumb ? 'shot--thumb' : ''}" data-frame="${p.frame || 'wide'}">
+        <div class="shot ${p.frame === 'phone' ? 'shot--phone' : ''} ${p.thumb ? 'shot--thumb' : ''}" data-frame="${p.frame || 'wide'}" data-preview-zoom="${p.previewZoom || 1}" data-preview-focus="${p.previewFocus || 0}" data-preview-height="${p.previewHeight || 900}">
           ${p.thumb
             ? `<img class="shot__img" src="${esc(p.thumb)}" alt="" loading="lazy" />`
             : `<div class="shot__scaler">
@@ -747,16 +750,21 @@ const PIPELINE = [
     const phone = shot.dataset.frame === 'phone';
     const scaler = shot.querySelector('.shot__scaler');
     const frame = shot.querySelector('iframe');
+    const previewZoom = Number(shot.dataset.previewZoom) || 1;
+    const previewFocus = Number(shot.dataset.previewFocus) || 0;
+    const previewHeight = Number(shot.dataset.previewHeight) || 900;
     const W = phone ? 430 : 1240;
-    const H = phone ? 900 : 830;
+    const H = phone ? previewHeight : 830;
     frame.style.width = W + 'px';
     frame.style.height = H + 'px';
 
     const fit = () => {
       const w = shot.clientWidth;
       if (!w) return;
-      const k = phone ? (w * 0.44) / W : w / W;
-      scaler.style.transform = phone ? `translateX(-50%) scale(${k})` : `scale(${k})`;
+      const k = phone ? (w * 0.44 * previewZoom) / W : w / W;
+      scaler.style.transform = phone
+        ? `translateX(-50%) translateY(${-previewFocus * k}px) scale(${k})`
+        : `scale(${k})`;
     };
     fit();
     new ResizeObserver(fit).observe(shot);
