@@ -76,7 +76,7 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has 17 built prototypes and 14 remaining pipeline ideas. The PW Growth Roadmap appears only through the Roadmap pill; other App prototypes appear under both All and App. Search Expansion adds an always-available frosted search button to the batch listing. Filter Experiments keeps filters one tap away while scrolling. PW Upsell Sheet pitches the next plan at checkout, with Basic-to-Infinity/Pro and Infinity-to-Pro paths. Counsellor Offer Nudge contains two switchable versions.
+The shelf has 19 built prototypes and 14 remaining pipeline ideas. The PW Growth Roadmap appears only through the Roadmap pill; other App prototypes appear under both All and App. Search Expansion adds an always-available frosted search button to the batch listing. Filter Experiments keeps filters one tap away while scrolling. PW Upsell Sheet pitches the next plan at checkout, with Basic-to-Infinity/Pro and Infinity-to-Pro paths. Batch Steal Deals offers low-ticket digital products in the cart and skips address entry for digital-only purchases. Counsellor Offer Nudge contains two switchable versions.
 
 ## Filters
 

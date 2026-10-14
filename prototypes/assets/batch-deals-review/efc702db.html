@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="width:{{ px }};height:{{ px }};flex-shrink:0;position:relative">
+  <div style="position:absolute;left:0;top:0;width:72px;height:72px;transform:scale({{ scale }});transform-origin:0 0">
+    <sc-if value="{{ isBooks }}" hint-placeholder-val="{{ true }}">
+      <div style="width:72px;height:72px;border-radius:14px;background:#5A4BDA;position:relative;overflow:hidden">
+        <div style="position:absolute;left:-14px;top:-14px;width:44px;height:44px;border-radius:50%;background:#6E60E4"></div>
+        <div style="position:absolute;left:11px;top:15px;width:28px;height:38px;border-radius:3px;background:#FFD54A;transform:rotate(-14deg)"></div>
+        <div style="position:absolute;left:21px;top:12px;width:28px;height:40px;border-radius:3px;background:#FF8A65;transform:rotate(-3deg)"></div>
+        <div style="position:absolute;left:31px;top:13px;width:29px;height:41px;border-radius:3px;background:#fff;transform:rotate(9deg);display:flex;flex-direction:column;gap:3px;padding:4px;box-sizing:border-box;box-shadow:-2px 2px 6px rgba(0,0,0,.2)">
+          <span style="height:7px;border-radius:2px;background:#5A4BDA;color:#fff;font-size:5px;font-weight:800;line-height:7px;text-align:center;letter-spacing:.04em">NEET</span>
+          <span style="height:2px;background:#D5D8E0;border-radius:1px"></span>
+          <span style="height:2px;width:70%;background:#D5D8E0;border-radius:1px"></span>
+          <span style="height:2px;background:#D5D8E0;border-radius:1px"></span>
+        </div>
+        <span style="position:absolute;left:7px;bottom:6px;background:#1D1D1F;color:#FFD54A;font-size:8px;font-weight:800;letter-spacing:.06em;padding:2px 5px;border-radius:4px">PASS</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isOtt }}" hint-placeholder-val="{{ false }}">
+      <div style="width:72px;height:72px;border-radius:14px;background:#17142E;position:relative;overflow:hidden">
+        <div style="position:absolute;right:-16px;bottom:-16px;width:46px;height:46px;border-radius:50%;background:#2A2550"></div>
+        <div style="position:absolute;left:9px;top:12px;width:54px;height:34px;border-radius:6px;background:#3D32A8;border:2px solid #FFD54A;box-sizing:border-box;display:grid;place-items:center">
+          <span style="width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px"></span>
+        </div>
+        <span style="position:absolute;left:30px;top:47px;width:12px;height:3px;border-radius:2px;background:#FFD54A"></span>
+        <span style="position:absolute;left:0;right:0;bottom:6px;text-align:center;color:#FFD54A;font-size:9px;font-weight:800;letter-spacing:.08em">Pi OTT</span>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:120,&quot;height&quot;:120},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;books&quot;,&quot;ott&quot;],&quot;default&quot;:&quot;books&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;size&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:72,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const size = this.props.size ?? 72;
+    const kind = this.props.kind ?? 'books';
+    return { px: size + 'px', scale: size / 72, isBooks: kind === 'books', isOtt: kind === 'ott' };
+  }
+}
+</script>
+</body>
+</html>
