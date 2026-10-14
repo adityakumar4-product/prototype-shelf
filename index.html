@@ -158,6 +158,39 @@ const PROTOTYPES = [
     frame: "wide",
     tags: ["Roadmap", "Growth", "RICE"],
     updated: "7 Oct 2026"
+  },
+  {
+    slug: "search-expansion",
+    title: "Search Expansion",
+    snippet: "A frosted-glass Search button stays one tap away as users scroll, with rotating example searches",
+    description: "Search converts at twice the rate, but disappears from the batch listing when users scroll. Keep search accessible throughout the listing.",
+    file: "prototypes/search-expansion.html",
+    platform: "App",
+    frame: "phone",
+    tags: ["Discovery", "Search", "Conversion"],
+    updated: "14 Oct 2026"
+  },
+  {
+    slug: "pw-upsell-sheet",
+    title: "PW Upsell Sheet",
+    snippet: "A one-tap plan upgrade pitch at checkout, with monthly price difference and a full comparison link",
+    description: "Students often buy Basic without considering Infinity or Pro. Present the next plan up when they tap Buy Now or Continue with Basic.",
+    file: "prototypes/pw-upsell-sheet.html",
+    platform: "App",
+    frame: "phone",
+    tags: ["Plans", "Upgrade", "Conversion"],
+    updated: "14 Oct 2026"
+  },
+  {
+    slug: "filter-experiments",
+    title: "Filter Experiments",
+    snippet: "A frosted-glass Filter button stays one tap away after users scroll past course filters, with rotating examples",
+    description: "Students who use filters convert at twice the rate, but filters currently appear only in the All Courses section.",
+    file: "prototypes/filter-experiments.html",
+    platform: "App",
+    frame: "phone",
+    tags: ["Discovery", "Filters", "Conversion"],
+    updated: "14 Oct 2026"
   }
 ];
 
@@ -482,13 +515,6 @@ const PIPELINE = [
     letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .viewer__file{font-family:var(--util); font-size:11.5px; color:var(--mute); margin-right:auto}
-  .segmented{display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex:none}
-  .segmented button{
-    all:unset; cursor:pointer; padding:7px 13px;
-    font-family:var(--util); font-size:11.5px; color:var(--mute);
-  }
-  .segmented button:hover{color:var(--chalk)}
-  .segmented button[aria-pressed="true"]{background:var(--signal); color:var(--ink)}
   .newtab{
     flex:none; font-family:var(--util); font-size:11.5px; color:var(--mute);
     text-decoration:none; padding:7px 4px;
@@ -502,14 +528,8 @@ const PIPELINE = [
       radial-gradient(1100px 500px at 50% -12%, color-mix(in srgb, var(--signal) 6%, transparent), transparent),
       var(--ink);
   }
-  .viewer__stage[data-device="phone"]{padding:clamp(14px,3vh,30px) 16px}
   .viewer__frame{
     width:100%; height:100%; border:0; display:block; background:#fff;
-  }
-  .viewer__stage[data-device="phone"] .viewer__frame{
-    width:390px; max-width:100%; height:min(844px, 100%);
-    border-radius:26px; border:1px solid var(--line);
-    box-shadow:0 30px 70px rgba(0,0,0,.55);
   }
 
   @media (max-width:640px){
@@ -561,13 +581,9 @@ const PIPELINE = [
     </button>
     <span class="viewer__title" id="vTitle"></span>
     <span class="viewer__file" id="vFile"></span>
-    <div class="segmented" role="group" aria-label="Preview width">
-      <button type="button" id="dPhone" aria-pressed="false">Phone</button>
-      <button type="button" id="dWide" aria-pressed="false">Full width</button>
-    </div>
     <a class="newtab" id="vNew" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
   </div>
-  <div class="viewer__stage" id="stage" data-device="wide">
+  <div class="viewer__stage" id="stage">
     <iframe class="viewer__frame" id="vFrame" title="Prototype preview"></iframe>
   </div>
 </section>
@@ -588,8 +604,6 @@ const PIPELINE = [
   const vTitle = document.getElementById('vTitle');
   const vFile = document.getElementById('vFile');
   const vNew = document.getElementById('vNew');
-  const dPhone = document.getElementById('dPhone');
-  const dWide = document.getElementById('dWide');
 
   const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline', 'Roadmap'];
   let activeFilter = 'All';
@@ -604,9 +618,9 @@ const PIPELINE = [
     if (!b) return;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (b.dataset.filter === 'Roadmap') {
-      activeFilter = 'All';
+      activeFilter = 'Roadmap';
       q.value = '';
-      filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.filter === 'All'));
+      filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
       render();
       document.getElementById('prototype-growth-roadmap')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       return;
@@ -633,7 +647,10 @@ const PIPELINE = [
 
   function matches(p) {
     const term = q.value.trim().toLowerCase();
-    const inFilter = activeFilter === 'All' || p.platform === activeFilter;
+    const isRoadmap = p.slug === 'growth-roadmap';
+    const inFilter = activeFilter === 'Roadmap'
+      ? isRoadmap
+      : !isRoadmap && (activeFilter === 'All' || p.platform === activeFilter);
     const prototype = p.prototypeSlug && PROTOTYPES.find(item => item.slug === p.prototypeSlug);
     const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || []), ...(prototype ? [prototype.title, prototype.snippet, prototype.description] : [])].join(' ').toLowerCase().includes(term);
     return inFilter && inText;
@@ -750,19 +767,10 @@ const PIPELINE = [
   }
 
   /* ---------- viewer ---------- */
-  function setDevice(mode) {
-    stage.dataset.device = mode;
-    dPhone.setAttribute('aria-pressed', mode === 'phone');
-    dWide.setAttribute('aria-pressed', mode === 'wide');
-  }
-  dPhone.onclick = () => setDevice('phone');
-  dWide.onclick = () => setDevice('wide');
-
   function open(p) {
     vTitle.textContent = p.title;
     vFile.textContent = p.file;
     vNew.href = p.file;
-    setDevice(p.frame === 'phone' ? 'phone' : 'wide');
     if (vFrame.src.indexOf(p.file) === -1) vFrame.src = p.file;
     viewer.classList.add('is-open');
     viewer.setAttribute('aria-hidden', 'false');

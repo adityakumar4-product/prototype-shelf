@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/search-expansion/39f20680.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/search-expansion/5c384fe6.js", "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js": "assets/search-expansion/302afdd2.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/search-expansion/7c24af60.js"></script>
+</head>
+<body>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<style>/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/search-expansion/7b11e4d7.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/search-expansion/b9ea08ee.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/search-expansion/67bbe801.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/search-expansion/754d9b45.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/search-expansion/09c83fa2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/search-expansion/db1444e1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/search-expansion/f83ece03.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/search-expansion/880612a8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/search-expansion/0e37b9f5.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/search-expansion/29ea314b.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/search-expansion/30b73a83.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/search-expansion/844773b6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin: 0; background: #0E1116; font-family: 'Poppins', system-ui, sans-serif; }
+  a { color: #1268E0; text-decoration: none; }
+  a:hover { color: #0B4EAE; }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  input::placeholder { color: #8A9099; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;padding:34px 30px 60px;box-sizing:border-box;color:#fff">
+
+  <div style="flex:1 1 250px;max-width:330px;min-width:230px">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A93A6;font-weight:600">Batch listing 2.0 · search adoption</div>
+    <div style="font-size:28px;line-height:1.2;font-weight:600;margin-top:10px;letter-spacing:-.01em;text-wrap:pretty">Search stays one thumb-tap away.</div>
+    <div style="font-size:13px;line-height:1.65;color:#9AA3B2;margin-top:14px;text-wrap:pretty">Searchers convert at 2× non-searchers. Once the header search scrolls out of view, a frosted-glass search button docks above the bottom nav, where the thumb already rests.</div>
+    <div style="display:flex;flex-direction:column;gap:7px;margin-top:24px">
+      <button sc-camel-on-click="{{ stepTop }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:11px 13px;border-radius:10px;font:500 13px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;background:#1B222C">1 · Listing, top of page</button>
+      <button sc-camel-on-click="{{ stepScrolled }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:11px 13px;border-radius:10px;font:500 13px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;background:#1B222C">2 · Scrolled — glass search docks</button>
+      <button sc-camel-on-click="{{ stepSearch }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:11px 13px;border-radius:10px;font:500 13px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;background:#1B222C">3 · Search opened</button>
+      <button sc-camel-on-click="{{ stepTyping }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:11px 13px;border-radius:10px;font:500 13px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;background:#1B222C">4 · Typing “neet”</button>
+      <button sc-camel-on-click="{{ stepBatch }}" style="text-align:left;background:#171B22;border:1px solid #262C36;color:#E6E9EF;padding:11px 13px;border-radius:10px;font:500 13px 'Poppins';cursor:pointer" style-hover="border-color:#1268E0;background:#1B222C">5 · Result → batch page</button>
+    </div>
+    <div style="font-size:12px;line-height:1.6;color:#6F7889;margin-top:20px">Or scroll the phone yourself. Tweaks: glass tint, when it appears, rotating hints.</div>
+  </div>
+
+  <div style="flex:0 0 auto;position:relative">
+    <x-import component-from-global-scope="AndroidDevice" from="assets/search-expansion/580385f5.jsx#/android-frame.jsx" hint-size="412px,892px">
+      <div style="position:relative;height:100%;overflow:hidden;background:#fff">
+
+      <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
+        <div ref="{{ scrollRef }}" sc-camel-on-scroll="{{ onScroll }}" style="background:#fff;height:100%;overflow-y:auto;padding-bottom:140px;box-sizing:border-box">
+
+          <div style="background:linear-gradient(180deg,#BFE9FB 0%,#D8F2FD 70%,#FFFFFF 100%);padding:12px 14px 16px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:3px;cursor:pointer">
+                <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+                <div style="width:13px;height:2px;background:#1F2328;border-radius:2px"></div>
+                <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+              </div>
+              <div sc-camel-on-click="{{ openSearch }}" style="flex:1;background:#fff;border-radius:9px;padding:10px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 1px 3px rgba(15,23,42,.08);cursor:text">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#6B7280" stroke-width="1.8"></circle><path d="M11 11l3.5 3.5" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;color:#8A9099">Search for ‘{{ hint }}’</span>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;background:rgba(255,255,255,.45);border-radius:11px;padding:9px 12px;display:flex;align-items:center;gap:10px">
+              <div style="width:29px;height:29px;border-radius:7px;background:#fff;display:grid;place-items:center;font-size:15px">🎒</div>
+              <div style="flex:1;font-size:15px;font-weight:600;color:#1F2328">Class 11 NEET</div>
+              <div style="font-size:13px;font-weight:600;color:#5B4CE8;cursor:pointer">Change</div>
+            </div>
+
+            <div style="display:flex;gap:9px;margin-top:13px">
+              <div style="flex:1;background:#1268E0;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer"><div style="font-size:18px">🖥️</div><div style="font-size:11px;font-weight:600;color:#fff;margin-top:5px">Online</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer"><div style="font-size:18px">🏫</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Vidyapeeth</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer"><div style="font-size:18px">⚡</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Power Batch</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center;cursor:pointer"><div style="font-size:18px">📝</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Test Series</div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:9px;padding:4px 14px 14px">
+            <div style="font-size:9px;font-weight:600;letter-spacing:.06em;color:#6B7280;line-height:1.25;width:52px">VIEW OTHER BATCHES</div>
+            <div style="flex:1;display:flex;gap:7px;overflow:hidden">
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">XII</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">Class 12</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">XII+</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">Dropper</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:20px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">Recommended For You</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:13px 14px 0">
+            <div sc-camel-on-click="{{ goArjuna }}" style="cursor:pointer">
+              <div style="height:104px;border-radius:11px;background:linear-gradient(160deg,#DCEEFF,#B6D8F7);padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#0B4EAE;line-height:1.15">ARJUNA<br>NEET 2026</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Arjuna NEET 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹4,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹5,500</div></div>
+              <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:4px">40% OFF</div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:linear-gradient(160deg,#9FB0BF,#6E7C89);padding:11px;box-sizing:border-box"><div style="font-size:11px;font-weight:700;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg)">CLASS 11 JEE</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Vidyapeeth Class 11th NEET</div>
+              <div style="font-size:14px;font-weight:600;color:#1F2328;margin-top:8px">₹5,000</div>
+              <div style="font-size:11px;color:#6B7280;margin-top:4px">For Seat Booking</div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Book a Seat</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:#FDF0D0;padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#B37400;line-height:1.15">Lakshya<br>NEET 2027</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Lakshya NEET 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:4px">40% OFF</div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:#1B8A3A;padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#fff;line-height:1.15">UDAY<br><span style="font-size:12px;font-weight:600">TEAM OG</span></div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px;line-height:1.35">Uday Class 11 Boards 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:4px">40% OFF</div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+            </div>
+          </div>
+
+          <div style="background:#FDF1E7;margin-top:22px;padding:18px 14px">
+            <div style="display:flex;gap:14px">
+              <div style="flex:1">
+                <div style="font-size:19px;font-weight:700;color:#F04E23;line-height:1.2">Small Group<br>Learning</div>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+                  <div><div style="font-size:16px">👨‍🏫</div><div style="font-size:12px;color:#3A4049;margin-top:4px">1:1 interaction with teacher</div></div>
+                  <div><div style="font-size:16px">💬</div><div style="font-size:12px;color:#3A4049;margin-top:4px">Live doubt solving</div></div>
+                  <div><div style="font-size:16px">👥</div><div style="font-size:12px;color:#3A4049;margin-top:4px">Small Classroom Size</div></div>
+                </div>
+              </div>
+              <div style="width:158px;background:#fff;border-radius:12px;overflow:hidden">
+                <div style="height:104px;background:linear-gradient(150deg,#4A1206,#8C2A0A);padding:11px;box-sizing:border-box">
+                  <div style="font-size:15px;font-weight:700;color:#FFC53D;line-height:1.1">POWER<br>BATCH</div>
+                  <div style="margin-top:7px;display:inline-block;background:#FFC53D;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:700;color:#4A1206">NEET</div>
+                </div>
+                <div style="padding:11px">
+                  <div style="font-size:13px;color:#1F2328;line-height:1.35">Arjuna Power Batch NEET 2027</div>
+                  <div style="font-size:14px;font-weight:600;color:#1F2328;margin-top:8px">₹5,000</div>
+                  <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:10px;font:500 13px 'Poppins';cursor:pointer">Explore</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:22px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">Explore PW</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:13px 14px 0">
+            <div style="background:linear-gradient(150deg,#FFE07A,#FFD24A);border-radius:12px;padding:13px;height:112px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">PW Pi</div><div style="font-size:11px;color:#5A4A10;margin-top:3px">Padhai ka OTT</div></div>
+            <div style="background:linear-gradient(150deg,#DCEBFF,#C6DEFF);border-radius:12px;padding:13px;height:112px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">Saarthi</div><div style="font-size:11px;color:#2E4368;margin-top:3px">Your personal mentor</div></div>
+            <div style="background:linear-gradient(150deg,#E4DEFB,#D3CAF7);border-radius:12px;padding:13px;height:112px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">MedEd</div><div style="font-size:11px;color:#3D3466;margin-top:3px">Prepare for NEET PG</div></div>
+            <div style="background:linear-gradient(150deg,#D7F0FF,#BEE6FF);border-radius:12px;padding:13px;height:112px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">E Books</div><div style="font-size:11px;color:#1E4A66;margin-top:3px">NCERT in your pocket</div></div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:24px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">PW Modules</div>
+          </div>
+          <div style="display:flex;gap:12px;padding:13px 14px 0;overflow-x:auto">
+            <div style="flex:0 0 128px">
+              <div style="height:112px;border-radius:11px;background:#2B1B4A;position:relative;padding:10px;box-sizing:border-box"><div style="font-size:12px;font-weight:700;color:#FFD24A;line-height:1.2">NCERT<br>PUNCH</div><div style="position:absolute;bottom:8px;left:8px;background:#fff;border-radius:5px;padding:2px 6px;font-size:9px;font-weight:600;color:#1F2328">★ 4.6</div></div>
+              <div style="font-size:12px;color:#1F2328;margin-top:8px;line-height:1.35">Objective NCERT Punch 4.0</div>
+              <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><div style="font-size:13px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:10px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <button style="margin-top:9px;width:100%;background:#fff;color:#5B4CE8;border:1px solid #5B4CE8;border-radius:9px;padding:9px;font:500 12px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+            <div style="flex:0 0 128px">
+              <div style="height:112px;border-radius:11px;background:#123A6B;position:relative;padding:10px;box-sizing:border-box"><div style="font-size:12px;font-weight:700;color:#8FD3FF;line-height:1.2">12 NEET<br>YEARS</div><div style="position:absolute;bottom:8px;left:8px;background:#fff;border-radius:5px;padding:2px 6px;font-size:9px;font-weight:600;color:#1F2328">★ 4.6</div></div>
+              <div style="font-size:12px;color:#1F2328;margin-top:8px;line-height:1.35">NEET 12 Years PYQ</div>
+              <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><div style="font-size:13px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:10px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <button style="margin-top:9px;width:100%;background:#fff;color:#5B4CE8;border:1px solid #5B4CE8;border-radius:9px;padding:9px;font:500 12px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+            <div style="flex:0 0 128px">
+              <div style="height:112px;border-radius:11px;background:#4A1206;position:relative;padding:10px;box-sizing:border-box"><div style="font-size:12px;font-weight:700;color:#FFC53D;line-height:1.2">MedEd<br>Notes</div><div style="position:absolute;bottom:8px;left:8px;background:#fff;border-radius:5px;padding:2px 6px;font-size:9px;font-weight:600;color:#1F2328">★ 4.6</div></div>
+              <div style="font-size:12px;color:#1F2328;margin-top:8px;line-height:1.35">MedEd Handwritten</div>
+              <div style="display:flex;align-items:baseline;gap:5px;margin-top:6px"><div style="font-size:13px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:10px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <button style="margin-top:9px;width:100%;background:#fff;color:#5B4CE8;border:1px solid #5B4CE8;border-radius:9px;padding:9px;font:500 12px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:24px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">All Courses</div>
+          </div>
+          <div style="font-size:11px;color:#6B7280;padding:5px 14px 0">34 courses available</div>
+          <div style="display:flex;flex-direction:column;gap:14px;padding:14px 14px 0">
+            <sc-for list="{{ courses }}" as="c" hint-placeholder-count="3">
+              <div style="border:1px solid #E6E9EF;border-radius:13px;overflow:hidden">
+                <div style="height:104px;background:#EEF1F5"></div>
+                <div style="padding:12px">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <div style="font-size:10px;font-weight:600;color:#F04E23;flex:1">{{ c.tag }}</div>
+                    <div style="border:1px solid #D8DDE5;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:500;color:#3A4049">{{ c.lang }}</div>
+                  </div>
+                  <div style="font-size:15px;font-weight:600;color:#1F2328;margin-top:5px">{{ c.name }}</div>
+                  <div style="font-size:11px;color:#6B7280;margin-top:5px">🗓 Started on {{ c.start }}</div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-top:11px">
+                    <div style="flex:1">
+                      <div style="display:flex;align-items:baseline;gap:6px"><div style="font-size:14px;font-weight:600;color:#1F2328">{{ c.price }}</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">{{ c.mrp }}</div></div>
+                      <div style="font-size:11px;font-weight:600;color:#1AA260;margin-top:3px">40% OFF</div>
+                    </div>
+                    <button style="background:#1F2328;color:#fff;border:0;border-radius:9px;padding:10px 20px;font:500 13px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 100%);opacity:{{ pillOpacity }};transition:opacity .3s ease"></div>
+
+        <div sc-camel-on-click="{{ openSearch }}" style="position:absolute;left:50%;bottom:70px;z-index:3;cursor:pointer;opacity:{{ pillOpacity }};transform:{{ pillTransform }};pointer-events:{{ pillEvents }};transition:transform .42s cubic-bezier(.2,.9,.25,1.2),opacity .25s ease">
+          <sc-if value="{{ lightGlass }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:rgba(255,255,255,.38);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(15,23,42,.20),0 0 0 4px rgba(18,104,224,.10),inset 0 1px 0 rgba(255,255,255,.95);white-space:nowrap">
+              <div style="display:flex;align-items:center;gap:7px;background:#1F2328;color:#fff;border-radius:999px;padding:10px 15px 10px 13px">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#fff" stroke-width="2"></circle><path d="M11 11l3.5 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;font-weight:600">Search</span>
+              </div>
+              <sc-if value="{{ showHints }}" hint-placeholder-val="{{ true }}">
+                <span style="font-size:12px;font-weight:500;color:#1F2328;min-width:96px">‘{{ hint }}’</span>
+              </sc-if>
+            </div>
+          </sc-if>
+          <sc-if value="{{ darkGlass }}">
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:rgba(20,24,30,.52);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.22);box-shadow:0 10px 30px rgba(15,23,42,.30),inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap">
+              <div style="display:flex;align-items:center;gap:7px;background:#FFFFFF;color:#1F2328;border-radius:999px;padding:10px 15px 10px 13px">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#1F2328" stroke-width="2"></circle><path d="M11 11l3.5 3.5" stroke="#1F2328" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;font-weight:600">Search</span>
+              </div>
+              <sc-if value="{{ showHints }}" hint-placeholder-val="{{ true }}">
+                <span style="font-size:12px;font-weight:500;color:#fff;min-width:96px">‘{{ hint }}’</span>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="position:absolute;left:0;right:0;bottom:0;z-index:4;background:#fff;border-top:1px solid #E6E9EF;display:flex;padding:8px 6px 11px">
+          <div style="flex:1;text-align:center"><div style="font-size:15px">📖</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Study</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🏫</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Centres</div></div>
+          <div style="flex:1;text-align:center"><div style="width:28px;height:28px;border-radius:50%;background:#1F2328;color:#fff;display:grid;place-items:center;margin:0 auto;font-size:13px">🎓</div><div style="font-size:9px;font-weight:600;color:#1F2328;margin-top:2px">Batches</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🅿️</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Pi</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🛍️</div><div style="font-size:9px;color:#6B7280;margin-top:2px">PW Store</div></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSearch }}">
+        <div style="background:#fff;height:100%;overflow-y:auto">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #EEF0F3">
+            <div sc-camel-on-click="{{ goListing }}" style="font-size:18px;cursor:pointer;color:#1F2328;width:24px">←</div>
+            <div style="flex:1;display:flex;align-items:center;gap:9px;background:#F3F5F8;border:1px solid #1268E0;border-radius:10px;padding:0 12px">
+              <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#6B7280" stroke-width="1.8"></circle><path d="M11 11l3.5 3.5" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              <input ref="{{ inputRef }}" value="{{ query }}" sc-camel-on-change="{{ onQuery }}" placeholder="{{ placeholder }}" style="flex:1;border:0;background:transparent;outline:none;padding:11px 0;font:500 14px 'Poppins';color:#1F2328;min-width:0">
+              <sc-if value="{{ hasQuery }}">
+                <div sc-camel-on-click="{{ clearQuery }}" style="width:20px;height:20px;border-radius:50%;background:#C9CED6;color:#fff;display:grid;place-items:center;font-size:10px;cursor:pointer">✕</div>
+              </sc-if>
+            </div>
+          </div>
+
+          <div style="padding:10px 14px 0;display:flex;align-items:center;gap:6px">
+            <div style="font-size:11px;color:#6B7280">Searching in</div>
+            <div style="font-size:11px;font-weight:600;color:#1F2328;background:#EAF6FD;border-radius:6px;padding:3px 8px">🎒 Class 11 NEET</div>
+          </div>
+
+          <sc-if value="{{ noQuery }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:18px 14px 0">
+              <div style="font-size:12px;font-weight:600;color:#6B7280;letter-spacing:.04em">RECENT</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+                <sc-for list="{{ recents }}" as="r" hint-placeholder-count="3">
+                  <div sc-camel-on-click="{{ r.pick }}" style="display:flex;align-items:center;gap:6px;border:1px solid #D8DDE5;border-radius:999px;padding:7px 12px;font-size:12px;color:#3A4049;cursor:pointer" style-hover="border-color:#1268E0">🕘 {{ r.label }}</div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="padding:22px 14px 0">
+              <div style="font-size:12px;font-weight:600;color:#6B7280;letter-spacing:.04em">TRENDING IN CLASS 11 NEET</div>
+              <div style="display:flex;flex-direction:column;margin-top:6px">
+                <sc-for list="{{ trending }}" as="t" hint-placeholder-count="5">
+                  <div sc-camel-on-click="{{ t.pick }}" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0F2F5;cursor:pointer">
+                    <div style="width:22px;font-size:13px;font-weight:700;color:#1268E0">{{ t.n }}</div>
+                    <div style="flex:1;font-size:13px;color:#1F2328">{{ t.label }}</div>
+                    <div style="font-size:14px;color:#9AA0A9">↗</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="padding:22px 14px 20px">
+              <div style="font-size:12px;font-weight:600;color:#6B7280;letter-spacing:.04em">BROWSE BY</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:10px">
+                <sc-for list="{{ browse }}" as="b" hint-placeholder-count="4">
+                  <div sc-camel-on-click="{{ b.pick }}" style="background:#F3FBFF;border-radius:11px;padding:11px 4px;text-align:center;cursor:pointer"><div style="font-size:18px">{{ b.icon }}</div><div style="font-size:10px;font-weight:500;color:#3A4049;margin-top:5px">{{ b.label }}</div></div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hasResults }}">
+            <div style="padding:14px 14px 0;font-size:11px;color:#6B7280">{{ resultCount }}</div>
+            <div style="display:flex;flex-direction:column;padding:4px 14px 20px">
+              <sc-for list="{{ results }}" as="r" hint-placeholder-count="4">
+                <div sc-camel-on-click="{{ r.open }}" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0F2F5;cursor:pointer">
+                  <div style="width:52px;height:52px;border-radius:10px;background:{{ r.bg }};flex:0 0 auto;display:grid;place-items:center;font-size:8px;font-weight:700;color:{{ r.fg }};text-align:center;line-height:1.15;padding:4px;box-sizing:border-box">{{ r.short }}</div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;color:#1F2328;line-height:1.35"><span>{{ r.pre }}</span><span style="font-weight:700;background:#FFF1C2;border-radius:3px">{{ r.match }}</span><span>{{ r.post }}</span></div>
+                    <div style="font-size:10px;color:#6B7280;margin-top:3px">{{ r.type }}</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div style="font-size:13px;font-weight:600;color:#1F2328">{{ r.price }}</div>
+                    <div style="font-size:10px;color:#9AA0A9;text-decoration:line-through">{{ r.mrp }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ noResults }}">
+            <div style="padding:36px 20px;text-align:center">
+              <div style="font-size:15px;font-weight:600;color:#1F2328">No batches match “{{ query }}”</div>
+              <div style="font-size:12px;color:#6B7280;margin-top:6px">Try a batch name, exam or subject</div>
+              <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px">
+                <sc-for list="{{ trending }}" as="t" hint-placeholder-count="3">
+                  <div sc-camel-on-click="{{ t.pick }}" style="border:1px solid #D8DDE5;border-radius:999px;padding:7px 12px;font-size:12px;color:#3A4049;cursor:pointer">{{ t.label }}</div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBatch }}">
+        <div style="background:#fff;height:100%;overflow-y:auto;padding-bottom:92px;box-sizing:border-box">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #E6E9EF">
+            <div sc-camel-on-click="{{ backFromBatch }}" style="font-size:18px;cursor:pointer;color:#1F2328">←</div>
+            <div style="font-size:15px;font-weight:600;color:#1F2328">{{ batch.name }}</div>
+          </div>
+          <div style="height:148px;background:{{ batch.bg }};display:flex;align-items:flex-end;padding:14px;box-sizing:border-box">
+            <div>
+              <div style="font-size:9px;letter-spacing:.12em;font-weight:600;color:{{ batch.fg }}">{{ batch.type }}</div>
+              <div style="font-size:21px;font-weight:700;color:{{ batch.fg }};margin-top:5px">{{ batch.name }}</div>
+            </div>
+          </div>
+          <div style="padding:16px 14px">
+            <div style="display:flex;align-items:baseline;gap:9px">
+              <div style="font-size:24px;font-weight:700;color:#1F2328">{{ batch.price }}</div>
+              <div style="font-size:14px;color:#9AA0A9;text-decoration:line-through">{{ batch.mrp }}</div>
+              <div style="font-size:12px;font-weight:600;color:#1AA260">40% OFF</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px;margin-top:20px">
+              <div style="font-size:14px;font-weight:600;color:#1F2328">What you get</div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:28px;height:28px;border-radius:7px;background:#F6F7F9;display:grid;place-items:center;font-size:13px">🎥</div><div style="font-size:12px;color:#4A5058">Live classes with PW's core faculty</div></div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:28px;height:28px;border-radius:7px;background:#F6F7F9;display:grid;place-items:center;font-size:13px">📝</div><div style="font-size:12px;color:#4A5058">DPPs, test series and All-India mocks</div></div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:28px;height:28px;border-radius:7px;background:#F6F7F9;display:grid;place-items:center;font-size:13px">💬</div><div style="font-size:12px;color:#4A5058">Doubt support in under 5 minutes</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #E6E9EF;padding:11px 14px 15px;display:flex;align-items:center;gap:12px">
+          <div style="font-size:18px;font-weight:600;color:#1F2328">{{ batch.price }}</div>
+          <button style="flex:1;background:#1F2328;color:#fff;border:0;border-radius:11px;padding:14px;font:600 14px 'Poppins';cursor:pointer" style-hover="background:#33383F">Buy Now</button>
+        </div>
+      </sc-if>
+
+      </div>
+    </x-import>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1100,&quot;height&quot;:980},&quot;glassTint&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Light glass&quot;,&quot;Dark glass&quot;],&quot;default&quot;:&quot;Light glass&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Search button&quot;},&quot;showSearchPill&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;After header scrolls away&quot;,&quot;Always&quot;],&quot;default&quot;:&quot;After header scrolls away&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Search button&quot;},&quot;rotatingHints&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Search button&quot;}}">
+class Component extends DCLogic {
+  state = { screen: 'listing', scrolled: false, query: '', hintI: 0, batchId: 'arjuna', from: 'listing' };
+
+  hints = ['Arjuna NEET', 'Lakshya NEET', 'Yakeen 2027', 'NCERT Punch', 'Test Series', 'Physics PYQ'];
+
+  catalog = [
+    { id: 'arjuna', name: 'Arjuna NEET 2027', type: 'ONLINE BATCH · CLASS 11', short: 'ARJUNA NEET', price: '₹4,499', mrp: '₹5,500', bg: 'linear-gradient(160deg,#DCEEFF,#9FC8F0)', fg: '#0B4EAE' },
+    { id: 'arjunapb', name: 'Arjuna Power Batch NEET 2027', type: 'POWER BATCH · SMALL GROUP', short: 'POWER BATCH', price: '₹5,000', mrp: '₹8,000', bg: 'linear-gradient(150deg,#4A1206,#8C2A0A)', fg: '#FFC53D' },
+    { id: 'lakshya', name: 'Lakshya NEET 2027', type: 'ONLINE BATCH · CLASS 12', short: 'LAKSHYA NEET', price: '₹1,499', mrp: '₹2,500', bg: '#FDF0D0', fg: '#B37400' },
+    { id: 'yakeen', name: 'Yakeen NEET 2027', type: 'ONLINE BATCH · DROPPER', short: 'YAKEEN NEET', price: '₹1,499', mrp: '₹2,500', bg: '#E4DEFB', fg: '#3D3466' },
+    { id: 'uday', name: 'Uday Class 11 Boards 2027', type: 'ONLINE BATCH · BOARDS', short: 'UDAY TEAM OG', price: '₹1,499', mrp: '₹2,500', bg: '#1B8A3A', fg: '#FFFFFF' },
+    { id: 'udayneet', name: 'Uday NEET 2027', type: 'ONLINE BATCH · ENGLISH', short: 'UDAY NEET', price: '₹1,499', mrp: '₹2,500', bg: '#D7F0FF', fg: '#1E4A66' },
+    { id: 'vp', name: 'Vidyapeeth Class 11th NEET', type: 'OFFLINE · SEAT BOOKING', short: 'VIDYA PEETH', price: '₹5,000', mrp: '', bg: 'linear-gradient(160deg,#9FB0BF,#6E7C89)', fg: '#FFFFFF' },
+    { id: 'mip', name: 'Marks Improvement Programme', type: 'TEST SERIES', short: 'TEST SERIES', price: '₹4,499', mrp: '₹5,500', bg: 'linear-gradient(160deg,#5E7A8C,#2E4657)', fg: '#FFFFFF' },
+    { id: 'punch', name: 'Objective NCERT Punch 4.0', type: 'MODULE · BIOLOGY', short: 'NCERT PUNCH', price: '₹1,499', mrp: '₹2,500', bg: '#2B1B4A', fg: '#FFD24A' },
+    { id: 'pyq', name: 'NEET 12 Years PYQ', type: 'MODULE · PHYSICS, CHEMISTRY, BIOLOGY', short: '12 YEARS PYQ', price: '₹1,499', mrp: '₹2,500', bg: '#123A6B', fg: '#8FD3FF' },
+    { id: 'pi', name: 'PW Pi OTT', type: 'DIGITAL · 3 MONTHS', short: 'PW PI', price: '₹999', mrp: '₹1,199', bg: '#FBF3DE', fg: '#6B5B14' },
+    { id: 'books', name: 'Digital Books', type: 'DIGITAL · NCERT', short: 'E BOOKS', price: '₹1,499', mrp: '₹2,500', bg: '#EAF2FF', fg: '#1268E0' }
+  ];
+
+  componentDidMount() {
+    this.previousScreen = this.state.screen;
+    this.t = setInterval(() => this.setState(s => ({ hintI: (s.hintI + 1) % this.hints.length })), 2400);
+  }
+  componentWillUnmount() { clearInterval(this.t); }
+  componentDidUpdate() {
+    const previousScreen = this.previousScreen;
+    this.previousScreen = this.state.screen;
+    if (this.state.screen === 'search' && previousScreen !== 'search' && this.input) setTimeout(() => this.input && this.input.focus(), 50);
+    if (this.state.screen === 'listing' && previousScreen !== 'listing' && this.scroller && this.restoreTop != null) this.scroller.scrollTop = this.restoreTop;
+  }
+
+  go(screen, extra) { this.setState(Object.assign({ screen }, extra || {})); }
+  openBatch(id) { this.setState(s => ({ screen: 'batch', batchId: id, from: s.screen })); }
+  scrollListing(top, smooth) {
+    this.setState({ screen: 'listing' }, () => setTimeout(() => {
+      if (this.scroller) this.scroller.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+    }, 30));
+  }
+
+  renderVals() {
+    const s = this.state;
+    const always = (this.props.showSearchPill ?? 'After header scrolls away') === 'Always';
+    const dark = (this.props.glassTint ?? 'Light glass') === 'Dark glass';
+    const showHints = this.props.rotatingHints ?? true;
+    const visible = always || s.scrolled;
+    const hint = this.hints[s.hintI];
+    const q = s.query.trim().toLowerCase();
+    const pick = label => () => this.setState({ query: label });
+
+    const matches = q ? this.catalog.filter(c => (c.name + ' ' + c.type).toLowerCase().includes(q)) : [];
+    const results = matches.map(c => {
+      const i = c.name.toLowerCase().indexOf(q);
+      return Object.assign({}, c, {
+        pre: i >= 0 ? c.name.slice(0, i) : c.name,
+        match: i >= 0 ? c.name.slice(i, i + q.length) : '',
+        post: i >= 0 ? c.name.slice(i + q.length) : '',
+        open: () => this.openBatch(c.id)
+      });
+    });
+    const batch = this.catalog.find(c => c.id === s.batchId) || this.catalog[0];
+
+    return {
+      hint, showHints, lightGlass: !dark, darkGlass: dark,
+      pillOpacity: visible ? 1 : 0,
+      pillTransform: visible ? 'translate(-50%,0) scale(1)' : 'translate(-50%,24px) scale(.92)',
+      pillEvents: visible ? 'auto' : 'none',
+
+      isListing: s.screen === 'listing', isSearch: s.screen === 'search', isBatch: s.screen === 'batch',
+      scrollRef: el => { this.scroller = el; },
+      inputRef: el => { this.input = el; },
+      onScroll: e => {
+        const top = e.target.scrollTop;
+        this.restoreTop = top;
+        const sc = top > 56;
+        if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+      },
+      openSearch: () => this.go('search'),
+      goListing: () => this.go('listing'),
+      goArjuna: () => this.openBatch('arjuna'),
+      backFromBatch: () => this.go(s.from === 'search' ? 'search' : 'listing'),
+
+      query: s.query, placeholder: 'Search for ‘' + hint + '’',
+      hasQuery: !!q, noQuery: !q,
+      onQuery: e => this.setState({ query: e.target.value }),
+      clearQuery: () => { this.setState({ query: '' }); if (this.input) this.input.focus(); },
+      results, hasResults: !!q && results.length > 0, noResults: !!q && results.length === 0,
+      resultCount: results.length + (results.length === 1 ? ' result' : ' results'),
+
+      recents: ['Arjuna', 'Physics PYQ', 'Lakshya'].map(l => ({ label: l, pick: pick(l) })),
+      trending: ['Arjuna NEET 2027', 'Yakeen NEET 2027', 'NCERT Punch', 'Power Batch', 'Test Series'].map((l, i) => ({ n: i + 1, label: l, pick: pick(l) })),
+      browse: [['🖥️', 'Online'], ['🏫', 'Offline'], ['⚡', 'Power'], ['📝', 'Test']].map(([icon, label]) => ({ icon, label, pick: pick(label === 'Test' ? 'Test Series' : label === 'Power' ? 'Power Batch' : label) })),
+
+      batch,
+
+      courses: [
+        { tag: 'Class 12+ NEET', lang: 'HINGLISH', name: 'Arjuna MHTCET', start: "15th Apr'26", price: '₹1,499', mrp: '₹2500' },
+        { tag: 'Class 12+ NEET', lang: 'HINGLISH', name: 'Yakeen NEET 2027', start: "15th Apr'26", price: '₹1,499', mrp: '₹2500' },
+        { tag: 'Class 12+ NEET', lang: 'HINGLISH', name: 'Lakshya NEET 2027', start: "15th Apr'26", price: '₹1,499', mrp: '₹2500' },
+        { tag: 'Class 12+ NEET', lang: 'ENGLISH', name: 'Uday NEET 2027', start: "22nd Apr'26", price: '₹1,499', mrp: '₹2500' }
+      ],
+
+      stepTop: () => { this.setState({ query: '' }); this.scrollListing(0, false); },
+      stepScrolled: () => this.scrollListing(560, true),
+      stepSearch: () => this.go('search', { query: '' }),
+      stepTyping: () => this.go('search', { query: 'neet' }),
+      stepBatch: () => this.setState({ screen: 'batch', batchId: 'yakeen', from: 'search', query: 'neet' })
+    };
+  }
+}
+</script>
+
+
+</body></html>

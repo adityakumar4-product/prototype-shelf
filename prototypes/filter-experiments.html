@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/filter-experiments/d1204f47.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/filter-experiments/7585285d.js", "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js": "assets/filter-experiments/b5edda3b.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/filter-experiments/d74b5541.js"></script>
+</head>
+<body>
+
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<style>/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/filter-experiments/9e2bfa39.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/filter-experiments/24465b0b.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/filter-experiments/582736af.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/filter-experiments/4b4c2f4d.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/filter-experiments/35f7c602.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/filter-experiments/f84fb9bc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/filter-experiments/b240e06c.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/filter-experiments/fd553622.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/filter-experiments/08a30208.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/filter-experiments/ea582f0f.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/filter-experiments/daf186c8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/filter-experiments/101ccd1b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  body { margin: 0; background: #EDF1F8; font-family: 'Poppins', system-ui, sans-serif; }
+  a { color: #1268E0; text-decoration: none; }
+  a:hover { color: #0B4EAE; }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  input::placeholder { color: #8A9099; }
+</style>
+</helmet>
+
+<div style="height:100vh;min-height:620px;background:#EDF1F8;padding:18px 28px 18px;box-sizing:border-box;color:#0F1B33;overflow:hidden">
+  <div style="height:100%;max-width:1180px;margin:0 auto;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex:0 0 auto">
+    <div style="flex:1 1 auto;min-width:0">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1D5FE0">Batches · Filter visibility prototype</div>
+      <div style="font-size:26px;line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-top:6px">Filters that are impossible to miss</div>
+      <div style="font-size:13px;line-height:1.5;color:#5E6878;margin-top:6px;text-wrap:pretty">Switch the treatment, then use it: scroll the listing, tap <strong style="color:#3A4356">Filters</strong>, pick a teacher, remove chips.</div>
+    </div>
+    <div style="flex:0 0 520px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;background:#fff;border-radius:16px;padding:6px;box-shadow:0 6px 20px rgba(15,27,51,.06)">
+      <sc-for list="{{ variantTabs }}" as="v" hint-placeholder-count="3">
+        <div sc-camel-on-click="{{ v.pick }}" style="text-align:left;padding:9px 16px;border-radius:11px;background:{{ v.bg }};cursor:pointer">
+          <div style="font-size:14px;font-weight:700;color:{{ v.color }}">{{ v.code }}</div>
+          <div style="font-size:12px;font-weight:500;color:{{ v.sub }};margin-top:1px;white-space:nowrap">{{ v.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex;justify-content:space-between;align-items:stretch;gap:32px;margin-top:18px">
+  <div style="flex:0 0 280px;display:flex;flex-direction:column;gap:14px;overflow-y:auto">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6B7488;font-weight:700;margin-bottom:-4px">About this treatment</div>
+    <div style="background:#fff;border:1px solid #E1E6EF;border-radius:16px;padding:14px 16px;font-size:13px;line-height:1.55;font-weight:500;color:#4A5468;text-wrap:pretty">
+      <sc-if value="{{ filterOnly }}" hint-placeholder-val="{{ true }}">Filter users convert at 2× non-filter users, but filters sit deep inside All Courses. A glass Filters button docks above the bottom nav once the header scrolls away, and Teachers joins the filters.</sc-if>
+      <sc-if value="{{ combined }}">One glass dock above the bottom nav holds Search on the left and Filters on the right, so both high-converting actions share a single floating spot.</sc-if>
+      <sc-if value="{{ detached }}">Search docks as a glass pill on the left; Filters is its own round glass button on the right. Each keeps a distinct target and a distinct job.</sc-if>
+    </div>
+    <div>
+      <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6B7488;font-weight:700">Walkthrough</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <button sc-camel-on-click="{{ st.run }}" style="text-align:left;background:#fff;border:1px solid #E1E6EF;color:#0F1B33;padding:10px 12px;border-radius:11px;font:500 12px 'Poppins';cursor:pointer" style-hover="border-color:#1D5FE0">{{ st.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div ref="{{ stageRef }}" style="flex:0 0 auto;min-height:0;width:{{ phoneW }};position:relative">
+   <div style="position:absolute;top:0;left:0;width:412px;height:892px;transform:{{ phoneScale }};transform-origin:top left">
+    <x-import component-from-global-scope="AndroidDevice" from="assets/filter-experiments/9bff3ba4.jsx#/android-frame.jsx" hint-size="412px,892px">
+      <div style="position:relative;height:100%;overflow:hidden;background:#fff">
+
+      <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
+        <div ref="{{ scrollRef }}" sc-camel-on-scroll="{{ onScroll }}" style="position:relative;background:#fff;height:100%;overflow-y:auto;padding-bottom:150px;box-sizing:border-box">
+
+          <div style="background:linear-gradient(180deg,#BFE9FB 0%,#D8F2FD 70%,#FFFFFF 100%);padding:12px 14px 16px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:3px">
+                <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+                <div style="width:13px;height:2px;background:#1F2328;border-radius:2px"></div>
+                <div style="width:17px;height:2px;background:#1F2328;border-radius:2px"></div>
+              </div>
+              <div sc-camel-on-click="{{ openSearch }}" style="flex:1;background:#fff;border-radius:9px;padding:10px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 1px 3px rgba(15,23,42,.08);cursor:text">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#6B7280" stroke-width="1.8"></circle><path d="M11 11l3.5 3.5" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;color:#8A9099">Search for ‘{{ hint }}’</span>
+              </div>
+            </div>
+            <div style="margin-top:12px;background:rgba(255,255,255,.45);border-radius:11px;padding:9px 12px;display:flex;align-items:center;gap:10px">
+              <div style="width:29px;height:29px;border-radius:7px;background:#fff;display:grid;place-items:center;font-size:15px">🎒</div>
+              <div style="flex:1;font-size:15px;font-weight:600;color:#1F2328">Class 11 NEET</div>
+              <div style="font-size:13px;font-weight:600;color:#5B4CE8">Change</div>
+            </div>
+            <div style="display:flex;gap:9px;margin-top:13px">
+              <div style="flex:1;background:#1268E0;border-radius:11px;padding:11px 6px;text-align:center"><div style="font-size:18px">🖥️</div><div style="font-size:11px;font-weight:600;color:#fff;margin-top:5px">Online</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center"><div style="font-size:18px">🏫</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Vidyapeeth</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center"><div style="font-size:18px">⚡</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Power Batch</div></div>
+              <div style="flex:1;background:#F3FBFF;border-radius:11px;padding:11px 6px;text-align:center"><div style="font-size:18px">📝</div><div style="font-size:11px;font-weight:500;color:#3A4049;margin-top:5px">Test Series</div></div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:9px;padding:4px 14px 14px">
+            <div style="font-size:9px;font-weight:600;letter-spacing:.06em;color:#6B7280;line-height:1.25;width:52px">VIEW OTHER BATCHES</div>
+            <div style="flex:1;display:flex;gap:7px;overflow:hidden">
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">XII</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">Class 12</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">XII+</div>
+              <div style="border:1px solid #D8DDE5;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap">Dropper</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:20px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">Recommended For You</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:13px 14px 0">
+            <div>
+              <div style="height:104px;border-radius:11px;background:linear-gradient(160deg,#DCEEFF,#B6D8F7);padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#0B4EAE;line-height:1.15">ARJUNA<br>NEET 2026</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px">Arjuna NEET 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹4,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹5,500</div></div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:linear-gradient(160deg,#9FB0BF,#6E7C89);padding:11px;box-sizing:border-box"><div style="font-size:11px;font-weight:700;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg)">CLASS 11 JEE</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px">Vidyapeeth Class 11th NEET</div>
+              <div style="font-size:14px;font-weight:600;color:#1F2328;margin-top:8px">₹5,000</div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer">Book a Seat</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:#FDF0D0;padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#B37400;line-height:1.15">Lakshya<br>NEET 2027</div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px">Lakshya NEET 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+            <div>
+              <div style="height:104px;border-radius:11px;background:#1B8A3A;padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#fff;line-height:1.15">UDAY<br><span style="font-size:12px;font-weight:600">TEAM OG</span></div></div>
+              <div style="font-size:13px;color:#1F2328;margin-top:9px">Uday Class 11 Boards 2027</div>
+              <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px"><div style="font-size:14px;font-weight:600;color:#1F2328">₹1,499</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">₹2500</div></div>
+              <button style="margin-top:10px;width:100%;background:#1F2328;color:#fff;border:0;border-radius:9px;padding:11px;font:500 13px 'Poppins';cursor:pointer">Buy Now</button>
+            </div>
+          </div>
+
+          <div style="background:#FDF1E7;margin-top:22px;padding:18px 14px">
+            <div style="display:flex;gap:14px">
+              <div style="flex:1">
+                <div style="font-size:19px;font-weight:700;color:#F04E23;line-height:1.2">Small Group<br>Learning</div>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+                  <div><div style="font-size:16px">👨‍🏫</div><div style="font-size:12px;color:#3A4049;margin-top:4px">1:1 interaction with teacher</div></div>
+                  <div><div style="font-size:16px">💬</div><div style="font-size:12px;color:#3A4049;margin-top:4px">Live doubt solving</div></div>
+                </div>
+              </div>
+              <div style="width:158px;background:#fff;border-radius:12px;overflow:hidden">
+                <div style="height:90px;background:linear-gradient(150deg,#4A1206,#8C2A0A);padding:11px;box-sizing:border-box"><div style="font-size:15px;font-weight:700;color:#FFC53D;line-height:1.1">POWER<br>BATCH</div></div>
+                <div style="padding:11px">
+                  <div style="font-size:13px;color:#1F2328;line-height:1.35">Arjuna Power Batch NEET 2027</div>
+                  <div style="font-size:14px;font-weight:600;color:#1F2328;margin-top:8px">₹5,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;padding:22px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">Explore PW</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:13px 14px 0">
+            <div style="background:linear-gradient(150deg,#FFE07A,#FFD24A);border-radius:12px;padding:13px;height:100px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">PW Pi</div><div style="font-size:11px;color:#5A4A10;margin-top:3px">Padhai ka OTT</div></div>
+            <div style="background:linear-gradient(150deg,#DCEBFF,#C6DEFF);border-radius:12px;padding:13px;height:100px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">Saarthi</div><div style="font-size:11px;color:#2E4368;margin-top:3px">Your personal mentor</div></div>
+            <div style="background:linear-gradient(150deg,#E4DEFB,#D3CAF7);border-radius:12px;padding:13px;height:100px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">MedEd</div><div style="font-size:11px;color:#3D3466;margin-top:3px">Prepare for NEET PG</div></div>
+            <div style="background:linear-gradient(150deg,#D7F0FF,#BEE6FF);border-radius:12px;padding:13px;height:100px;box-sizing:border-box"><div style="font-size:15px;font-weight:600;color:#1F2328">E Books</div><div style="font-size:11px;color:#1E4A66;margin-top:3px">NCERT in your pocket</div></div>
+          </div>
+
+          <div ref="{{ coursesRef }}" style="display:flex;align-items:center;gap:8px;padding:24px 14px 0">
+            <div style="width:3px;height:17px;background:#1268E0;border-radius:2px"></div>
+            <div style="font-size:16px;font-weight:600;color:#1F2328">All Courses</div>
+          </div>
+          <div style="font-size:11px;color:#6B7280;padding:5px 14px 0">{{ countLabel }}</div>
+
+          <div style="display:flex;gap:8px;padding:12px 14px 0;overflow-x:auto">
+            <sc-if value="{{ noneApplied }}" hint-placeholder-val="{{ true }}">
+              <div sc-camel-on-click="{{ openSheetAll }}" style="display:flex;align-items:center;gap:6px;border:1px solid #1F2328;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:500;color:#1F2328;white-space:nowrap;cursor:pointer">
+                <svg width="13" height="13" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="#1F2328" stroke-width="1.6" stroke-linecap="round"></path><circle cx="5" cy="4" r="1.8" fill="#fff" stroke="#1F2328" stroke-width="1.5"></circle><circle cx="11" cy="8" r="1.8" fill="#fff" stroke="#1F2328" stroke-width="1.5"></circle><circle cx="7" cy="12" r="1.8" fill="#fff" stroke="#1F2328" stroke-width="1.5"></circle></svg>
+                Filters
+              </div>
+            </sc-if>
+            <sc-if value="{{ anyApplied }}">
+              <div sc-camel-on-click="{{ openSheetAll }}" style="display:flex;align-items:center;gap:6px;background:#1F2328;border:1px solid #1F2328;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap;cursor:pointer">
+                Filters
+                <span style="background:#FFC53D;color:#1F2328;border-radius:999px;min-width:16px;height:16px;display:grid;place-items:center;font-size:10px;font-weight:700;padding:0 4px;box-sizing:border-box">{{ appliedCount }}</span>
+              </div>
+            </sc-if>
+            <sc-for list="{{ quickChips }}" as="q" hint-placeholder-count="5">
+              <sc-if value="{{ q.on }}">
+                <div sc-camel-on-click="{{ q.act }}" style="display:flex;align-items:center;gap:5px;background:#EAF2FF;border:1px solid #1268E0;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600;color:#0B4EAE;white-space:nowrap;cursor:pointer">{{ q.label }}</div>
+              </sc-if>
+              <sc-if value="{{ q.off }}">
+                <div sc-camel-on-click="{{ q.act }}" style="display:flex;align-items:center;gap:5px;border:1px solid #D8DDE5;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:500;color:#3A4049;white-space:nowrap;cursor:pointer">
+                  <sc-if value="{{ q.isNew }}"><span style="background:#F04E23;color:#fff;border-radius:4px;padding:1px 4px;font-size:8px;font-weight:700;letter-spacing:.04em">NEW</span></sc-if>
+                  {{ q.label }}
+                </div>
+              </sc-if>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ anyApplied }}">
+            <div style="margin:12px 14px 0;background:#F6F8FB;border-radius:12px;padding:10px 12px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:11px;font-weight:600;color:#3A4049">Showing {{ resultCountShort }} for</div>
+                <div sc-camel-on-click="{{ clearAll }}" style="font-size:11px;font-weight:600;color:#1268E0;cursor:pointer">Clear all</div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+                <sc-for list="{{ activeChips }}" as="a" hint-placeholder-count="2">
+                  <div sc-camel-on-click="{{ a.remove }}" style="display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #D8DDE5;border-radius:999px;padding:4px 6px 4px 6px;font-size:11px;font-weight:500;color:#1F2328;cursor:pointer">
+                    <sc-if value="{{ a.isTeacher }}"><span style="width:18px;height:18px;border-radius:50%;background:{{ a.bg }};color:{{ a.fg }};display:grid;place-items:center;font-size:8px;font-weight:700">{{ a.initials }}</span></sc-if>
+                    <span style="padding-left:2px">{{ a.label }}</span>
+                    <span style="width:16px;height:16px;border-radius:50%;background:#EEF0F3;color:#6B7280;display:grid;place-items:center;font-size:8px">✕</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <div style="display:flex;flex-direction:column;gap:14px;padding:14px 14px 0">
+            <sc-for list="{{ results }}" as="c" hint-placeholder-count="3">
+              <div style="border:1px solid #E6E9EF;border-radius:13px;overflow:hidden">
+                <div style="height:92px;background:{{ c.bg }};padding:11px;box-sizing:border-box"><div style="font-size:14px;font-weight:700;color:{{ c.fg }};line-height:1.15;max-width:170px">{{ c.short }}</div></div>
+                <div style="padding:12px">
+                  <div style="display:flex;align-items:center;gap:8px">
+                    <div style="font-size:10px;font-weight:600;color:#F04E23;flex:1">{{ c.tag }}</div>
+                    <div style="border:1px solid #D8DDE5;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:500;color:#3A4049">{{ c.langUp }}</div>
+                  </div>
+                  <div style="font-size:15px;font-weight:600;color:#1F2328;margin-top:5px">{{ c.name }}</div>
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+                    <div style="display:flex">
+                      <sc-for list="{{ c.avatars }}" as="t" hint-placeholder-count="2">
+                        <div style="width:22px;height:22px;border-radius:50%;background:{{ t.bg }};color:{{ t.fg }};border:2px solid #fff;margin-right:-6px;display:grid;place-items:center;font-size:8px;font-weight:700">{{ t.initials }}</div>
+                      </sc-for>
+                    </div>
+                    <div style="font-size:11px;color:#4A5058;padding-left:6px">{{ c.teacherLine }}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px;margin-top:11px">
+                    <div style="flex:1">
+                      <div style="display:flex;align-items:baseline;gap:6px"><div style="font-size:14px;font-weight:600;color:#1F2328">{{ c.price }}</div><div style="font-size:11px;color:#9AA0A9;text-decoration:line-through">{{ c.mrp }}</div></div>
+                      <div style="font-size:10px;color:#6B7280;margin-top:3px">{{ c.meta }}</div>
+                    </div>
+                    <button style="background:#1F2328;color:#fff;border:0;border-radius:9px;padding:10px 20px;font:500 13px 'Poppins';cursor:pointer">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+            <sc-if value="{{ empty }}">
+              <div style="border:1px dashed #D8DDE5;border-radius:13px;padding:26px 16px;text-align:center">
+                <div style="font-size:14px;font-weight:600;color:#1F2328">No batches match these filters</div>
+                <div style="font-size:12px;color:#6B7280;margin-top:5px">Remove a filter to see more batches</div>
+                <div sc-camel-on-click="{{ clearAll }}" style="margin-top:12px;font-size:12px;font-weight:600;color:#1268E0;cursor:pointer">Clear all filters</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+
+        <sc-if value="{{ popOpen }}">
+          <div sc-camel-on-click="{{ closePop }}" style="position:absolute;inset:0;z-index:5;background:rgba(15,18,24,.38)"></div>
+          <div style="position:absolute;left:{{ popLeft }};right:{{ popRight }};transform:{{ popTransform }};bottom:{{ popBottom }};width:300px;z-index:7;background:#0B0E13;border-radius:22px;padding:16px 18px 14px;box-shadow:0 18px 40px rgba(0,0,0,.35);box-sizing:border-box">
+            <div style="font-size:10px;font-weight:600;letter-spacing:.1em;color:#8A93A6">QUICK FILTERS</div>
+            <div sc-camel-on-click="{{ openSheetTeachers }}" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #1E232C;cursor:pointer">
+              <div style="display:flex">
+                <sc-for list="{{ popAvatars }}" as="t" hint-placeholder-count="3">
+                  <div style="width:24px;height:24px;border-radius:50%;background:{{ t.bg }};color:{{ t.fg }};border:2px solid #0B0E13;margin-right:-7px;display:grid;place-items:center;font-size:8px;font-weight:700">{{ t.initials }}</div>
+                </sc-for>
+              </div>
+              <div style="flex:1;padding-left:6px">
+                <div style="display:flex;align-items:center;gap:6px"><span style="font-size:14px;font-weight:600;color:#fff">By teacher</span><span style="background:#F04E23;color:#fff;border-radius:4px;padding:1px 4px;font-size:8px;font-weight:700">NEW</span></div>
+                <div style="font-size:10px;color:#8A93A6;margin-top:1px">{{ teacherSummary }}</div>
+              </div>
+              <div style="font-size:16px;color:#8A93A6">›</div>
+            </div>
+            <sc-for list="{{ popRows }}" as="p" hint-placeholder-count="6">
+              <div sc-camel-on-click="{{ p.toggle }}" style="display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer">
+                <sc-if value="{{ p.on }}">
+                  <div style="width:18px;height:18px;border-radius:5px;background:#4C9BFF;color:#0B0E13;display:grid;place-items:center;font-size:11px;font-weight:700">✓</div>
+                  <div style="flex:1;font-size:14px;font-weight:600;color:#fff">{{ p.label }}</div>
+                </sc-if>
+                <sc-if value="{{ p.off }}">
+                  <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid #3A4250;box-sizing:border-box"></div>
+                  <div style="flex:1;font-size:14px;color:#D6DAE1">{{ p.label }}</div>
+                </sc-if>
+                <div style="font-size:13px;color:#8A93A6">{{ p.count }}</div>
+              </div>
+            </sc-for>
+            <button sc-camel-on-click="{{ openSheetAll }}" style="margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#0B0E13;border:0;border-radius:11px;padding:12px;font:600 13px 'Poppins';cursor:pointer">
+              <svg width="14" height="14" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="#0B0E13" stroke-width="1.7" stroke-linecap="round"></path><circle cx="5" cy="4" r="1.9" fill="#fff" stroke="#0B0E13" stroke-width="1.6"></circle><circle cx="11" cy="8" r="1.9" fill="#fff" stroke="#0B0E13" stroke-width="1.6"></circle><circle cx="7" cy="12" r="1.9" fill="#fff" stroke="#0B0E13" stroke-width="1.6"></circle></svg>
+              Show all filters
+            </button>
+          </div>
+        </sc-if>
+
+        <div style="position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 100%);opacity:{{ dockOpacity }};transition:opacity .3s ease"></div>
+
+        <sc-if value="{{ detached }}">
+          <div sc-camel-on-click="{{ openSearch }}" style="position:absolute;left:14px;bottom:72px;z-index:6;cursor:pointer;opacity:{{ dockOpacity }};transform:{{ detTransform }};pointer-events:{{ dockEvents }};transition:transform .42s cubic-bezier(.2,.9,.25,1.2),opacity .25s ease">
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.38);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(15,23,42,.20),0 0 0 4px rgba(18,104,224,.10),inset 0 1px 0 rgba(255,255,255,.95);white-space:nowrap">
+              <div style="display:flex;align-items:center;gap:7px;background:#1F2328;color:#fff;border-radius:999px;padding:10px 14px 10px 12px">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#fff" stroke-width="2"></circle><path d="M11 11l3.5 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;font-weight:600">Search</span>
+              </div>
+              <span style="font-size:12px;font-weight:500;color:#1F2328;width:96px;overflow:hidden;text-overflow:ellipsis">‘{{ hint }}’</span>
+            </div>
+          </div>
+          <div sc-camel-on-click="{{ togglePop }}" style="position:absolute;right:14px;bottom:68px;z-index:6;cursor:pointer;opacity:{{ dockOpacity }};transform:{{ detTransform }};pointer-events:{{ dockEvents }};transition:transform .48s cubic-bezier(.2,.9,.25,1.2) .06s,opacity .25s ease">
+            <div style="position:relative;padding:6px;border-radius:50%;background:rgba(255,255,255,.38);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(15,23,42,.22),0 0 0 4px rgba(18,104,224,.10),inset 0 1px 0 rgba(255,255,255,.95)">
+              <div style="width:54px;height:54px;border-radius:50%;background:{{ fabBg }};color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px">
+                <svg width="17" height="17" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="#fff" stroke-width="1.7" stroke-linecap="round"></path><circle cx="5" cy="4" r="1.9" fill="{{ fabBg }}" stroke="#fff" stroke-width="1.6"></circle><circle cx="11" cy="8" r="1.9" fill="{{ fabBg }}" stroke="#fff" stroke-width="1.6"></circle><circle cx="7" cy="12" r="1.9" fill="{{ fabBg }}" stroke="#fff" stroke-width="1.6"></circle></svg>
+                <span style="font-size:8px;font-weight:600;letter-spacing:.08em">FILTERS</span>
+              </div>
+              <sc-if value="{{ anyApplied }}">
+                <div style="position:absolute;top:0;right:0;background:#FFC53D;color:#1F2328;border:2px solid #fff;border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;font-size:10px;font-weight:700;padding:0 4px;box-sizing:border-box">{{ appliedCount }}</div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notDetached }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:50%;bottom:70px;z-index:6;opacity:{{ dockOpacity }};transform:{{ dockTransform }};pointer-events:{{ dockEvents }};transition:transform .42s cubic-bezier(.2,.9,.25,1.2),opacity .25s ease">
+          <div style="display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;background:rgba(255,255,255,.38);backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 30px rgba(15,23,42,.20),0 0 0 4px rgba(18,104,224,.10),inset 0 1px 0 rgba(255,255,255,.95);white-space:nowrap">
+
+            <sc-if value="{{ combined }}">
+              <div sc-camel-on-click="{{ openSearch }}" style="display:flex;align-items:center;gap:7px;background:#1F2328;color:#fff;border-radius:999px;padding:10px 14px 10px 12px;cursor:pointer">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#fff" stroke-width="2"></circle><path d="M11 11l3.5 3.5" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></svg>
+                <span style="font-size:13px;font-weight:600">Search</span>
+              </div>
+              <div sc-camel-on-click="{{ openSearch }}" style="font-size:12px;font-weight:500;color:#1F2328;width:92px;overflow:hidden;text-overflow:ellipsis;cursor:pointer">‘{{ hint }}’</div>
+              <div style="width:1px;height:24px;background:rgba(31,35,40,.18)"></div>
+            </sc-if>
+
+            <sc-if value="{{ noneApplied }}" hint-placeholder-val="{{ true }}">
+              <div sc-camel-on-click="{{ togglePop }}" style="display:flex;align-items:center;gap:7px;background:{{ filterBtnBg }};color:{{ filterBtnFg }};border-radius:999px;padding:10px 14px 10px 12px;cursor:pointer">
+                <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><circle cx="5" cy="4" r="1.9" fill="{{ filterBtnBg }}" stroke="currentColor" stroke-width="1.6"></circle><circle cx="11" cy="8" r="1.9" fill="{{ filterBtnBg }}" stroke="currentColor" stroke-width="1.6"></circle><circle cx="7" cy="12" r="1.9" fill="{{ filterBtnBg }}" stroke="currentColor" stroke-width="1.6"></circle></svg>
+                <span style="font-size:13px;font-weight:600">Filters</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ anyApplied }}">
+              <div sc-camel-on-click="{{ togglePop }}" style="display:flex;align-items:center;gap:7px;background:#1268E0;color:#fff;border-radius:999px;padding:10px 12px 10px 14px;cursor:pointer">
+                <span style="font-size:13px;font-weight:600">Filters</span>
+                <span style="background:#FFC53D;color:#1F2328;border-radius:999px;min-width:18px;height:18px;display:grid;place-items:center;font-size:10px;font-weight:700;padding:0 5px;box-sizing:border-box">{{ appliedCount }}</span>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ filterOnly }}" hint-placeholder-val="{{ true }}">
+              <div sc-camel-on-click="{{ togglePop }}" style="font-size:12px;font-weight:500;color:#1F2328;padding-right:10px;min-width:104px;cursor:pointer">{{ filterHint }}</div>
+            </sc-if>
+          </div>
+        </div>
+        </sc-if>
+
+        <div style="position:absolute;left:0;right:0;bottom:0;z-index:8;background:#fff;border-top:1px solid #E6E9EF;display:flex;padding:8px 6px 11px">
+          <div style="flex:1;text-align:center"><div style="font-size:15px">📖</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Study</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🏫</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Centres</div></div>
+          <div style="flex:1;text-align:center"><div style="width:28px;height:28px;border-radius:50%;background:#1F2328;color:#fff;display:grid;place-items:center;margin:0 auto;font-size:13px">🎓</div><div style="font-size:9px;font-weight:600;color:#1F2328;margin-top:2px">Batches</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🅿️</div><div style="font-size:9px;color:#6B7280;margin-top:2px">Pi</div></div>
+          <div style="flex:1;text-align:center"><div style="font-size:15px">🛍️</div><div style="font-size:9px;color:#6B7280;margin-top:2px">PW Store</div></div>
+        </div>
+
+        <sc-if value="{{ cardSheetOpen }}">
+          <div sc-camel-on-click="{{ closeSheet }}" style="position:absolute;inset:0;z-index:20;background:rgba(8,10,14,.62)"></div>
+          <div sc-camel-on-click="{{ closeSheet }}" style="position:absolute;left:50%;transform:translateX(-50%);top:calc(14% - 58px);z-index:22;width:42px;height:42px;border-radius:50%;background:#2A2E36;color:#fff;display:grid;place-items:center;font-size:16px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)">✕</div>
+          <div style="position:absolute;left:0;right:0;bottom:0;height:86%;z-index:21;background:#16181D;border-radius:18px 18px 0 0;display:flex;flex-direction:column;overflow:hidden">
+            <div style="display:flex;align-items:center;padding:18px 16px 16px;border-bottom:1px solid #262A31">
+              <div style="flex:1;font-size:18px;font-weight:600;color:#fff">Filters</div>
+              <div sc-camel-on-click="{{ resetDraft }}" style="font-size:13px;font-weight:500;color:#C9CED6;cursor:pointer">Clear all</div>
+            </div>
+            <div style="flex:1;display:flex;min-height:0">
+              <div style="width:86px;background:#1C1F25;overflow-y:auto;flex:0 0 auto">
+                <sc-for list="{{ cardRail }}" as="r" hint-placeholder-count="8">
+                  <div sc-camel-on-click="{{ r.select }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 6px;background:{{ r.bg }};cursor:pointer;text-align:center">
+                    <div style="font-size:17px;line-height:1">{{ r.icon }}</div>
+                    <div style="font-size:10px;line-height:1.3;color:{{ r.color }};font-weight:{{ r.weight }}">{{ r.label }}</div>
+                    <sc-if value="{{ r.hasCount }}"><div style="position:absolute;top:8px;right:12px;background:#4C9BFF;color:#0B0E13;border-radius:999px;min-width:15px;height:15px;display:grid;place-items:center;font-size:9px;font-weight:700">{{ r.count }}</div></sc-if>
+                    <sc-if value="{{ r.active }}"><div style="position:absolute;right:0;top:0;bottom:0;width:3px;background:#4C9BFF"></div></sc-if>
+                  </div>
+                </sc-for>
+              </div>
+              <div ref="{{ cardPaneRef }}" sc-camel-on-scroll="{{ onCardScroll }}" style="position:relative;flex:1;overflow-y:auto;padding:14px 12px 20px;min-width:0;display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ cardSections }}" as="sec" hint-placeholder-count="4">
+                  <div ref="{{ sec.ref }}" style="background:#22252C;border-radius:14px;padding:14px">
+                    <div style="display:flex;align-items:center;gap:7px">
+                      <div style="flex:1;font-size:15px;font-weight:600;color:#fff">{{ sec.label }}</div>
+                      <sc-if value="{{ sec.isNew }}"><span style="background:#F04E23;color:#fff;border-radius:4px;padding:1px 5px;font-size:8px;font-weight:700">NEW</span></sc-if>
+                    </div>
+
+                    <sc-if value="{{ sec.isTeachers }}">
+                      <div style="display:flex;gap:6px;margin-top:12px;overflow-x:auto">
+                        <sc-for list="{{ cardSubjects }}" as="sb" hint-placeholder-count="4">
+                          <div sc-camel-on-click="{{ sb.pick }}" style="border:1px solid {{ sb.border }};background:{{ sb.bg }};color:{{ sb.color }};border-radius:999px;padding:4px 11px;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap">{{ sb.label }}</div>
+                        </sc-for>
+                      </div>
+                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+                        <sc-for list="{{ teacherRows }}" as="t" hint-placeholder-count="4">
+                          <div sc-camel-on-click="{{ t.toggle }}" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px 10px;border-radius:12px;border:1px solid {{ t.cardBorder }};background:{{ t.cardBg }};cursor:pointer;text-align:center">
+                            <div style="width:38px;height:38px;border-radius:50%;background:{{ t.bg }};color:{{ t.fg }};display:grid;place-items:center;font-size:12px;font-weight:700">{{ t.initials }}</div>
+                            <div style="font-size:12px;font-weight:500;color:#fff;line-height:1.2">{{ t.name }}</div>
+                            <div style="font-size:9px;color:#9AA3B2">{{ t.subShort }}</div>
+                            <sc-if value="{{ t.on }}"><div style="position:absolute;top:6px;right:6px;width:16px;height:16px;border-radius:50%;background:#4C9BFF;color:#0B0E13;display:grid;place-items:center;font-size:9px;font-weight:700">✓</div></sc-if>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isTiles }}">
+                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+                        <sc-for list="{{ sec.options }}" as="o" hint-placeholder-count="2">
+                          <div sc-camel-on-click="{{ o.toggle }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:64px;border-radius:12px;border:1px solid {{ o.border }};background:{{ o.bg }};cursor:pointer">
+                            <div style="font-size:13px;font-weight:500;color:#fff">{{ o.label }}</div>
+                            <div style="font-size:10px;color:#9AA3B2">{{ o.countLabel }}</div>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ sec.isChips }}">
+                      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+                        <sc-for list="{{ sec.options }}" as="o" hint-placeholder-count="4">
+                          <div sc-camel-on-click="{{ o.toggle }}" style="display:flex;align-items:center;gap:6px;border-radius:10px;border:1px solid {{ o.border }};background:{{ o.bg }};padding:8px 12px;cursor:pointer">
+                            <span style="font-size:12px;font-weight:500;color:#fff">{{ o.label }}</span>
+                            <span style="font-size:10px;color:#9AA3B2">{{ o.count }}</span>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 14px 16px;background:#1C1F25;border-top:1px solid #262A31">
+              <button sc-camel-on-click="{{ closeSheet }}" style="flex:1;background:transparent;color:#fff;border:0;padding:14px;font:500 15px 'Poppins';cursor:pointer">Close</button>
+              <button sc-camel-on-click="{{ applyDraft }}" style="flex:1.4;background:{{ cardApplyBg }};color:{{ cardApplyFg }};border:0;border-radius:12px;padding:14px;font:600 14px 'Poppins';cursor:pointer">{{ cardApplyLabel }}</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ sheetOpen }}">
+          <div sc-camel-on-click="{{ closeSheet }}" style="position:absolute;inset:0;z-index:20;background:rgba(31,35,40,.55)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;height:82%;z-index:21;background:#fff;border-radius:18px 18px 0 0;display:flex;flex-direction:column;overflow:hidden">
+            <div style="display:flex;align-items:center;padding:16px 16px 14px;border-bottom:1px solid #E6E9EF">
+              <div style="flex:1;font-size:17px;font-weight:600;color:#1F2328">Refine Batches</div>
+              <div sc-camel-on-click="{{ resetDraft }}" style="font-size:13px;font-weight:500;color:#7C6CE0;cursor:pointer">↺ Reset</div>
+            </div>
+            <div style="flex:1;display:flex;min-height:0">
+              <div style="width:132px;background:#F4F5F7;overflow-y:auto;flex:0 0 auto">
+                <sc-for list="{{ rail }}" as="r" hint-placeholder-count="8">
+                  <div sc-camel-on-click="{{ r.select }}" style="display:flex;align-items:center;gap:5px;padding:13px 10px 13px 14px;background:{{ r.bg }};cursor:pointer">
+                    <div style="flex:1;font-size:12px;font-weight:{{ r.weight }};color:{{ r.color }};line-height:1.3">{{ r.label }}</div>
+                    <sc-if value="{{ r.isNew }}"><span style="background:#F04E23;color:#fff;border-radius:4px;padding:1px 4px;font-size:7px;font-weight:700">NEW</span></sc-if>
+                    <sc-if value="{{ r.hasCount }}"><span style="background:#1268E0;color:#fff;border-radius:999px;min-width:16px;height:16px;display:grid;place-items:center;font-size:9px;font-weight:700">{{ r.count }}</span></sc-if>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="flex:1;overflow-y:auto;padding:6px 14px 14px;min-width:0">
+                <sc-if value="{{ isTeachersPane }}" hint-placeholder-val="{{ true }}">
+                  <div style="font-size:11px;color:#6B7280;padding:8px 0 10px;line-height:1.5">Pick teachers you want to learn from</div>
+                  <div style="display:flex;align-items:center;gap:7px;background:#F3F5F8;border-radius:9px;padding:0 10px">
+                    <svg width="13" height="13" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#6B7280" stroke-width="1.8"></circle><path d="M11 11l3.5 3.5" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                    <input value="{{ tQuery }}" sc-camel-on-change="{{ onTQuery }}" placeholder="Search teacher" style="flex:1;border:0;background:transparent;outline:none;padding:9px 0;font:500 12px 'Poppins';color:#1F2328;min-width:0">
+                  </div>
+                  <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
+                    <sc-for list="{{ subjects }}" as="sb" hint-placeholder-count="4">
+                      <div sc-camel-on-click="{{ sb.pick }}" style="border:1px solid {{ sb.border }};background:{{ sb.bg }};color:{{ sb.color }};border-radius:999px;padding:4px 10px;font-size:11px;font-weight:500;cursor:pointer">{{ sb.label }}</div>
+                    </sc-for>
+                  </div>
+                  <div style="margin-top:6px">
+                    <sc-for list="{{ teacherRows }}" as="t" hint-placeholder-count="5">
+                      <div sc-camel-on-click="{{ t.toggle }}" style="display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #EEF0F3;cursor:pointer">
+                        <div style="width:36px;height:36px;border-radius:50%;background:{{ t.bg }};color:{{ t.fg }};display:grid;place-items:center;font-size:12px;font-weight:700;flex:0 0 auto">{{ t.initials }}</div>
+                        <div style="flex:1;min-width:0">
+                          <div style="font-size:13px;font-weight:500;color:#1F2328">{{ t.name }}</div>
+                          <div style="font-size:10px;color:#6B7280;margin-top:1px">{{ t.sub }}</div>
+                        </div>
+                        <sc-if value="{{ t.on }}"><div style="width:18px;height:18px;border-radius:4px;background:#1268E0;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700">✓</div></sc-if>
+                        <sc-if value="{{ t.off }}"><div style="width:18px;height:18px;border-radius:4px;border:1.5px solid #C9CED6;box-sizing:border-box"></div></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ isOptionPane }}">
+                  <sc-for list="{{ paneOptions }}" as="o" hint-placeholder-count="4">
+                    <div sc-camel-on-click="{{ o.toggle }}" style="display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #EEF0F3;cursor:pointer">
+                      <div style="flex:1;font-size:13px;color:#3A4049">{{ o.label }}</div>
+                      <div style="font-size:11px;color:#9AA0A9">{{ o.count }}</div>
+                      <sc-if value="{{ o.on }}"><div style="width:18px;height:18px;border-radius:4px;background:#1268E0;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700">✓</div></sc-if>
+                      <sc-if value="{{ o.off }}"><div style="width:18px;height:18px;border-radius:4px;border:1.5px solid #C9CED6;box-sizing:border-box"></div></sc-if>
+                    </div>
+                  </sc-for>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex;gap:12px;padding:12px 14px 16px;border-top:1px solid #E6E9EF">
+              <button sc-camel-on-click="{{ closeSheet }}" style="flex:1;background:#fff;color:#1F2328;border:1px solid #D8DDE5;border-radius:10px;padding:13px;font:500 14px 'Poppins';cursor:pointer">Cancel</button>
+              <button sc-camel-on-click="{{ applyDraft }}" style="flex:1.5;background:#1F2328;color:#fff;border:0;border-radius:10px;padding:13px;font:600 14px 'Poppins';cursor:pointer">{{ applyLabel }}</button>
+            </div>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <sc-if value="{{ isSearch }}">
+        <div style="background:#fff;height:100%;overflow-y:auto">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #EEF0F3">
+            <div sc-camel-on-click="{{ goListing }}" style="font-size:18px;cursor:pointer;color:#1F2328;width:24px">←</div>
+            <div style="flex:1;display:flex;align-items:center;gap:9px;background:#F3F5F8;border:1px solid #1268E0;border-radius:10px;padding:0 12px">
+              <svg width="15" height="15" sc-camel-view-box="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5.2" stroke="#6B7280" stroke-width="1.8"></circle><path d="M11 11l3.5 3.5" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round"></path></svg>
+              <input ref="{{ inputRef }}" value="{{ query }}" sc-camel-on-change="{{ onQuery }}" placeholder="{{ placeholder }}" style="flex:1;border:0;background:transparent;outline:none;padding:11px 0;font:500 14px 'Poppins';color:#1F2328;min-width:0">
+            </div>
+          </div>
+          <div style="padding:10px 14px 0;display:flex;align-items:center;gap:6px">
+            <div style="font-size:11px;color:#6B7280">Searching in</div>
+            <div style="font-size:11px;font-weight:600;color:#1F2328;background:#EAF6FD;border-radius:6px;padding:3px 8px">🎒 Class 11 NEET</div>
+          </div>
+          <sc-if value="{{ noQuery }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:20px 14px 0">
+              <div style="font-size:12px;font-weight:600;color:#6B7280;letter-spacing:.04em">TRENDING IN CLASS 11 NEET</div>
+              <sc-for list="{{ trending }}" as="t" hint-placeholder-count="5">
+                <div sc-camel-on-click="{{ t.pick }}" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0F2F5;cursor:pointer">
+                  <div style="width:22px;font-size:13px;font-weight:700;color:#1268E0">{{ t.n }}</div>
+                  <div style="flex:1;font-size:13px;color:#1F2328">{{ t.label }}</div>
+                  <div style="font-size:14px;color:#9AA0A9">↗</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ hasQuery }}">
+            <div style="display:flex;flex-direction:column;padding:8px 14px 20px">
+              <sc-for list="{{ searchResults }}" as="r" hint-placeholder-count="4">
+                <div sc-camel-on-click="{{ goListing }}" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #F0F2F5;cursor:pointer">
+                  <div style="width:48px;height:48px;border-radius:10px;background:{{ r.bg }};flex:0 0 auto"></div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:13px;color:#1F2328">{{ r.name }}</div>
+                    <div style="font-size:10px;color:#6B7280;margin-top:3px">{{ r.teacherLine }}</div>
+                  </div>
+                  <div style="font-size:13px;font-weight:600;color:#1F2328">{{ r.price }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      </div>
+    </x-import>
+   </div>
+  </div>
+
+  <div style="flex:0 0 280px;display:flex;flex-direction:column;overflow-y:auto">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6B7488;font-weight:700">Filter action sheet</div>
+    <div style="font-size:13px;line-height:1.55;color:#5E6878;margin-top:10px">What opens when the Filters button is tapped.</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+      <sc-for list="{{ sheetOpts }}" as="o" hint-placeholder-count="3">
+        <div sc-camel-on-click="{{ o.pick }}" style="display:flex;gap:11px;align-items:flex-start;background:{{ o.bg }};border:1px solid {{ o.border }};border-radius:12px;padding:12px 13px;cursor:pointer">
+          <div style="width:16px;height:16px;border-radius:50%;border:2px solid {{ o.dotBorder }};box-sizing:border-box;display:grid;place-items:center;margin-top:2px;flex:0 0 auto"><div style="width:6px;height:6px;border-radius:50%;background:{{ o.dot }}"></div></div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#0F1B33">{{ o.tag }} · {{ o.label }}</div>
+            <div style="font-size:11px;line-height:1.5;color:#5E6878;margin-top:3px">{{ o.desc }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1300,&quot;height&quot;:1000},&quot;showDock&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;After header scrolls away&quot;,&quot;Always&quot;],&quot;default&quot;:&quot;After header scrolls away&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  teachers = [
+    { id: 'aman', name: 'Aman Verma', subject: 'Physics', bg: '#DCEEFF', fg: '#0B4EAE', yrs: 9 },
+    { id: 'neha', name: 'Neha Kapoor', subject: 'Biology', bg: '#DDF3E6', fg: '#0F7A48', yrs: 7 },
+    { id: 'rohit', name: 'Rohit Mehta', subject: 'Chemistry', bg: '#FDF0D0', fg: '#8A5800', yrs: 11 },
+    { id: 'sakshi', name: 'Sakshi Jain', subject: 'Biology', bg: '#FCE4EF', fg: '#9D174D', yrs: 6 },
+    { id: 'vikas', name: 'Vikas Rao', subject: 'Physics', bg: '#E4DEFB', fg: '#3D3466', yrs: 12 },
+    { id: 'pooja', name: 'Pooja Iyer', subject: 'Chemistry', bg: '#FFE6DA', fg: '#A63A0A', yrs: 8 },
+    { id: 'arjun', name: 'Arjun Nair', subject: 'Maths', bg: '#D7F0FF', fg: '#1E4A66', yrs: 10 }
+  ];
+  catalog = [
+    { name: 'Arjuna NEET 2027', short: 'ARJUNA NEET 2027', lang: 'Hinglish', mode: 'Online', status: 'Ongoing', duration: '2 Years', exam: '', type: 'Paid', learning: 'Live', power: false, teachers: ['aman', 'neha', 'rohit'], price: '₹4,499', mrp: '₹5,500', bg: 'linear-gradient(160deg,#DCEEFF,#9FC8F0)', fg: '#0B4EAE' },
+    { name: 'Yakeen NEET 2027', short: 'YAKEEN NEET 2027', lang: 'Hindi', mode: 'Online', status: 'Ongoing', duration: '1 Year', exam: '', type: 'Paid', learning: 'Live', power: false, teachers: ['vikas', 'sakshi', 'pooja'], price: '₹1,499', mrp: '₹2,500', bg: '#E4DEFB', fg: '#3D3466' },
+    { name: 'Lakshya NEET 2027', short: 'LAKSHYA NEET 2027', lang: 'Hinglish', mode: 'Online', status: 'Upcoming', duration: '1 Year', exam: '', type: 'Paid', learning: 'Live', power: false, teachers: ['aman', 'sakshi', 'pooja'], price: '₹1,499', mrp: '₹2,500', bg: '#FDF0D0', fg: '#B37400' },
+    { name: 'Uday NEET 2027', short: 'UDAY NEET 2027', lang: 'English', mode: 'Online', status: 'Upcoming', duration: '2 Years', exam: '', type: 'Paid', learning: 'Recorded', power: false, teachers: ['vikas', 'neha', 'rohit'], price: '₹1,499', mrp: '₹2,500', bg: '#1B8A3A', fg: '#FFFFFF' },
+    { name: 'Arjuna Power Batch NEET 2027', short: 'POWER BATCH', lang: 'Hinglish', mode: 'Online', status: 'Ongoing', duration: '2 Years', exam: '', type: 'Paid', learning: 'Live', power: true, teachers: ['aman', 'neha'], price: '₹5,000', mrp: '₹8,000', bg: 'linear-gradient(150deg,#4A1206,#8C2A0A)', fg: '#FFC53D' },
+    { name: 'Vidyapeeth Class 11th NEET', short: 'VIDYAPEETH', lang: 'Hinglish', mode: 'Offline', status: 'Upcoming', duration: '2 Years', exam: '', type: 'Paid', learning: 'Live', power: false, teachers: ['rohit', 'sakshi'], price: '₹5,000', mrp: '', bg: 'linear-gradient(160deg,#9FB0BF,#6E7C89)', fg: '#FFFFFF' },
+    { name: 'Arjuna MHTCET 2027', short: 'ARJUNA MHTCET', lang: 'Hinglish', mode: 'Online', status: 'Ongoing', duration: '2 Years', exam: 'MHTCET', type: 'Paid', learning: 'Live', power: false, teachers: ['arjun', 'pooja'], price: '₹1,499', mrp: '₹2,500', bg: '#EAF2FF', fg: '#1268E0' },
+    { name: 'Prarambh NEET Kannada', short: 'PRARAMBH KANNADA', lang: 'Kannada', mode: 'Online', status: 'Upcoming', duration: '1 Year', exam: 'KCET', type: 'Paid', learning: 'Live', power: false, teachers: ['vikas'], price: '₹1,299', mrp: '₹2,200', bg: '#FBF3DE', fg: '#6B5B14' },
+    { name: 'NEET Crash Course', short: 'CRASH COURSE', lang: 'Hindi', mode: 'Online', status: 'Ongoing', duration: '1 Year', exam: '', type: 'Free', learning: 'Recorded', power: false, teachers: ['aman'], price: 'Free', mrp: '', bg: '#123A6B', fg: '#8FD3FF' },
+    { name: 'Biology Revision Series', short: 'BIO REVISION', lang: 'English', mode: 'Online', status: 'Ongoing', duration: '1 Year', exam: '', type: 'Free', learning: 'Recorded', power: false, teachers: ['neha', 'sakshi'], price: 'Free', mrp: '', bg: '#DDF3E6', fg: '#0F7A48' },
+    { name: 'Udaan WBJEE 2027', short: 'UDAAN WBJEE', lang: 'Bangla', mode: 'Online', status: 'Upcoming', duration: '1 Year', exam: 'WBJEE', type: 'Paid', learning: 'Live', power: false, teachers: ['arjun', 'rohit'], price: '₹1,499', mrp: '₹2,500', bg: '#2B1B4A', fg: '#FFD24A' },
+    { name: 'Yakeen Power Batch 2027', short: 'YAKEEN POWER', lang: 'Hindi', mode: 'Online', status: 'Upcoming', duration: '1 Year', exam: '', type: 'Paid', learning: 'Live', power: true, teachers: ['vikas', 'pooja'], price: '₹5,000', mrp: '₹8,000', bg: '#4A1206', fg: '#FFC53D' }
+  ];
+  cats = [
+    { key: 'teachers', label: 'Teachers', isNew: true },
+    { key: 'status', label: 'Status', options: ['Ongoing', 'Upcoming'] },
+    { key: 'mode', label: 'Study Mode', options: ['Online', 'Offline'] },
+    { key: 'duration', label: 'Batch Duration', options: ['1 Year', '2 Years'] },
+    { key: 'exam', label: 'State Exam', options: ['MHTCET', 'KCET', 'GUJCET', 'WBJEE', 'OJEE', 'TS_EAPCET', 'AP_EAPCET', 'KEAM'] },
+    { key: 'lang', label: 'Languages', options: ['English', 'Hindi', 'Hinglish', 'Kannada', 'Tamil', 'Telugu', 'Bangla', 'Gujrati', 'Bilingual', 'Malayalam', 'Odia'] },
+    { key: 'type', label: 'Batch Type', options: ['Paid', 'Free'] },
+    { key: 'learning', label: 'Mode of Learning', options: ['Live', 'Recorded'] },
+    { key: 'power', label: 'Batch Types', options: ['Power Batch'] }
+  ];
+  secEls = {};
+  icons = { teachers: '👩‍🏫', status: '⏱️', mode: '🖥️', duration: '📅', exam: '🏛️', lang: '🗣️', type: '🏷️', learning: '▶️', power: '⚡' };
+  hints = ['Arjuna NEET', 'Lakshya NEET', 'Yakeen 2027', 'NCERT Punch'];
+  fHints = ['By teacher', 'By language', 'By state exam', 'Free batches'];
+
+  empty() { const f = {}; this.cats.forEach(c => f[c.key] = []); return f; }
+  state = { variantSel: 'Filter only', sheetSel: 'V1', screen: 'listing', scrolled: false, hintI: 0, applied: this.empty(), draft: this.empty(), sheet: false, cat: 'teachers', pop: false, tSubject: 'All', tQuery: '', query: '' };
+
+  componentDidMount() {
+    this.fit = () => { const el = this.stage; const avail = el ? el.clientHeight : window.innerHeight - 140; const sc = Math.max(0.4, Math.min(1, avail / 892)); if (Math.abs(sc - (this.state.sc || 0)) > 0.003) this.setState({ sc }); };
+    window.addEventListener('resize', this.fit); setTimeout(this.fit, 50); setTimeout(this.fit, 600); this.t = setInterval(() => this.setState(s => ({ hintI: (s.hintI + 1) % 4 })), 2400); }
+  componentWillUnmount() { clearInterval(this.t); }
+  componentDidUpdate() {
+    const prev = { screen: this._prevScreen }; this._prevScreen = this.state.screen;
+    if (this.state.screen === 'search' && prev.screen !== 'search') setTimeout(() => this.input && this.input.focus(), 50);
+    if (this.state.screen === 'listing' && prev.screen && prev.screen !== 'listing' && this.scroller && this.lastTop != null) this.scroller.scrollTop = this.lastTop;
+  }
+
+  val(c, key) { return key === 'power' ? (c.power ? 'Power Batch' : '') : c[key]; }
+  match(c, f) {
+    return this.cats.every(({ key }) => {
+      const sel = f[key]; if (!sel.length) return true;
+      return key === 'teachers' ? sel.some(t => c.teachers.includes(t)) : sel.includes(this.val(c, key));
+    });
+  }
+  count(f, key, v) { const g = Object.assign({}, f, { [key]: [v] }); return this.catalog.filter(c => this.match(c, g)).length; }
+  toggle(f, key, v) { const cur = f[key]; return Object.assign({}, f, { [key]: cur.includes(v) ? cur.filter(x => x !== v) : cur.concat(v) }); }
+  total(f) { return Object.values(f).reduce((n, a) => n + a.length, 0); }
+  plural(n) { return n + (n === 1 ? ' batch' : ' batches'); }
+  tById(id) { return this.teachers.find(t => t.id === id); }
+  ini(name) { return name.split(' ').map(w => w[0]).join(''); }
+
+  scrollTo(top, smooth) { setTimeout(() => this.scroller && this.scroller.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' }), 40); }
+  scrollToResults() { setTimeout(() => { if (this.scroller && this.coursesEl) this.scroller.scrollTo({ top: this.coursesEl.offsetTop - 4, behavior: 'smooth' }); }, 60); }
+  openSheet(cat) { this.setState(s => ({ sheet: true, pop: false, cat: cat || 'teachers', draft: JSON.parse(JSON.stringify(s.applied)), tQuery: '', tSubject: 'All' })); }
+  setApplied(f, scroll) { this.setState({ applied: f }, () => scroll && this.scrollToResults()); }
+
+  renderVals() {
+    const s = this.state;
+    const variant = this.state.variantSel;
+    const combined = variant === 'Filter + Search';
+    const detached = variant === 'Detached';
+    const hasSearch = combined || detached;
+    const ss = this.state.sheetSel;
+    const sheetStyle = ss.startsWith('V3') ? 'card' : ss.startsWith('V2') ? 'full' : 'quick';
+    const always = (this.props.showDock ?? 'After header scrolls away') === 'Always';
+    const visible = always || s.scrolled || s.pop;
+    const A = s.applied, D = s.draft;
+    const nApplied = this.total(A);
+    const results = this.catalog.filter(c => this.match(c, A));
+    const avatar = id => { const t = this.tById(id); return { initials: this.ini(t.name), bg: t.bg, fg: t.fg }; };
+
+    const cards = results.map(c => {
+      const names = c.teachers.map(id => this.tById(id).name.split(' ')[0]);
+      return Object.assign({}, c, {
+        langUp: c.lang.toUpperCase(),
+        tag: 'Class 11 NEET · ' + c.status,
+        avatars: c.teachers.map(avatar),
+        teacherLine: names.slice(0, 2).join(', ') + (names.length > 2 ? ' +' + (names.length - 2) : ''),
+        meta: c.mode + ' · ' + c.learning + ' · ' + c.duration
+      });
+    });
+
+    const activeChips = [];
+    this.cats.forEach(({ key }) => A[key].forEach(v => {
+      const t = key === 'teachers' ? this.tById(v) : null;
+      activeChips.push({ label: t ? t.name : v, isTeacher: !!t, initials: t ? this.ini(t.name) : '', bg: t ? t.bg : '', fg: t ? t.fg : '', remove: () => this.setApplied(this.toggle(A, key, v)) });
+    }));
+
+    const quickToggle = (key, v) => ({ label: v, on: A[key].includes(v), off: !A[key].includes(v), isNew: false, act: () => this.setApplied(this.toggle(A, key, v)) });
+    const opener = (label, cat, isNew, key) => { const n = A[key].length; return { label: (n ? label + ' · ' + n : label) + ' ▾', on: n > 0, off: n === 0, isNew, act: () => this.openSheet(cat) }; };
+    const quickChips = [opener('Teachers', 'teachers', true, 'teachers'), quickToggle('mode', 'Online'), quickToggle('mode', 'Offline'), quickToggle('power', 'Power Batch'), opener('Language', 'lang', false, 'lang'), opener('State Exam', 'exam', false, 'exam')];
+
+    const popRows = [['lang', 'Hinglish'], ['lang', 'Hindi'], ['lang', 'English'], ['power', 'Power Batch'], ['status', 'Ongoing'], ['type', 'Free']].map(([key, v]) => {
+      const on = A[key].includes(v);
+      return { label: v, on, off: !on, count: this.count(A, key, v), toggle: () => this.setApplied(this.toggle(A, key, v)) };
+    });
+    const selT = A.teachers.map(id => this.tById(id).name.split(' ')[0]);
+
+    const curCat = this.cats.find(c => c.key === s.cat);
+    const rail = this.cats.map(c => {
+      const active = c.key === s.cat, n = D[c.key].length;
+      return { label: c.label, isNew: !!c.isNew && !n, hasCount: n > 0, count: n, bg: active ? '#FFFFFF' : 'transparent', weight: active ? 600 : 400, color: active ? '#1F2328' : '#5A616B', select: () => this.setState({ cat: c.key }) };
+    });
+    const paneOptions = (curCat.options || []).map(v => {
+      const on = D[s.cat].includes(v);
+      return { label: v, on, off: !on, count: this.count(D, s.cat, v), toggle: () => this.setState({ draft: this.toggle(D, s.cat, v) }) };
+    });
+    const tq = s.tQuery.trim().toLowerCase();
+    const teacherRows = this.teachers
+      .filter(t => (s.tSubject === 'All' || t.subject === s.tSubject) && (!tq || t.name.toLowerCase().includes(tq)))
+      .map(t => {
+        const on = D.teachers.includes(t.id);
+        const n = this.count(D, 'teachers', t.id);
+        return { subShort: t.subject + ' · ' + this.plural(n), cardBorder: on ? '#4C9BFF' : '#3A3F48', cardBg: on ? '#1A2A44' : '#2A2E36', name: t.name, initials: this.ini(t.name), bg: t.bg, fg: t.fg, sub: t.subject + ' · ' + t.yrs + ' yrs · ' + this.plural(n), on, off: !on, toggle: () => this.setState({ draft: this.toggle(D, 'teachers', t.id) }) };
+      });
+    const subjects = ['All', 'Physics', 'Chemistry', 'Biology', 'Maths'].map(l => {
+      const on = s.tSubject === l;
+      return { label: l, bg: on ? '#1F2328' : '#fff', color: on ? '#fff' : '#3A4049', border: on ? '#1F2328' : '#D8DDE5', pick: () => this.setState({ tSubject: l }) };
+    });
+    const draftCount = this.catalog.filter(c => this.match(c, D)).length;
+
+    const q = s.query.trim().toLowerCase();
+    const searchResults = q ? cards.length && this.catalog.filter(c => c.name.toLowerCase().includes(q)).map(c => ({ name: c.name, price: c.price, bg: c.bg, teacherLine: c.teachers.map(id => this.tById(id).name).join(', ') })) : [];
+    const hint = this.hints[s.hintI];
+    const dark = (this.props.filterButton ?? 'Light') === 'Dark';
+
+    const base = [
+      { label: '1 · Listing, top of page', run: () => { this.setState({ screen: 'listing', pop: false, sheet: false, applied: this.empty() }); this.scrollTo(0); } },
+      { label: '2 · Scrolled — glass dock appears', run: () => { this.setState({ screen: 'listing', pop: false, sheet: false }); this.scrollTo(600, true); } },
+      { label: sheetStyle === 'quick' ? '3 · Tap Filters → quick filters' : sheetStyle === 'card' ? '3 · Tap Filters → all filters (new design)' : '3 · Tap Filters → all filters', run: () => { this.setState({ screen: 'listing', scrolled: true }); this.scrollTo(600); if (sheetStyle === 'quick') this.setState({ sheet: false, pop: true }); else this.openSheet('teachers'); } },
+      { label: '4 · Refine sheet — new Teachers filter', run: () => { this.setState({ screen: 'listing', scrolled: true }); this.scrollTo(600); this.setState(st => ({ sheet: true, pop: false, cat: 'teachers', draft: Object.assign(this.empty(), { teachers: ['aman'] }), tQuery: '', tSubject: 'All' })); } },
+      { label: '5 · Filters applied — results state', run: () => { this.setState({ screen: 'listing', pop: false, sheet: false, scrolled: true, applied: Object.assign(this.empty(), { teachers: ['aman'], lang: ['Hinglish'] }) }, () => this.scrollToResults()); } }
+    ];
+    if (hasSearch) base.push({ label: detached ? '6 · Search opened from pill' : '6 · Search opened from dock', run: () => this.setState({ screen: 'search', query: '', pop: false, sheet: false }) });
+
+    const variantTabs = [['Filter only','Filter only','A'],['Filter + Search','Filter + Search','B'],['Detached','Filter detached','C']].map(([v,l,c]) => { const on = variant === v; return { code: c, label: l, bg: on ? '#0F1B33' : 'transparent', color: on ? '#FFFFFF' : '#3A4356', sub: on ? '#C8D0DE' : '#6B7488', pick: () => this.setState({ variantSel: v, pop: false, sheet: false, screen: 'listing' }) }; });
+    const sheetOpts = [['V1','Quick filters','Popover with Teachers + top filters, then “Show all filters”'],['V2','All filters','Current Refine Batches sheet opens directly'],['V3','All filters · new design','Dark card-style sheet with icon rail']].map(([v,l,d]) => { const on = ss === v; return { tag: v, label: l, desc: d, border: on ? '#1D5FE0' : '#E1E6EF', bg: on ? '#EEF4FF' : '#FFFFFF', dot: on ? '#1D5FE0' : 'transparent', dotBorder: on ? '#1D5FE0' : '#B8C0CE', pick: () => this.setState({ sheetSel: v, pop: false, sheet: false }) }; });
+    return {
+      variantTabs, sheetOpts,
+      stageRef: el => { this.stage = el; },
+      phoneW: Math.round(412 * (s.sc || 0.85)) + 'px', phoneScale: 'scale(' + (s.sc || 0.85) + ')',
+      combined, detached, notDetached: !detached, filterOnly: variant === 'Filter only',
+      variantLabel: detached ? 'search + filter, detached' : combined ? 'filter + search' : 'filter expansion', steps: base,
+      detTransform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(.92)',
+      fabBg: nApplied ? '#1268E0' : '#1F2328',
+      popLeft: detached ? 'auto' : '50%', popRight: detached ? '14px' : 'auto',
+      popTransform: detached ? 'none' : 'translateX(-50%)', popBottom: detached ? '146px' : '128px',
+      hint, filterHint: nApplied ? nApplied + ' applied' : this.fHints[s.hintI],
+      filterBtnBg: combined || !dark ? '#FFFFFF' : '#1F2328', filterBtnFg: combined || !dark ? '#1F2328' : '#FFFFFF',
+      dockOpacity: visible ? 1 : 0,
+      dockTransform: visible ? 'translate(-50%,0) scale(1)' : 'translate(-50%,24px) scale(.92)',
+      dockEvents: visible ? 'auto' : 'none',
+
+      isListing: s.screen === 'listing', isSearch: s.screen === 'search',
+      scrollRef: el => { this.scroller = el; },
+      coursesRef: el => { this.coursesEl = el; },
+      inputRef: el => { this.input = el; },
+      onScroll: e => { const top = e.target.scrollTop; this.lastTop = top; const sc = top > 56; if (sc !== this.state.scrolled) this.setState({ scrolled: sc }); },
+
+      anyApplied: nApplied > 0, noneApplied: nApplied === 0, appliedCount: nApplied,
+      countLabel: nApplied ? this.plural(results.length) + ' match your filters' : '34 courses available',
+      resultCountShort: this.plural(results.length),
+      results: cards, empty: results.length === 0,
+      activeChips, quickChips,
+      clearAll: () => this.setApplied(this.empty()),
+
+      popOpen: s.pop, popRows,
+      togglePop: () => sheetStyle === 'quick' ? this.setState({ pop: !s.pop }) : this.openSheet('teachers'),
+      closePop: () => this.setState({ pop: false }),
+      showResults: () => { this.setState({ pop: false }); this.scrollToResults(); },
+      popAvatars: this.teachers.slice(0, 3).map(t => ({ initials: this.ini(t.name), bg: t.bg, fg: t.fg })),
+      teacherSummary: selT.length ? selT.join(', ') + ' selected' : this.teachers.length + ' NEET teachers',
+
+      sheetOpen: s.sheet && sheetStyle !== 'card', cardSheetOpen: s.sheet && sheetStyle === 'card',
+      cardPaneRef: el => { this.cardPane = el; },
+      onCardScroll: e => {
+        const top = e.target.scrollTop + 30; let cur = this.cats[0].key;
+        this.cats.forEach(c => { const el = this.secEls[c.key]; if (el && el.offsetTop <= top) cur = c.key; });
+        if (cur !== this.state.cat) this.setState({ cat: cur });
+      },
+      cardRail: this.cats.map(c => {
+        const active = c.key === s.cat, n = D[c.key].length;
+        return { label: c.label, icon: this.icons[c.key], active, hasCount: n > 0, count: n, bg: active ? '#232B3A' : 'transparent', color: active ? '#FFFFFF' : '#9AA3B2', weight: active ? 600 : 400,
+          select: () => { this.setState({ cat: c.key }); const el = this.secEls[c.key]; if (this.cardPane && el) this.cardPane.scrollTo({ top: el.offsetTop - 14, behavior: 'smooth' }); } };
+      }),
+      cardSections: this.cats.map(c => {
+        const opts = (c.options || []).map(v => {
+          const on = D[c.key].includes(v), n = this.count(D, c.key, v);
+          return { label: v, on, count: n, countLabel: this.plural(n), border: on ? '#4C9BFF' : '#3A3F48', bg: on ? '#1A2A44' : '#2A2E36', toggle: () => this.setState(st => ({ draft: this.toggle(st.draft, c.key, v) })) };
+        });
+        return { key: c.key, label: c.label, isNew: !!c.isNew, isTeachers: c.key === 'teachers', isTiles: !!c.options && c.options.length <= 2, isChips: !!c.options && c.options.length > 2, options: opts, ref: el => { this.secEls[c.key] = el; } };
+      }),
+      cardSubjects: ['All', 'Physics', 'Chemistry', 'Biology', 'Maths'].map(l => {
+        const on = s.tSubject === l;
+        return { label: l, bg: on ? '#FFFFFF' : 'transparent', color: on ? '#16181D' : '#C9CED6', border: on ? '#FFFFFF' : '#3A3F48', pick: () => this.setState({ tSubject: l }) };
+      }),
+      cardApplyLabel: 'Show ' + draftCount + ' results',
+      cardApplyBg: this.total(D) ? '#4C9BFF' : '#8E95A3', cardApplyFg: this.total(D) ? '#0B0E13' : '#E6E9EF',
+      rail, paneOptions, teacherRows, subjects,
+      isTeachersPane: s.cat === 'teachers', isOptionPane: s.cat !== 'teachers',
+      tQuery: s.tQuery, onTQuery: e => this.setState({ tQuery: e.target.value }),
+      openSheetAll: () => this.openSheet(s.cat === 'teachers' ? 'teachers' : s.cat),
+      openSheetTeachers: () => this.openSheet('teachers'),
+      closeSheet: () => this.setState({ sheet: false }),
+      resetDraft: () => this.setState({ draft: this.empty() }),
+      applyDraft: () => { this.setState({ sheet: false, applied: D }, () => this.scrollToResults()); },
+      applyLabel: 'Show ' + this.plural(draftCount),
+
+      openSearch: () => hasSearch && this.setState({ screen: 'search', pop: false }),
+      goListing: () => this.setState({ screen: 'listing' }),
+      query: s.query, placeholder: 'Search for ‘' + hint + '’', hasQuery: !!q, noQuery: !q,
+      onQuery: e => this.setState({ query: e.target.value }),
+      searchResults: searchResults || [],
+      trending: ['Arjuna NEET 2027', 'Yakeen', 'Power Batch', 'Lakshya', 'Crash Course'].map((l, i) => ({ n: i + 1, label: l, pick: () => this.setState({ query: l }) }))
+    };
+  }
+}
+</script>
+
+
+</body></html>

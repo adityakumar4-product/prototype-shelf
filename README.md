@@ -76,11 +76,11 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has 13 built prototypes and 14 remaining pipeline ideas. Voice Search, Dropper NEET: Next Year Purchase, Counsellor Offer Nudge, Retention of Droppers <> Cross Exam and the PW Growth Roadmap are live prototypes in the main section and appear under both All and App. Counsellor Offer Nudge contains two switchable versions.
+The shelf has 17 built prototypes and 14 remaining pipeline ideas. The PW Growth Roadmap appears only through the Roadmap pill; other App prototypes appear under both All and App. Search Expansion adds an always-available frosted search button to the batch listing. Filter Experiments keeps filters one tap away while scrolling. PW Upsell Sheet pitches the next plan at checkout, with Basic-to-Infinity/Pro and Infinity-to-Pro paths. Counsellor Offer Nudge contains two switchable versions.
 
 ## Filters
 
-The platform chips are **All · App · Web · Admin**; Pipeline scrolls to the planned ideas, and Roadmap scrolls to the PW Growth Roadmap card in Main. Each prototype's `platform` decides which platform chip it appears under. The pipeline shares the platform filters and search; its count reflects the matching ideas.
+The platform chips are **All · App · Web · Admin**; Pipeline scrolls to the planned ideas, and Roadmap shows only the PW Growth Roadmap card. Each prototype's `platform` decides which platform chip it appears under, except the roadmap, which is exclusive to its pill. The pipeline shares the platform filters and search; its count reflects the matching ideas.
 
 `tags` are separate: they're descriptive labels on the card (and searchable), not filters.
 
@@ -89,7 +89,7 @@ The platform chips are **All · App · Web · Admin**; Pipeline scrolls to the p
 - **Card previews are live.** Each card renders the real prototype in a scaled-down iframe, so the thumbnail never goes stale. `frame: "phone"` renders it at 430px wide; `"wide"` at 1240px.
 - **Opening is in-place.** Clicking a card sets the URL to `#p=slug` and drops the prototype into a full-screen viewer. The back button in the viewer, the browser back button, and <kbd>Esc</kbd> all return to the shelf.
 - **Every prototype is shareable.** Send someone `yoursite.vercel.app/#p=doubt-chat` and it opens straight into that prototype.
-- **Width toggle.** The viewer has Phone / Full width, so a mobile prototype can be checked in a 390px frame and a dashboard can fill the screen.
+- **Preview width.** Prototypes open at full width in the viewer; the Phone view has been removed.
 - **Search.** `/` focuses the search box.
 - **Pipeline.** The Pipeline chip jumps to the 14 ideas still in progress.
 

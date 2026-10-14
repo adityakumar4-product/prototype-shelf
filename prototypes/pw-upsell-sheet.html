@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources={"./PWHero.dc.html": "assets/pw-upsell-sheet/fa49081c.html", "./PWCompare.dc.html": "assets/pw-upsell-sheet/847e976c.html", "./PWFeatures.dc.html": "assets/pw-upsell-sheet/cd1bf276.html", "./PWFaculty.dc.html": "assets/pw-upsell-sheet/37509b84.html", "./PWPageBody.dc.html": "assets/pw-upsell-sheet/95f1bb8b.html", "./PWOverlays.dc.html": "assets/pw-upsell-sheet/60cf662e.html", "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/pw-upsell-sheet/903f2ea1.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/pw-upsell-sheet/d5a7aa76.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/pw-upsell-sheet/788386f4.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/227cf7fc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/e352497e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/95da59a2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/0655dd4f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/227cf7fc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/e352497e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/95da59a2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/0655dd4f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/227cf7fc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/e352497e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/95da59a2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/0655dd4f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/227cf7fc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/e352497e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/95da59a2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/0655dd4f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/227cf7fc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/e352497e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/95da59a2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/0655dd4f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/c315e7e4.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/1457b1bb.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/f662d97f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/13f08d11.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/5fefe476.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/026a2103.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/c315e7e4.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/1457b1bb.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/f662d97f.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/13f08d11.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/5fefe476.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/pw-upsell-sheet/026a2103.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    body { margin:0; background:#15161B; font-family:'Plus Jakarta Sans',sans-serif; overflow:hidden; }
+    a { color:#B9B2FF; text-decoration:none; }
+    a:hover { color:#fff; }
+    ::-webkit-scrollbar { width:0; height:0; }
+  </style>
+</helmet>
+
+<div style="height:100vh;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:40px;padding:20px 28px;overflow:hidden">
+  <div style="flex:0 1 330px;min-width:270px;display:flex;flex-direction:column;gap:20px;max-height:100%;overflow-y:auto">
+    <div>
+      <div style="font:800 10px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;color:#7E86A0">YAKEEN NEET 2.0 · UPSELL TEST RIG</div>
+      <div style="font:700 22px/1.2 'Source Serif 4',serif;color:#fff;margin-top:9px">Pitch the next plan at “Buy now”</div>
+    </div>
+
+    <div>
+      <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;color:#7E86A0;margin-bottom:9px">1 · SHEET VERSION</div>
+      <div style="display:grid;gap:7px">
+        <sc-for list="{{ vers }}" as="v" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ v.pick }}" style="padding:11px 13px;border-radius:12px;background:{{ v.bg }};border:1.5px solid {{ v.bd }};cursor:pointer">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="font:800 10px/1 'Plus Jakarta Sans',sans-serif;color:{{ v.badgeFg }};background:{{ v.badgeBg }};padding:4px 6px;border-radius:5px">{{ v.id }}</div>
+              <div style="font:700 13px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ v.fg }}">{{ v.name }}</div>
+            </div>
+            <div style="font:500 11px/1.45 'Plus Jakarta Sans',sans-serif;color:{{ v.dfg }};margin-top:6px">{{ v.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div>
+      <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;color:#7E86A0;margin-bottom:9px">2 · TRIGGER A PITCH</div>
+      <div style="display:grid;gap:7px">
+        <sc-for list="{{ scens }}" as="c" hint-placeholder-count="3">
+          <div sc-camel-on-click="{{ c.pick }}" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;background:{{ c.bg }};border:1.5px solid {{ c.bd }};cursor:pointer">
+            <div style="flex:1;font:700 12px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ c.fg }}">{{ c.name }}</div>
+            <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:{{ c.sfg }}">{{ c.cta }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font:500 10px/1.5 'Plus Jakarta Sans',sans-serif;color:#5F6678;margin-top:8px">Or use the phone: pick a plan on the page and tap Buy now. Pro skips the sheet.</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:11px;background:#1D1F26;border:1px solid #2A2D36">
+      <div style="flex:1">
+        <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.1em;color:#7E86A0">ON SCREEN</div>
+        <div style="font:700 12px/1.3 'Plus Jakarta Sans',sans-serif;color:#E4E6EE;margin-top:5px">{{ stateLine }}</div>
+      </div>
+      <div sc-camel-on-click="{{ reset }}" style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#15161B;background:#F5C64B;padding:8px 11px;border-radius:8px;cursor:pointer">Reset</div>
+    </div>
+  </div>
+
+  <div style="flex:0 0 auto;width:{{ phW }}px;height:{{ phH }}px;position:relative">
+  <div style="position:absolute;top:0;left:0;transform:scale({{ scale }});transform-origin:top left">
+  <div style="width:390px;height:844px;box-sizing:border-box;border:8px solid #0B0D12;border-radius:44px;background:#fff;overflow:hidden;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.5)">
+    <div ref="{{ refS }}" style="height:100%;overflow-y:auto;background:#F4F5F8;position:relative">
+      <div style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px)">
+        <div style="height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12"><span>7:59</span><span style="letter-spacing:.12em">▪▪▪ ▪</span></div>
+        <div style="height:44px;display:flex;align-items:center;gap:10px;padding:0 14px">
+          <div style="font:400 16px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">‹</div>
+          <div style="flex:1;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Yakeen NEET 2.0 2026</div>
+          <div style="font:400 14px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">↥</div>
+        </div>
+      </div>
+
+      <dc-import name="PWHero" plan="{{ plan }}" compare-label="Check plan details for full comparison" on-select="{{ sel }}" on-compare="{{ goCmp }}" on-buy="{{ buy }}" on-teachers="{{ goFac }}" on-demo="{{ demo }}" hint-size="100%,660px"></dc-import>
+
+      <div style="padding:12px 16px 0" ref="{{ refCmp }}">
+        <dc-import name="PWCompare" plan="{{ plan }}" on-select="{{ sel }}" hint-size="100%,560px"></dc-import>
+      </div>
+      <div style="padding:26px 16px 0">
+        <dc-import name="PWFeatures" hint-size="100%,300px"></dc-import>
+      </div>
+      <div style="padding:28px 16px 0" ref="{{ refFac }}">
+        <dc-import name="PWFaculty" on-demo="{{ demo }}" hint-size="100%,340px"></dc-import>
+      </div>
+      <div style="padding:28px 16px 120px">
+        <dc-import name="PWPageBody" show-features="{{ false }}" hint-size="100%,900px"></dc-import>
+      </div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid #E7E9F0;padding:11px 14px 20px;display:flex;align-items:center;gap:12px;z-index:30">
+      <div style="flex:1">
+        <div style="font:800 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ price }}</div>
+        <div style="font:600 10px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64;margin-top:4px">{{ sub }}</div>
+      </div>
+      <div sc-camel-on-click="{{ buy }}" style="background:#0F1116;color:#fff;border-radius:12px;padding:13px 22px;font:700 13px/1 'Plus Jakarta Sans',sans-serif;cursor:pointer">Buy now</div>
+    </div>
+
+    <sc-if value="{{ sheetOpenAB }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-click="{{ dismiss }}" style="position:absolute;inset:0;background:rgba(8,9,12,.55);z-index:44"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;z-index:46;background:#fff;border-radius:24px 24px 0 0;box-shadow:0 -12px 44px rgba(8,9,12,.28);padding:10px 16px 22px">
+        <div style="width:38px;height:4px;border-radius:2px;background:#E4E6EE;margin:0 auto 12px"></div>
+        <div sc-camel-on-click="{{ dismiss }}" style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:#F1F2F6;display:flex;align-items:center;justify-content:center;font:400 12px/1 'Plus Jakarta Sans',sans-serif;color:#7A8093;cursor:pointer">✕</div>
+
+        <sc-if value="{{ isA }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="display:flex;align-items:center;gap:7px;padding-right:34px">
+              <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:{{ toFg }};background:{{ toBg }};padding:5px 7px;border-radius:5px">{{ toBadge }}</div>
+              <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64">{{ proof }}</div>
+            </div>
+            <div style="font:700 21px/1.2 'Source Serif 4',serif;color:#0B0D12;margin-top:11px;padding-right:20px">{{ headA }}</div>
+            <div style="font:500 12px/1.45 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:5px">{{ subA }}</div>
+
+            <div style="margin-top:14px;border-radius:16px;background:linear-gradient(160deg,#F1F0FF 0%,#FAFAFF 100%);border:1.5px solid #5A4FCF;padding:13px 14px;display:flex;align-items:center;gap:12px">
+              <div style="flex:1">
+                <div style="font:800 22px/1 'Plus Jakarta Sans',sans-serif;color:#3E349F">{{ emi }}</div>
+                <div style="font:600 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#4A5060;margin-top:5px">{{ deltaToday }}</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;color:#0B6B3F;background:#E8F7EF;padding:5px 7px;border-radius:5px;display:inline-block">{{ saveChip }}</div>
+                <div style="font:700 11px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:6px">{{ toName }} · {{ toPrice }}</div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;display:grid;gap:9px">
+              <sc-for list="{{ gainA }}" as="g" hint-placeholder-count="3">
+                <div style="display:flex;gap:10px;align-items:flex-start">
+                  <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none" style="flex:0 0 16px;margin-top:1px"><circle cx="8" cy="8" r="7" fill="#5A4FCF"></circle><path d="M5 8.2l2 2 4-4.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+                  <div>
+                    <div style="font:700 12px/1.3 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ g.t }}</div>
+                    <div style="font:500 10px/1.4 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:2px">{{ g.s }}</div>
+                  </div>
+                </div>
+              </sc-for>
+              <div sc-camel-on-click="{{ seeAll }}" style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;padding-left:26px;cursor:pointer">{{ moreA }}</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:#B0670F;background:#FEF3E8;padding:5px 7px;border-radius:5px;display:inline-block">WAIT — BEFORE YOU PAY</div>
+            <div style="font:700 21px/1.2 'Source Serif 4',serif;color:#0B0D12;margin-top:11px;padding-right:30px;text-wrap:balance">{{ headB }}</div>
+            <div style="font:500 12px/1.45 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:5px">{{ subB }}</div>
+
+            <div style="margin-top:14px;display:grid;grid-template-columns:1fr 92px 92px;align-items:end;gap:0">
+              <div></div>
+              <div style="text-align:center;padding:8px 2px 9px">
+                <div style="font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:#8A90A2">YOUR PICK</div>
+                <div style="font:700 12px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:5px">{{ fromName }}</div>
+                <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:2px">{{ fromPrice }}</div>
+              </div>
+              <div style="text-align:center;padding:8px 2px 9px;background:#5A4FCF;border-radius:12px 12px 0 0">
+                <div style="font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;color:#F5C64B">RECOMMENDED</div>
+                <div style="font:700 12px/1.2 'Plus Jakarta Sans',sans-serif;color:#fff;margin-top:5px">{{ toName }}</div>
+                <div style="font:600 10px/1.2 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.78);margin-top:2px">{{ toPrice }}</div>
+              </div>
+            </div>
+            <div style="border:1.5px solid #5A4FCF;border-radius:12px 0 12px 12px;border-top-right-radius:0;background:#FAFAFF;margin-left:calc(100% - 92px)"></div>
+            <div style="margin-top:-1px;display:grid">
+              <sc-for list="{{ rowsB }}" as="r" hint-placeholder-count="4">
+                <div style="display:grid;grid-template-columns:1fr 92px 92px;align-items:center;border-top:1px solid #F0F1F5;padding:9px 0">
+                  <div style="padding-right:8px"><div style="font:700 12px/1.3 'Plus Jakarta Sans',sans-serif;color:#2C3040">{{ r.t }}</div><div style="font:500 10px/1.35 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:2px">{{ r.s }}</div></div>
+                  <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#C8CCD8">✕</div>
+                  <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;background:#F1F0FF;margin:-9px 0;padding:9px 0">✓</div>
+                </div>
+              </sc-for>
+              <div sc-camel-on-click="{{ seeAll }}" style="display:grid;grid-template-columns:1fr 92px 92px;align-items:center;border-top:1px solid #F0F1F5;padding:9px 0;cursor:pointer">
+                <div style="font:700 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#5A4FCF">{{ moreB }}</div>
+                <div></div>
+                <div style="background:#F1F0FF;margin:-9px 0;height:36px"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 92px 92px;align-items:center;border-top:1px solid #F0F1F5;padding:9px 0">
+                <div style="font:600 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#7A8093">All {{ commonCount }} {{ fromName }} features</div>
+                <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64">✓</div>
+                <div style="text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;background:#F1F0FF;margin:-9px 0;padding:9px 0;border-radius:0 0 12px 12px">✓</div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px;padding:10px 12px;border-radius:11px;background:#0F1116;display:flex;align-items:center;gap:8px">
+              <div style="flex:1;font:700 12px/1.3 'Plus Jakarta Sans',sans-serif;color:#fff">{{ emi }} unlocks all {{ gainCount }}</div>
+              <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#F5C64B;white-space:nowrap">{{ seats }}</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notC }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="margin-top:14px;display:flex;justify-content:center"><div style="display:inline-flex;align-items:center;gap:6px;font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#B0451B;background:#FDEBDF;padding:6px 10px;border-radius:20px">◷ Upgrade price held for {{ timer }}</div></div>
+            <div sc-camel-on-click="{{ upgrade }}" style="margin-top:10px;background:#5A4FCF;border-radius:13px;padding:15px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#fff;cursor:pointer;box-shadow:0 8px 20px rgba(90,79,207,.35)">{{ upgradeCta }}</div>
+            <div sc-camel-on-click="{{ keep }}" style="margin-top:6px;text-align:center;padding:12px;font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#7A8093;cursor:pointer">{{ keepCta }}</div>
+            <div style="display:flex;justify-content:center;gap:12px;font:600 10px/1 'Plus Jakarta Sans',sans-serif;color:#8A90A2;margin-top:2px"><span>No-cost EMI</span><span>·</span><span>Same batch &amp; teachers</span><span>·</span><span>Instant access</span></div>
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ sheetOpenC }}" hint-placeholder-val="{{ false }}">
+      <div sc-camel-on-click="{{ dismiss }}" style="position:absolute;inset:0;background:rgba(40,44,50,.62);z-index:44"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;z-index:46;display:flex;flex-direction:column;align-items:center">
+        <div sc-camel-on-click="{{ dismiss }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid #E4E6EE;display:flex;align-items:center;justify-content:center;font:500 13px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12;cursor:pointer;margin-bottom:-16px;position:relative;z-index:2">✕</div>
+        <div style="width:100%;box-sizing:border-box;background-color:#FFF8E6;background-image:linear-gradient(rgba(217,154,11,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(217,154,11,.08) 1px,transparent 1px);background-size:18px 18px;border-radius:24px 24px 0 0;padding:34px 14px 20px">
+          <div style="text-align:center;padding:0 6px">
+            <div style="display:inline-block;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:#7A4E08;background:rgba(217,154,11,.18);padding:6px 10px;border-radius:20px">{{ cKicker }}</div>
+            <div style="font:700 23px/1.18 'Source Serif 4',serif;color:#2A1A02;margin-top:10px;text-wrap:balance">{{ cHead1 }}</div>
+            <div style="font:600 13px/1.4 'Plus Jakarta Sans',sans-serif;color:#7A5A1C;margin-top:6px">{{ cHead2 }}</div>
+          </div>
+
+          <div style="margin-top:16px;display:flex;align-items:stretch;gap:0;position:relative">
+            <div style="flex:0 0 132px;align-self:flex-end;margin-bottom:34px;background:#fff;border:1px solid #ECE6D6;border-radius:14px;padding:10px 10px 11px;margin-right:-10px;box-sizing:border-box">
+              <div style="height:104px;border-radius:9px;background:repeating-linear-gradient(135deg,#EEF0F5 0 8px,#E6E9F0 8px 16px);display:flex;align-items:center;justify-content:center;font:700 9px/1.3 'Plus Jakarta Sans',sans-serif;color:#8A90A2;text-align:center;letter-spacing:.04em">YAKEEN<br>NEET 2.0</div>
+              <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:#E26A1B;margin-top:10px">YOUR PICK</div>
+              <div style="font:700 12px/1.25 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:5px">{{ fromName }} plan</div>
+              <div style="font:500 10px/1.3 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:2px">{{ fromSub }}</div>
+              <div style="display:flex;align-items:baseline;gap:5px;margin-top:7px;flex-wrap:wrap">
+                <div style="font:800 14px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ fromPrice }}</div>
+                <div style="font:500 9px/1 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;text-decoration:line-through">{{ fromMrp }}</div>
+              </div>
+            </div>
+
+            <div style="position:absolute;left:112px;top:112px;width:34px;height:34px;border-radius:50%;background:#D99A0B;border:3px solid #FFF8E6;display:flex;align-items:center;justify-content:center;z-index:3;color:#fff;font:800 16px/1 'Plus Jakarta Sans',sans-serif;box-shadow:0 4px 10px rgba(139,90,12,.35)">⇄</div>
+
+            <div style="flex:1;background:#1B1D22;border:1.5px solid #3A3D46;border-radius:16px;padding:12px 11px 10px;text-align:center;position:relative;z-index:1;padding-left:22px">
+              <div style="position:absolute;top:-9px;left:50%;transform:translateX(-50%);font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:#3A2A05;background:#F5C64B;padding:4px 8px;border-radius:5px;white-space:nowrap">{{ toBadge }}</div>
+              <div style="display:flex;gap:4px;margin-top:2px">
+                <sc-for list="{{ tilesC }}" as="t" hint-placeholder-count="4">
+                  <div style="flex:1;background:#fff;border-radius:8px;padding:7px 1px 6px;text-align:center;font:600 8px/1.2 'Plus Jakarta Sans',sans-serif;color:#2C3040"><div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#5A4FCF;margin-bottom:4px">{{ t.ic }}</div>{{ t.n }}</div>
+                </sc-for>
+              </div>
+              <div style="font:800 17px/1.2 'Plus Jakarta Sans',sans-serif;color:#F5C64B;margin-top:11px">{{ toName }}</div>
+              <div style="font:700 11px/1.3 'Plus Jakarta Sans',sans-serif;color:#fff;margin-top:3px">{{ cTag }}</div>
+              <div style="font:500 10px/1.4 'Plus Jakarta Sans',sans-serif;color:#B8BDCC;margin-top:5px">{{ cDesc }}</div>
+
+              <div style="margin-top:10px;border:1px solid #4A4630;border-radius:10px;overflow:hidden;background:#23252B">
+                <div style="display:flex;align-items:baseline;justify-content:center;gap:6px;padding:8px 6px 7px">
+                  <div style="font:600 11px/1 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;text-decoration:line-through">{{ toMrp }}</div>
+                  <div style="font:800 11px/1 'Plus Jakarta Sans',sans-serif;color:#D99A0B">→</div>
+                  <div style="font:800 17px/1 'Plus Jakarta Sans',sans-serif;color:#fff">{{ toPrice }}</div>
+                </div>
+                <div style="background:linear-gradient(90deg,#E8B94A,#F5D27A);padding:7px 4px;font:800 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#3A2A05">{{ cSave }}</div>
+              </div>
+              <div style="font:600 9px/1.3 'Plus Jakarta Sans',sans-serif;color:#E8B94A;margin-top:9px">{{ cEmi }}</div>
+            </div>
+          </div>
+
+          <div sc-camel-on-click="{{ seeAll }}" style="margin-top:12px;text-align:center;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#7A4E08;cursor:pointer">Compare all plan features ›</div>
+          <div style="margin-top:12px;display:flex;justify-content:center"><div style="display:inline-flex;align-items:center;gap:6px;font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#B0451B;background:#FDEBDF;padding:6px 10px;border-radius:20px">◷ Upgrade price held for {{ timer }}</div></div>
+          <div sc-camel-on-click="{{ upgrade }}" style="margin-top:10px;background:#1B1D22;border-radius:12px;padding:15px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#fff;cursor:pointer">{{ cUpgrade }}</div>
+          <div sc-camel-on-click="{{ keep }}" style="margin-top:9px;background:#fff;border:1.5px solid #1B1D22;border-radius:12px;padding:14px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:#1B1D22;cursor:pointer">{{ cKeep }}</div>
+          <div style="margin-top:11px;text-align:center;font:500 10px/1.3 'Plus Jakarta Sans',sans-serif;color:#8A7440">You can review the cart before paying</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ cmpOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;z-index:50;background:#F4F5F8;display:flex;flex-direction:column">
+        <div style="background:#fff;border-bottom:1px solid #E7E9F0">
+          <div style="height:32px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12"><span>7:59</span><span style="letter-spacing:.12em">▪▪▪ ▪</span></div>
+          <div style="height:46px;display:flex;align-items:center;gap:10px;padding:0 14px">
+            <div sc-camel-on-click="{{ cmpBack }}" style="font:400 18px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12;cursor:pointer;padding:4px 6px 4px 0">‹</div>
+            <div style="flex:1">
+              <div style="font:700 14px/1.1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">Compare plans</div>
+              <div style="font:500 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:3px">Tap a plan column to switch</div>
+            </div>
+            <div sc-camel-on-click="{{ cmpClose }}" style="width:28px;height:28px;border-radius:50%;background:#F1F2F6;display:flex;align-items:center;justify-content:center;font:400 12px/1 'Plus Jakarta Sans',sans-serif;color:#7A8093;cursor:pointer">✕</div>
+          </div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:12px 12px 16px">
+          <dc-import name="PWCompare" plan="{{ cmpPlan }}" default-open="{{ true }}" on-select="{{ cmpSel }}" hint-size="100%,700px"></dc-import>
+        </div>
+        <div style="background:#fff;border-top:1px solid #E7E9F0;padding:11px 14px 20px;display:flex;align-items:center;gap:12px">
+          <div style="flex:1">
+            <div style="font:800 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ cmpPrice }}</div>
+            <div style="font:600 10px/1 'Plus Jakarta Sans',sans-serif;color:#1B9C64;margin-top:4px">{{ cmpSub }}</div>
+          </div>
+          <div sc-camel-on-click="{{ cmpBuy }}" style="background:#0F1116;color:#fff;border-radius:12px;padding:13px 18px;font:700 13px/1 'Plus Jakarta Sans',sans-serif;cursor:pointer">Continue with {{ cmpName }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <dc-import name="PWOverlays" mode="{{ ovMode }}" plan="{{ plan }}" teacher="{{ ovTeacher }}" topic="{{ ovTopic }}" on-close="{{ closeOv }}" on-plans="{{ ovPlans }}" hint-size="0,0"></dc-import>
+  </div>
+
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const PL = [
+  { n: "Basic", price: "₹4,999", sub: "You save ₹601 · 11% off" },
+  { n: "Infinity", price: "₹9,600", sub: "You save ₹6,000 · only ₹384/mo more" },
+  { n: "Infinity Pro", price: "₹20,600", sub: "You save ₹14,000 · 40% off" }
+];
+const INF = [
+  ["Khazaana question bank", "40k+ practice questions, chapter by chapter"],
+  ["Sahayak doubt solving", "Doubts answered the same day"],
+  ["Online test series", "Full-syllabus mocks to track your rank"],
+  ["Printed books & material", "Delivered to your door"],
+  ["PW goodies kit", "Welcome kit for your batch"]
+];
+const PRO = [
+  ["Saarthi personal guide", "A mentor who tracks your weekly progress"],
+  ["1:1 mentorship calls", "Monthly calls to fix your study plan"],
+  ["Offline test series + Test Pass", "Write tests at a PW centre near you"]
+];
+const COPY = {
+  "0-1": { kick: "35K+ STUDENTS CHOSE INFINITY", h: "Never stay stuck on a doubt", hs: "Add Infinity for just ₹384/month more", a: "Doubts, tests and books — all covered", as: "Basic gets you the classes. Infinity adds everything around them.", b: "Here's what Basic leaves out", bs: "Same classes, same teachers. Compare before you pay.", tag: "Everything in Basic, plus", desc: "Same-day doubts, full test series and printed books." },
+  "1-2": { kick: "FOR SERIOUS RANKERS", h: "Prepare with a mentor beside you", hs: "Add Pro for just ₹917/month more", a: "Get a mentor who tracks your progress", as: "You're already on Infinity. Pro adds personal guidance.", b: "Here's what Infinity leaves out", bs: "Everything you have, plus personal mentoring.", tag: "Everything in Infinity, plus", desc: "A personal guide, 1:1 calls and offline tests." },
+  "0-2": { kick: "BEST VALUE FOR RANKERS", h: "Prepare with a mentor beside you", hs: "Go Pro for just ₹1,300/month more", a: "Get everything, plus a personal mentor", as: "The full Yakeen experience, from doubts to 1:1 mentoring.", b: "Here's what Basic leaves out", bs: "Same classes, same teachers. Compare before you pay.", tag: "Everything in Basic and Infinity, plus", desc: "A personal guide, 1:1 calls and offline tests." }
+};
+const MO = ["₹417", "₹800", "₹1,717"];
+const GAIN = { "0-1": INF, "1-2": PRO, "0-2": INF.concat(PRO) };
+const EMI = { "0-1": "₹384", "1-2": "₹917", "0-2": "₹1,300" };
+const DELTA = { "0-1": "₹4,601", "1-2": "₹11,000", "0-2": "₹15,601" };
+const SAVE = { 1: "SAVE ₹6,000 vs MRP", 2: "SAVE ₹14,000 vs MRP" };
+const BLURB = {
+  a: "Positive framing: a clear monthly delta, what you unlock, and one primary upgrade button. Short and fast — built for students who just want to pay.",
+  c: "Swap card: your current pick sits small on the left, the upgrade is a bigger dark card on the right with a gold ⇄ badge between them, strike-through price and a “Save ₹X” bar. Two clear buttons: take the upgrade, or continue with what you picked.",
+  b: "Loss framing: your pick vs the recommended plan in a mini table, with ✕ on what you'd miss. Mirrors the comparison table students already trust."
+};
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { ver: "a", plan: 0, target: 1, sheet: null, ov: null, swapped: false, cmp: false, cmpPlan: 1, left: 600, scale: 1 };
+    this.refS = React.createRef();
+    this.refCmp = React.createRef();
+    this.refFac = React.createRef();
+  }
+
+  componentDidMount() {
+    this.fit = () => this.setState({ scale: Math.min(1, Math.max(0.5, (window.innerHeight - 40) / 844)) });
+    this.fit();
+    window.addEventListener("resize", this.fit);
+    this.tick = setInterval(() => { if (this.state.sheet && this.state.left > 0) this.setState(s => ({ left: s.left - 1 })); }, 1000);
+  }
+
+  componentWillUnmount() { window.removeEventListener("resize", this.fit); clearInterval(this.tick); }
+
+  openSheet(from, to) { this.setState({ plan: from, sheet: { from, to }, swapped: false, cmp: false, ov: null, left: 600 }); }
+
+  scrollTo(ref) {
+    setTimeout(() => {
+      const sc = this.refS.current, el = ref.current;
+      if (!sc || !el) return;
+      const to = Math.max(0, Math.min(el.offsetTop - 118, sc.scrollHeight - sc.clientHeight));
+      const from = sc.scrollTop, t0 = performance.now();
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 460);
+        sc.scrollTop = from + (to - from) * (1 - Math.pow(1 - k, 3));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, 120);
+  }
+
+  renderVals() {
+    const { ver, plan, target, sheet, ov } = this.state;
+    const o = ov || {};
+    const from = sheet ? sheet.from : 0, to = sheet ? sheet.to : 1;
+    const key = from + "-" + to;
+    const gain = GAIN[key] || INF;
+    const toName = PL[to].n, fromName = PL[from].n;
+    const isPro = to === 2;
+    const tBtn = (n) => ({
+      bd: target === n ? "#F5C64B" : "#33363F",
+      bg: target === n ? "#F5C64B" : "transparent",
+      fg: target === n ? "#15161B" : "#9AA0B4"
+    });
+    const t1 = tBtn(1), t2 = tBtn(2);
+
+    return {
+      showA: () => this.setState({ ver: "a" }),
+      showB: () => this.setState({ ver: "b" }),
+      bgA: ver === "a" ? "#F5C64B" : "transparent", fgA: ver === "a" ? "#15161B" : "#9AA0B4",
+      bgB: ver === "b" ? "#F5C64B" : "transparent", fgB: ver === "b" ? "#15161B" : "#9AA0B4",
+      blurb: BLURB[ver],
+      tgt1: () => this.setState({ target: 1 }), tgt2: () => this.setState({ target: 2 }),
+      tbd1: t1.bd, tbg1: t1.bg, tfg1: t1.fg, tbd2: t2.bd, tbg2: t2.bg, tfg2: t2.fg,
+
+      refS: this.refS, refCmp: this.refCmp, refFac: this.refFac,
+      plan, price: PL[plan].price, sub: PL[plan].sub,
+      sel: (n) => this.setState({ plan: n }),
+      goCmp: () => this.scrollTo(this.refCmp),
+      goFac: () => this.scrollTo(this.refFac),
+      demo: (d) => this.setState({ ov: { mode: "demo", teacher: d.teacher, topic: d.topic } }),
+      buy: () => {
+        if (plan === 2) return this.setState({ ov: { mode: "checkout" } });
+        this.openSheet(plan, plan === 0 ? target : 2);
+      },
+      showC: () => this.setState({ ver: "c" }),
+      sheetOpenAB: !!sheet && ver !== "c",
+      sheetOpenC: !!sheet && ver === "c",
+      fromSub: from === 0 ? "6 core features" : "Everything in Basic + 5 more",
+      fromMrp: ["₹5,600", "₹15,600", "₹34,600"][from],
+      toMrp: ["₹5,600", "₹15,600", "₹34,600"][to],
+      cKicker: COPY[key].kick,
+      cHead1: COPY[key].h,
+      cHead2: COPY[key].hs,
+      cTag: COPY[key].tag,
+      cDesc: COPY[key].desc,
+      cEmi: "or " + MO[to] + "/month · no-cost EMI",
+      tilesC: (to === 2 ? [["Saarthi","◎"],["1:1","☎"],["Offline","✎"],["Test Pass","✓"]] : [["Khazaana","▦"],["Sahayak","?"],["Tests","✎"],["Books","▤"]]).map(([n, ic]) => ({ n, ic })),
+      cSave: SAVE[to].replace("SAVE", "Save").replace(" vs MRP", " with " + toName),
+      cUpgrade: "Get " + toName + " · " + PL[to].price,
+      cKeep: "No thanks, continue with " + fromName,
+      bgC: ver === "c" ? "#F5C64B" : "transparent", fgC: ver === "c" ? "#15161B" : "#9AA0B4",
+      isC: ver === "c", notC: ver !== "c",
+      o1: this.state.swapped ? 0 : 1, y1: this.state.swapped ? 14 : 0, s1: this.state.swapped ? 0.96 : 1,
+      o2: this.state.swapped ? 1 : 0, y2: this.state.swapped ? 0 : -14, s2: this.state.swapped ? 1 : 0.96,
+      swBg: this.state.swapped ? "#F7F6FF" : "#F7F8FC", swBd: this.state.swapped ? "#5A4FCF" : "#E7E9F0",
+      trackBg: this.state.swapped ? "#5A4FCF" : "#C8CCD8", knobLeft: this.state.swapped ? 20 : 2,
+      swapTitle: this.state.swapped ? "Swapped to " + toName : "Swap to " + toName,
+      swapSub: this.state.swapped ? "Tap to undo and go back to " + fromName : DELTA[key] + " more today · " + EMI[key] + "/month more",
+      listLabel: this.state.swapped ? "NOW INCLUDED WITH " + toName.toUpperCase() : "YOU'RE MISSING IN " + fromName.toUpperCase(),
+      listC: gain.slice(0, 3).map(([t]) => ({
+        t, mark: this.state.swapped ? "✓" : "✕",
+        bg: this.state.swapped ? "#5A4FCF" : "#C8CCD8",
+        fg: this.state.swapped ? "#0B0D12" : "#7A8093", op: this.state.swapped ? 1 : 0.85
+      })),
+      curPrice: this.state.swapped ? PL[to].price : PL[from].price,
+      doSwap: () => this.setState(s => ({ swapped: !s.swapped })),
+      confirmSwap: () => this.setState(s => ({ plan: s.swapped ? to : from, sheet: null, swapped: false, ov: { mode: "checkout" } })),
+
+      sheetOpen: !!sheet, isA: ver === "a", isB: ver === "b",
+      dismiss: () => this.setState({ sheet: null, swapped: false }),
+      upgrade: () => this.setState({ plan: to, sheet: null, ov: { mode: "checkout" } }),
+      keep: () => this.setState({ sheet: null, ov: { mode: "checkout" } }),
+      seeAll: () => this.setState({ cmp: true, cmpPlan: to }),
+      cmpOpen: this.state.cmp,
+      cmpPlan: this.state.cmpPlan,
+      cmpSel: (n) => this.setState({ cmpPlan: n }),
+      cmpBack: () => this.setState({ cmp: false }),
+      cmpClose: () => this.setState({ cmp: false, sheet: null }),
+      cmpBuy: () => this.setState(s => ({ plan: s.cmpPlan, cmp: false, sheet: null, ov: { mode: "checkout" } })),
+      cmpName: PL[this.state.cmpPlan].n, cmpPrice: PL[this.state.cmpPlan].price, cmpSub: PL[this.state.cmpPlan].sub,
+      timer: String(Math.floor(this.state.left / 60)).padStart(2, "0") + ":" + String(this.state.left % 60).padStart(2, "0"),
+      scale: this.state.scale, phW: Math.round(390 * this.state.scale), phH: Math.round(844 * this.state.scale),
+      vers: [["A", "a", "Value pitch", "Outcome headline, monthly delta, top 3 unlocks."], ["B", "b", "Side-by-side", "Your pick vs recommended, ✕ on what you'd miss."], ["C", "c", "Swap card", "Current pick small, dark upgrade card, ⇄ badge."]].map(([id, k, name, desc]) => {
+        const on = ver === k;
+        return { id, name, desc, pick: () => this.setState({ ver: k, cmp: false }),
+          bg: on ? "#26232F" : "#1B1D23", bd: on ? "#F5C64B" : "#2A2D36", fg: on ? "#fff" : "#C9CEDC", dfg: on ? "#B8BDCC" : "#6B7183",
+          badgeBg: on ? "#F5C64B" : "#2E313A", badgeFg: on ? "#15161B" : "#9AA0B4" };
+      }),
+      scens: [[0, 1, "Basic → pitch Infinity"], [0, 2, "Basic → pitch Pro"], [1, 2, "Infinity → pitch Pro"]].map(([f, t, name]) => {
+        const on = !!sheet && sheet.from === f && sheet.to === t;
+        return { name, cta: on ? "Showing" : "Open ›",
+          pick: () => { this.setState({ target: f === 0 ? t : this.state.target }); this.openSheet(f, t); },
+          bg: on ? "#F5C64B" : "#1B1D23", bd: on ? "#F5C64B" : "#2A2D36", fg: on ? "#15161B" : "#E4E6EE", sfg: on ? "#15161B" : "#F5C64B" };
+      }),
+      stateLine: (this.state.cmp ? "Compare table" : sheet ? "Version " + ver.toUpperCase() + " sheet · " + PL[from].n + " → " + PL[to].n : (ov && ov.mode === "checkout") ? "Cart summary · " + PL[plan].n : "Description page · " + PL[plan].n + " selected"),
+      reset: () => { this.setState({ plan: 0, sheet: null, cmp: false, ov: null, swapped: false }); if (this.refS.current) this.refS.current.scrollTop = 0; },
+
+      toName, toPrice: PL[to].price, fromName, fromPrice: PL[from].price,
+      toBadge: isPro ? "BEST VALUE" : "MOST POPULAR",
+      toFg: isPro ? "#9A6A12" : "#1668E3", toBg: isPro ? "#FDF0D8" : "#E4EEFD",
+      proof: isPro ? "Picked by serious rankers" : "35k+ students chose this",
+      headA: COPY[key].a,
+      subA: COPY[key].as,
+      emi: EMI[key] + "/month more",
+      deltaToday: DELTA[key] + " more today · no-cost EMI available",
+      saveChip: SAVE[to],
+      gainA: gain.slice(0, 3).map(([n, b]) => ({ t: b, s: n })),
+      moreA: gain.length > 3 ? "+ " + (gain.length - 3) + " more · compare all features ›" : "Compare all features ›",
+
+      headB: COPY[key].b,
+      subB: COPY[key].bs,
+      rowsB: gain.slice(0, 4).map(([t, s]) => ({ t, s })),
+      moreB: gain.length > 4 ? "+ " + (gain.length - 4) + " more · compare all ›" : "Compare all features ›",
+      commonCount: from === 0 ? 6 : 11,
+      gainCount: gain.length,
+      seats: "128 seats left",
+
+      upgradeCta: "Upgrade to " + toName + " · " + PL[to].price,
+      keepCta: "No thanks, continue with " + fromName,
+
+      ovMode: o.mode || "none", ovTeacher: o.teacher || "PW faculty", ovTopic: o.topic || "Free demo class",
+      closeOv: () => this.setState({ ov: null }),
+      ovPlans: () => this.setState({ ov: null }, () => this.scrollTo(this.refCmp))
+    };
+  }
+}
+</script>
+
+
+</body></html>
