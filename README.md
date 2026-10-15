@@ -15,6 +15,7 @@ prototype-shelf/
     │   ├── batch-description/
     │   ├── cohort-exploration/
     │   ├── saved-cart/
+    │   ├── sku-reveal/
     │   ├── fbt-display-order/
     │   ├── pay-strip/
     │   ├── exam-first-teaching/
@@ -28,6 +29,7 @@ prototype-shelf/
     ├── batch-description.html   (App)
     ├── cohort-exploration.html  (App)
     ├── saved-cart.html          (App)
+    ├── sku-reveal.html          (App)
     ├── fbt-display-order.html   (Admin)
     ├── pay-strip.html           (App)
     ├── voice-search.html        (App)
@@ -78,7 +80,7 @@ It also sets `window.__resources` to the extracted React and ReactDOM copies, so
 
 By default a card renders the real prototype in a scaled-down iframe, so the thumbnail can never go stale. To use a static image instead, add `thumb` pointing at a PNG, JPG or SVG in `prototypes/thumbs/`; the full prototype still opens normally in the viewer. Address Usability and Add Ons Quantity currently use static images. Delete the `thumb` line from an entry to switch that card back to a live preview.
 
-The shelf has 18 built prototypes and 12 remaining pipeline ideas. The PW Growth Roadmap appears only through the Roadmap pill; other App prototypes appear under both All and App. Search Expansion adds an always-available frosted search button to the batch listing. Filter Experiments keeps filters one tap away while scrolling and covers the former “Students don't notice filters” pipeline idea. Saved Cart keeps explored batches and the selected plan ready to buy, with a persistent bag and direct order-summary path. PW Upsell Sheet pitches the next plan at checkout, with Basic-to-Infinity/Pro and Infinity-to-Pro paths. Batch Steal Deals offers low-ticket digital products in the cart and skips address entry for digital-only purchases. Counsellor Offer Nudge contains two switchable versions.
+The shelf has 19 built prototypes and 12 remaining pipeline ideas. The PW Growth Roadmap appears only through the Roadmap pill; other App prototypes appear under both All and App. Search Expansion adds an always-available frosted search button to the batch listing. Filter Experiments keeps filters one tap away while scrolling and covers the former “Students don't notice filters” pipeline idea. Saved Cart keeps explored batches and the selected plan ready to buy, with a persistent bag and direct order-summary path. Best-Fit Batch Reveal uses onboarding answers to pop up the single best-matching batch over the filtered listing, with enrolment straight from the pop-up. PW Upsell Sheet pitches the next plan at checkout, with Basic-to-Infinity/Pro and Infinity-to-Pro paths. Batch Steal Deals offers low-ticket digital products in the cart and skips address entry for digital-only purchases. Counsellor Offer Nudge contains two switchable versions.
 
 ## Filters
 

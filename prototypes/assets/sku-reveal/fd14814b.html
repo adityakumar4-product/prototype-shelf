@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:relative;width:100%;height:100%;container-type:size;overflow:hidden;background:{{ banner.bg }};font-family:'Poppins',sans-serif">
+  <sc-if value="{{ banner.sqOrMini }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:50%;bottom:-34cqmin;width:100cqmin;height:100cqmin;margin-left:-50cqmin;border-radius:50%;background:{{ banner.glow }}"></div>
+    <div style="position:absolute;left:50%;bottom:-44cqmin;width:124cqmin;height:124cqmin;margin-left:-62cqmin;border-radius:50%;border:0.7cqmin dashed {{ banner.ring }};box-sizing:border-box"></div>
+  </sc-if>
+  <sc-if value="{{ banner.full }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;top:{{ banner.top }};left:5cqmin;right:5cqmin;text-align:center;color:{{ banner.fg }};z-index:3">
+      <div style="font-size:{{ banner.ns }};font-weight:800;line-height:.95;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance">{{ banner.name }}</div>
+      <div style="font-size:6.6cqmin;font-weight:700;margin-top:2.2cqmin;letter-spacing:.01em">{{ banner.sub }}</div>
+    </div>
+    <div style="position:absolute;bottom:0;left:50%;width:50cqmin;height:50cqmin;margin-left:-52cqmin;background:url({{ banner.f1 }}) center bottom/contain no-repeat;z-index:1"></div>
+    <div style="position:absolute;bottom:0;left:50%;width:50cqmin;height:50cqmin;margin-left:2cqmin;background:url({{ banner.f3 }}) center bottom/contain no-repeat;z-index:1"></div>
+    <div style="position:absolute;bottom:0;left:50%;width:60cqmin;height:60cqmin;margin-left:-30cqmin;background:url({{ banner.f2 }}) center bottom/contain no-repeat;z-index:2;filter:drop-shadow(0 1.5cqmin 3cqmin rgba(0,0,0,.22))"></div>
+    <sc-if value="{{ banner.showTag }}">
+      <div style="position:absolute;bottom:3.5cqmin;left:0;right:0;display:flex;justify-content:center;z-index:4"><span style="background:{{ banner.fg }};color:#fff;font-size:4.2cqmin;font-weight:700;letter-spacing:.06em;border-radius:10cqmin;padding:1.4cqmin 3.6cqmin;white-space:nowrap">{{ banner.tag }}</span></div>
+    </sc-if>
+  </sc-if>
+  <sc-if value="{{ banner.wide }}">
+    <div style="position:absolute;right:-26cqh;bottom:-62cqh;width:150cqh;height:150cqh;border-radius:50%;background:{{ banner.glow }}"></div>
+    <div style="position:absolute;right:-46cqh;bottom:-82cqh;width:190cqh;height:190cqh;border-radius:50%;border:0.6cqh dashed {{ banner.ring }};box-sizing:border-box"></div>
+    <div style="position:absolute;bottom:0;right:-22cqh;width:{{ banner.figS }};height:{{ banner.figS }};background:url({{ banner.f1 }}) center bottom/contain no-repeat;z-index:1"></div>
+    <div style="position:absolute;bottom:0;right:6cqh;width:{{ banner.figC }};height:{{ banner.figC }};background:url({{ banner.f2 }}) center bottom/contain no-repeat;z-index:2;filter:drop-shadow(0 1cqh 2.5cqh rgba(0,0,0,.22))"></div>
+    <div style="position:absolute;left:5cqw;bottom:10cqh;width:42cqw;color:{{ banner.fg }};z-index:3">
+      <div style="font-size:{{ banner.nsW }};font-weight:800;line-height:.95;letter-spacing:-.03em;text-transform:uppercase">{{ banner.name }}</div>
+      <div style="font-size:9cqh;font-weight:700;margin-top:2.5cqh">{{ banner.sub }}</div>
+      <sc-if value="{{ banner.showTag }}"><div style="display:inline-block;margin-top:4cqh;background:{{ banner.fg }};color:#fff;font-size:5.6cqh;font-weight:700;letter-spacing:.06em;border-radius:6cqh;padding:1.6cqh 4cqh;white-space:nowrap">{{ banner.tag }}</div></sc-if>
+    </div>
+  </sc-if>
+  <sc-if value="{{ banner.tagsOn }}">
+    <div style="position:absolute;right:6cqh;width:92cqh;bottom:4cqh;display:flex;justify-content:center;z-index:4"><span style="background:rgba(14,16,36,.88);color:#fff;font-size:6cqh;font-weight:600;border-radius:5cqh;padding:1.6cqh 3.4cqh;white-space:nowrap;display:flex;gap:1.6cqh;align-items:center"><span style="color:#C8F169">▶</span>{{ banner.t2 }}</span></div>
+    <div style="position:absolute;right:2cqh;bottom:34cqh;z-index:4"><span style="background:rgba(14,16,36,.88);color:#fff;font-size:5.2cqh;font-weight:600;border-radius:5cqh;padding:1.4cqh 3cqh;white-space:nowrap;display:flex;gap:1.4cqh;align-items:center"><span style="color:#C8F169">▶</span>{{ banner.t1 }}</span></div>
+  </sc-if>
+  <sc-if value="{{ banner.mini }}">
+    <div style="position:absolute;left:0;right:0;bottom:-4%;height:100%;background:url({{ banner.f2 }}) center bottom/contain no-repeat"></div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:308,&quot;height&quot;:308},&quot;banner&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}"></script>
+</body>
+</html>
