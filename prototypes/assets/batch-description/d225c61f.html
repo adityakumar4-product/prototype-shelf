@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div data-cmp-id="{{ cmpId }}" style="display:flex;flex-direction:column;gap:10px">
+  <div style="order:0;background:#fff;border-radius:18px;border:1px solid #E7E9F0;padding:14px 12px">
+    <div style="display:flex;align-items:flex-start;gap:8px">
+      <div style="flex:1">
+        <div style="font:700 17px/1.2 'Source Serif 4',serif;color:#0B0D12">Choose your plan</div>
+        <div style="font:500 11px/1.35 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:3px">Each plan includes everything in the one before it</div>
+      </div>
+      <div style="font:700 10px/1 'Plus Jakarta Sans',sans-serif;color:#0B6B3F;background:#E8F7EF;padding:5px 7px;border-radius:6px;white-space:nowrap">{{ proof }}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:16px;align-items:stretch">
+      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+        <div onClick="{{ c.pick }}" style="position:relative;border:1.5px solid {{ c.bd }};background:{{ c.bg }};border-radius:12px;padding:12px 6px 9px;text-align:center;cursor:pointer;box-shadow:{{ c.sh }};transition:all .2s ease;display:flex;flex-direction:column;justify-content:space-between;gap:5px;min-height:62px;box-sizing:border-box">
+          <sc-if value="{{ c.hasBadge }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:{{ c.badgeFg }};background:{{ c.badgeBg }};padding:3px 6px;border-radius:4px;white-space:nowrap">{{ c.badge }}</div>
+          </sc-if>
+          <div style="font:700 12px/1.25 'Plus Jakarta Sans',sans-serif;color:{{ c.fg }};display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ c.name }}</div>
+          <div style="font:600 11px/1.2 'Plus Jakarta Sans',sans-serif;color:{{ c.sfg }}">{{ c.price }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{ show0 }}" hint-placeholder-val="{{ true }}">
+  <div data-sec="0" style="order:{{ o0 }};background:#fff;border-radius:18px;border:{{ s0w }} solid {{ s0bd }};padding:14px 12px;transition:border-color .2s ease;box-shadow:{{ s0sh }}">
+    <sc-if value="{{ isSel0 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#fff;background:#5A4FCF;padding:5px 8px;border-radius:20px;margin-bottom:12px">● YOUR PLAN</div>
+    </sc-if>
+    <sc-if value="{{ isUp0 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#5A4FCF;border:1px solid #5A4FCF;padding:4px 8px;border-radius:20px;margin-bottom:12px">UPGRADE</div>
+    </sc-if>
+    <div style="display:flex;align-items:flex-start;gap:10px">
+      <div style="flex:1">
+        <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:#8A90A2">INCLUDED IN EVERY PLAN</div>
+        <div style="font:700 17px/1.2 'Source Serif 4',serif;color:#0B0D12;margin-top:6px">{{ n0 }}</div>
+      </div>
+      <div style="font:800 15px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12;padding-top:14px">₹4,999</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;margin-top:12px">
+      <sc-for list="{{ core }}" as="k" hint-placeholder-count="6">
+        <div style="display:flex;gap:7px;align-items:flex-start">
+          <div style="flex:0 0 15px;height:15px;border-radius:50%;background:#1B9C64;color:#fff;font:800 8px/15px 'Plus Jakarta Sans',sans-serif;text-align:center;margin-top:1px">✓</div>
+          <div style="font:600 11px/1.35 'Plus Jakarta Sans',sans-serif;color:#2C3040">{{ k.t }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ pick0 }}" style="margin-top:14px;border:1.5px solid {{ b0bd }};background:{{ b0bg }};border-radius:12px;padding:13px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ b0fg }};cursor:pointer">{{ b0label }}</div>
+  </div>
+
+  </sc-if>
+
+  <sc-if value="{{ show1 }}" hint-placeholder-val="{{ true }}">
+  <div data-sec="1" style="order:{{ o1 }};background:#2B2C31;border-radius:18px;border:{{ s1w }} solid {{ s1bd }};padding:16px 14px 14px;transition:border-color .2s ease;box-shadow:{{ s1sh }}">
+    <sc-if value="{{ isSel1 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#0F2A1E;background:#5BE3A4;padding:5px 8px;border-radius:20px;margin-bottom:12px">● YOUR PLAN</div>
+    </sc-if>
+    <sc-if value="{{ isUp1 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#5BE3A4;border:1px solid #5BE3A4;padding:4px 8px;border-radius:20px;margin-bottom:12px">UPGRADE</div>
+    </sc-if>
+    <div style="display:flex;align-items:flex-start;gap:12px">
+      <div style="flex:1;font:700 19px/1.3 'Plus Jakarta Sans',sans-serif;color:#fff;text-wrap:balance">Elevate your learning even more with <span style="font:italic 700 21px/1.2 'Source Serif 4',serif;color:#5BE3A4">{{ n1 }}</span></div>
+      <div style="flex:0 0 52px;height:52px;border-radius:14px;background:#D9DADF;color:#2B2C31;display:flex;align-items:center;justify-content:center;font:800 26px/1 'Plus Jakarta Sans',sans-serif">∞</div>
+    </div>
+
+    <div style="margin-top:14px;background:#5BE3A4;border-radius:14px;padding:12px 13px;display:flex;gap:11px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,.28)">
+      <div style="flex:0 0 34px;height:34px;border-radius:50%;background:#0B2A1C;color:#5BE3A4;font:800 16px/34px 'Plus Jakarta Sans',sans-serif;text-align:center">✓</div>
+      <div style="flex:1;min-width:0">
+        <div style="font:800 14px/1.25 'Plus Jakarta Sans',sans-serif;color:#0B2A1C">Everything in {{ n0 }} is included</div>
+        <div style="font:600 10px/1.4 'Plus Jakarta Sans',sans-serif;color:#1F5A40;margin-top:3px">Live lectures, notes, DPPs, tests, revision &amp; community</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin:12px 2px 0">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.14)"></div>
+      <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#5BE3A4">PLUS THESE EXTRAS</div>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.14)"></div>
+    </div>
+
+    <div style="display:grid;gap:8px;margin-top:12px">
+      <sc-for list="{{ f1 }}" as="f" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:11px;display:flex;gap:11px;align-items:flex-start">
+          <div style="flex:0 0 44px;height:44px;border-radius:10px;background:#F3F4F6;display:flex;align-items:center;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="{{ f.d }}" stroke="#4A5060" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font:500 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093">{{ f.n }}</div>
+            <div style="font:600 12px/1.35 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:3px">{{ f.b }}</div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-top:5px">
+              <div style="font:500 11px/1 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;text-decoration:line-through">{{ f.v }}</div>
+              <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">FREE with {{ n1 }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ more1 }}" style="display:inline-block;margin-top:11px;font:700 12px/1 'Plus Jakarta Sans',sans-serif;color:#fff;text-decoration:underline;text-underline-offset:3px;cursor:pointer">{{ more1Label }}</div>
+    <div onClick="{{ pick1 }}" style="margin-top:14px;border:1.5px solid {{ b1bd }};background:{{ b1bg }};border-radius:12px;padding:14px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ b1fg }};cursor:pointer">{{ b1label }}</div>
+  </div>
+
+  </sc-if>
+
+  <sc-if value="{{ show2 }}" hint-placeholder-val="{{ true }}">
+  <div data-sec="2" style="order:{{ o2 }};background:#141519;border-radius:18px;border:{{ s2w }} solid {{ s2bd }};padding:16px 14px 14px;transition:border-color .2s ease;box-shadow:{{ s2sh }}">
+    <sc-if value="{{ isSel2 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#3A2A05;background:#F5C64B;padding:5px 8px;border-radius:20px;margin-bottom:12px">● YOUR PLAN</div>
+    </sc-if>
+    <sc-if value="{{ isUp2 }}" hint-placeholder-val="{{ false }}">
+      <div style="display:inline-flex;align-items:center;gap:5px;font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#F5C64B;border:1px solid #F5C64B;padding:4px 8px;border-radius:20px;margin-bottom:12px">UPGRADE</div>
+    </sc-if>
+    <div style="display:flex;align-items:flex-start;gap:12px">
+      <div style="flex:1;font:700 19px/1.3 'Plus Jakarta Sans',sans-serif;color:#fff;text-wrap:balance">Go all the way with <span style="font:italic 700 21px/1.2 'Source Serif 4',serif;color:#F5C64B">{{ n2 }}</span></div>
+      <div style="flex:0 0 52px;height:52px;border-radius:14px;background:#3A2F12;color:#F5C64B;display:flex;align-items:center;justify-content:center;font:800 24px/1 'Plus Jakarta Sans',sans-serif">★</div>
+    </div>
+
+    <div style="margin-top:14px;background:#F5C64B;border-radius:14px;padding:12px 13px;display:flex;gap:11px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,.28)">
+      <div style="flex:0 0 34px;height:34px;border-radius:50%;background:#2A1D02;color:#F5C64B;font:800 16px/34px 'Plus Jakarta Sans',sans-serif;text-align:center">✓</div>
+      <div style="flex:1;min-width:0">
+        <div style="font:800 14px/1.25 'Plus Jakarta Sans',sans-serif;color:#2A1D02">Everything in {{ n0 }} &amp; {{ n1 }} is included</div>
+        <div style="font:600 10px/1.4 'Plus Jakarta Sans',sans-serif;color:#6A4C0A;margin-top:3px">Lectures, DPPs, tests, Khazaana, Sahayak, books &amp; more</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin:12px 2px 0">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.14)"></div>
+      <div style="font:800 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;color:#F5C64B">PLUS THESE EXTRAS</div>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.14)"></div>
+    </div>
+
+    <div style="display:grid;gap:8px;margin-top:10px">
+      <sc-for list="{{ f2 }}" as="f" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:11px;display:flex;gap:11px;align-items:flex-start">
+          <div style="flex:0 0 44px;height:44px;border-radius:10px;background:#FBF4E2;display:flex;align-items:center;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="{{ f.d }}" stroke="#7A5A12" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font:500 10px/1.2 'Plus Jakarta Sans',sans-serif;color:#7A8093">{{ f.n }}</div>
+            <div style="font:600 12px/1.35 'Plus Jakarta Sans',sans-serif;color:#0B0D12;margin-top:3px">{{ f.b }}</div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-top:5px">
+              <div style="font:500 11px/1 'Plus Jakarta Sans',sans-serif;color:#9AA0B4;text-decoration:line-through">{{ f.v }}</div>
+              <div style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12">FREE with {{ n2 }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div onClick="{{ pick2 }}" style="margin-top:14px;border:1.5px solid {{ b2bd }};background:{{ b2bg }};border-radius:12px;padding:14px;text-align:center;font:700 13px/1 'Plus Jakarta Sans',sans-serif;color:{{ b2fg }};cursor:pointer">{{ b2label }}</div>
+  </div>
+  </sc-if>
+
+  <sc-for list="{{ teasers }}" as="u" hint-placeholder-count="1">
+    <div style="order:3;background:#fff;border:1px solid #E7E9F0;border-radius:16px;padding:12px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="flex:0 0 34px;height:34px;border-radius:10px;background:{{ u.icBg }};color:{{ u.icFg }};display:flex;align-items:center;justify-content:center;font:800 16px/1 'Plus Jakarta Sans',sans-serif">{{ u.ic }}</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+            <div style="font:700 13px/1.2 'Plus Jakarta Sans',sans-serif;color:#0B0D12">{{ u.name }}</div>
+            <div style="font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.07em;color:{{ u.tagFg }};background:{{ u.tagBg }};padding:3px 6px;border-radius:4px">UPGRADE</div>
+          </div>
+          <div style="font:600 10px/1.3 'Plus Jakarta Sans',sans-serif;color:#1B9C64;margin-top:3px">{{ u.delta }}</div>
+        </div>
+        <div onClick="{{ u.view }}" style="font:700 11px/1 'Plus Jakarta Sans',sans-serif;color:#0B0D12;border:1px solid #2C3040;border-radius:9px;padding:9px 11px;cursor:pointer;white-space:nowrap">View plan</div>
+      </div>
+      <div style="font:500 10px/1.4 'Plus Jakarta Sans',sans-serif;color:#7A8093;margin-top:8px;padding-left:44px">{{ u.adds }}</div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:366,&quot;height&quot;:1400},&quot;plan&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;},&quot;names&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;onSelect&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(n:number)=&gt;void&quot;}}">
+const PRICES = ["₹4,999", "₹9,600", "₹20,600"];
+const CORE = ["Live & recorded lectures", "Lecturewise PDF notes", "DPPs with solutions", "Live tests & AITS", "3 months revision", "Community access"];
+const F1 = [
+  ["Khazaana", "40k+ practice questions, chapter by chapter", "₹1,500", "M2.5 6h11v7.5h-11z M2 3.5h12V6H2z M8 3.5v10"],
+  ["Sahayak doubt solving", "Get every doubt answered the same day", "₹2,000", "M2.5 3h11v7.5h-6l-3 2.5v-2.5h-2z M6.6 5.6c.3-.8 2.8-.9 2.8.5 0 .9-1.4 1-1.4 1.8 M8 9.2v.1"],
+  ["Online test series", "Full-syllabus mocks to track your rank", "₹1,500", "M2 3h12v8H2z M6 14h4 M8 11v3"],
+  ["Printed books", "Complete study material delivered home", "₹2,500", "M2.5 3.5c2-.8 3.8-.8 5.5.5v9c-1.7-1.3-3.5-1.3-5.5-.5z M13.5 3.5c-2-.8-3.8-.8-5.5.5v9c1.7-1.3 3.5-1.3 5.5-.5z"],
+  ["PW goodies kit", "A welcome kit for your batch", "₹500", "M2.5 6.5h11v2h-11z M3.5 8.5h9v5h-9z M8 6.5v7"]
+];
+const F2 = [
+  ["Saarthi personal guide", "A mentor who tracks your progress every week", "₹4,000", "M8 1.6a6.4 6.4 0 1 0 0 12.8a6.4 6.4 0 1 0 0-12.8 M10.5 5.5L9 9 5.5 10.5 7 7z"],
+  ["1:1 mentorship", "Stay ahead with personal attention from teachers", "₹3,000", "M5.5 7a2 2 0 1 0 0-4a2 2 0 1 0 0 4 M1.8 13c0-2.1 1.7-3.8 3.7-3.8s3.7 1.7 3.7 3.8 M11 6.6a1.7 1.7 0 1 0 0-3.4 M11.6 9.3c1.5.3 2.6 1.8 2.6 3.6"],
+  ["Offline test series & Test Pass", "Write tests at a PW centre in a real exam setting", "₹3,000", "M3.5 2h9v12h-9z M6 4.5h1 M9 4.5h1 M6 7h1 M9 7h1 M6 9.5h1 M9 9.5h1 M7 14v-2h2v2"]
+];
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { more1: false };
+    this.cid = "ps" + Math.random().toString(36).slice(2, 8);
+  }
+
+  componentDidUpdate(prev) {
+    if (prev.plan !== this.props.plan && this._scrollNext != null) {
+      const n = this._scrollNext;
+      this._scrollNext = null;
+      clearTimeout(this._s);
+      this._s = setTimeout(() => {
+        const el = document.querySelector('[data-cmp-id="' + this.cid + '"] [data-sec="' + n + '"]');
+        if (!el) return;
+        let sc = el.parentElement;
+        while (sc && !/auto|scroll/.test(getComputedStyle(sc).overflowY)) sc = sc.parentElement;
+        if (!sc) return;
+        const top = el.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop;
+        const from = sc.scrollTop, to = Math.max(0, Math.min(top - 88, sc.scrollHeight - sc.clientHeight));
+        const t0 = performance.now();
+        const step = (now) => {
+          const k = Math.min(1, (now - t0) / 480);
+          sc.scrollTop = from + (to - from) * (1 - Math.pow(1 - k, 3));
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }, 140);
+    }
+  }
+
+  componentWillUnmount() { clearTimeout(this._s); }
+
+  renderVals() {
+    const p = this.props.plan ?? 1;
+    const N = this.props.names || ["Basic", "Infinity", "Infinity Pro"];
+    const pickTop = (n) => () => { this._scrollNext = n; this.props.onSelect && this.props.onSelect(n); };
+    const pick = (n) => () => this.props.onSelect && this.props.onSelect(n);
+    const badges = [null, ["POPULAR", "#fff", "#1668E3"], ["BEST VALUE", "#0B0D12", "#F5C64B"]];
+    const cards = N.map((name, i) => {
+      const on = p === i, bd = badges[i];
+      return {
+        name, price: PRICES[i], pick: pickTop(i),
+        bd: on ? "#5A4FCF" : "#E4E6EE", bg: on ? "#5A4FCF" : "#fff",
+        fg: on ? "#fff" : "#0B0D12", sfg: on ? "rgba(255,255,255,.82)" : "#7A8093",
+        sh: on ? "0 4px 12px rgba(90,79,207,.35)" : "none",
+        hasBadge: !!bd, badge: bd ? bd[0] : "", badgeFg: bd ? bd[1] : "", badgeBg: bd ? bd[2] : ""
+      };
+    });
+    const f1all = F1.map(([n, b, v, d]) => ({ n, b, v, d }));
+    const btn = (i, dark) => {
+      const on = p === i;
+      if (on) return { bd: dark ? (i === 2 ? "#F5C64B" : "#5BE3A4") : "#5A4FCF", bg: "transparent", fg: dark ? (i === 2 ? "#F5C64B" : "#5BE3A4") : "#5A4FCF", label: "✓ " + N[i] + " selected" };
+      return dark
+        ? { bd: i === 2 ? "#F5C64B" : "#fff", bg: i === 2 ? "#F5C64B" : "#F7F7F8", fg: "#0B0D12", label: "Select " + N[i] + " plan · " + PRICES[i] }
+        : { bd: "#2C3040", bg: "#fff", fg: "#0B0D12", label: "Select " + N[i] + " plan · " + PRICES[i] };
+    };
+    const b0 = btn(0, false), b1 = btn(1, true), b2 = btn(2, true);
+
+    return {
+      cmpId: this.cid, cards,
+      proof: "35k+ chose " + N[1],
+      n0: N[0], n1: N[1], n2: N[2],
+      core: CORE.map(t => ({ t })),
+      f1: this.state.more1 ? f1all : f1all.slice(0, 3),
+      f1count: F1.length,
+      more1: () => this.setState(s => ({ more1: !s.more1 })),
+      more1Label: this.state.more1 ? "Show fewer" : "+ " + (F1.length - 3) + " more included",
+      f2: F2.map(([n, b, v, d]) => ({ n, b, v, d })),
+      f2count: F2.length,
+      s0bd: p === 0 ? "#5A4FCF" : "#E7E9F0",
+      s1bd: p === 1 ? "#5BE3A4" : "transparent",
+      s2bd: p === 2 ? "#F5C64B" : "transparent",
+      s0w: p === 0 ? "2px" : "1px", s1w: p === 1 ? "2px" : "1px", s2w: p === 2 ? "2px" : "1px",
+      s0sh: p === 0 ? "0 10px 28px rgba(90,79,207,.22)" : "none",
+      s1sh: p === 1 ? "0 10px 30px rgba(43,44,49,.35)" : "none",
+      s2sh: p === 2 ? "0 10px 30px rgba(20,21,25,.4)" : "none",
+      show0: p === 0, show1: p === 1, show2: p === 2,
+      o0: 1, o1: 1, o2: 1,
+      teasers: [
+        { i: 1, ic: "∞", icBg: "#2B2C31", icFg: "#5BE3A4", tagFg: "#0F6B45", tagBg: "#E3F8EE", adds: "Adds Khazaana, Sahayak doubt solving, online test series, printed books & goodies kit" },
+        { i: 2, ic: "★", icBg: "#141519", icFg: "#F5C64B", tagFg: "#8A5A0C", tagBg: "#FDF0D8", adds: "Adds Saarthi personal guide, 1:1 mentorship, offline test series & Test Pass" }
+      ].filter(() => false).map(u => Object.assign(u, {
+        name: N[u.i] + " · " + PRICES[u.i],
+        delta: ["", "", ""][0] + (p === 0 ? (u.i === 1 ? "Only ₹384/month more than " + N[0] : "₹1,300/month more than " + N[0]) : "Only ₹917/month more than " + N[1]),
+        view: pickTop(u.i)
+      })),
+      isSel0: p === 0, isSel1: p === 1, isSel2: p === 2,
+      isUp0: false, isUp1: p < 1, isUp2: p < 2,
+      hasIncluded: false,
+      selName: N[p],
+      included: [
+        { name: N[0], count: "· 6 features", sum: "Live & recorded lectures, PDF notes, DPPs, live tests & AITS, revision, community" },
+        { name: N[1], count: "· 5 features", sum: "Khazaana, Sahayak doubt solving, online test series, printed books, goodies kit" }
+      ].slice(0, p),
+      pick0: pick(0), pick1: pick(1), pick2: pick(2),
+      b0bd: b0.bd, b0bg: b0.bg, b0fg: b0.fg, b0label: b0.label,
+      b1bd: b1.bd, b1bg: b1.bg, b1fg: b1.fg, b1label: b1.label,
+      b2bd: b2.bd, b2bg: b2.bg, b2fg: b2.fg, b2label: b2.label
+    };
+  }
+}
+</script>
+</body>
+</html>
