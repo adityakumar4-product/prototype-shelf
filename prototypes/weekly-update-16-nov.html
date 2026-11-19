@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conversion POD: Stakeholder Update | Week of 16 Nov 2026</title>
+<style>
+  :root{
+    --navy:#14213D; --ink:#1F2937; --mute:#6B7280; --line:#E5E7EB; --soft:#F8FAFC;
+    --green:#15803D; --orange:#D97706; --blue:#2563EB; --slate:#94A3B8;
+    --red:#DC2626; --purple:#7C3AED; --teal:#0F9488; --cyan:#0891B2;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:"Helvetica Neue", Arial, sans-serif; color:var(--ink); background:#fff; font-size:13px; line-height:1.4}
+  .topline{height:12px; background:linear-gradient(to right, #F59E0B 0 140px, var(--navy) 140px)}
+  .page{max-width:1200px; margin:0 auto; padding:28px 40px 56px}
+
+  header h1{font-size:26px; font-weight:800; color:var(--navy); margin:0 0 6px; letter-spacing:-.01em}
+  header h1 small{font-size:15px; font-weight:400; color:var(--mute); margin-left:6px}
+  nav{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 6px}
+  nav a{font-size:12px; color:var(--navy); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:5px 12px}
+  nav a:hover{border-color:var(--navy)}
+
+  section{padding-top:34px; scroll-margin-top:12px}
+  h2{font-size:21px; font-weight:800; color:var(--navy); margin:0 0 4px}
+  .lead{color:var(--mute); margin:0 0 18px}
+  .source{color:var(--mute); font-size:11.5px; margin-top:10px}
+
+  .stats{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin-bottom:18px}
+  .stat{background:var(--soft); border:1px solid var(--line); border-left:6px solid var(--navy); border-radius:8px; padding:12px 16px}
+  .stat b{display:block; font-size:28px; line-height:1.1; font-weight:800; color:var(--c, var(--navy))}
+  .stat strong{display:block; font-size:13px; margin-top:4px}
+  .stat span{display:block; font-size:11.5px; color:var(--mute)}
+  .stat.green{border-left-color:var(--green); --c:var(--green)}
+  .stat.orange{border-left-color:var(--orange); --c:var(--orange)}
+  .stat.blue{border-left-color:var(--blue); --c:var(--blue)}
+  .stat.slate{border-left-color:var(--slate); --c:var(--slate)}
+  .stat.red{border-left-color:var(--red); --c:var(--red)}
+  .stat.purple{border-left-color:var(--purple); --c:var(--purple)}
+
+  .table-wrap{overflow-x:auto}
+  table{width:100%; border-collapse:collapse}
+  th{background:var(--navy); color:#fff; text-align:left; font-size:11.5px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:9px 12px}
+  td{padding:8px 12px; border-bottom:1px solid var(--line); vertical-align:middle}
+  td.item{font-weight:700}
+  td.item small{display:block; font-weight:400; color:var(--mute); font-size:11px}
+  td.dim{color:var(--mute)}
+  tr.month td{color:#fff; font-weight:800; font-size:14px; padding:8px 12px; border:0}
+  tr.month td span{font-size:11px; font-weight:700; margin-left:8px}
+  tr.month.oct td{background:var(--green)}
+  tr.month.nov td{background:var(--orange)}
+  tr.month.dec td{background:var(--blue)}
+
+  .pill{display:inline-block; min-width:150px; text-align:center; color:#fff; font-size:10.5px; font-weight:700; letter-spacing:.03em; border-radius:999px; padding:4px 10px; white-space:nowrap}
+  .pill.qa{background:var(--blue)}
+  .pill.dev{background:var(--orange)}
+  .pill.closed{background:var(--teal)}
+  .pill.assess{background:var(--slate)}
+  .pill.released{background:var(--green)}
+  .pill.handover{background:var(--cyan)}
+  .t-adhoc{color:#C2410C}
+  .t-excellence{color:var(--teal)}
+  .flag{color:#C2410C; font-size:10px; font-weight:800; margin-left:4px}
+
+  tr.back td{background:#FEF2F2}
+  tr.soon td{background:#FAF5FF}
+  tr.back .upd, tr.back .next{color:var(--red)}
+  tr.warn .upd, tr.warn .next{color:#B45309}
+  tr.live .upd, tr.live .next{color:var(--blue)}
+  tr.soon .upd, tr.soon .next{color:var(--purple)}
+  .next{font-weight:700}
+  tr.released td{background:#F0FDF4}
+
+  h3{font-size:14px; color:var(--navy); margin:22px 0 8px}
+
+  @media (max-width:820px){
+    .page{padding:22px 18px 44px}
+    .stats{grid-template-columns:repeat(2, 1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<div class="page">
+  <header>
+    <h1>Conversion POD: Stakeholder Update <small>| Week of 16 Nov 2026 | OND Quarter (Oct-Dec 2026)</small></h1>
+    <nav>
+      <a href="#roadmap">1. OND Roadmap</a>
+      <a href="#items">2. Items Update</a>
+      <a href="#experiments">3. Experiments &amp; Status</a>
+      <a href="#october">4. October Delivery</a>
+    </nav>
+  </header>
+
+  <!-- 1. OND Roadmap -->
+  <section id="roadmap">
+    <h2>1. OND Roadmap</h2>
+    <p class="lead">OND Quarter (Oct-Dec 2026). Must-have items only, by tentative delivery month.</p>
+    <div class="stats">
+      <div class="stat"><b>19</b><strong>Must-have initiatives</strong><span>Oct 3 | Nov 10 | Dec 6</span></div>
+      <div class="stat green"><b>3</b><strong>Delivered</strong><span>All three October targets</span></div>
+      <div class="stat orange"><b>9</b><strong>In progress now</strong><span>In dev or in QA</span></div>
+      <div class="stat slate"><b>7</b><strong>Not yet started</strong><span>Of the 19 must-haves</span></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:15%">Theme</th><th style="width:13%">Type</th><th>Item</th></tr></thead>
+        <tbody>
+          <tr class="month oct"><td colspan="3">OCT 2026<span>3 must-have items</span></td></tr>
+          <tr><td class="dim">Acquisition</td><td class="dim">Catchup</td><td class="item">Onboarding - Login KMP - iOS</td></tr>
+          <tr><td class="dim">Acquisition</td><td class="dim">New PRD</td><td class="item">Coupon Support - Web &amp; BE</td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">New PRD</td><td class="item">Exam First Discovery on Listing - Android</td></tr>
+
+          <tr class="month nov"><td colspan="3">NOV 2026<span>10 must-have items</span></td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">New PRD</td><td class="item">Next Year Purchase - Android</td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">New PRD</td><td class="item">Uninstall Widget - Android</td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">New PRD</td><td class="item">WA Channel - Onboarding Completion POC - All</td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">Enhancement</td><td class="item">Preference Questions - Web &amp; iOS<small>** Android Native Support is Picked by LTV</small></td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">Enhancement</td><td class="item">100% Location Support for Personalisation - All</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Experiment</td><td class="item">Payment Failure - Recovery on Thank You &amp; Cart - Android</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Enhancement</td><td class="item">VP Flow Enhancements</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Enhancement</td><td class="item">Address Validation - All</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Enhancement</td><td class="item">Power Batch Scholarship Implementation - All</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Enhancement</td><td class="item">Power Batch T&amp;C Handling on OS Page</td></tr>
+
+          <tr class="month dec"><td colspan="3">DEC 2026<span>6 must-have items</span></td></tr>
+          <tr><td class="dim">Acquisition</td><td class="dim">Experiment</td><td class="item">Description + Plan Merge - Android</td></tr>
+          <tr><td class="dim">Acquisition</td><td class="dim">Experiment</td><td class="item">Qualification Based Onboarding - Android</td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">Catchup</td><td class="item">Batch Listing Personalisation - Web &amp; iOS<small>First Purchase | Same Year Repurchase | Next Year Purchase | Exam First Discovery</small></td></tr>
+          <tr><td class="dim">Activation</td><td class="dim">Catchup</td><td class="item">SuperApp Navigation + Super App More Section - Web &amp; iOS</td></tr>
+          <tr><td class="dim">Conversion</td><td class="dim">Catchup</td><td class="item">Checkout Go Live &amp; Phase 1 Enhancement - Web &amp; iOS</td></tr>
+          <tr><td class="dim">Retention</td><td class="dim">New PRD</td><td class="item">Auth DPoP + One Tap Package - All</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">Source: Conversion POD sheet - Roadmap view, sprint and release tabs</p>
+  </section>
+
+  <!-- 2. Items Update -->
+  <section id="items">
+    <h2>2. Items Update</h2>
+    <p class="lead">Sprint 3 (16 Nov - 27 Nov). Everything on the current sprint board.</p>
+    <div class="stats">
+      <div class="stat"><b>20</b><strong>Items this sprint</strong><span>15 roadmap | 3 adhoc | 2 excellence</span></div>
+      <div class="stat blue"><b>8</b><strong>In QA</strong><span>Testing ahead of release</span></div>
+      <div class="stat orange"><b>6</b><strong>In development</strong><span>Actively being built</span></div>
+      <div class="stat slate"><b>6</b><strong>In assessment</strong><span>1 closed, 5 open</span></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Type</th><th>PM</th><th>Status</th><th>ETA</th><th>Jira</th></tr></thead>
+        <tbody>
+          <tr><td class="item">Next Year Purchase - Android</td><td>Roadmap</td><td>Aditya</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-29270</td></tr>
+          <tr><td class="item">Preference Questions - LSQ</td><td>Roadmap</td><td>Aditya</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-27741</td></tr>
+          <tr><td class="item">100% Location Support for Personalisation</td><td>Roadmap</td><td>Shantanu</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-29875</td></tr>
+          <tr><td class="item">VP Flow Enhancements</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-29874</td></tr>
+          <tr><td class="item">Address Validation for Store Orders</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-29337</td></tr>
+          <tr><td class="item">Power Batch T&amp;C Handling on OS Page</td><td class="t-adhoc">Adhoc</td><td>Aditya</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-30091</td></tr>
+          <tr><td class="item">Validity on the Basis of Plan Type</td><td class="t-adhoc">Adhoc</td><td>Aditya</td><td><span class="pill qa">IN QA</span></td><td>26th Nov CF</td><td>PRG-29876</td></tr>
+          <tr><td class="item">Checkout - Web Parity</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill qa">IN QA</span></td><td>26th Nov Release</td><td>PRG-30090</td></tr>
+          <tr><td class="item">Async Access Functionality</td><td class="t-adhoc">Adhoc</td><td>Aditya</td><td><span class="pill dev">IN DEV</span></td><td>26th Nov CF</td><td>PRG-28584</td></tr>
+          <tr><td class="item">Power Batch Scholarship Implementation</td><td>Roadmap</td><td>Aditya</td><td><span class="pill dev">IN DEV</span></td><td>26th Nov CF</td><td>PRG-30308</td></tr>
+          <tr><td class="item">Checkout - iOS Parity</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill dev">IN DEV</span></td><td>7th Dec CF</td><td>PRG-30090</td></tr>
+          <tr><td class="item">One Tap Package Project</td><td>Roadmap</td><td>Shantanu</td><td><span class="pill dev">IN DEV</span></td><td>Dec End</td><td>PRG-28855</td></tr>
+          <tr><td class="item">Commerce API Implementation</td><td>Roadmap</td><td>Aditya</td><td><span class="pill closed">ASSESSMENT CLOSED</span></td><td class="dim">YTBD</td><td>PRG-30092</td></tr>
+          <tr><td class="item">Uninstall Widget</td><td>Roadmap</td><td>Shantanu</td><td><span class="pill assess">IN ASSESSMENT</span></td><td class="dim">YTBD</td><td>PRG-27842</td></tr>
+          <tr><td class="item">WA Channel - Onboarding Completion</td><td>Roadmap</td><td>Shantanu</td><td><span class="pill assess">IN ASSESSMENT</span></td><td class="dim">YTBD</td><td>PRG-30337</td></tr>
+          <tr><td class="item">Batch Listing Personalisation - Web</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill assess">IN ASSESSMENT</span></td><td class="dim">YTBD</td><td>PRG-30336</td></tr>
+          <tr><td class="item">Payment Failure - Recovery on Thank You &amp; Cart</td><td>Roadmap</td><td>Shantanu</td><td><span class="pill assess">IN ASSESSMENT</span></td><td class="dim">YTBD</td><td>PRG-30338</td></tr>
+          <tr><td class="item">Batch Listing Personalisation - App</td><td>Roadmap</td><td>Lakhvinder</td><td><span class="pill assess">IN ASSESSMENT</span></td><td class="dim">YTBD</td><td>PRG-30340</td></tr>
+          <tr><td class="item">Auth Rewrite P1 APIs</td><td class="t-excellence">Excellence</td><td>Aditya</td><td><span class="pill dev">IN DEV</span></td><td>30th Nov</td><td>PRG-27634</td></tr>
+          <tr><td class="item">20% work</td><td class="t-excellence">Excellence</td><td>Manoj</td><td><span class="pill dev">IN DEV</span></td><td class="dim">-</td><td class="dim">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">CF = code freeze. YTBD = ETA yet to be decided.</p>
+  </section>
+
+  <!-- 3. Experiments & Status -->
+  <section id="experiments">
+    <h2>3. Experiments &amp; Status</h2>
+    <p class="lead">Every running and upcoming experiment, with its latest read and next step.</p>
+    <div class="stats">
+      <div class="stat"><b>9</b><strong>Experiments</strong><span>Running, upcoming and closing</span></div>
+      <div class="stat red"><b>3</b><strong>Rolling back</strong><span>Flat or revenue-negative reads</span></div>
+      <div class="stat blue"><b>4</b><strong>Live</strong><span>Rolled out between 5% and 20%</span></div>
+      <div class="stat purple"><b>2</b><strong>Rolling out soon</strong><span>20 Nov and 23 Nov</span></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Experiment</th><th>Platform</th><th>Update</th><th>Next step</th><th>Dashboard</th></tr></thead>
+        <tbody>
+          <tr class="back"><td class="item">OTPLess with SNA - Android</td><td>App</td><td class="upd">Positive Onboarding Uplift, <b>but revenue negative</b></td><td class="next">Roll back the experiment</td><td>Metabase</td></tr>
+          <tr class="back"><td class="item">K1-K8 Widget</td><td>App &amp; Web</td><td class="upd">Flat results</td><td class="next">Roll back the experiment</td><td>Metabase</td></tr>
+          <tr class="back"><td class="item">Truecaller V2</td><td>App</td><td class="upd">Flat results</td><td class="next">Roll back the experiment</td><td>Metabase</td></tr>
+          <tr class="warn"><td class="item">OTPLess - Web</td><td>Web</td><td class="upd">Rolled out at 5%. Positive Onboarding Uplift, <b>but revenue negative</b></td><td class="next">Increase the rollout to 20%</td><td>Metabase</td></tr>
+          <tr class="live"><td class="item">Landing Page</td><td>App</td><td class="upd">Running at 20%. Scale is still quite small</td><td class="next">Increase the rollout to 100%</td><td>Metabase</td></tr>
+          <tr class="live"><td class="item">Search Revamp</td><td>App</td><td class="upd">Rolled out at 5% on 17 Nov</td><td class="next">Split is fine</td><td class="dim">-</td></tr>
+          <tr class="live"><td class="item">Exam First Discovery</td><td>App</td><td class="upd">Rolled back, then rolled out again at 5% on 17 Nov</td><td class="next">Split is fine</td><td class="dim">-</td></tr>
+          <tr class="soon"><td class="item">Batch Listing<small>Same Year Repurchase | First Purchase</small></td><td>App</td><td class="upd">To be rolled out on 20 Nov</td><td class="next">YTBD</td><td class="dim">-</td></tr>
+          <tr class="soon"><td class="item">One Tap</td><td>App</td><td class="upd">To be rolled out on 23rd Nov</td><td class="next">Rollback OTPLess and release One Tap</td><td class="dim">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">Source: provided by the POD, 19 Nov 2026.</p>
+  </section>
+
+  <!-- 4. October Delivery -->
+  <section id="october">
+    <h2>4. October Delivery</h2>
+    <p class="lead">Two sprints ran in October: 5-16 Oct and 19-30 Oct. Every item with an October delivery month shipped, alongside three items that spilled over from the JAS quarter.</p>
+    <div class="stats">
+      <div class="stat green"><b>6</b><strong>Delivered in October</strong><span>3 OND targets + 3 JAS spillover</span></div>
+      <div class="stat green"><b>3/3</b><strong>October targets met</strong><span>Every planned October item shipped</span></div>
+      <div class="stat"><b>0</b><strong>Slipped to November</strong><span>No OND target carried over</span></div>
+      <div class="stat orange"><b>3</b><strong>Still in flight</strong><span>Carried into Sprint 2</span></div>
+    </div>
+
+    <h3>Delivered in October</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Theme</th><th>Platform</th><th>Owner</th><th>Jira</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="released"><td class="item">Onboarding - Login KMP</td><td>Acquisition</td><td>iOS</td><td>Shantanu</td><td class="dim">-</td><td><span class="pill released">RELEASED</span></td></tr>
+          <tr class="released"><td class="item">Coupon Support</td><td>Acquisition</td><td>Web &amp; BE</td><td>Aditya</td><td>PRG-29267</td><td><span class="pill released">RELEASED</span></td></tr>
+          <tr class="released"><td class="item">Exam First Discovery on Listing</td><td>Activation</td><td>Android</td><td>Aditya</td><td>PRG-29252</td><td><span class="pill released">RELEASED</span></td></tr>
+          <tr class="released"><td class="item">OTPLess - Web (without SNA)<span class="flag">JAS SPILLOVER</span></td><td>Acquisition</td><td>Web</td><td>Aditya</td><td class="dim">-</td><td><span class="pill released">RELEASED</span></td></tr>
+          <tr class="released"><td class="item">Super App More - Phase 2 Extension<span class="flag">JAS SPILLOVER</span></td><td>Activation</td><td>Web &amp; iOS</td><td>Aditya</td><td>PRG-29269</td><td><span class="pill released">RELEASED</span></td></tr>
+          <tr class="released"><td class="item">FBT Type and Type Id Data Fix<span class="flag">JAS SPILLOVER</span></td><td>Conversion</td><td>All</td><td>Aditya</td><td>PRG-27840</td><td><span class="pill released">RELEASED</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Moved through the October sprints, still in flight</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Owner</th><th>Status</th><th>Progress</th></tr></thead>
+        <tbody>
+          <tr><td class="item">One Tap Package Project</td><td>Shantanu</td><td><span class="pill dev">IN DEV</span></td><td>In Dev across both October sprints; continues in Sprint 2</td></tr>
+          <tr><td class="item">Auth Rewrite</td><td>Aditya</td><td><span class="pill dev">IN DEV</span></td><td>Reached QA + UAT in October; P1 APIs in Sprint 2</td></tr>
+          <tr><td class="item">Next Year Purchase</td><td>Aditya</td><td><span class="pill handover">QA HANDOVER</span></td><td>On Hold in Sprint 1, back In Dev in Sprint 2, QA handover 9 Nov</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">Source: Conversion POD sheet - Roadmap view, sprint and release tabs</p>
+  </section>
+</div>
+</body>
+</html>

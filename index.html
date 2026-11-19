@@ -227,6 +227,17 @@ const PROTOTYPES = [
     frame: "wide",
     tags: ["Checkout", "Digital products", "ARPU"],
     updated: "14 Oct 2026"
+  },
+  {
+    slug: "weekly-update-16-nov",
+    title: "Conversion POD: Week of 16 Nov",
+    snippet: "19 must-haves: 3 delivered, 9 in progress, 7 not started · 20 items in Sprint 3 · 9 experiments",
+    description: "Stakeholder update for the OND quarter: roadmap, Sprint 3 items, experiment reads and next steps, and October delivery.",
+    file: "prototypes/weekly-update-16-nov.html",
+    kind: "weekly",
+    frame: "wide",
+    tags: ["Weekly update", "OND", "Sprint 3"],
+    updated: "19 Nov 2026"
   }
 ];
 
@@ -629,7 +640,7 @@ const PIPELINE = [
   const vFile = document.getElementById('vFile');
   const vNew = document.getElementById('vNew');
 
-  const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline', 'Roadmap'];
+  const FILTERS = ['All', 'App', 'Web', 'Admin', 'Pipeline', 'Roadmap', 'Weekly Updates'];
   let activeFilter = 'All';
 
   /* ---------- shelf ---------- */
@@ -647,6 +658,14 @@ const PIPELINE = [
       filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
       render();
       document.getElementById('prototype-growth-roadmap')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      return;
+    }
+    if (b.dataset.filter === 'Weekly Updates') {
+      activeFilter = 'Weekly Updates';
+      q.value = '';
+      filters.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b));
+      render();
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
       return;
     }
     if (b.dataset.filter === 'Pipeline') {
@@ -672,9 +691,12 @@ const PIPELINE = [
   function matches(p) {
     const term = q.value.trim().toLowerCase();
     const isRoadmap = p.slug === 'growth-roadmap';
+    const isWeekly = p.kind === 'weekly';
     const inFilter = activeFilter === 'Roadmap'
       ? isRoadmap
-      : !isRoadmap && (activeFilter === 'All' || p.platform === activeFilter);
+      : activeFilter === 'Weekly Updates'
+        ? isWeekly
+        : !isRoadmap && !isWeekly && (activeFilter === 'All' || p.platform === activeFilter);
     const prototype = p.prototypeSlug && PROTOTYPES.find(item => item.slug === p.prototypeSlug);
     const inText = !term || [p.title, p.description, p.snippet, p.platform, ...(p.tags || []), ...(prototype ? [prototype.title, prototype.snippet, prototype.description] : [])].join(' ').toLowerCase().includes(term);
     return inFilter && inText;
